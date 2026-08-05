@@ -12,6 +12,13 @@ Ce document ne doit pas encore être considéré comme validé.
 
 ## Entrées
 
+### 5 août 2026
+
+- Validation de `docs/12A_EXPERIENCE_DESIGN_SYSTEM.md` (Experience Design System v1.0).
+- `12A_EXPERIENCE_DESIGN_SYSTEM` devient la référence officielle de l’expérience utilisateur de Tai-Chi AI Coach.
+- Complète `docs/12_UX_UI.md` ; aucune modification des parcours utilisateur.
+- Statut passé de Draft à VALIDÉ après finalisation 12A.1 et audit final.
+
 ### 4 août 2026
 
 - Création de l’architecture documentaire initiale du projet.
