@@ -8,13 +8,12 @@
 | Fichier | `docs/runtime/03_DATA_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 |
+| Dernière mise à jour | 5 août 2026 — MVP-003 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel du modèle de données |
 | Référence conception | `docs/14_DATA_MODEL.md` (modèle cible / gelé — non recopié comme implémenté) |
 
-> Ce registre décrit uniquement ce qui est **effectivement** modélisé / stocké / migré en runtime.  
-> Aucune donnée métier n’existe encore.
+> Ce registre décrit uniquement ce qui est **effectivement** modélisé / stocké / migré en runtime.
 
 ## 2. Synthèse
 
@@ -22,10 +21,10 @@
 | --- | --- |
 | Domaines suivis | 14 (périmètre demandé) |
 | Implémentés | **0** |
-| En validation / développement | **0** |
-| Non commencés | **14** |
+| En validation / développement | **1** (Curriculum — types TS + JSON embarqué) |
+| Non commencés | **13** |
 | Schéma DB / migrations applicatives | Absents |
-| Données métier | Aucune |
+| Données métier | Curriculum local embarqué (3 `SessionTemplate` structurels) ; **aucune** donnée utilisateur |
 
 ## 3. Domaines — état réel
 
@@ -35,8 +34,8 @@ Statuts autorisés : Non commencé · En développement · En validation · Impl
 | --- | --- | --- | --- | --- | --- |
 | Utilisateur | D1 Identité | Non commencé | — | — | Aucun profil / compte runtime |
 | Préférences | D10 | Non commencé | — | — | — |
-| Curriculum | D3 | Non commencé | — | — | — |
-| Séances | D4 Pratique | Non commencé | — | — | — |
+| Curriculum | D3 | En développement | MVP-003 | 5 août 2026 | Types + données locales + reader ; `SessionTemplate` / `SessionStep` / phases ; pas SQL |
+| Séances | D4 Pratique | Non commencé | — | — | Pas de `PracticeSession` (exécution utilisateur) |
 | Progression | D5 | Non commencé | — | — | — |
 | Recommandations | D6 | Non commencé | — | — | — |
 | IA | D7 IA Coach | Non commencé | — | — | — |
@@ -55,20 +54,21 @@ Domaines `14` non listés dans la table de suivi demandée (Onboarding D2, Expor
 | Élément | Statut | Justification |
 | --- | --- | --- |
 | Modèle de données conception | Conforme (gelé) | Baseline Design Freeze |
-| Implémentation réelle | Conforme à l’absence attendue | Aucune table / entité runtime |
-| Divergence | **Aucune** | — |
-
-Au démarrage : **aucune divergence**.
+| Implémentation réelle | Partielle | Sous-ensemble D3 en TypeScript + fichier local ; pas de persistance distante |
+| Divergence | **Aucune** | Séparation `SessionTemplate` / `PracticeSession` respectée (pratique absente) |
 
 ## 5. Écarts
 
 Aucun écart connu.
+
+Note : les 3 séances locales sont des **placeholders structurels** (`isStructuralPlaceholder`) dérivés de `08` — pas un catalogue de mouvements inventé.
 
 ## 6. Historique
 
 | Date | Événement |
 | --- | --- |
 | 5 août 2026 | Création initiale — tous domaines **Non commencé** ; aucune donnée métier ; aucune divergence. |
+| 5 août 2026 | MVP-003 — Curriculum → **En développement** (types + `local-curriculum` + reader) ; 0 SQL / 0 Supabase. |
 
 ## 7. Diagrammes
 
@@ -76,11 +76,13 @@ Aucun écart connu.
 
 ```mermaid
 flowchart TB
-  subgraph NonCommence[Tous domaines — Non commencé]
+  subgraph EnDev[En développement]
+    C[Curriculum]
+  end
+  subgraph NonCommence[Non commencé]
     U[Utilisateur]
     P[Préférences]
-    C[Curriculum]
-    S[Séances]
+    S[Séances pratique]
     PR[Progression]
     R[Recommandations]
     IA[IA]
@@ -98,17 +100,19 @@ flowchart TB
 
 ```mermaid
 pie title Domaines data — état réel
-  "Non commencé" : 14
-  "En cours / implémenté" : 0
+  "Non commencé" : 13
+  "En développement" : 1
+  "Implémenté" : 0
 ```
 
-### 7.3 Dépendances (structurelles — non implémentées)
+### 7.3 Dépendances (structurelles — partiellement implémentées)
 
 ```mermaid
 flowchart LR
   U[Utilisateur] -.-> Pref[Préférences]
-  U -.-> Sess[Séances]
-  Curr[Curriculum] -.-> Sess
+  U -.-> Sess[Séances pratique]
+  Curr[Curriculum] -->|local reader| Lib[Bibliothèque UI]
+  Curr -.-> Sess
   Sess -.-> Prog[Progression]
   Prog -.-> Reco[Recommandations]
   U -.-> Cons[Consentements]
@@ -121,10 +125,10 @@ flowchart LR
 ```mermaid
 flowchart TB
   Target[14 Data Model — cible]
-  Real[Runtime data — vide]
+  Real[Runtime — curriculum local]
   Target --> Gap{Couverture}
   Real --> Gap
-  Gap --> Zero[0% implémenté]
+  Gap --> Partial[D3 partiel — reste 0]
 ```
 
 ### 7.5 Cycle d’évolution
@@ -150,9 +154,7 @@ Toute évolution du modèle de données (entité, migration, stockage local, syn
 
 ## 10. Prochaine étape
 
-Créer :
-
-`docs/runtime/04_API_STATUS.md`
+Enrichir le curriculum / démarrer la pratique (`PracticeSession`) selon ticket suivant — sans anticiper hors backlog.
 
 ## 11. Références
 

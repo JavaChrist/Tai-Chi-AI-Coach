@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 |
-| Phase actuelle | Post–Design Freeze — initialisation Runtime |
+| Dernière mise à jour | 5 août 2026 — MVP-003 |
+| Phase actuelle | Développement MVP — premiers tests unitaires |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
 
@@ -20,27 +20,27 @@
 
 | Domaine | État réel |
 | --- | --- |
-| Tests unitaires | Non commencé |
+| Tests unitaires | **En cours** — Vitest ; 6 tests curriculum reader (MVP-003) |
 | Intégration | Non commencé |
 | Fonctionnels | Non commencé |
 | E2E | Non commencé |
-| UX | Non commencé |
+| UX | Non commencé (validations manuelles documentées §5) |
 | Sécurité | Non commencé |
 | RGPD | Non commencé |
 | Offline | Non commencé |
 | Analytics | Non commencé |
 | Performances | Non commencé |
 
-**Synthèse :** aucun test exécuté. Aucune suite, aucun rapport, aucune couverture mesurée.
+**Synthèse :** infrastructure Vitest légère ajoutée ; première suite unitaire sur le service de lecture curriculum. Pas de campagne produit complète.
 
 ## 3. Couverture
 
 | Périmètre | Couverture réelle |
 | --- | --- |
-| Globale | **0 %** |
-| Architecture | 0 % |
-| Features | 0 % |
-| Data | 0 % |
+| Globale | Non mesurée (pas de seuil produit) |
+| Architecture | Non mesurée |
+| Features | Partielle — lecture `SessionTemplate` (F-013 fondation) |
+| Data | Partielle — curriculum local |
 | API | 0 % |
 | Sécurité | 0 % |
 | RGPD | 0 % |
@@ -52,12 +52,31 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Campagnes exécutées | **0** |
-| Campagnes prévues (runtime planifié) | Aucune campagne Runtime planifiée avec ticket |
+| Campagnes exécutées | **1** (locale, MVP-003) |
+| Campagnes prévues (runtime planifié) | Aucune campagne Runtime formelle hors ticket |
 
-Ne pas confondre stratégie `20` et campagne exécutée.
+### 4.1 Campagne MVP-003
 
-## 5. Incidents
+| Champ | Valeur |
+| --- | --- |
+| Date | 5 août 2026 |
+| Outil | Vitest (`npm test` dans `web/`) |
+| Périmètre | `curriculum-reader` (liste, getById, not_found, filtre, source vide) |
+| Résultat | **6 / 6 passed** |
+| Build / tsc / eslint | OK (même ticket) |
+
+## 5. Validations manuelles / hors suite
+
+| Contrôle | Résultat | Preuve |
+| --- | --- | --- |
+| Lien carte → fiche | OK (code + SSG) | `SessionCard` → `/bibliotheque/[sessionId]` ; 3 pages SSG générées |
+| Fiche valide sans erreur build | OK | Build Next.js routes `●` pour les 3 IDs |
+| Bibliothèque vide | OK (contrat testé) | Source vide → `listSessions() === []` ; UI `EmptyState` si length 0 |
+| Identifiant inconnu | OK | `notFound()` + `not-found.tsx` ; test `not_found` |
+
+Pas de tests E2E navigateur exécutés.
+
+## 6. Incidents
 
 | Type | Constat |
 | --- | --- |
@@ -65,50 +84,48 @@ Ne pas confondre stratégie `20` et campagne exécutée.
 | Bugs découverts par tests | Aucun |
 | Régressions | Aucune |
 
-Détail bugs éventuels futurs : `13_BUGS.md` (non créé).
-
-## 6. Conformité
+## 7. Conformité
 
 | Élément | Statut |
 | --- | --- |
-| Conformité vs `20` | Conforme à l’absence d’exécution attendue |
+| Conformité vs `20` | Première tranche unitaire alignée périmètre ticket ; pyramide incomplète |
 | Divergences | **Aucune** |
 | Décisions Runtime | **Aucune** |
 
-## 7. Diagrammes
+## 8. Diagrammes
 
-### 7.1 Pyramide de tests (état réel)
+### 8.1 Pyramide de tests (état réel)
 
 ```mermaid
 flowchart TB
   E2E[E2E — 0]
   F[Fonctionnels — 0]
   I[Intégration — 0]
-  U[Unitaires — 0]
+  U[Unitaires — 6]
   E2E --- F
   F --- I
   I --- U
 ```
 
-### 7.2 Couverture
+### 8.2 Couverture
 
 ```mermaid
 pie title Couverture tests — état réel
-  "Non couvert" : 100
-  "Couvert" : 0
+  "Non mesuré / non couvert" : 1
+  "Suite unitaire curriculum" : 1
 ```
 
-### 7.3 Progression
+### 8.3 Progression
 
 ```mermaid
 stateDiagram-v2
   [*] --> NonCommence
-  NonCommence --> EnCours: première campagne
+  NonCommence --> EnCours: MVP-003 Vitest
   EnCours --> Rapport
   Rapport --> MajRegistre
 ```
 
-### 7.4 Workflow
+### 8.4 Workflow
 
 ```mermaid
 flowchart LR
@@ -118,16 +135,16 @@ flowchart LR
   R09 --> R00[Sync 00]
 ```
 
-### 7.5 Conformité
+### 8.5 Conformité
 
 ```mermaid
 flowchart LR
   C20[20 stratégie] --> Q{Écart exécution?}
-  Real[0 test] --> Q
+  Real[Vitest MVP-003] --> Q
   Q -->|Non| OK[Aucune divergence]
 ```
 
-## 8. Gouvernance
+## 9. Gouvernance
 
 Toute campagne de test devra :
 
@@ -137,13 +154,14 @@ Toute campagne de test devra :
 4. synchroniser `00_PROJECT_STATUS.md` ;  
 5. ouvrir/mettre à jour `13_BUGS.md` si anomalies.
 
-## 9. Historique
+## 10. Historique
 
 | Date | Événement |
 | --- | --- |
 | 5 août 2026 | Création du registre ; initialisation ; aucune exécution de test. |
+| 5 août 2026 | MVP-003 — Vitest ajouté ; 6 tests reader OK ; validations manuelles documentées. |
 
-## 10. Références
+## 11. Références
 
 - `docs/20_TEST_STRATEGY.md`  
 - `docs/runtime/README.md`  

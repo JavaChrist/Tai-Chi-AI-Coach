@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-001 (aucune F-xxx livrée) |
+| Dernière mise à jour | 5 août 2026 — MVP-003 (F-013 fondation) |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -22,21 +22,21 @@
 | --- | --- |
 | Total des fonctionnalités | **41** (`F-001` … `F-041`) |
 | Terminées (Validé / Livré) | **0** |
-| En cours (En développement / En test) | **0** |
-| Restantes (Non commencé) | **41** |
+| En cours (En développement / En test) | **1** (`F-013`) |
+| Restantes (Non commencé) | **40** |
 
 ### Répartition par version cible (conception)
 
 | Version cible | Nombre | Statut d’implémentation |
 | --- | --- | --- |
 | Pré-MVP | 2 | 0 livré / 2 non commencés |
-| MVP | 17 | 0 livré / 17 non commencés |
+| MVP | 17 | 0 livré / 1 en développement (`F-013`) / 16 non commencés |
 | V1 | 10 | 0 livré / 10 non commencés |
 | V2 | 7 | 0 livré / 7 non commencés |
 | V3 | 2 | 0 livré / 2 non commencés |
 | Backlog | 3 | 0 livré / 3 non commencés |
 
-Versions cibles selon matrice `05` §9. Le développement applicatif n’a **pas** commencé.
+Versions cibles selon matrice `05` §9. Socle Frontend + Design System + fondation curriculum/séances (MVP-001…003).
 
 ## 3. Catalogue — état réel
 
@@ -47,7 +47,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-001 | Présentation du Tai Chi | MVP | Non commencé | — | — | — |
 | F-002 | Découverte des styles | MVP | Non commencé | — | — | — |
 | F-003 | Parcours débutant | MVP | Non commencé | — | — | — |
-| F-004 | Bibliothèque des mouvements | MVP | Non commencé | — | — | — |
+| F-004 | Bibliothèque des mouvements | MVP | Non commencé | — | — | `/bibliotheque` sert pour l’instant le catalogue de **séances** (F-013) ; pas de catalogue Mouvement |
 | F-005 | Explication détaillée d’un mouvement | MVP | Non commencé | — | — | — |
 | F-006 | Vidéo pédagogique | MVP | Non commencé | — | — | — |
 | F-007 | Images de référence | MVP | Non commencé | — | — | — |
@@ -56,7 +56,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-010 | Progression | MVP | Non commencé | — | — | — |
 | F-011 | Favoris | V1 | Non commencé | — | — | — |
 | F-012 | Recherche | V1 | Non commencé | — | — | — |
-| F-013 | Séances guidées | MVP | Non commencé | — | — | — |
+| F-013 | Séances guidées | MVP | En développement | MVP-003 | 5 août 2026 | Fondation uniquement : catalogue SessionTemplate + fiche ; **pas** de démarrage / suivi / reprise |
 | F-014 | Exercices de respiration | MVP | Non commencé | — | — | — |
 | F-015 | Relaxation | MVP | Non commencé | — | — | — |
 | F-016 | Conseils de sécurité | Pré-MVP | Non commencé | — | — | — |
@@ -92,8 +92,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | --- | --- |
 | Features MVP (+ Pré-MVP héritées) | 19 (`17` MVP + `2` Pré-MVP) |
 | Livrées / validées | 0 |
-| En cours | 0 |
-| Non commencées | 19 |
+| En cours | 1 (`F-013`) |
+| Non commencées | 18 |
 
 ## 5. Historique
 
@@ -101,6 +101,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | --- | --- |
 | 5 août 2026 | Création initiale — 41 fonctionnalités catalogue ; toutes **Non commencé** ; aucun ticket. |
 | 5 août 2026 | MVP-001 livré (App Shell) — **aucune** `F-xxx` passée à En développement / Validé / Livré (hors périmètre du ticket). |
+| 5 août 2026 | MVP-002 livré (Design System & UI Foundation) — **aucune** `F-xxx` passée à En développement / Validé / Livré (hors périmètre du ticket). |
+| 5 août 2026 | MVP-003 : `F-013` → **En développement** (fondation catalogue + fiche) ; démarrage guidé hors périmètre ; `F-004` inchangé. |
 
 ## 6. Diagrammes
 
@@ -108,8 +110,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 
 ```mermaid
 pie title MVP + Pré-MVP — état réel
-  "Non commencé" : 19
-  "En cours / livré" : 0
+  "Non commencé" : 18
+  "En développement" : 1
+  "Livré / validé" : 0
 ```
 
 ### 6.2 Répartition des versions

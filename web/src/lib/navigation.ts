@@ -14,3 +14,9 @@ export const mainNavItems: NavItem[] = [
   { href: "/bibliotheque", label: "Bibliothèque", icon: BookOpen },
   { href: "/profil", label: "Profil", icon: User },
 ];
+
+/** Détermine l’état actif d’un item de navigation. */
+export function isNavItemActive(pathname: string, href: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}

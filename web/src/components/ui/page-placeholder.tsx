@@ -1,17 +1,19 @@
+import { ContentLayout } from "@/components/layout/content-layout";
+import { InformationCard } from "@/components/cards/information-card";
+
 type PagePlaceholderProps = {
   title: string;
   description: string;
 };
 
+/** Placeholder de route — aucune logique métier. */
 export function PagePlaceholder({ title, description }: PagePlaceholderProps) {
   return (
-    <section className="mx-auto flex max-w-2xl flex-col gap-3 py-4">
-      <h1 className="font-heading text-3xl font-semibold tracking-tight text-balance">
-        {title}
-      </h1>
-      <p className="text-muted-foreground text-base leading-relaxed text-pretty">
-        {description}
-      </p>
-    </section>
+    <ContentLayout title={title} description={description}>
+      <InformationCard
+        title="Espace en préparation"
+        description="Cette section accueillera bientôt le contenu correspondant. Aucune action n’est requise pour le moment."
+      />
+    </ContentLayout>
   );
 }

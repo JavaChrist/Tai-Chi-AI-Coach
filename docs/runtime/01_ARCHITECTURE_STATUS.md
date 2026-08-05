@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/01_ARCHITECTURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-001 App Shell |
+| Dernière mise à jour | 5 août 2026 — MVP-003 curriculum local |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel de l’architecture |
 | Référence conception | `docs/13_TECH_ARCHITECTURE.md` (architecture cible / gelée — non recopié ici) |
@@ -23,7 +23,7 @@ Référentiel de lecture des noms de couches : conception `13` (pour comparaison
 
 | Couche | État réel | Constat |
 | --- | --- | --- |
-| Frontend | **En cours** | Socle Next.js App Router + App Shell dans `web/` (MVP-001) ; pas encore PWA |
+| Frontend | **En cours** | Socle Next.js + App Shell + Design System + bibliothèque séances (MVP-001…003) ; curriculum embarqué local ; pas encore PWA |
 | Backend | **Non commencé** | Aucun service backend |
 | API | **Non commencé** | Aucun endpoint exposé |
 | Base de données | **Non commencé** | Aucun schéma / instance applicative |
@@ -40,9 +40,9 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 
 | Module | État | Responsable | Ticket d’origine | Dernière mise à jour |
 | --- | --- | --- | --- | --- |
-| Interface utilisateur (PWA) | En cours | Projet | MVP-001 | 5 août 2026 — shell UI, pas PWA |
+| Interface utilisateur (PWA) | En cours | Projet | MVP-002 | 5 août 2026 — shell + design system UI, pas PWA |
 | Couche application / orchestration client | En cours | Projet | MVP-001 | 5 août 2026 — layout / navigation |
-| Modules métiers (curriculum, progression, etc.) | Non commencé | — | — | — |
+| Modules métiers (curriculum, progression, etc.) | En cours | Projet | MVP-003 | 5 août 2026 — curriculum local + lecture SessionTemplate ; pas de PracticeSession |
 | Couche d’abstraction IA | Non commencé | — | — | — |
 | Backend API (stateless) | Non commencé | — | — | — |
 | Persistance (PostgreSQL) | Non commencé | — | — | — |
@@ -60,7 +60,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 | Élément | Statut | Justification |
 | --- | --- | --- |
 | Architecture cible documentée (`13`) | Conforme (conception) | Baseline figée par `25` ; non remise en cause |
-| Architecture réellement déployée | Partielle | Frontend shell uniquement ; reste conforme au périmètre MVP-001 |
+| Architecture réellement déployée | Partielle | Frontend + curriculum local embarqué ; conforme MVP-001…003 ; pas de backend / DB |
 | Divergence d’implémentation | **Aucune** | Stack Next.js/React/TS/Tailwind alignée `13` ; pas de backend inventé |
 
 ## 5. Écarts
@@ -87,6 +87,8 @@ Aucune.
 | --- | --- |
 | 5 août 2026 | Création initiale — Design Freeze terminé ; architecture validée en conception ; aucun module développé ; aucun écart ; aucun ticket. |
 | 5 août 2026 | MVP-001 : socle Frontend (`web/`) — Next.js, React, TS, Tailwind, shadcn/ui, Lucide ; App Shell + routes vides ; Frontend = En cours. |
+| 5 août 2026 | MVP-002 : Design System & UI Foundation — boutons, cartes, états, dialogs, toasts, inputs, feedback, layouts ; navigation avec états actifs ; Frontend = En cours. |
+| 5 août 2026 | MVP-003 : curriculum local typé + service de lecture + `/bibliotheque` + fiche `/bibliotheque/[sessionId]` ; modules métiers = En cours. |
 
 ## 9. Diagrammes
 
@@ -94,8 +96,10 @@ Aucune.
 
 ```mermaid
 flowchart TB
-  subgraph NonCommence[Toutes couches — Non commencé]
+  subgraph EnCours[En cours]
     FE[Frontend]
+  end
+  subgraph NonCommence[Non commencé]
     BE[Backend]
     API[API]
     DB[Base de données]
@@ -112,11 +116,11 @@ flowchart TB
 
 ```mermaid
 pie title Modules architecture — état réel
-  "Non commencés" : 14
-  "En cours / implémentés" : 0
+  "Non commencés" : 11
+  "En cours" : 3
 ```
 
-### 9.3 Dépendances (référence structurelle — non implémentées)
+### 9.3 Dépendances (référence structurelle — partiellement implémentées)
 
 ```mermaid
 flowchart TB
@@ -126,8 +130,8 @@ flowchart TB
   AIABS[Abstraction IA]
   API[Backend API]
   DATA[(Persistance)]
-  UI -.->|non implémenté| APP
-  APP -.->|non implémenté| METIER
+  UI -->|shell + design system| APP
+  APP -->|curriculum local| METIER
   METIER -.->|non implémenté| AIABS
   METIER -.->|non implémenté| API
   API -.->|non implémenté| DATA
