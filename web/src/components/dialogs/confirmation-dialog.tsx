@@ -1,7 +1,5 @@
 "use client";
 
-import { HelpCircle } from "lucide-react";
-
 import {
   AppDialog,
   DialogActionButton,
@@ -19,7 +17,7 @@ type ConfirmationDialogProps = {
   onCancel?: () => void;
 };
 
-/** Dialog de confirmation — remplace window.confirm(). */
+/** Dialog de confirmation — une décision, peu de texte. */
 export function ConfirmationDialog({
   open,
   onOpenChange,
@@ -47,13 +45,11 @@ export function ConfirmationDialog({
       onOpenChange={onOpenChange}
       title={title}
       description={description}
-      icon={HelpCircle}
-      iconClassName="bg-primary/10 text-primary"
       footer={
         <>
           <DialogActionButton
             label={cancelLabel}
-            variant="outline"
+            variant="ghost"
             onClick={handleCancel}
           />
           <DialogActionButton

@@ -25,9 +25,10 @@ export function ChoiceCard({
     <label
       htmlFor={id}
       className={cn(
-        "border-border bg-card block cursor-pointer rounded-xl border p-4 transition-colors",
-        "hover:border-primary/40 focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-3",
-        selected && "border-primary bg-primary/5 ring-primary/20 ring-2",
+        "border-border bg-card shadow-medium block cursor-pointer rounded-card border p-6",
+        "ease-calm duration-normal transition-colors",
+        "hover:border-primary/40 focus-within:border-ring focus-within:ring-ring/40 focus-within:ring-3",
+        selected && "border-primary bg-primary/5 ring-primary/15 ring-2",
       )}
     >
       <input
@@ -39,8 +40,8 @@ export function ChoiceCard({
         onChange={onSelect}
         className="sr-only"
       />
-      <span className="font-heading text-base font-medium">{title}</span>
-      <span className="text-muted-foreground mt-1 block text-sm leading-relaxed">
+      <span className="text-h3 text-foreground block">{title}</span>
+      <span className="text-small text-muted-foreground mt-2 block">
         {description}
       </span>
     </label>

@@ -7,6 +7,7 @@ import { AppHeader } from "@/components/layout/app-header";
 import { BottomNav } from "@/components/layout/bottom-nav";
 import { OnboardingGate } from "@/components/onboarding/onboarding-gate";
 import { Toaster } from "@/components/ui/sonner";
+import { cn } from "@/lib/utils";
 
 type AppShellProps = {
   children: ReactNode;
@@ -15,6 +16,7 @@ type AppShellProps = {
 export function AppShell({ children }: AppShellProps) {
   const pathname = usePathname();
   const isOnboarding = pathname.startsWith("/onboarding");
+  const isPractice = pathname.startsWith("/pratique");
 
   return (
     <OnboardingGate>
@@ -25,11 +27,17 @@ export function AppShell({ children }: AppShellProps) {
         </>
       ) : (
         <div className="bg-background text-foreground flex min-h-dvh flex-col">
-          <AppHeader />
-          <main id="contenu-principal" className="flex-1 pb-24 md:pb-10">
+          <AppHeader discreet={isPractice} />
+          <main
+            id="contenu-principal"
+            className={cn(
+              "flex-1",
+              isPractice ? "pb-10" : "pb-24 md:pb-10",
+            )}
+          >
             {children}
           </main>
-          <BottomNav />
+          {isPractice ? null : <BottomNav />}
           <Toaster position="top-center" richColors closeButton />
         </div>
       )}

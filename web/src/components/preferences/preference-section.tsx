@@ -24,14 +24,17 @@ export function PreferenceSection({
     <section
       aria-labelledby={headingId}
       aria-describedby={descriptionId}
-      className={cn("space-y-4", className)}
+      className={cn("space-y-5", className)}
     >
-      <header className="space-y-1">
-        <h2 id={headingId} className="font-heading text-lg font-medium tracking-tight">
+      <header className="space-y-2">
+        <h2 id={headingId} className="text-h2 text-foreground">
           {title}
         </h2>
         {description ? (
-          <p id={descriptionId} className="text-muted-foreground text-sm leading-relaxed">
+          <p
+            id={descriptionId}
+            className="text-small text-muted-foreground leading-relaxed"
+          >
             {description}
           </p>
         ) : null}

@@ -22,8 +22,8 @@ export function EmptyStateCard({
   className,
 }: EmptyStateCardProps) {
   return (
-    <Card className={cn("border-dashed", className)}>
-      <CardContent className="py-8">
+    <Card className={cn("border-dashed shadow-none", className)}>
+      <CardContent className="py-4">
         <EmptyState
           title={title}
           description={description}

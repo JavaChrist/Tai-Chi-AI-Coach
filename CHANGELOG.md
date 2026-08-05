@@ -12,6 +12,12 @@ Ce document ne doit pas encore être considéré comme validé.
 
 ## Entrées
 
+### 6 août 2026
+
+- Clôture **MVP-008A** — refonte UI selon `12A_EXPERIENCE_DESIGN_SYSTEM` (présentation seule).
+- Tokens, primitives, layouts et écrans MVP alignés 12A ; CH-009 enregistré.
+- Aucune fonctionnalité ni logique métier ajoutée.
+
 ### 5 août 2026
 
 - Validation de `docs/12A_EXPERIENCE_DESIGN_SYSTEM.md` (Experience Design System v1.0).

@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-008 |
+| Dernière mise à jour | 6 août 2026 — MVP-008A / CH-009 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,9 +22,9 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — onboarding local (MVP-008) |
-| Statut global | Conception close ; Runtime 20/20 ; onboarding local `/onboarding` ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; **aucune** `F-xxx` Validé/Livré ; pas de sync |
-| Dernière mise à jour globale | 5 août 2026 |
+| Phase | Développement MVP — identité UI 12A appliquée (MVP-008A) |
+| Statut global | Conception close ; Runtime 20/20 ; Experience Design System appliqué à l’UI ; onboarding local `/onboarding` ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; **aucune** `F-xxx` Validé/Livré ; pas de sync |
+| Dernière mise à jour globale | 6 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
 ## 3. État général
@@ -33,8 +33,8 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | Socle + pratique + progression + préférences + onboarding local `/onboarding` (MVP-008) |
-| Tests | **En cours** | Vitest : **45** tests OK ; pas de campagne produit complète |
+| Développement | **En cours** | Socle + pratique + progression + préférences + onboarding + **refonte UI 12A** (MVP-008A) |
+| Tests | **En cours** | Vitest : **45** tests OK ; pas de campagne produit E2E complète |
 | Release | **Non commencé** | 0 Release (`19`) ; déploiement absent (`10`) |
 
 ## 4. Vue d’ensemble Runtime
@@ -60,9 +60,9 @@
 | Indicateur | Valeur réelle |
 | --- | --- |
 | Tickets ouverts | 0 |
-| Tickets terminés | 8 (MVP-001 … MVP-008) |
+| Tickets terminés | 9 (MVP-001 … MVP-008, MVP-008A) |
 | Tickets bloqués | 0 |
-| Modules applicatifs commencés | App Shell + DS + curriculum + assets + pratique + progression + préférences + onboarding local (`web/`) |
+| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + pratique + progression + préférences + onboarding local (`web/`) |
 
 Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
@@ -91,7 +91,7 @@ Les décisions de conception (`DECISIONS.md`, D-001…D-222) ne sont pas des dé
 | --- | --- |
 | Risques Runtime ouverts (`15`) | **0** `RR-xxx` |
 | Limitations Runtime (`16`) | **0** `KL-xxx` |
-| Changements Runtime (`17`) | **8** `CH-001`…`CH-008` (MVP-001…MVP-008) |
+| Changements Runtime (`17`) | **9** `CH-001`…`CH-009` (MVP-001…MVP-008A) |
 | Métriques Runtime (`18`) | **0** `MT-xxx` |
 | Releases publiées (`19`) | **0** `REL-xxx` |
 
@@ -129,16 +129,16 @@ Détail : `12_TECH_DEBT.md`.
 | Registre | Rôle | Statut | Dernière mise à jour |
 | --- | --- | --- | --- |
 | `README.md` | Guide Runtime | VALIDÉ | 5 août 2026 |
-| `00_PROJECT_STATUS.md` | Tableau de bord | **ACTIF** | 5 août 2026 — MVP-008 |
-| `01_ARCHITECTURE_STATUS.md` | Architecture réelle | **ACTIF** | 5 août 2026 — MVP-008 |
-| `02_FEATURE_STATUS.md` | Features réelles | **ACTIF** | 5 août 2026 — MVP-008 |
+| `00_PROJECT_STATUS.md` | Tableau de bord | **ACTIF** | 6 août 2026 — MVP-008A |
+| `01_ARCHITECTURE_STATUS.md` | Architecture réelle | **ACTIF** | 6 août 2026 — MVP-008A |
+| `02_FEATURE_STATUS.md` | Features réelles | **ACTIF** | 6 août 2026 — MVP-008A |
 | `03_DATA_STATUS.md` | Data réelle | **ACTIF** | 5 août 2026 — MVP-008 |
 | `04_API_STATUS.md` | API réelle | **ACTIF** | 5 août 2026 |
 | `05_SECURITY_STATUS.md` | Sécurité réelle | **ACTIF** | 5 août 2026 |
 | `06_PRIVACY_STATUS.md` | RGPD réel | **ACTIF** | 5 août 2026 |
 | `07_OFFLINE_STATUS.md` | Offline réel | **ACTIF** | 5 août 2026 — MVP-008 |
 | `08_ANALYTICS_STATUS.md` | Analytics réel | **ACTIF** | 5 août 2026 |
-| `09_TEST_STATUS.md` | Tests réels | **ACTIF** | 5 août 2026 — MVP-008 |
+| `09_TEST_STATUS.md` | Tests réels | **ACTIF** | 6 août 2026 — MVP-008A |
 | `10_DEPLOYMENT_STATUS.md` | Déploiement réel | **ACTIF** | 5 août 2026 |
 | `11_BACKLOG.md` | Backlog runtime ticketé | **ACTIF** | 5 août 2026 |
 | `12_TECH_DEBT.md` | Dette technique | **ACTIF** | 5 août 2026 |
@@ -146,7 +146,7 @@ Détail : `12_TECH_DEBT.md`.
 | `14_DECISIONS_RUNTIME.md` | Décisions d’exécution | **ACTIF** | 5 août 2026 |
 | `15_RISKS.md` | Risques runtime | **ACTIF** | 5 août 2026 |
 | `16_KNOWN_LIMITATIONS.md` | Limites acceptées | **ACTIF** | 5 août 2026 |
-| `17_CHANGE_HISTORY.md` | Historique changements | **ACTIF** | 5 août 2026 — CH-008 |
+| `17_CHANGE_HISTORY.md` | Historique changements | **ACTIF** | 6 août 2026 — CH-009 |
 | `18_METRICS.md` | Métriques mesurées | **ACTIF** | 5 août 2026 |
 | `19_RELEASE_HISTORY.md` | Releases publiées | **ACTIF** | 5 août 2026 |
 
@@ -185,6 +185,7 @@ Détail : `12_TECH_DEBT.md`.
 1. Ouvrir le prochain ticket MVP (auth, sync, médias, ou prudence F-016/F-031).  
 2. Appliquer Impact Analysis + cycle Ticket → Dev → Tests → Validation → MAJ Runtime → Commit.  
 3. Tenir à jour les registres concernés à chaque ticket.  
+4. Compléter les logos SVG officiels (fallback « TC » actif).  
 
 ## 16. Historique du registre
 
@@ -209,6 +210,7 @@ Détail : `12_TECH_DEBT.md`.
 | 5 août 2026 | **MVP-006** : progression / historique localStorage ; CH-006 ; F-009 / F-010 En développement. |
 | 5 août 2026 | **MVP-007** : préférences utilisateur locales + page `/profil` ; CH-007 ; F-028 / F-029 En développement. |
 | 5 août 2026 | **MVP-008** : onboarding local `/onboarding` ; CH-008 ; F-033 En développement ; Offline (localStorage). |
+| 6 août 2026 | **MVP-008A** : refonte UI Experience Design System (12A) ; CH-009 ; aucune `F-xxx` nouvelle ; présentation seule. |
 
 ## 17. Diagrammes
 

@@ -9,7 +9,7 @@ type PageHeaderProps = {
   className?: string;
 };
 
-/** En-tête de page (hors App Header). */
+/** En-tête de page — un seul H1 (12A §6.6 / §11.5). */
 export function PageHeader({
   title,
   description,
@@ -20,21 +20,19 @@ export function PageHeader({
     <header
       data-slot="page-header"
       className={cn(
-        "flex flex-wrap items-start justify-between gap-3",
+        "flex flex-wrap items-start justify-between gap-4",
         className,
       )}
     >
-      <div className="min-w-0 space-y-1">
-        <h1 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
-          {title}
-        </h1>
+      <div className="min-w-0 max-w-reading space-y-2">
+        <h1 className="text-h1 text-foreground tracking-tight">{title}</h1>
         {description ? (
-          <p className="text-muted-foreground max-w-2xl text-sm sm:text-base">
-            {description}
-          </p>
+          <p className="text-body text-muted-foreground">{description}</p>
         ) : null}
       </div>
-      {actions ? <div className="flex shrink-0 items-center gap-2">{actions}</div> : null}
+      {actions ? (
+        <div className="flex shrink-0 items-center gap-2">{actions}</div>
+      ) : null}
     </header>
   );
 }

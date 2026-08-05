@@ -19,7 +19,7 @@ export function PracticeProgress({
 
   return (
     <div className={cn("space-y-2", className)}>
-      <div className="text-muted-foreground flex items-center justify-between text-sm">
+      <div className="text-muted-foreground flex items-center justify-between text-caption">
         <span>{label}</span>
         <span>
           {Math.min(current, total)} / {total}

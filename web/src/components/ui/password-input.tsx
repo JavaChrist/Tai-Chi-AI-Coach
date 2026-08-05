@@ -23,7 +23,7 @@ export function PasswordInput({ className, id, ...props }: PasswordInputProps) {
       <Input
         id={inputId}
         type={visible ? "text" : "password"}
-        className={cn("pr-10", className)}
+        className={cn("pr-12", className)}
         autoComplete={props.autoComplete}
         {...props}
       />
@@ -31,16 +31,18 @@ export function PasswordInput({ className, id, ...props }: PasswordInputProps) {
         type="button"
         variant="ghost"
         size="icon"
-        className="text-muted-foreground absolute top-1/2 right-1 size-8 -translate-y-1/2"
+        className="text-muted-foreground absolute top-1/2 right-0.5 size-10 min-h-10 -translate-y-1/2"
         onClick={() => setVisible((v) => !v)}
-        aria-label={visible ? "Masquer le mot de passe" : "Afficher le mot de passe"}
+        aria-label={
+          visible ? "Masquer le mot de passe" : "Afficher le mot de passe"
+        }
         aria-pressed={visible}
         aria-controls={inputId}
       >
         {visible ? (
-          <EyeOff className="size-4" aria-hidden />
+          <EyeOff className="size-4" strokeWidth={1.75} aria-hidden />
         ) : (
-          <Eye className="size-4" aria-hidden />
+          <Eye className="size-4" strokeWidth={1.75} aria-hidden />
         )}
       </Button>
     </div>

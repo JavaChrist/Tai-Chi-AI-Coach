@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — CH-008 MVP-008 |
-| Phase actuelle | Développement MVP — onboarding local |
+| Dernière mise à jour | 6 août 2026 — CH-009 MVP-008A |
+| Phase actuelle | Développement MVP — identité UI 12A |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **8** |
-| Changements majeurs | **8** |
+| Changements enregistrés | **9** |
+| Changements majeurs | **9** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements
@@ -33,6 +33,7 @@
 | CH-006 | Progression / historique local (localStorage) + page `/progression` | MVP-006 | `00`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-007 | Préférences utilisateur locales + page `/profil` (thème / pratique / a11y) | MVP-007 | `00`, `02`, `03`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-008 | Onboarding local `/onboarding` (F-033) + gate + intégration préférences | MVP-008 | `00`, `01`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
+| CH-009 | Refonte UI Experience Design System (12A) — présentation seule | MVP-008A | `00`, `01`, `02`, `09`, `17` | — | 6 août 2026 | Appliqué |
 
 ## 4. Gouvernance
 
@@ -44,8 +45,8 @@ Un changement Runtime n’est enregistré que s’il est effectivement réalisé
 timeline
   title Changements Runtime
   section MVP
-    5 août 2026 : CH-001 à CH-007
-    5 août 2026 : CH-008 Onboarding local
+    5 août 2026 : CH-001 à CH-008
+    6 août 2026 : CH-009 UI Refresh 12A
 ```
 
 ## 6. Historique
@@ -54,6 +55,7 @@ timeline
 | --- | --- |
 | 5 août 2026 | CH-001 … CH-007 enregistrés. |
 | 5 août 2026 | CH-008 — MVP-008 onboarding local enregistré. |
+| 6 août 2026 | CH-009 — MVP-008A refonte UI 12A enregistré. |
 
 ---
 

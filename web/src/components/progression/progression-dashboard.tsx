@@ -8,7 +8,6 @@ import { ProgressionStats } from "@/components/progression/progression-stats";
 import { Section } from "@/components/layout/section";
 import { ErrorState } from "@/components/states/error-state";
 import { Button } from "@/components/ui/button";
-import { InformationCard } from "@/components/cards/information-card";
 import {
   computeUserStatistics,
   emptyHistory,
@@ -65,7 +64,11 @@ function subscribe(onStoreChange: () => void) {
 }
 
 export function ProgressionDashboard() {
-  const snapshot = useSyncExternalStore(subscribe, readSnapshot, () => emptySnapshot);
+  const snapshot = useSyncExternalStore(
+    subscribe,
+    readSnapshot,
+    () => emptySnapshot,
+  );
 
   const retry = useCallback(() => {
     cachedSnapshot = emptySnapshot;
@@ -76,7 +79,7 @@ export function ProgressionDashboard() {
     return (
       <ErrorState
         title="Lecture momentanément indisponible"
-        description={snapshot.message}
+        description="Votre carnet n’a pas pu être lu. Réessayez dans un instant — rien n’est perdu."
         action={
           <Button type="button" variant="outline" onClick={retry}>
             Réessayer
@@ -88,40 +91,28 @@ export function ProgressionDashboard() {
 
   const statistics = computeUserStatistics(snapshot.history);
   const summaries = listPracticeSummaries(snapshot.history);
-  const nextStepHint =
-    summaries.length === 0
-      ? "Commencer une première séance depuis la bibliothèque."
-      : "Revenir à la bibliothèque pour une nouvelle pratique calme.";
 
   return (
-    <div className="space-y-8">
-      <InformationCard
-        title="Progression locale"
-        description="Ces informations restent dans votre navigateur. Aucun compte ni synchronisation n’est utilisé pour le moment."
-      />
-
+    <div className="space-y-14">
       <Section
-        title="Vue d’ensemble"
-        description="Indicateurs sobres, sans classement ni compétition."
+        title="Votre chemin"
+        description="Un carnet personnel, sans classement."
       >
         <ProgressionStats statistics={statistics} />
       </Section>
 
       <Section
-        title="Prochaine étape"
-        description="Une suggestion simple pour continuer sans pression."
+        title="Continuer"
+        description="Une suggestion simple, sans obligation."
       >
-        <div className="flex flex-wrap items-center gap-3">
-          <p className="text-muted-foreground text-sm">{nextStepHint}</p>
-          <Button variant="primary" asChild>
-            <Link href="/bibliotheque">Ouvrir la bibliothèque</Link>
-          </Button>
-        </div>
+        <Button variant="primary" asChild>
+          <Link href="/bibliotheque">Choisir une séance</Link>
+        </Button>
       </Section>
 
       <Section
         title="Historique"
-        description="Séances enregistrées localement, de la plus récente à la plus ancienne."
+        description="De la plus récente à la plus ancienne."
       >
         <HistoryList summaries={summaries} />
       </Section>

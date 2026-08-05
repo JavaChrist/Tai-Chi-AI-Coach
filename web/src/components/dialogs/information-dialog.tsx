@@ -1,7 +1,5 @@
 "use client";
 
-import { Info } from "lucide-react";
-
 import {
   AppDialog,
   DialogActionButton,
@@ -16,7 +14,7 @@ type InformationDialogProps = {
   onAction?: () => void;
 };
 
-/** Dialog d’information — remplace window.alert() informatif. */
+/** Dialog d’information — silencieux, peu de texte. */
 export function InformationDialog({
   open,
   onOpenChange,
@@ -36,8 +34,6 @@ export function InformationDialog({
       onOpenChange={onOpenChange}
       title={title}
       description={description}
-      icon={Info}
-      iconClassName="bg-muted text-muted-foreground"
       footer={
         <DialogActionButton
           label={actionLabel}

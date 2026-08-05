@@ -11,7 +11,7 @@ type GoalChoiceProps = {
 
 export function GoalChoice({ value, onChange }: GoalChoiceProps) {
   return (
-    <fieldset className="space-y-3">
+    <fieldset className="space-y-4">
       <legend className="sr-only">Objectif principal</legend>
       {learningGoalOptions.map((option) => (
         <ChoiceCard

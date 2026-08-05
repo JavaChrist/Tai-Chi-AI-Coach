@@ -1,17 +1,33 @@
 import { AppBrand } from "@/components/brand/app-brand";
 import { DesktopNav } from "@/components/layout/desktop-nav";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { cn } from "@/lib/utils";
 
-export function AppHeader() {
+type AppHeaderProps = {
+  /** Pendant la pratique : encore plus discret (12A §47 / §41). */
+  discreet?: boolean;
+};
+
+export function AppHeader({ discreet = false }: AppHeaderProps) {
   return (
-    <header className="border-border bg-background/95 supports-[backdrop-filter]:bg-background/80 sticky top-0 z-40 border-b backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
-        <AppBrand variant="compact" size="md" />
+    <header
+      className={cn(
+        "bg-background sticky top-0 z-sticky",
+        discreet ? "border-transparent" : "border-border border-b",
+      )}
+    >
+      <div
+        className={cn(
+          "mx-auto flex max-w-content items-center justify-between gap-4 px-4 sm:px-6",
+          discreet ? "h-12" : "h-14",
+        )}
+      >
+        <AppBrand variant="compact" size={discreet ? "sm" : "md"} />
 
-        <DesktopNav />
+        {discreet ? null : <DesktopNav />}
 
         <div className="flex items-center">
-          <ThemeToggle />
+          {discreet ? null : <ThemeToggle />}
         </div>
       </div>
     </header>

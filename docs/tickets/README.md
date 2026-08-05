@@ -310,8 +310,9 @@ Tous les développements de Tai-Chi AI Coach devront obligatoirement être réal
 | MVP-006 | `MVP-006_LOCAL_PROGRESS.md` | **Fermé** | CH-006 | `7369676` |
 | MVP-007 | `MVP-007_USER_PREFERENCES.md` | **Fermé** | CH-007 | `16cafbe` |
 | MVP-008 | `MVP-008_LOCAL_ONBOARDING.md` | **Fermé** | CH-008 | — |
+| MVP-008A | `MVP-008A_UI_REFRESH.md` | **Fermé** | CH-009 | — |
 
-Aucun ticket actif (« À développer ») à la date de cette mise à jour d’index.
+Ticket actif : aucun (prochain ticket MVP à ouvrir).
 
 Note : MVP-002 et MVP-003 ont été livrés dans le même commit (`696a76f`).
 

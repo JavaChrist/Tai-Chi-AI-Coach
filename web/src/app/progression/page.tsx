@@ -11,7 +11,7 @@ export default function ProgressionPage() {
   return (
     <ContentLayout
       title="Progression"
-      description="Retrouvez votre historique local et des indicateurs calmes sur votre pratique."
+      description="Votre carnet de pratique — local, personnel, sans compétition."
     >
       <ProgressionDashboard />
     </ContentLayout>

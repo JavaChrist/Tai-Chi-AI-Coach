@@ -1,5 +1,3 @@
-import { Clock, CalendarDays, Hash, Timer } from "lucide-react";
-
 import { formatActiveDuration } from "@/domain/practice/practice-reducer";
 import type { UserStatistics } from "@/domain/progression/types";
 
@@ -8,61 +6,44 @@ type ProgressionStatsProps = {
 };
 
 function formatDate(iso: string | null): string {
-  if (!iso) return "Aucune pour le moment";
+  if (!iso) return "Pas encore de pratique";
   try {
     return new Intl.DateTimeFormat("fr-FR", {
       dateStyle: "long",
-      timeStyle: "short",
     }).format(new Date(iso));
   } catch {
     return iso;
   }
 }
 
+/** Carnet — habitudes avant chiffres (12A §9.10 / ticket §44). */
 export function ProgressionStats({ statistics }: ProgressionStatsProps) {
-  const items = [
-    {
-      icon: Hash,
-      label: "Pratiques enregistrées",
-      value: String(statistics.totalSessions),
-    },
-    {
-      icon: Clock,
-      label: "Durée totale",
-      value: formatActiveDuration(statistics.totalDurationMs),
-    },
-    {
-      icon: Timer,
-      label: "Durée moyenne",
-      value:
-        statistics.totalSessions === 0
-          ? "—"
-          : formatActiveDuration(statistics.averageDurationMs),
-    },
-    {
-      icon: CalendarDays,
-      label: "Dernière pratique",
-      value: formatDate(statistics.lastPracticedAt),
-    },
-  ] as const;
+  const habitLine =
+    statistics.totalSessions === 0
+      ? "Votre chemin commence par une première séance."
+      : statistics.totalSessions === 1
+        ? "Une pratique enregistrée. La régularité se construit doucement."
+        : `${statistics.totalSessions} pratiques enregistrées. Continuez à votre rythme.`;
 
   return (
-    <ul className="grid gap-3 sm:grid-cols-2">
-      {items.map((item) => {
-        const Icon = item.icon;
-        return (
-          <li
-            key={item.label}
-            className="border-border bg-card rounded-xl border p-4"
-          >
-            <div className="text-muted-foreground mb-2 flex items-center gap-2 text-sm">
-              <Icon className="size-4" aria-hidden />
-              <span>{item.label}</span>
-            </div>
-            <p className="font-heading text-lg font-medium">{item.value}</p>
-          </li>
-        );
-      })}
-    </ul>
+    <div className="bg-card border-border shadow-medium space-y-5 rounded-card border p-6">
+      <p className="text-body text-foreground">{habitLine}</p>
+      <dl className="text-small text-muted-foreground space-y-3">
+        <div className="flex flex-wrap justify-between gap-2">
+          <dt>Dernière pratique</dt>
+          <dd className="text-foreground">
+            {formatDate(statistics.lastPracticedAt)}
+          </dd>
+        </div>
+        {statistics.totalSessions > 0 ? (
+          <div className="flex flex-wrap justify-between gap-2">
+            <dt>Temps cumulé</dt>
+            <dd className="text-foreground">
+              {formatActiveDuration(statistics.totalDurationMs)}
+            </dd>
+          </div>
+        ) : null}
+      </dl>
+    </div>
   );
 }

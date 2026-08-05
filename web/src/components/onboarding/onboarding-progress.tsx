@@ -13,10 +13,14 @@ export function OnboardingProgress({ currentStep }: OnboardingProgressProps) {
 
   return (
     <div className="space-y-2" aria-label="Progression de l’accueil">
-      <p className="text-muted-foreground text-sm">
-        Étape {current + 1} sur {total} · {onboardingStepLabels[currentStep]}
+      <p className="text-caption text-muted-foreground">
+        {onboardingStepLabels[currentStep]}
+        <span className="sr-only">
+          {" "}
+          — étape {current + 1} sur {total}
+        </span>
       </p>
-      <ol className="flex list-none gap-1.5 p-0" aria-hidden>
+      <ol className="flex list-none gap-2 p-0" aria-hidden>
         {ONBOARDING_STEPS.map((step, index) => (
           <li
             key={step}

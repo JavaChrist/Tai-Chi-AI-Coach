@@ -1,6 +1,6 @@
 "use client";
 
-import { CircleCheck } from "lucide-react";
+import { Leaf } from "lucide-react";
 
 import {
   AppDialog,
@@ -16,7 +16,7 @@ type SuccessDialogProps = {
   onAction?: () => void;
 };
 
-/** Dialog de succès — confirmation discrète. */
+/** Dialog de succès — reconnaissance discrète. */
 export function SuccessDialog({
   open,
   onOpenChange,
@@ -36,7 +36,7 @@ export function SuccessDialog({
       onOpenChange={onOpenChange}
       title={title}
       description={description}
-      icon={CircleCheck}
+      icon={Leaf}
       iconClassName="bg-primary/10 text-primary"
       footer={
         <DialogActionButton

@@ -14,19 +14,16 @@ export function OnboardingStepView({
   actions,
 }: OnboardingStepViewProps) {
   return (
-    <section className="space-y-6" aria-labelledby="onboarding-step-title">
-      <header className="space-y-2">
-        <h1
-          id="onboarding-step-title"
-          className="font-heading text-2xl font-medium tracking-tight sm:text-3xl"
-        >
+    <section className="space-y-10" aria-labelledby="onboarding-step-title">
+      <header className="space-y-4">
+        <h1 id="onboarding-step-title" className="text-h1 text-foreground">
           {title}
         </h1>
-        <p className="text-muted-foreground max-w-xl text-base leading-relaxed">
+        <p className="text-body text-muted-foreground max-w-xl leading-relaxed">
           {description}
         </p>
       </header>
-      <div>{children}</div>
+      <div className="space-y-4">{children}</div>
       <div className="flex flex-wrap gap-3 pt-2">{actions}</div>
     </section>
   );

@@ -29,8 +29,8 @@ export function FeatureCard({
   return (
     <Card className={cn(className)}>
       <CardHeader>
-        <div className="bg-primary/10 text-primary mb-2 inline-flex size-10 items-center justify-center rounded-full">
-          <Icon className="size-5" aria-hidden />
+        <div className="bg-primary/10 text-primary mb-2 inline-flex size-10 items-center justify-center rounded-[var(--radius)]">
+          <Icon className="size-5" strokeWidth={1.75} aria-hidden />
         </div>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>

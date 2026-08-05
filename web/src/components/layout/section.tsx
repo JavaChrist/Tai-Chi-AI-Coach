@@ -8,7 +8,7 @@ type SectionProps = ComponentProps<"section"> & {
   action?: ReactNode;
 };
 
-/** Section de page — un objectif, un titre, un texte court. */
+/** Section de page — un objectif, respiration 32 px (12A §5.7 / §11.16). */
 export function Section({
   title,
   description,
@@ -27,12 +27,10 @@ export function Section({
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0 space-y-1">
             {title ? (
-              <h2 className="font-heading text-lg font-medium tracking-tight">
-                {title}
-              </h2>
+              <h2 className="text-h2 text-foreground tracking-tight">{title}</h2>
             ) : null}
             {description ? (
-              <p className="text-muted-foreground text-sm">{description}</p>
+              <p className="text-small text-muted-foreground">{description}</p>
             ) : null}
           </div>
           {action ? <div className="shrink-0">{action}</div> : null}

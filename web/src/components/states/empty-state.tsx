@@ -1,4 +1,4 @@
-import { Inbox } from "lucide-react";
+import { Leaf } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -12,11 +12,11 @@ type EmptyStateProps = {
   className?: string;
 };
 
-/** État vide — invitation calme à la première action. */
+/** État vide — invitation (« Commençons »), jamais un vide froid (12A §7.10). */
 export function EmptyState({
   title,
   description,
-  icon: Icon = Inbox,
+  icon: Icon = Leaf,
   action,
   className,
 }: EmptyStateProps) {
@@ -24,18 +24,20 @@ export function EmptyState({
     <div
       role="status"
       className={cn(
-        "flex flex-col items-center justify-center gap-3 px-4 py-6 text-center",
+        "flex flex-col items-center justify-center gap-5 px-6 py-14 text-center",
         className,
       )}
     >
-      <span className="bg-muted text-muted-foreground inline-flex size-12 items-center justify-center rounded-full">
-        <Icon className="size-6" aria-hidden />
+      <span className="bg-secondary text-primary inline-flex size-14 items-center justify-center rounded-full">
+        <Icon className="size-6" strokeWidth={1.5} aria-hidden />
       </span>
-      <div className="space-y-1">
-        <p className="font-heading text-base font-medium">{title}</p>
-        <p className="text-muted-foreground max-w-sm text-sm">{description}</p>
+      <div className="space-y-3">
+        <p className="text-h3 text-foreground">{title}</p>
+        <p className="text-small text-muted-foreground mx-auto max-w-sm leading-relaxed">
+          {description}
+        </p>
       </div>
-      {action ? <div className="mt-1">{action}</div> : null}
+      {action ? <div className="pt-2">{action}</div> : null}
     </div>
   );
 }

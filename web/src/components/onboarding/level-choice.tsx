@@ -11,7 +11,7 @@ type LevelChoiceProps = {
 
 export function LevelChoice({ value, onChange }: LevelChoiceProps) {
   return (
-    <fieldset className="space-y-3">
+    <fieldset className="space-y-4">
       <legend className="sr-only">Niveau initial</legend>
       {initialLevelOptions.map((option) => (
         <ChoiceCard

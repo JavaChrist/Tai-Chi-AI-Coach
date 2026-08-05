@@ -6,11 +6,15 @@ import { usePathname } from "next/navigation";
 import { isNavItemActive, mainNavItems } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
+/** Même personnalité que la Bottom Nav — Soft Jade actif, Zen Stone sinon. */
 export function DesktopNav() {
   const pathname = usePathname();
 
   return (
-    <nav aria-label="Navigation principale" className="hidden items-center gap-1 md:flex">
+    <nav
+      aria-label="Navigation principale"
+      className="hidden items-center gap-2 md:flex"
+    >
       {mainNavItems.map((item) => {
         const active = isNavItemActive(pathname, item.href);
         const Icon = item.icon;
@@ -20,23 +24,18 @@ export function DesktopNav() {
             key={item.href}
             href={item.href}
             className={cn(
-              "relative inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+              "inline-flex h-11 min-h-11 items-center gap-2 rounded-[var(--radius)] px-4 text-small font-medium",
+              "ease-calm duration-fast transition-colors",
               "focus-visible:ring-ring focus-visible:ring-2 focus-visible:outline-none",
               active
-                ? "bg-primary/10 text-primary"
-                : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                ? "text-primary"
+                : "text-muted-foreground hover:text-foreground",
             )}
             aria-current={active ? "page" : undefined}
             data-active={active || undefined}
           >
-            <Icon className="size-4" aria-hidden />
+            <Icon className="size-4" strokeWidth={1.75} aria-hidden />
             {item.label}
-            {active ? (
-              <span
-                className="bg-primary absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full"
-                aria-hidden
-              />
-            ) : null}
           </Link>
         );
       })}

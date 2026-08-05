@@ -1,4 +1,4 @@
-import { CircleCheck } from "lucide-react";
+import { Leaf } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -10,7 +10,7 @@ type SuccessStateProps = {
   className?: string;
 };
 
-/** État de succès — confirmation discrète. */
+/** Succès discret — reconnaissance, pas récompense (12A §9.9). */
 export function SuccessState({
   title = "C’est fait",
   description,
@@ -22,18 +22,20 @@ export function SuccessState({
       role="status"
       aria-live="polite"
       className={cn(
-        "flex flex-col items-center justify-center gap-3 px-4 py-6 text-center",
+        "flex flex-col items-center justify-center gap-5 px-6 py-10 text-center",
         className,
       )}
     >
-      <span className="bg-primary/10 text-primary inline-flex size-12 items-center justify-center rounded-full">
-        <CircleCheck className="size-6" aria-hidden />
+      <span className="bg-primary/10 text-primary inline-flex size-14 items-center justify-center rounded-full">
+        <Leaf className="size-6" strokeWidth={1.5} aria-hidden />
       </span>
-      <div className="space-y-1">
-        <p className="font-heading text-base font-medium">{title}</p>
-        <p className="text-muted-foreground max-w-sm text-sm">{description}</p>
+      <div className="space-y-3">
+        <p className="text-h2 text-foreground">{title}</p>
+        <p className="text-small text-muted-foreground mx-auto max-w-sm leading-relaxed">
+          {description}
+        </p>
       </div>
-      {action ? <div className="mt-1">{action}</div> : null}
+      {action ? <div className="pt-2">{action}</div> : null}
     </div>
   );
 }

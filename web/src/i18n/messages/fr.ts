@@ -7,12 +7,11 @@ export const fr: MessageDictionary = {
   },
   profile: {
     title: "Profil",
-    description:
-      "Personnalisez l’apparence, la pratique et l’accessibilité. Vos choix restent sur cet appareil.",
+    description: "Quelques réglages simples. Vos choix restent sur cet appareil.",
     appearance: "Apparence",
-    practice: "Préférences de pratique",
+    practice: "Pratique",
     accessibility: "Accessibilité",
-    about: "Informations de l’application",
+    about: "À propos",
     theme: "Thème",
     themeHelp: "Clair, sombre, ou selon les réglages de votre appareil.",
     language: "Langue",

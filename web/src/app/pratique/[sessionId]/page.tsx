@@ -44,10 +44,10 @@ export default async function PracticePage({ params }: PracticePageProps) {
       <ContentLayout>
         <ErrorState
           title="Séance non disponible"
-          description="Cette séance ne peut pas être démarrée pour le moment."
+          description="Cette séance ne peut pas être démarrée pour le moment. Choisissez-en une autre — vous pourrez y revenir plus tard."
           action={
-            <Button variant="outline" asChild>
-              <Link href="/bibliotheque">Retour à la bibliothèque</Link>
+            <Button variant="primary" asChild>
+              <Link href="/bibliotheque">Voir la bibliothèque</Link>
             </Button>
           }
         />

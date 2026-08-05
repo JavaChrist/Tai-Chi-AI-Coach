@@ -33,11 +33,11 @@ export default function BibliothequePage() {
     return (
       <ContentLayout
         title="Bibliothèque"
-        description="Parcourez les séances pédagogiques disponibles localement."
+        description="Des séances pour pratiquer, quand vous le souhaitez."
       >
         <ErrorState
           title="Lecture momentanément indisponible"
-          description="Les séances n’ont pas pu être chargées. Vous pouvez réessayer dans un instant."
+          description="Les séances n’ont pas pu être chargées. Vous pouvez réessayer dans un instant — rien n’est perdu."
         />
       </ContentLayout>
     );
@@ -46,7 +46,7 @@ export default function BibliothequePage() {
   return (
     <ContentLayout
       title="Bibliothèque"
-      description="Parcourez les séances pédagogiques disponibles localement. Chaque fiche présente la structure du cursus, sans démarrer encore une pratique guidée."
+      description="Choisissez une séance. Prenez votre temps."
     >
       <SessionLibrary sessions={result.sessions} />
     </ContentLayout>

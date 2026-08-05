@@ -27,7 +27,8 @@ export type AppDialogProps = {
 };
 
 /**
- * Base Dialog projet — jamais alert()/confirm() natifs.
+ * Base Dialog projet — silencieux, une décision (12A §9.12).
+ * Jamais alert()/confirm() natifs.
  */
 export function AppDialog({
   open,
@@ -42,16 +43,16 @@ export function AppDialog({
 }: AppDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className={cn(className)}>
-        <DialogHeader>
+      <DialogContent className={cn("gap-6 p-8 sm:p-10", className)}>
+        <DialogHeader className="gap-3">
           {Icon ? (
             <span
               className={cn(
-                "mb-2 inline-flex size-10 items-center justify-center rounded-full",
-                iconClassName ?? "bg-muted text-muted-foreground",
+                "mb-1 inline-flex size-10 items-center justify-center rounded-full",
+                iconClassName ?? "bg-secondary text-muted-foreground",
               )}
             >
-              <Icon className="size-5" aria-hidden />
+              <Icon className="size-5" strokeWidth={1.5} aria-hidden />
             </span>
           ) : null}
           <DialogTitle>{title}</DialogTitle>
@@ -60,7 +61,9 @@ export function AppDialog({
           ) : null}
         </DialogHeader>
         {children}
-        {footer ? <DialogFooter>{footer}</DialogFooter> : null}
+        {footer ? (
+          <DialogFooter className="border-0 pt-2">{footer}</DialogFooter>
+        ) : null}
       </DialogContent>
     </Dialog>
   );
@@ -69,7 +72,13 @@ export function AppDialog({
 type DialogActionProps = {
   label: string;
   onClick?: () => void;
-  variant?: "default" | "primary" | "secondary" | "outline" | "ghost" | "destructive";
+  variant?:
+    | "default"
+    | "primary"
+    | "secondary"
+    | "outline"
+    | "ghost"
+    | "destructive";
   autoFocus?: boolean;
 };
 
@@ -80,7 +89,12 @@ export function DialogActionButton({
   autoFocus,
 }: DialogActionProps) {
   return (
-    <Button type="button" variant={variant} onClick={onClick} autoFocus={autoFocus}>
+    <Button
+      type="button"
+      variant={variant}
+      onClick={onClick}
+      autoFocus={autoFocus}
+    >
       {label}
     </Button>
   );

@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useSyncExternalStore } from "react";
 
-import { InformationCard } from "@/components/cards/information-card";
 import { DurationChoice } from "@/components/onboarding/duration-choice";
 import { GoalChoice } from "@/components/onboarding/goal-choice";
 import { LevelChoice } from "@/components/onboarding/level-choice";
@@ -114,7 +113,7 @@ export function OnboardingFlow() {
       {state.currentStep === "welcome" ? (
         <OnboardingStepView
           title="Bienvenue"
-          description="Tai-Chi AI Coach vous accompagne pour pratiquer le Tai Chi progressivement, avec bienveillance et sans compétition."
+          description="Un accompagnement calme pour pratiquer à votre rythme. Quelques questions simples — vous pourrez tout modifier plus tard."
           actions={
             <>
               <Button
@@ -134,16 +133,10 @@ export function OnboardingFlow() {
             </>
           }
         >
-          <div className="space-y-3">
-            <InformationCard
-              title="Un accompagnement calme"
-              description="Aucune course aux scores. Vous avancez à votre rythme, et vous pourrez modifier vos choix plus tard dans Profil."
-            />
-            <InformationCard
-              title="Cadre de prudence"
-              description="Cette application n’est pas un dispositif médical et ne remplace pas un avis de santé. Adaptez l’effort et interrompez en cas de douleur."
-            />
-          </div>
+          <p className="text-small text-muted-foreground max-w-xl leading-relaxed">
+            Adaptez l’effort à votre forme du jour. Interrompez en cas de
+            douleur. Cette application n’est pas un dispositif médical.
+          </p>
         </OnboardingStepView>
       ) : null}
 

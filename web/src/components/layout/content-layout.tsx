@@ -23,7 +23,7 @@ export function ContentLayout({
   containerSize = "md",
 }: ContentLayoutProps) {
   return (
-    <Container size={containerSize} className={cn("space-y-8 py-6", className)}>
+    <Container size={containerSize} className={cn("space-y-8 py-8", className)}>
       {title ? (
         <PageHeader title={title} description={description} actions={actions} />
       ) : null}

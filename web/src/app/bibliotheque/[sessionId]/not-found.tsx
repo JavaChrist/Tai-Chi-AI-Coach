@@ -9,10 +9,10 @@ export default function SessionNotFound() {
     <ContentLayout>
       <ErrorState
         title="Séance introuvable"
-        description="Cette séance n’existe pas dans le catalogue local, ou l’identifiant est incorrect."
+        description="Cette fiche n’est plus disponible. Revenez à la bibliothèque pour en choisir une autre."
         action={
-          <Button variant="outline" asChild>
-            <Link href="/bibliotheque">Retour à la bibliothèque</Link>
+          <Button variant="primary" asChild>
+            <Link href="/bibliotheque">Voir la bibliothèque</Link>
           </Button>
         }
       />

@@ -55,14 +55,14 @@ export function ProfilePreferences() {
   }
 
   return (
-    <div className="space-y-10">
+    <div className="mx-auto max-w-reading space-y-14">
       <div className="sr-only" aria-live="polite">
         {isSaving ? t.saving : null}
         {saveError ? saveError : null}
       </div>
 
       {saveError ? (
-        <p role="alert" className="text-destructive text-sm">
+        <p role="alert" className="text-destructive text-small">
           {saveError}
         </p>
       ) : null}

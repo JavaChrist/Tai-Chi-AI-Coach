@@ -2,7 +2,6 @@ import { Pause, Play } from "lucide-react";
 
 import { PracticeProgress } from "@/components/practice/practice-progress";
 import { Button } from "@/components/ui/button";
-import { sessionStepKindLabels } from "@/domain/curriculum/labels";
 import type { SessionStep } from "@/domain/curriculum/types";
 import {
   mapStepKindToUxPhase,
@@ -35,62 +34,53 @@ export function PracticeStepView({
   const uxPhase = mapStepKindToUxPhase(step.kind);
 
   return (
-    <section className="space-y-6" aria-labelledby="practice-step-heading">
+    <section
+      className="mx-auto max-w-reading space-y-10"
+      aria-labelledby="practice-step-heading"
+    >
       <PracticeProgress
-        label="Avancement de la séance"
+        label="Avancement"
         current={stepIndex + 1}
         total={stepsTotal}
       />
 
-      <header className="space-y-2">
-        <p className="text-primary text-sm font-medium tracking-wide uppercase">
+      <header className="space-y-4">
+        <p className="text-caption text-muted-foreground">
           {sessionUxPhaseLabels[uxPhase]}
-          <span className="text-muted-foreground font-normal">
-            {" "}
-            · {sessionStepKindLabels[step.kind]}
-          </span>
         </p>
-        <h1
-          id="practice-step-heading"
-          className="font-heading text-2xl font-medium tracking-tight sm:text-3xl"
-        >
+        <h1 id="practice-step-heading" className="text-h1 text-foreground">
           {step.title}
         </h1>
-        <p className="text-muted-foreground max-w-2xl text-base leading-relaxed">
-          {step.summary}
-        </p>
+        <p className="text-body text-muted-foreground">{step.summary}</p>
       </header>
 
       {paused ? (
         <p
           role="status"
-          className="bg-muted text-muted-foreground rounded-xl px-4 py-3 text-sm"
+          className="bg-secondary text-muted-foreground rounded-card px-6 py-10 text-center text-body"
         >
-          Pause en cours. Reprenez quand vous le souhaitez — sans pression.
+          Respirez. Reprenez quand vous êtes prêt.
         </p>
       ) : null}
 
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         {paused ? (
           <Button type="button" variant="primary" onClick={onResume}>
-            <Play className="size-4" aria-hidden />
+            <Play className="size-4" strokeWidth={1.75} aria-hidden />
             Reprendre
           </Button>
         ) : (
-          <Button type="button" variant="secondary" onClick={onPause}>
-            <Pause className="size-4" aria-hidden />
-            Mettre en pause
-          </Button>
+          <>
+            <Button type="button" variant="primary" onClick={onNext}>
+              {isLastStep ? "Terminer" : "Suivant"}
+            </Button>
+            <Button type="button" variant="ghost" onClick={onPause}>
+              <Pause className="size-4" strokeWidth={1.75} aria-hidden />
+              Pause
+            </Button>
+          </>
         )}
-        <Button
-          type="button"
-          variant="primary"
-          onClick={onNext}
-          disabled={paused}
-        >
-          {isLastStep ? "Terminer la séance" : "Étape suivante"}
-        </Button>
-        <Button type="button" variant="outline" onClick={onQuit}>
+        <Button type="button" variant="ghost" onClick={onQuit}>
           Quitter
         </Button>
       </div>

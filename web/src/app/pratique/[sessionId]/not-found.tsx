@@ -9,10 +9,10 @@ export default function PracticeNotFound() {
     <ContentLayout>
       <ErrorState
         title="Séance introuvable"
-        description="Impossible de démarrer cette pratique : la séance n’existe pas dans le catalogue local."
+        description="Cette séance n’est plus disponible ici. Choisissez-en une autre dans la bibliothèque — rien n’est perdu."
         action={
-          <Button variant="outline" asChild>
-            <Link href="/bibliotheque">Retour à la bibliothèque</Link>
+          <Button variant="primary" asChild>
+            <Link href="/bibliotheque">Voir la bibliothèque</Link>
           </Button>
         }
       />

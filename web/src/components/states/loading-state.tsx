@@ -1,4 +1,4 @@
-import { Spinner } from "@/components/ui/spinner";
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
 type LoadingStateProps = {
@@ -6,22 +6,26 @@ type LoadingStateProps = {
   className?: string;
 };
 
-/** État de chargement calme, non anxiogène. */
+/** Chargement — Skeleton prioritaire, spinner secondaire (12A §7.9 / ticket §53). */
 export function LoadingState({
-  label = "Chargement en cours…",
+  label = "Un instant…",
   className,
 }: LoadingStateProps) {
   return (
     <div
       role="status"
       aria-live="polite"
-      className={cn(
-        "flex flex-col items-center justify-center gap-3 px-4 py-10 text-center",
-        className,
-      )}
+      aria-busy="true"
+      className={cn("space-y-5 px-4 py-12", className)}
     >
-      <Spinner className="text-primary size-6" aria-label={label} />
-      <p className="text-muted-foreground text-sm">{label}</p>
+      <span className="sr-only">{label}</span>
+      <Skeleton className="h-9 w-2/3 max-w-xs" />
+      <div className="space-y-3">
+        <Skeleton className="h-4 w-full max-w-md" />
+        <Skeleton className="h-4 w-5/6 max-w-sm" />
+        <Skeleton className="h-4 w-4/6 max-w-xs" />
+      </div>
+      <Skeleton className="h-28 w-full max-w-md rounded-card" />
     </div>
   );
 }

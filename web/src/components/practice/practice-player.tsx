@@ -132,16 +132,16 @@ export function PracticePlayer({ template }: PracticePlayerProps) {
       {state.phase === "summary" && summary ? (
         <PracticeSummaryView
           summary={summary}
-          templateId={template.id}
           savedLocally={savedLocally}
           saveError={saveError}
         />
       ) : null}
 
       {state.phase === "step" && !currentStep ? (
-        <div className="space-y-4">
-          <p className="text-muted-foreground text-sm">
-            Aucune étape disponible pour cette séance.
+        <div className="mx-auto max-w-reading space-y-6">
+          <p className="text-body text-muted-foreground">
+            Cette séance n’a pas d’étape à afficher. Vous pouvez terminer
+            calmement.
           </p>
           <Button
             type="button"
@@ -157,7 +157,7 @@ export function PracticePlayer({ template }: PracticePlayerProps) {
         open={quitOpen}
         onOpenChange={setQuitOpen}
         title="Quitter la séance ?"
-        description="Vous pourrez revenir plus tard. Aucun reproche. Un bilan local pourra être enregistré dans votre historique navigateur."
+        description="Vous pourrez y revenir plus tard. Aucun reproche."
         confirmLabel="Quitter"
         cancelLabel="Rester"
         destructive

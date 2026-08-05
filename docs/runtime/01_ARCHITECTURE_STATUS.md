@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/01_ARCHITECTURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-008 onboarding local |
+| Dernière mise à jour | 6 août 2026 — MVP-008A UI 12A |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel de l’architecture |
 | Référence conception | `docs/13_TECH_ARCHITECTURE.md` (architecture cible / gelée — non recopié ici) |
@@ -23,7 +23,7 @@ Référentiel de lecture des noms de couches : conception `13` (pour comparaison
 
 | Couche | État réel | Constat |
 | --- | --- | --- |
-| Frontend | **En cours** | Socle Next.js + shell + DS + bibliothèque + assets + pratique + préférences + onboarding `/onboarding` (MVP-001…008) ; curriculum local ; **pas** de PWA installable complète |
+| Frontend | **En cours** | Socle Next.js + shell + **Experience Design System 12A** (tokens + écrans MVP-008A) + bibliothèque + assets + pratique + préférences + onboarding `/onboarding` (MVP-001…008A) ; curriculum local ; **pas** de PWA installable complète |
 | Backend | **Non commencé** | Aucun service backend |
 | API | **Non commencé** | Aucun endpoint exposé |
 | Base de données | **Non commencé** | Aucun schéma / instance applicative |
@@ -40,9 +40,9 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 
 | Module | État | Responsable | Ticket d’origine | Dernière mise à jour |
 | --- | --- | --- | --- | --- |
-| Interface utilisateur (PWA) | En cours | Projet | MVP-004 | 5 août 2026 — shell + DS + assets/manifeste ; SW absent ; icônes manquantes (PO) |
+| Interface utilisateur (PWA) | En cours | Projet | MVP-008A | 6 août 2026 — shell + DS 12A + écrans refondus ; SW absent ; logos SVG manquants (fallback TC) |
 | Couche application / orchestration client | En cours | Projet | MVP-001 | 5 août 2026 — layout / navigation |
-| Modules métiers (curriculum, progression, etc.) | En cours | Projet | MVP-008 | 5 août 2026 — curriculum + pratique + progression + préférences + onboarding localStorage ; pas de backend |
+| Modules métiers (curriculum, progression, etc.) | En cours | Projet | MVP-008 | 5 août 2026 — curriculum + pratique + progression + préférences + onboarding localStorage ; pas de backend ; **aucune** logique modifiée par MVP-008A |
 | Couche d’abstraction IA | Non commencé | — | — | — |
 | Backend API (stateless) | Non commencé | — | — | — |
 | Persistance (PostgreSQL) | Non commencé | — | — | — |
@@ -60,7 +60,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 | Élément | Statut | Justification |
 | --- | --- | --- |
 | Architecture cible documentée (`13`) | Conforme (conception) | Baseline figée par `25` ; non remise en cause |
-| Architecture réellement déployée | Partielle | Frontend + curriculum + assets + pratique + préférences + onboarding local ; conforme MVP-001…008 ; pas de backend / DB / SW |
+| Architecture réellement déployée | Partielle | Frontend + curriculum + assets + pratique + préférences + onboarding local + UI 12A ; conforme MVP-001…008A ; pas de backend / DB / SW |
 | Divergence d’implémentation | **Aucune** | Stack Next.js/React/TS/Tailwind alignée `13` ; pas de backend inventé |
 
 ## 5. Écarts
@@ -92,6 +92,7 @@ Aucune.
 | 5 août 2026 | MVP-004 : arborescence `public/`, catalogue assets, manifeste, métadonnées, `AppBrand` ; Offline reste Non commencé. |
 | 5 août 2026 | MVP-005 : parcours pratique local (intro → étapes → bilan ; pause/reprise) ; PracticeSession en mémoire seule. |
 | 5 août 2026 | MVP-008 : module onboarding local (`OnboardingStore` + `/onboarding` + gate) ; orchestration avec préférences. |
+| 6 août 2026 | MVP-008A : tokens 12A (`globals.css`) + primitives + écrans MVP ; aucune couche métier / service / store / route ajoutée. |
 
 ## 9. Diagrammes
 

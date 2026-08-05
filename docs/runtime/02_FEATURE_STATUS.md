@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-008 (F-033) |
+| Dernière mise à jour | 6 août 2026 — MVP-008A (UI seule, aucune F-xxx nouvelle) |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -52,8 +52,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-006 | Vidéo pédagogique | MVP | Non commencé | — | — | — |
 | F-007 | Images de référence | MVP | Non commencé | — | — | — |
 | F-008 | Programme quotidien | MVP | Non commencé | — | — | — |
-| F-009 | Historique | MVP | En développement | MVP-006 | 5 août 2026 | Historique localStorage ; pas de sync ; pas de stats avancées V1 (F-024) |
-| F-010 | Progression | MVP | En développement | MVP-006 | 5 août 2026 | Stats locales + prochaine étape sobre ; pas de gamification ; pas de parcours F-003 branché |
+| F-009 | Historique | MVP | En développement | MVP-006 | 6 août 2026 | Historique localStorage ; UI carnet 12A (MVP-008A) ; pas de sync ; pas de stats avancées V1 (F-024) |
+| F-010 | Progression | MVP | En développement | MVP-006 | 6 août 2026 | Stats locales sobres (carnet, pas dashboard) ; pas de gamification ; pas de parcours F-003 branché |
 | F-011 | Favoris | V1 | Non commencé | — | — | — |
 | F-012 | Recherche | V1 | Non commencé | — | — | — |
 | F-013 | Séances guidées | MVP | En test | MVP-006 | 5 août 2026 | Parcours local + enregistrement historique en fin de séance ; pas de vidéo/médias |
@@ -71,8 +71,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-025 | Contenus Premium | V2 | Non commencé | — | — | — |
 | F-026 | Téléchargement hors ligne | V2 | Non commencé | — | — | — |
 | F-027 | Synchronisation multi-appareils | V1 | Non commencé | — | — | — |
-| F-028 | Paramètres | MVP | En développement | MVP-007 | 5 août 2026 | Page `/profil` + préférences locales (thème, langue FR, pratique, accessibilité) ; pas d’auth / sync / notifications |
-| F-029 | Accessibilité | MVP | En développement | MVP-007 | 5 août 2026 | Préférence « animations réduites » + contrastes DS ; pas encore tailles de texte avancées |
+| F-028 | Paramètres | MVP | En développement | MVP-007 | 6 août 2026 | Page `/profil` + préférences locales ; UI densifiée 12A (MVP-008A) ; pas d’auth / sync / notifications |
+| F-029 | Accessibilité | MVP | En développement | MVP-007 | 6 août 2026 | Préférence « animations réduites » + tokens contraste 12A + `prefers-reduced-motion` ; pas encore tailles de texte avancées |
 | F-030 | Export utilisateur | V1 | Non commencé | — | — | — |
 | F-031 | Avertissements avant pratique | Pré-MVP | Non commencé | — | — | — |
 | F-032 | Reprise de séance | MVP | En développement | MVP-005 | 5 août 2026 | Pause/reprise **en mémoire de page** uniquement ; pas de reprise après fermeture / refresh |
@@ -108,6 +108,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 5 août 2026 | MVP-006 : `F-009` / `F-010` → **En développement** ; historique + stats localStorage ; `F-024` inchangé (V1). |
 | 5 août 2026 | MVP-007 : `F-028` / `F-029` → **En développement** ; préférences locales + `/profil` ; pas de sync. |
 | 5 août 2026 | MVP-008 : `F-033` → **En développement** ; onboarding local + reprise + skip ; pas Mei/caméra. |
+| 6 août 2026 | MVP-008A : **aucune** `F-xxx` créée ni passée Validé/Livré — refonte présentation 12A uniquement (CH-009). |
 
 ## 6. Diagrammes
 

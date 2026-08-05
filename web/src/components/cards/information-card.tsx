@@ -28,8 +28,8 @@ export function InformationCard({
     <Card className={cn("bg-muted/40", className)}>
       <CardHeader>
         <div className="flex items-start gap-3">
-          <span className="bg-background text-muted-foreground mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-full ring-1 ring-foreground/10">
-            <Info className="size-4" aria-hidden />
+          <span className="bg-surface text-muted-foreground mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-[var(--radius)] border border-border">
+            <Info className="size-4" strokeWidth={1.75} aria-hidden />
           </span>
           <div className="min-w-0 space-y-1">
             <CardTitle>{title}</CardTitle>

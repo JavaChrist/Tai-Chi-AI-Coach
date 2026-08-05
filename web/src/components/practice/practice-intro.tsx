@@ -1,7 +1,6 @@
 import { Pause, Play } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { InformationCard } from "@/components/cards/information-card";
 import type { PracticeTemplateSnapshot } from "@/domain/practice/types";
 
 type PracticeIntroProps = {
@@ -24,67 +23,52 @@ export function PracticeIntro({
   showTips = true,
 }: PracticeIntroProps) {
   return (
-    <section className="space-y-6" aria-labelledby="practice-intro-heading">
-      <header className="space-y-2">
-        <p className="text-primary text-sm font-medium tracking-wide uppercase">
-          Introduction
-        </p>
-        <h1
-          id="practice-intro-heading"
-          className="font-heading text-2xl font-medium tracking-tight sm:text-3xl"
-        >
+    <section
+      className="mx-auto max-w-reading space-y-10"
+      aria-labelledby="practice-intro-heading"
+    >
+      <header className="space-y-4">
+        <h1 id="practice-intro-heading" className="text-h1 text-foreground">
           {template.title}
         </h1>
-        <p className="text-muted-foreground max-w-2xl text-base leading-relaxed">
-          Prenez un instant pour vous installer. Cette séance se déroule
-          localement, à votre rythme. Vous pourrez mettre en pause, reprendre ou
-          quitter sans jugement.
+        <p className="text-body text-muted-foreground">
+          Installez-vous. Cette séance se déroule à votre rythme.
         </p>
       </header>
 
-      <section aria-labelledby="practice-objectives-heading" className="space-y-2">
-        <h2 id="practice-objectives-heading" className="font-heading text-lg font-medium">
-          Intention
-        </h2>
-        <ul className="text-muted-foreground list-disc space-y-1.5 pl-5 text-sm">
-          {template.objectives.map((objective) => (
-            <li key={objective.id}>{objective.label}</li>
-          ))}
-        </ul>
-      </section>
-
       {showTips ? (
-        <InformationCard
-          title="Prudence avant de pratiquer"
-          description="Interrompez en cas de douleur. Adaptez l’effort à votre forme du jour. Cette application n’est pas un dispositif médical et ne remplace pas un avis de santé."
-        />
+        <p className="text-small text-muted-foreground">
+          Interrompez en cas de douleur. Adaptez l’effort à votre forme du jour.
+        </p>
       ) : null}
 
       {paused ? (
         <p
           role="status"
-          className="bg-muted text-muted-foreground rounded-xl px-4 py-3 text-sm"
+          className="bg-secondary text-muted-foreground rounded-card px-6 py-8 text-center text-body"
         >
-          Pause en cours. Reprenez quand vous le souhaitez — sans pression.
+          Pause. Reprenez quand vous le souhaitez.
         </p>
       ) : null}
 
-      <div className="flex flex-wrap gap-3">
-        <Button type="button" variant="primary" onClick={onContinue} disabled={paused}>
-          Continuer vers la préparation
-        </Button>
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         {paused ? (
-          <Button type="button" variant="secondary" onClick={onResume}>
-            <Play className="size-4" aria-hidden />
+          <Button type="button" variant="primary" onClick={onResume}>
+            <Play className="size-4" strokeWidth={1.75} aria-hidden />
             Reprendre
           </Button>
         ) : (
-          <Button type="button" variant="secondary" onClick={onPause}>
-            <Pause className="size-4" aria-hidden />
-            Mettre en pause
+          <Button type="button" variant="primary" onClick={onContinue}>
+            Continuer
           </Button>
         )}
-        <Button type="button" variant="outline" onClick={onQuit}>
+        {!paused ? (
+          <Button type="button" variant="ghost" onClick={onPause}>
+            <Pause className="size-4" strokeWidth={1.75} aria-hidden />
+            Pause
+          </Button>
+        ) : null}
+        <Button type="button" variant="ghost" onClick={onQuit}>
           Quitter
         </Button>
       </div>

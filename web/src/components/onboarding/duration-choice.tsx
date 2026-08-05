@@ -12,7 +12,7 @@ type DurationChoiceProps = {
 
 export function DurationChoice({ value, onChange }: DurationChoiceProps) {
   return (
-    <fieldset className="space-y-3">
+    <fieldset className="space-y-4">
       <legend className="sr-only">Durée préférée des séances</legend>
       {PREFERRED_DURATION_OPTIONS.map((minutes) => (
         <ChoiceCard

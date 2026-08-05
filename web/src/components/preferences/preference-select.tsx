@@ -33,7 +33,7 @@ export function PreferenceSelect<T extends string>({
   return (
     <PreferenceCard title={title} description={description}>
       <div className="space-y-2">
-        <Label htmlFor={id} className="sr-only">
+        <Label htmlFor={id} className="text-small text-muted-foreground">
           {title}
         </Label>
         <select
@@ -42,8 +42,9 @@ export function PreferenceSelect<T extends string>({
           disabled={disabled}
           onChange={(event) => onValueChange(event.target.value as T)}
           className={cn(
-            "border-input bg-background text-foreground h-10 w-full rounded-lg border px-3 text-sm outline-none",
-            "focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50",
+            "border-input bg-surface text-foreground h-11 min-h-11 w-full rounded-[var(--radius)] border px-3 text-body outline-none",
+            "ease-calm duration-normal transition-colors",
+            "focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40",
             "disabled:cursor-not-allowed disabled:opacity-50",
           )}
         >

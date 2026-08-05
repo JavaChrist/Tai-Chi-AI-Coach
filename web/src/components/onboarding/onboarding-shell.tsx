@@ -13,14 +13,15 @@ type OnboardingShellProps = {
 export function OnboardingShell({ currentStep, children }: OnboardingShellProps) {
   return (
     <div className="bg-background text-foreground min-h-dvh">
-      <Container size="sm" className="space-y-8 py-8">
-        <header className="space-y-4">
-          <p className="text-primary text-sm font-medium tracking-wide uppercase">
+      <Container size="sm" className="space-y-12 py-12">
+        <header className="space-y-6">
+          <p className="text-primary text-caption font-medium tracking-wide">
             {BRAND_NAME}
           </p>
           <OnboardingProgress currentStep={currentStep} />
         </header>
         {children}
+        <div className="min-h-16" aria-hidden />
       </Container>
     </div>
   );

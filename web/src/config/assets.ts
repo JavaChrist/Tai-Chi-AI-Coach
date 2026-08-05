@@ -24,15 +24,22 @@ export const assets = {
   brand: {
     favicon: {
       path: "/brand/icons/tai-chi-ai-coach-favicon.ico",
-      status: "missing",
+      status: "final",
       format: "ico",
       width: 32,
       height: 32,
       role: "Favicon navigateur",
     },
+    faviconSvg: {
+      path: "/brand/icons/tai-chi-ai-coach-favicon.svg",
+      status: "final",
+      format: "svg",
+      transparent: true,
+      role: "Favicon SVG",
+    },
     icon192: {
       path: "/brand/icons/tai-chi-ai-coach-icon-192.png",
-      status: "missing",
+      status: "final",
       format: "png",
       width: 192,
       height: 192,
@@ -41,7 +48,7 @@ export const assets = {
     },
     icon512: {
       path: "/brand/icons/tai-chi-ai-coach-icon-512.png",
-      status: "missing",
+      status: "final",
       format: "png",
       width: 512,
       height: 512,
@@ -49,8 +56,8 @@ export const assets = {
       role: "Icône PWA 512",
     },
     iconMaskable192: {
-      path: "/brand/icons/tai-chi-ai-coach-icon-maskable-192.png",
-      status: "missing",
+      path: "/brand/icons/tai-chi-ai-coach-maskable-192.png",
+      status: "final",
       format: "png",
       width: 192,
       height: 192,
@@ -58,8 +65,8 @@ export const assets = {
       role: "Icône maskable 192",
     },
     iconMaskable512: {
-      path: "/brand/icons/tai-chi-ai-coach-icon-maskable-512.png",
-      status: "missing",
+      path: "/brand/icons/tai-chi-ai-coach-maskable-512.png",
+      status: "final",
       format: "png",
       width: 512,
       height: 512,
@@ -68,7 +75,7 @@ export const assets = {
     },
     appleTouchIcon: {
       path: "/brand/icons/tai-chi-ai-coach-apple-touch-icon.png",
-      status: "missing",
+      status: "final",
       format: "png",
       width: 180,
       height: 180,
@@ -190,8 +197,8 @@ export const BRAND_SHORT_NAME = "Tai-Chi";
 export const BRAND_DESCRIPTION =
   "Compagnon d’apprentissage du Tai Chi — calme, accessible et progressif.";
 
-/** Couleurs alignées sur la palette calme (vert doux / beige). */
+/** Couleurs officielles 12A — Soft Jade / Rice Paper. */
 export const BRAND_THEME = {
-  themeColor: "#4a7c6f",
-  backgroundColor: "#faf8f3",
+  themeColor: "#7A998D",
+  backgroundColor: "#F7F6F1",
 } as const;

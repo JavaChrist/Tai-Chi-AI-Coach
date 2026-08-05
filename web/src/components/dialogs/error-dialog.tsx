@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertCircle } from "lucide-react";
+import { CircleHelp } from "lucide-react";
 
 import {
   AppDialog,
@@ -16,11 +16,11 @@ type ErrorDialogProps = {
   onAction?: () => void;
 };
 
-/** Dialog d’erreur — remplace window.alert() pour les erreurs. */
+/** Dialog d’erreur — rassurer, une seule action. */
 export function ErrorDialog({
   open,
   onOpenChange,
-  title = "Une difficulté est survenue",
+  title = "Un instant de pause",
   description,
   actionLabel = "Compris",
   onAction,
@@ -36,8 +36,8 @@ export function ErrorDialog({
       onOpenChange={onOpenChange}
       title={title}
       description={description}
-      icon={AlertCircle}
-      iconClassName="bg-destructive/10 text-destructive"
+      icon={CircleHelp}
+      iconClassName="bg-secondary text-muted-foreground"
       footer={
         <DialogActionButton
           label={actionLabel}

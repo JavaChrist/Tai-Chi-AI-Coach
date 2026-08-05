@@ -1,14 +1,15 @@
-import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-import { SessionMetadata } from "@/components/sessions/session-metadata";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  difficultyLabels,
+  formatDurationMinutes,
+} from "@/domain/curriculum/labels";
 import type { SessionTemplateSummary } from "@/domain/curriculum/types";
 import { cn } from "@/lib/utils";
 
@@ -17,37 +18,37 @@ type SessionCardProps = {
   className?: string;
 };
 
+/** Carte séance — titre, durée, niveau, objectif (12A §7.3 / ticket §39). */
 export function SessionCard({ session, className }: SessionCardProps) {
   return (
     <Card
       className={cn(
-        "relative h-full transition-colors hover:bg-muted/30",
+        "relative h-full min-h-40 ease-calm duration-normal transition-colors hover:bg-secondary/50",
         className,
       )}
     >
-      <CardHeader className="gap-2">
-        <div className="flex items-start justify-between gap-3">
-          <CardTitle className="text-lg">
-            <Link
-              href={`/bibliotheque/${session.id}`}
-              className="focus-visible:ring-ring rounded-sm after:absolute after:inset-0 focus-visible:ring-2 focus-visible:outline-none"
-            >
-              {session.title}
-            </Link>
-          </CardTitle>
-          <ChevronRight
-            className="text-muted-foreground mt-1 size-5 shrink-0"
-            aria-hidden
-          />
-        </div>
-        <CardDescription>{session.shortDescription}</CardDescription>
+      <CardHeader className="gap-3">
+        <CardTitle>
+          <Link
+            href={`/bibliotheque/${session.id}`}
+            className="focus-visible:ring-ring rounded-[var(--radius)] after:absolute after:inset-0 focus-visible:ring-2 focus-visible:outline-none"
+          >
+            {session.title}
+          </Link>
+        </CardTitle>
+        <CardDescription className="text-small space-y-1">
+          <span className="text-muted-foreground block">
+            {formatDurationMinutes(session.plannedDurationMinutes)}
+            {" · "}
+            {difficultyLabels[session.difficulty]}
+          </span>
+          {session.primaryObjectiveLabel ? (
+            <span className="text-muted-foreground block">
+              {session.primaryObjectiveLabel}
+            </span>
+          ) : null}
+        </CardDescription>
       </CardHeader>
-      <CardContent className="relative z-0">
-        <SessionMetadata session={session} />
-        <p className="text-primary mt-4 text-sm font-medium" aria-hidden>
-          Voir la fiche
-        </p>
-      </CardContent>
     </Card>
   );
 }
