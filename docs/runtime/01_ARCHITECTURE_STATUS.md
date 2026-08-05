@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/01_ARCHITECTURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-003 curriculum local |
+| Dernière mise à jour | 5 août 2026 — MVP-004 assets / manifeste |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel de l’architecture |
 | Référence conception | `docs/13_TECH_ARCHITECTURE.md` (architecture cible / gelée — non recopié ici) |
@@ -23,14 +23,14 @@ Référentiel de lecture des noms de couches : conception `13` (pour comparaison
 
 | Couche | État réel | Constat |
 | --- | --- | --- |
-| Frontend | **En cours** | Socle Next.js + App Shell + Design System + bibliothèque séances (MVP-001…003) ; curriculum embarqué local ; pas encore PWA |
+| Frontend | **En cours** | Socle Next.js + shell + DS + bibliothèque + fondation assets/manifeste (MVP-001…004) ; curriculum local ; **pas** de PWA installable complète |
 | Backend | **Non commencé** | Aucun service backend |
 | API | **Non commencé** | Aucun endpoint exposé |
 | Base de données | **Non commencé** | Aucun schéma / instance applicative |
 | IA Coach | **Non commencé** | Aucune couche d’abstraction ni fournisseur branché |
 | Computer Vision | **Non commencé** | Aucun pipeline CV |
 | Virtual Humans | **Non commencé** | Aucun guide / runtime VH |
-| Offline | **Non commencé** | Aucun Service Worker / stockage local applicatif |
+| Offline | **Non commencé** | Manifeste PWA déclaré (MVP-004) ; **aucun** Service Worker / cache / IndexedDB |
 | Analytics | **Non commencé** | Aucun pipeline / sink analytics |
 | Sécurité | **Non commencé** | Aucun contrôle auth / sécu applicatif déployé |
 
@@ -40,7 +40,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 
 | Module | État | Responsable | Ticket d’origine | Dernière mise à jour |
 | --- | --- | --- | --- | --- |
-| Interface utilisateur (PWA) | En cours | Projet | MVP-002 | 5 août 2026 — shell + design system UI, pas PWA |
+| Interface utilisateur (PWA) | En cours | Projet | MVP-004 | 5 août 2026 — shell + DS + assets/manifeste ; SW absent ; icônes manquantes (PO) |
 | Couche application / orchestration client | En cours | Projet | MVP-001 | 5 août 2026 — layout / navigation |
 | Modules métiers (curriculum, progression, etc.) | En cours | Projet | MVP-003 | 5 août 2026 — curriculum local + lecture SessionTemplate ; pas de PracticeSession |
 | Couche d’abstraction IA | Non commencé | — | — | — |
@@ -48,9 +48,9 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 | Persistance (PostgreSQL) | Non commencé | — | — | — |
 | Stockage objet | Non commencé | — | — | — |
 | Synchronisation | Non commencé | — | — | — |
-| Offline / cache PWA | Non commencé | — | — | — |
+| Offline / cache PWA | Non commencé | — | MVP-004 | 5 août 2026 — manifeste seulement ; pas de SW/cache |
 | Computer Vision | Non commencé | — | — | — |
-| Virtual Humans / Mei | Non commencé | — | — | — |
+| Virtual Humans / Mei | Non commencé | — | MVP-004 | Emplacements assets documentés ; **aucune** UI Mei |
 | Analytics (technique / produit) | Non commencé | — | — | — |
 | Auth / sécurité applicative | Non commencé | — | — | — |
 | Monitoring / journalisation applicative | Non commencé | — | — | — |
@@ -60,7 +60,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 | Élément | Statut | Justification |
 | --- | --- | --- |
 | Architecture cible documentée (`13`) | Conforme (conception) | Baseline figée par `25` ; non remise en cause |
-| Architecture réellement déployée | Partielle | Frontend + curriculum local embarqué ; conforme MVP-001…003 ; pas de backend / DB |
+| Architecture réellement déployée | Partielle | Frontend + curriculum + fondation assets ; conforme MVP-001…004 ; pas de backend / DB / SW |
 | Divergence d’implémentation | **Aucune** | Stack Next.js/React/TS/Tailwind alignée `13` ; pas de backend inventé |
 
 ## 5. Écarts
@@ -89,6 +89,7 @@ Aucune.
 | 5 août 2026 | MVP-001 : socle Frontend (`web/`) — Next.js, React, TS, Tailwind, shadcn/ui, Lucide ; App Shell + routes vides ; Frontend = En cours. |
 | 5 août 2026 | MVP-002 : Design System & UI Foundation — boutons, cartes, états, dialogs, toasts, inputs, feedback, layouts ; navigation avec états actifs ; Frontend = En cours. |
 | 5 août 2026 | MVP-003 : curriculum local typé + service de lecture + `/bibliotheque` + fiche `/bibliotheque/[sessionId]` ; modules métiers = En cours. |
+| 5 août 2026 | MVP-004 : arborescence `public/`, catalogue assets, manifeste, métadonnées, `AppBrand` ; Offline reste Non commencé. |
 
 ## 9. Diagrammes
 

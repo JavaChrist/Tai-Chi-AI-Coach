@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-003 |
-| Phase actuelle | Développement MVP — premiers tests unitaires |
+| Dernière mise à jour | 5 août 2026 — MVP-004 |
+| Phase actuelle | Développement MVP — tests unitaires Vitest |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
 
@@ -20,18 +20,18 @@
 
 | Domaine | État réel |
 | --- | --- |
-| Tests unitaires | **En cours** — Vitest ; 6 tests curriculum reader (MVP-003) |
+| Tests unitaires | **En cours** — Vitest ; 15 tests (curriculum + assets/AppBrand/manifeste) |
 | Intégration | Non commencé |
 | Fonctionnels | Non commencé |
 | E2E | Non commencé |
-| UX | Non commencé (validations manuelles documentées §5) |
+| UX | Non commencé (contrôles manuels documentés §5) |
 | Sécurité | Non commencé |
 | RGPD | Non commencé |
 | Offline | Non commencé |
 | Analytics | Non commencé |
 | Performances | Non commencé |
 
-**Synthèse :** infrastructure Vitest légère ajoutée ; première suite unitaire sur le service de lecture curriculum. Pas de campagne produit complète.
+**Synthèse :** suites unitaires MVP-003 et MVP-004. Pas de campagne produit complète.
 
 ## 3. Couverture
 
@@ -39,8 +39,9 @@
 | --- | --- |
 | Globale | Non mesurée (pas de seuil produit) |
 | Architecture | Non mesurée |
-| Features | Partielle — lecture `SessionTemplate` (F-013 fondation) |
+| Features | Partielle — lecture SessionTemplate (F-013 fondation) |
 | Data | Partielle — curriculum local |
+| Assets / PWA fondation | Partielle — catalogue, AppBrand, manifeste JSON |
 | API | 0 % |
 | Sécurité | 0 % |
 | RGPD | 0 % |
@@ -52,7 +53,7 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Campagnes exécutées | **1** (locale, MVP-003) |
+| Campagnes exécutées | **2** (locales, MVP-003 puis MVP-004) |
 | Campagnes prévues (runtime planifié) | Aucune campagne Runtime formelle hors ticket |
 
 ### 4.1 Campagne MVP-003
@@ -61,18 +62,28 @@
 | --- | --- |
 | Date | 5 août 2026 |
 | Outil | Vitest (`npm test` dans `web/`) |
-| Périmètre | `curriculum-reader` (liste, getById, not_found, filtre, source vide) |
+| Périmètre | `curriculum-reader` |
 | Résultat | **6 / 6 passed** |
-| Build / tsc / eslint | OK (même ticket) |
+
+### 4.2 Campagne MVP-004
+
+| Champ | Valeur |
+| --- | --- |
+| Date | 5 août 2026 |
+| Outil | Vitest (`npm test` dans `web/`) |
+| Périmètre | catalogue assets, manifeste JSON, AppBrand (fallback + logoSrc + lien) |
+| Résultat | **15 / 15 passed** (cumul suites) |
+| Build / tsc / eslint | OK |
 
 ## 5. Validations manuelles / hors suite
 
 | Contrôle | Résultat | Preuve |
 | --- | --- | --- |
-| Lien carte → fiche | OK (code + SSG) | `SessionCard` → `/bibliotheque/[sessionId]` ; 3 pages SSG générées |
-| Fiche valide sans erreur build | OK | Build Next.js routes `●` pour les 3 IDs |
-| Bibliothèque vide | OK (contrat testé) | Source vide → `listSessions() === []` ; UI `EmptyState` si length 0 |
-| Identifiant inconnu | OK | `notFound()` + `not-found.tsx` ; test `not_found` |
+| Lien carte → fiche | OK | MVP-003 |
+| Fiche valide SSG | OK | MVP-003 |
+| Header sans logo cassé | OK | `AppBrand` fallback textuel ; build OK |
+| Manifeste JSON valide | OK | test + parse fichier |
+| Chemins manquants non rendus | OK | test AppBrand + statut `missing` |
 
 Pas de tests E2E navigateur exécutés.
 
@@ -88,7 +99,7 @@ Pas de tests E2E navigateur exécutés.
 
 | Élément | Statut |
 | --- | --- |
-| Conformité vs `20` | Première tranche unitaire alignée périmètre ticket ; pyramide incomplète |
+| Conformité vs `20` | Tranches unitaires alignées tickets ; pyramide incomplète |
 | Divergences | **Aucune** |
 | Décisions Runtime | **Aucune** |
 
@@ -101,7 +112,7 @@ flowchart TB
   E2E[E2E — 0]
   F[Fonctionnels — 0]
   I[Intégration — 0]
-  U[Unitaires — 6]
+  U[Unitaires — 15]
   E2E --- F
   F --- I
   I --- U
@@ -112,7 +123,7 @@ flowchart TB
 ```mermaid
 pie title Couverture tests — état réel
   "Non mesuré / non couvert" : 1
-  "Suite unitaire curriculum" : 1
+  "Suites unitaires MVP-003/004" : 1
 ```
 
 ### 8.3 Progression
@@ -140,7 +151,7 @@ flowchart LR
 ```mermaid
 flowchart LR
   C20[20 stratégie] --> Q{Écart exécution?}
-  Real[Vitest MVP-003] --> Q
+  Real[Vitest MVP-003/004] --> Q
   Q -->|Non| OK[Aucune divergence]
 ```
 
@@ -159,7 +170,8 @@ Toute campagne de test devra :
 | Date | Événement |
 | --- | --- |
 | 5 août 2026 | Création du registre ; initialisation ; aucune exécution de test. |
-| 5 août 2026 | MVP-003 — Vitest ajouté ; 6 tests reader OK ; validations manuelles documentées. |
+| 5 août 2026 | MVP-003 — Vitest ajouté ; 6 tests reader OK. |
+| 5 août 2026 | MVP-004 — tests assets / AppBrand / manifeste ; **15 / 15** OK. |
 
 ## 11. Références
 

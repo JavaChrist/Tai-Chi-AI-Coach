@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/07_OFFLINE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 |
-| Phase actuelle | Post–Design Freeze — initialisation Runtime |
+| Dernière mise à jour | 5 août 2026 — MVP-004 |
+| Phase actuelle | Développement MVP — fondation manifeste uniquement |
 | Document de référence | `docs/18_PWA_OFFLINE.md` |
 | Type | Runtime Register — état réel Offline First / PWA |
 | Décisions conception | D-132 … D-142 (intention — non implémentées) |
@@ -31,8 +31,9 @@
 | IA Offline | Non commencé |
 | CV Offline | Non commencé |
 | Virtual Humans Offline | Non commencé |
+| Manifeste Web App | Fondation (MVP-004) — fichier + métadonnées ; **pas** d’installabilité garantie (icônes absentes) |
 
-**Synthèse :** aucune fonctionnalité Offline implémentée. Aucun SW, aucun stockage local applicatif.
+**Synthèse :** Offline First **non** implémenté. MVP-004 prépare uniquement `manifest.webmanifest` et les emplacements d’icônes. Aucun SW, aucun cache, aucun stockage local applicatif.
 
 ## 3. Classification Offline / Hybrid / Online
 
@@ -61,14 +62,14 @@ Aucune fonctionnalité `F-xxx` n’est classée en Runtime (catalogue conception
 | Préférences | Non commencé |
 | Progression | Non commencé |
 | Curriculum | Non commencé |
-| Médias | Non commencé |
+| Médias | Non commencé — arborescence `public/` documentée (MVP-004) ; fichiers absents |
 | Cache | Non commencé |
 
 ## 6. Conformité
 
 | Élément | Statut |
 | --- | --- |
-| Conformité vs `18` | Conforme à l’absence d’implémentation attendue |
+| Conformité vs `18` | Conforme : fondation manifeste sans SW (Offline First non anticipé) |
 | Divergences | **Aucune** |
 | Décisions Runtime | **Aucune** |
 
@@ -153,6 +154,7 @@ Toute évolution Offline devra :
 | Date | Événement |
 | --- | --- |
 | 5 août 2026 | Création du registre ; initialisation depuis l’état réel ; aucune implémentation Offline. |
+| 5 août 2026 | MVP-004 — manifeste PWA + emplacements icônes ; Offline/SW restent Non commencé. |
 
 ## 11. Références
 
