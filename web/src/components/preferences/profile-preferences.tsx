@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { ProfileOnboardingSection } from "@/components/onboarding/profile-onboarding-section";
 import { PreferenceSection } from "@/components/preferences/preference-section";
 import { PreferenceSelect } from "@/components/preferences/preference-select";
 import { PreferenceSwitch } from "@/components/preferences/preference-switch";
@@ -65,6 +66,8 @@ export function ProfilePreferences() {
           {saveError}
         </p>
       ) : null}
+
+      <ProfileOnboardingSection />
 
       <PreferenceSection id="appearance" title={t.appearance}>
         <PreferenceSelect<ThemePreference>

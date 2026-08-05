@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/07_OFFLINE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-006 |
-| Phase actuelle | Développement MVP — fondation manifeste uniquement |
+| Dernière mise à jour | 5 août 2026 — MVP-008 |
+| Phase actuelle | Développement MVP — localStorage applicatif partiel ; Offline First non complet |
 | Document de référence | `docs/18_PWA_OFFLINE.md` |
 | Type | Runtime Register — état réel Offline First / PWA |
 | Décisions conception | D-132 … D-142 (intention — non implémentées) |
@@ -33,17 +33,17 @@
 | Virtual Humans Offline | Non commencé |
 | Manifeste Web App | Fondation (MVP-004) — fichier + métadonnées ; **pas** d’installabilité garantie (icônes absentes) |
 
-**Synthèse :** Offline First **non** implémenté. MVP-004 prépare uniquement `manifest.webmanifest` et les emplacements d’icônes. Aucun SW, aucun cache, aucun stockage local applicatif.
+**Synthèse :** Offline First **non** implémenté (pas de SW / cache / IndexedDB / sync). Stockage applicatif local partiel via **localStorage** (progression, préférences, onboarding). Manifeste PWA fondation (MVP-004).
 
 ## 3. Classification Offline / Hybrid / Online
 
 | Classe | Features Runtime classées | Constat |
 | --- | --- | --- |
-| Offline | Aucune | — |
+| Offline | **F-033** (MVP-008) | Onboarding 100 % local ; aucune dépendance réseau |
 | Hybrid | Aucune | — |
 | Online | Aucune | — |
 
-Aucune fonctionnalité `F-xxx` n’est classée en Runtime (catalogue conception non tagué runtime ; voir aussi ouverture `18`).
+Classification D-142 pour F-033 uniquement parmi les features touchées par MVP-008. Offline First global **non** déclaré.
 
 ## 4. Synchronisation
 
@@ -59,7 +59,8 @@ Aucune fonctionnalité `F-xxx` n’est classée en Runtime (catalogue conception
 
 | Domaine | État réel |
 | --- | --- |
-| Préférences | Non commencé |
+| Préférences | localStorage (MVP-007) — **pas** IndexedDB / SW / sync |
+| Onboarding | localStorage (MVP-008) — **pas** IndexedDB / SW / sync |
 | Progression | localStorage (MVP-006) — **pas** IndexedDB / SW / sync |
 | Curriculum | Embarqué en code (MVP-003) — pas de cache PWA |
 | Médias | Non commencé — arborescence `public/` documentée (MVP-004) ; fichiers absents |
@@ -133,9 +134,9 @@ stateDiagram-v2
 
 ```mermaid
 flowchart TB
-  Offline[Offline — 0 feature Runtime]
-  Hybrid[Hybrid — 0 feature Runtime]
-  Online[Online — 0 feature Runtime]
+  Offline[Offline — F-033]
+  Hybrid[Hybrid — 0]
+  Online[Online — 0]
 ```
 
 ## 9. Gouvernance
@@ -157,6 +158,7 @@ Toute évolution Offline devra :
 | 5 août 2026 | MVP-004 — manifeste PWA + emplacements icônes ; Offline/SW restent Non commencé. |
 | 5 août 2026 | MVP-005 — pratique locale en mémoire ; **pas** d’Offline First / SW (état pratique perdu au refresh). |
 | 5 août 2026 | MVP-006 — historique progression en localStorage ; Offline First / SW toujours Non commencé. |
+| 5 août 2026 | MVP-008 — onboarding localStorage classé **Offline** (D-142) ; Offline First / SW toujours Non commencé. |
 
 ## 11. Références
 

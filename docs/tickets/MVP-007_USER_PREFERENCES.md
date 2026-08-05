@@ -2,12 +2,10 @@
 
 > Tai-Chi AI Coach  
 > Version 1.0  
-> Statut : Fermé  
-
-
-
+> Statut : **Fermé**  
 > Phase : MVP  
 > Emplacement : `docs/tickets/MVP-007_USER_PREFERENCES.md`  
+> Nature : Ticket validé puis livré (contenu d’origine conservé ; clôture en fin de document)  
 > Dépend de :  
 > - MVP-001_APP_SHELL  
 > - MVP-002_DESIGN_SYSTEM  
@@ -15,6 +13,7 @@
 > - MVP-004_ASSET_PIPELINE  
 > - MVP-005_LOCAL_PRACTICE  
 > - MVP-006_LOCAL_PROGRESS  
+
 
 ---
 
@@ -293,3 +292,41 @@ Aucune persistance distante.
 Respect strict du Design Freeze.
 
 Le stockage local doit être entièrement remplaçable par Supabase dans un futur ticket.
+
+---
+
+# 10. Rapport de clôture (archive)
+
+> Statut d’origine du ticket : **À développer**.  
+> Livré, validé, commité et poussé — statut final : **Fermé**.
+
+## Développement
+
+- Domaine `web/src/domain/preferences/`
+- `PreferenceStore` + `LocalStoragePreferenceStore` + service
+- Composants préférences + page `/profil`
+- i18n FR (`web/src/i18n/`)
+- Thème clair / sombre / système branché sur les préférences
+
+## Fonctionnalités
+
+| F-xxx | Évolution | Justification |
+| --- | --- | --- |
+| **F-028** Paramètres | → **En développement** | Page Profil + préférences essentielles locales |
+| **F-029** Accessibilité | → **En développement** | Animations réduites (+ socle contrastes DS) |
+
+## Validation
+
+Build / TypeScript / ESLint OK ; **32** tests Vitest cumulés OK.
+
+## Runtime
+
+- **CH-007**
+- Registres : `00`, `02`, `03`, `09`, `17`
+
+## Commit
+
+| Champ | Valeur |
+| --- | --- |
+| SHA | `16cafbe` |
+| Message | `feat(preferences): add local user preferences and profile page` |

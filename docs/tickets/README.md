@@ -300,17 +300,20 @@ Tous les développements de Tai-Chi AI Coach devront obligatoirement être réal
 
 # 19. Index des tickets (état réel)
 
-| Ticket | Fichier attendu | Statut | Change History |
-| --- | --- | --- | --- |
-| MVP-001 | `MVP-001_APP_SHELL.md` | Fermé (livré via chat, fichier à formaliser) | CH-001 |
-| MVP-002 | `MVP-002_DESIGN_SYSTEM.md` | Fermé (livré via chat, fichier à formaliser) | CH-002 |
-| MVP-003 | `MVP-003_CURRICULUM_LIBRARY.md` | Fermé (livré via chat, fichier à formaliser) | CH-003 |
-| MVP-004 | `MVP-004_ASSET_PIPELINE.md` | Fermé (livré via chat, fichier à formaliser) | CH-004 |
-| MVP-005 | `MVP-005_LOCAL_PRACTICE.md` | Fermé (livré via chat, fichier à formaliser) | CH-005 |
-| MVP-006 | `MVP-006_LOCAL_PROGRESS.md` | Fermé (livré via chat, fichier à formaliser) | CH-006 |
-| MVP-007 | `MVP-007_USER_PREFERENCES.md` | Fermé | CH-007 |
+| Ticket | Fichier | Statut | Change History | Commit |
+| --- | --- | --- | --- | --- |
+| MVP-001 | `MVP-001_APP_SHELL.md` | **Fermé** | CH-001 | `3c0b28c` |
+| MVP-002 | `MVP-002_DESIGN_SYSTEM.md` | **Fermé** | CH-002 | `696a76f` |
+| MVP-003 | `MVP-003_CURRICULUM_LIBRARY.md` | **Fermé** | CH-003 | `696a76f` |
+| MVP-004 | `MVP-004_ASSET_PIPELINE.md` | **Fermé** | CH-004 | `6a9784a` |
+| MVP-005 | `MVP-005_LOCAL_PRACTICE.md` | **Fermé** | CH-005 | `7652b2f` |
+| MVP-006 | `MVP-006_LOCAL_PROGRESS.md` | **Fermé** | CH-006 | `7369676` |
+| MVP-007 | `MVP-007_USER_PREFERENCES.md` | **Fermé** | CH-007 | `16cafbe` |
+| MVP-008 | `MVP-008_LOCAL_ONBOARDING.md` | **Fermé** | CH-008 | — |
 
-Les fichiers ticket individuels peuvent être ajoutés rétroactivement pour archivage ; le travail correspondant est déjà reflété dans le code et les Runtime Registers.
+Aucun ticket actif (« À développer ») à la date de cette mise à jour d’index.
+
+Note : MVP-002 et MVP-003 ont été livrés dans le même commit (`696a76f`).
 
 ---
 

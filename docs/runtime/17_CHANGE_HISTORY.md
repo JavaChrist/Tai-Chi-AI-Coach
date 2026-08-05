@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — CH-007 MVP-007 |
-| Phase actuelle | Développement MVP — préférences locales |
+| Dernière mise à jour | 5 août 2026 — CH-008 MVP-008 |
+| Phase actuelle | Développement MVP — onboarding local |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **7** |
-| Changements majeurs | **7** |
+| Changements enregistrés | **8** |
+| Changements majeurs | **8** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements
@@ -32,6 +32,7 @@
 | CH-005 | Parcours pratique local | MVP-005 | `00`, `01`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-006 | Progression / historique local (localStorage) + page `/progression` | MVP-006 | `00`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-007 | Préférences utilisateur locales + page `/profil` (thème / pratique / a11y) | MVP-007 | `00`, `02`, `03`, `09`, `17` | — | 5 août 2026 | Appliqué |
+| CH-008 | Onboarding local `/onboarding` (F-033) + gate + intégration préférences | MVP-008 | `00`, `01`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
 
 ## 4. Gouvernance
 
@@ -43,17 +44,16 @@ Un changement Runtime n’est enregistré que s’il est effectivement réalisé
 timeline
   title Changements Runtime
   section MVP
-    5 août 2026 : CH-001 à CH-006
-    5 août 2026 : CH-007 Préférences locales
+    5 août 2026 : CH-001 à CH-007
+    5 août 2026 : CH-008 Onboarding local
 ```
 
 ## 6. Historique
 
 | Date | Événement |
 | --- | --- |
-| 5 août 2026 | CH-001 … CH-005 enregistrés. |
-| 5 août 2026 | CH-006 — MVP-006 progression / historique local enregistré. |
-| 5 août 2026 | CH-007 — MVP-007 préférences utilisateur locales enregistré. |
+| 5 août 2026 | CH-001 … CH-007 enregistrés. |
+| 5 août 2026 | CH-008 — MVP-008 onboarding local enregistré. |
 
 ---
 
