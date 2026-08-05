@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-004 (aucune F-xxx avancée) |
+| Dernière mise à jour | 5 août 2026 — MVP-005 (F-013 / F-032) |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -22,15 +22,15 @@
 | --- | --- |
 | Total des fonctionnalités | **41** (`F-001` … `F-041`) |
 | Terminées (Validé / Livré) | **0** |
-| En cours (En développement / En test) | **1** (`F-013`) |
-| Restantes (Non commencé) | **40** |
+| En cours (En développement / En test) | **2** (`F-013`, `F-032`) |
+| Restantes (Non commencé) | **39** |
 
 ### Répartition par version cible (conception)
 
 | Version cible | Nombre | Statut d’implémentation |
 | --- | --- | --- |
 | Pré-MVP | 2 | 0 livré / 2 non commencés |
-| MVP | 17 | 0 livré / 1 en développement (`F-013`) / 16 non commencés |
+| MVP | 17 | 0 livré / 2 en cours (`F-013` En test, `F-032` En développement) / 15 non commencés |
 | V1 | 10 | 0 livré / 10 non commencés |
 | V2 | 7 | 0 livré / 7 non commencés |
 | V3 | 2 | 0 livré / 2 non commencés |
@@ -56,7 +56,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-010 | Progression | MVP | Non commencé | — | — | — |
 | F-011 | Favoris | V1 | Non commencé | — | — | — |
 | F-012 | Recherche | V1 | Non commencé | — | — | — |
-| F-013 | Séances guidées | MVP | En développement | MVP-003 | 5 août 2026 | Fondation uniquement : catalogue SessionTemplate + fiche ; **pas** de démarrage / suivi / reprise |
+| F-013 | Séances guidées | MVP | En test | MVP-005 | 5 août 2026 | Parcours local complet (démarrer → étapes → bilan) ; pas de vidéo/médias ; pas de persistance |
 | F-014 | Exercices de respiration | MVP | Non commencé | — | — | — |
 | F-015 | Relaxation | MVP | Non commencé | — | — | — |
 | F-016 | Conseils de sécurité | Pré-MVP | Non commencé | — | — | — |
@@ -75,7 +75,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-029 | Accessibilité | MVP | Non commencé | — | — | — |
 | F-030 | Export utilisateur | V1 | Non commencé | — | — | — |
 | F-031 | Avertissements avant pratique | Pré-MVP | Non commencé | — | — | — |
-| F-032 | Reprise de séance | MVP | Non commencé | — | — | — |
+| F-032 | Reprise de séance | MVP | En développement | MVP-005 | 5 août 2026 | Pause/reprise **en mémoire de page** uniquement ; pas de reprise après fermeture / refresh |
 | F-033 | Première découverte guidée | MVP | Non commencé | — | — | — |
 | F-034 | Personnalisation avancée | V2 | Non commencé | — | — | — |
 | F-035 | Programmes adaptés | V2 | Non commencé | — | — | — |
@@ -92,8 +92,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | --- | --- |
 | Features MVP (+ Pré-MVP héritées) | 19 (`17` MVP + `2` Pré-MVP) |
 | Livrées / validées | 0 |
-| En cours | 1 (`F-013`) |
-| Non commencées | 18 |
+| En cours | 2 (`F-013`, `F-032`) |
+| Non commencées | 17 |
 
 ## 5. Historique
 
@@ -104,6 +104,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 5 août 2026 | MVP-002 livré (Design System & UI Foundation) — **aucune** `F-xxx` passée à En développement / Validé / Livré (hors périmètre du ticket). |
 | 5 août 2026 | MVP-003 : `F-013` → **En développement** (fondation catalogue + fiche) ; démarrage guidé hors périmètre ; `F-004` inchangé. |
 | 5 août 2026 | MVP-004 : fondation assets / manifeste — **aucune** `F-xxx` modifiée (hors périmètre métier ; Mei/V2 non activée ; Offline non livré). |
+| 5 août 2026 | MVP-005 : `F-013` → **En test** ; `F-032` → **En développement** (pause/reprise locale) ; bilan non persistant. |
 
 ## 6. Diagrammes
 
@@ -111,8 +112,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 
 ```mermaid
 pie title MVP + Pré-MVP — état réel
-  "Non commencé" : 18
-  "En développement" : 1
+  "Non commencé" : 17
+  "En développement / En test" : 2
   "Livré / validé" : 0
 ```
 

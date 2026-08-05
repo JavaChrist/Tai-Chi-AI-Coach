@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Play } from "lucide-react";
 import Link from "next/link";
 
 import { SessionMetadata } from "@/components/sessions/session-metadata";
@@ -48,6 +48,14 @@ export function SessionDetails({ session }: SessionDetailsProps) {
             }}
             showObjective={false}
           />
+          <div className="pt-2">
+            <Button variant="primary" size="lg" asChild>
+              <Link href={`/pratique/${session.id}`}>
+                <Play className="size-4" aria-hidden />
+                Démarrer la séance
+              </Link>
+            </Button>
+          </div>
         </header>
       </div>
 
@@ -95,7 +103,7 @@ export function SessionDetails({ session }: SessionDetailsProps) {
       {session.isStructuralPlaceholder ? (
         <InformationCard
           title="Contenu structurel initial"
-          description="Cette fiche décrit la structure pédagogique validée du cursus. Elle ne constitue pas encore une leçon officielle de style Tai Chi détaillé. Le démarrage guidé d’une séance arrivera dans un prochain ticket."
+          description="Cette fiche décrit la structure pédagogique validée du cursus. Elle ne constitue pas encore une leçon officielle de style Tai Chi détaillé. La pratique guidée reste locale et non persistante."
         />
       ) : null}
     </article>

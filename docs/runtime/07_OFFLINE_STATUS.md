@@ -61,7 +61,7 @@ Aucune fonctionnalité `F-xxx` n’est classée en Runtime (catalogue conception
 | --- | --- |
 | Préférences | Non commencé |
 | Progression | Non commencé |
-| Curriculum | Non commencé |
+| Curriculum | Embarqué en code (MVP-003) — pas de cache PWA |
 | Médias | Non commencé — arborescence `public/` documentée (MVP-004) ; fichiers absents |
 | Cache | Non commencé |
 
@@ -155,6 +155,7 @@ Toute évolution Offline devra :
 | --- | --- |
 | 5 août 2026 | Création du registre ; initialisation depuis l’état réel ; aucune implémentation Offline. |
 | 5 août 2026 | MVP-004 — manifeste PWA + emplacements icônes ; Offline/SW restent Non commencé. |
+| 5 août 2026 | MVP-005 — pratique locale en mémoire ; **pas** d’Offline First / SW (état pratique perdu au refresh). |
 
 ## 11. Références
 

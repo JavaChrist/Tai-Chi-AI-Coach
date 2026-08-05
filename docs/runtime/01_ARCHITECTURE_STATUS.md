@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/01_ARCHITECTURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-004 assets / manifeste |
+| Dernière mise à jour | 5 août 2026 — MVP-005 pratique locale |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel de l’architecture |
 | Référence conception | `docs/13_TECH_ARCHITECTURE.md` (architecture cible / gelée — non recopié ici) |
@@ -23,7 +23,7 @@ Référentiel de lecture des noms de couches : conception `13` (pour comparaison
 
 | Couche | État réel | Constat |
 | --- | --- | --- |
-| Frontend | **En cours** | Socle Next.js + shell + DS + bibliothèque + fondation assets/manifeste (MVP-001…004) ; curriculum local ; **pas** de PWA installable complète |
+| Frontend | **En cours** | Socle Next.js + shell + DS + bibliothèque + assets + parcours `/pratique/[sessionId]` (MVP-001…005) ; curriculum local ; **pas** de PWA installable complète |
 | Backend | **Non commencé** | Aucun service backend |
 | API | **Non commencé** | Aucun endpoint exposé |
 | Base de données | **Non commencé** | Aucun schéma / instance applicative |
@@ -42,7 +42,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 | --- | --- | --- | --- | --- |
 | Interface utilisateur (PWA) | En cours | Projet | MVP-004 | 5 août 2026 — shell + DS + assets/manifeste ; SW absent ; icônes manquantes (PO) |
 | Couche application / orchestration client | En cours | Projet | MVP-001 | 5 août 2026 — layout / navigation |
-| Modules métiers (curriculum, progression, etc.) | En cours | Projet | MVP-003 | 5 août 2026 — curriculum local + lecture SessionTemplate ; pas de PracticeSession |
+| Modules métiers (curriculum, progression, etc.) | En cours | Projet | MVP-005 | 5 août 2026 — curriculum + PracticeSession locale en mémoire ; pas de persistance |
 | Couche d’abstraction IA | Non commencé | — | — | — |
 | Backend API (stateless) | Non commencé | — | — | — |
 | Persistance (PostgreSQL) | Non commencé | — | — | — |
@@ -60,7 +60,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 | Élément | Statut | Justification |
 | --- | --- | --- |
 | Architecture cible documentée (`13`) | Conforme (conception) | Baseline figée par `25` ; non remise en cause |
-| Architecture réellement déployée | Partielle | Frontend + curriculum + fondation assets ; conforme MVP-001…004 ; pas de backend / DB / SW |
+| Architecture réellement déployée | Partielle | Frontend + curriculum + assets + pratique locale ; conforme MVP-001…005 ; pas de backend / DB / SW |
 | Divergence d’implémentation | **Aucune** | Stack Next.js/React/TS/Tailwind alignée `13` ; pas de backend inventé |
 
 ## 5. Écarts
@@ -90,6 +90,7 @@ Aucune.
 | 5 août 2026 | MVP-002 : Design System & UI Foundation — boutons, cartes, états, dialogs, toasts, inputs, feedback, layouts ; navigation avec états actifs ; Frontend = En cours. |
 | 5 août 2026 | MVP-003 : curriculum local typé + service de lecture + `/bibliotheque` + fiche `/bibliotheque/[sessionId]` ; modules métiers = En cours. |
 | 5 août 2026 | MVP-004 : arborescence `public/`, catalogue assets, manifeste, métadonnées, `AppBrand` ; Offline reste Non commencé. |
+| 5 août 2026 | MVP-005 : parcours pratique local (intro → étapes → bilan ; pause/reprise) ; PracticeSession en mémoire seule. |
 
 ## 9. Diagrammes
 
