@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 
 import { AppShell } from "@/components/layout/app-shell";
+import { THEME_BOOT_SCRIPT } from "@/components/theme/theme-boot-script";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import {
   BRAND_DESCRIPTION,
@@ -70,6 +71,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${sourceSans.variable} ${fraunces.variable} h-full`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT_SCRIPT }} />
+      </head>
       <body className="min-h-dvh font-sans antialiased">
         <ThemeProvider>
           <AppShell>{children}</AppShell>

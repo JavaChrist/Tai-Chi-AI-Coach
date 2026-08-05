@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-006 (F-009 / F-010) |
+| Dernière mise à jour | 5 août 2026 — MVP-007 (F-028 / F-029) |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -22,15 +22,15 @@
 | --- | --- |
 | Total des fonctionnalités | **41** (`F-001` … `F-041`) |
 | Terminées (Validé / Livré) | **0** |
-| En cours (En développement / En test) | **4** (`F-009`, `F-010`, `F-013`, `F-032`) |
-| Restantes (Non commencé) | **37** |
+| En cours (En développement / En test) | **6** (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`) |
+| Restantes (Non commencé) | **35** |
 
 ### Répartition par version cible (conception)
 
 | Version cible | Nombre | Statut d’implémentation |
 | --- | --- | --- |
 | Pré-MVP | 2 | 0 livré / 2 non commencés |
-| MVP | 17 | 0 livré / 4 en cours (`F-009`, `F-010`, `F-013`, `F-032`) / 13 non commencés |
+| MVP | 17 | 0 livré / 6 en cours (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`) / 11 non commencés |
 | V1 | 10 | 0 livré / 10 non commencés |
 | V2 | 7 | 0 livré / 7 non commencés |
 | V3 | 2 | 0 livré / 2 non commencés |
@@ -71,8 +71,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-025 | Contenus Premium | V2 | Non commencé | — | — | — |
 | F-026 | Téléchargement hors ligne | V2 | Non commencé | — | — | — |
 | F-027 | Synchronisation multi-appareils | V1 | Non commencé | — | — | — |
-| F-028 | Paramètres | MVP | Non commencé | — | — | — |
-| F-029 | Accessibilité | MVP | Non commencé | — | — | — |
+| F-028 | Paramètres | MVP | En développement | MVP-007 | 5 août 2026 | Page `/profil` + préférences locales (thème, langue FR, pratique, accessibilité) ; pas d’auth / sync / notifications |
+| F-029 | Accessibilité | MVP | En développement | MVP-007 | 5 août 2026 | Préférence « animations réduites » + contrastes DS ; pas encore tailles de texte avancées |
 | F-030 | Export utilisateur | V1 | Non commencé | — | — | — |
 | F-031 | Avertissements avant pratique | Pré-MVP | Non commencé | — | — | — |
 | F-032 | Reprise de séance | MVP | En développement | MVP-005 | 5 août 2026 | Pause/reprise **en mémoire de page** uniquement ; pas de reprise après fermeture / refresh |
@@ -92,8 +92,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | --- | --- |
 | Features MVP (+ Pré-MVP héritées) | 19 (`17` MVP + `2` Pré-MVP) |
 | Livrées / validées | 0 |
-| En cours | 4 (`F-009`, `F-010`, `F-013`, `F-032`) |
-| Non commencées | 15 |
+| En cours | 6 (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`) |
+| Non commencées | 13 |
 
 ## 5. Historique
 
@@ -106,6 +106,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 5 août 2026 | MVP-004 : fondation assets / manifeste — **aucune** `F-xxx` modifiée (hors périmètre métier ; Mei/V2 non activée ; Offline non livré). |
 | 5 août 2026 | MVP-005 : `F-013` → **En test** ; `F-032` → **En développement** (pause/reprise locale) ; bilan non persistant. |
 | 5 août 2026 | MVP-006 : `F-009` / `F-010` → **En développement** ; historique + stats localStorage ; `F-024` inchangé (V1). |
+| 5 août 2026 | MVP-007 : `F-028` / `F-029` → **En développement** ; préférences locales + `/profil` ; pas de sync. |
 
 ## 6. Diagrammes
 
@@ -113,8 +114,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 
 ```mermaid
 pie title MVP + Pré-MVP — état réel
-  "Non commencé" : 15
-  "En développement / En test" : 4
+  "Non commencé" : 13
+  "En développement / En test" : 6
   "Livré / validé" : 0
 ```
 

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 
 import { ConfirmationDialog } from "@/components/dialogs/confirmation-dialog";
+import { usePreferences } from "@/components/preferences/preferences-provider";
 import { PracticeIntro } from "@/components/practice/practice-intro";
 import { PracticeStepView } from "@/components/practice/practice-step-view";
 import { PracticeSummaryView } from "@/components/practice/practice-summary";
@@ -59,6 +60,7 @@ function persistIfNeeded(
 }
 
 export function PracticePlayer({ template }: PracticePlayerProps) {
+  const { preferences } = usePreferences();
   const [state, dispatch] = useReducer(practiceReducer, template, createStartedState);
   const [quitOpen, setQuitOpen] = useState(false);
   const [savedLocally, setSavedLocally] = useState(false);
@@ -105,6 +107,7 @@ export function PracticePlayer({ template }: PracticePlayerProps) {
         <PracticeIntro
           template={template}
           paused={state.status === "paused"}
+          showTips={preferences.practice.showTips}
           onContinue={() => runAction({ type: "BEGIN_STEPS" })}
           onResume={() => runAction({ type: "RESUME" })}
           onPause={() => runAction({ type: "PAUSE" })}

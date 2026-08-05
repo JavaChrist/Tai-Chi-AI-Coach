@@ -11,6 +11,7 @@ type PracticeIntroProps = {
   onPause: () => void;
   onResume: () => void;
   paused?: boolean;
+  showTips?: boolean;
 };
 
 export function PracticeIntro({
@@ -20,6 +21,7 @@ export function PracticeIntro({
   onPause,
   onResume,
   paused = false,
+  showTips = true,
 }: PracticeIntroProps) {
   return (
     <section className="space-y-6" aria-labelledby="practice-intro-heading">
@@ -51,10 +53,12 @@ export function PracticeIntro({
         </ul>
       </section>
 
-      <InformationCard
-        title="Prudence avant de pratiquer"
-        description="Interrompez en cas de douleur. Adaptez l’effort à votre forme du jour. Cette application n’est pas un dispositif médical et ne remplace pas un avis de santé."
-      />
+      {showTips ? (
+        <InformationCard
+          title="Prudence avant de pratiquer"
+          description="Interrompez en cas de douleur. Adaptez l’effort à votre forme du jour. Cette application n’est pas un dispositif médical et ne remplace pas un avis de santé."
+        />
+      ) : null}
 
       {paused ? (
         <p

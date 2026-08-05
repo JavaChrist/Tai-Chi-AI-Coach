@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — CH-006 MVP-006 |
-| Phase actuelle | Développement MVP — progression locale |
+| Dernière mise à jour | 5 août 2026 — CH-007 MVP-007 |
+| Phase actuelle | Développement MVP — préférences locales |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **6** |
-| Changements majeurs | **6** |
+| Changements enregistrés | **7** |
+| Changements majeurs | **7** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements
@@ -31,6 +31,7 @@
 | CH-004 | Fondation assets / manifeste PWA / AppBrand | MVP-004 | `00`, `01`, `02`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-005 | Parcours pratique local | MVP-005 | `00`, `01`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-006 | Progression / historique local (localStorage) + page `/progression` | MVP-006 | `00`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
+| CH-007 | Préférences utilisateur locales + page `/profil` (thème / pratique / a11y) | MVP-007 | `00`, `02`, `03`, `09`, `17` | — | 5 août 2026 | Appliqué |
 
 ## 4. Gouvernance
 
@@ -42,8 +43,8 @@ Un changement Runtime n’est enregistré que s’il est effectivement réalisé
 timeline
   title Changements Runtime
   section MVP
-    5 août 2026 : CH-001 à CH-005
-    5 août 2026 : CH-006 Progression locale
+    5 août 2026 : CH-001 à CH-006
+    5 août 2026 : CH-007 Préférences locales
 ```
 
 ## 6. Historique
@@ -52,6 +53,7 @@ timeline
 | --- | --- |
 | 5 août 2026 | CH-001 … CH-005 enregistrés. |
 | 5 août 2026 | CH-006 — MVP-006 progression / historique local enregistré. |
+| 5 août 2026 | CH-007 — MVP-007 préférences utilisateur locales enregistré. |
 
 ---
 

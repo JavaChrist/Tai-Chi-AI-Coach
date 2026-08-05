@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/03_DATA_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-006 |
+| Dernière mise à jour | 5 août 2026 — MVP-007 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel du modèle de données |
 | Référence conception | `docs/14_DATA_MODEL.md` (modèle cible / gelé — non recopié comme implémenté) |
@@ -21,10 +21,10 @@
 | --- | --- |
 | Domaines suivis | 14 (périmètre demandé) |
 | Implémentés | **0** |
-| En validation / développement | **3** (Curriculum ; Séances ; Progression — localStorage) |
-| Non commencés | **11** |
+| En validation / développement | **4** (Curriculum ; Séances ; Progression ; Préférences — localStorage) |
+| Non commencés | **10** |
 | Schéma DB / migrations applicatives | Absents |
-| Données métier | Curriculum embarqué + pratique mémoire + **historique localStorage** ; pas de sync / Supabase |
+| Données métier | Curriculum embarqué + pratique mémoire + historique + **préférences localStorage** ; pas de sync / Supabase |
 
 ## 3. Domaines — état réel
 
@@ -32,8 +32,8 @@ Statuts autorisés : Non commencé · En développement · En validation · Impl
 
 | Domaine | Alignement conception (`14`) | État réel | Ticket | Dernière MAJ | Remarques |
 | --- | --- | --- | --- | --- | --- |
-| Utilisateur | D1 Identité | Non commencé | — | — | Aucun profil / compte runtime |
-| Préférences | D10 | Non commencé | — | — | — |
+| Utilisateur | D1 Identité | Non commencé | — | — | Aucun profil / compte runtime (page Profil = préférences seules) |
+| Préférences | D10 | En développement | MVP-007 | 5 août 2026 | `UserPreferences` via `PreferenceStore` (localStorage) ; interface remplaçable ; pas de sync |
 | Curriculum | D3 | En développement | MVP-003 | 5 août 2026 | Types + données locales + reader ; `SessionTemplate` / `SessionStep` / phases ; pas SQL |
 | Séances | D4 Pratique | En développement | MVP-005 | 5 août 2026 | `LocalPracticeSession` en mémoire (reducer) ; **non** persistée ; pas de SQL |
 | Progression | D5 | En développement | MVP-006 | 5 août 2026 | `PracticeRecord` / stats via `ProgressStore` (localStorage) ; interface remplaçable |
@@ -54,8 +54,8 @@ Domaines `14` non listés dans la table de suivi demandée (Onboarding D2, Expor
 | Élément | Statut | Justification |
 | --- | --- | --- |
 | Modèle de données conception | Conforme (gelé) | Baseline Design Freeze |
-| Implémentation réelle | Partielle | D3 local + D4 mémoire + D5 localStorage ; pas de persistance distante |
-| Divergence | **Aucune** | Séparation template / exécution respectée ; historique = agrégat local non sync |
+| Implémentation réelle | Partielle | D3 local + D4 mémoire + D5 localStorage + D10 localStorage ; pas de persistance distante |
+| Divergence | **Aucune** | Séparation template / exécution respectée ; préférences = agrégat local non sync |
 
 ## 5. Écarts
 
@@ -71,6 +71,7 @@ Note : les 3 séances locales sont des **placeholders structurels** (`isStructur
 | 5 août 2026 | MVP-003 — Curriculum → **En développement** (types + `local-curriculum` + reader) ; 0 SQL / 0 Supabase. |
 | 5 août 2026 | MVP-005 — Séances (pratique) → **En développement** (état local non persistant). |
 | 5 août 2026 | MVP-006 — Progression → **En développement** (localStorage, pas IndexedDB / Supabase). |
+| 5 août 2026 | MVP-007 — Préférences → **En développement** (localStorage, `PreferenceStore` remplaçable). |
 
 ## 7. Diagrammes
 
@@ -82,10 +83,10 @@ flowchart TB
     C[Curriculum]
     S[Séances pratique]
     PR[Progression]
+    PF[Préférences]
   end
   subgraph NonCommence[Non commencé]
     U[Utilisateur]
-    P[Préférences]
     R[Recommandations]
     IA[IA]
     CV[Computer Vision]
@@ -102,8 +103,8 @@ flowchart TB
 
 ```mermaid
 pie title Domaines data — état réel
-  "Non commencé" : 11
-  "En développement" : 3
+  "Non commencé" : 10
+  "En développement" : 4
   "Implémenté" : 0
 ```
 
@@ -116,6 +117,8 @@ flowchart LR
   Curr[Curriculum] -->|local reader| Lib[Bibliothèque UI]
   Curr -.-> Sess
   Sess -.-> Prog[Progression]
+  Pref -.-> Lib
+  Pref -.-> Sess
   Prog -.-> Reco[Recommandations]
   U -.-> Cons[Consentements]
   Cons -.-> IA[IA]
@@ -127,10 +130,10 @@ flowchart LR
 ```mermaid
 flowchart TB
   Target[14 Data Model — cible]
-  Real[Runtime — curriculum local]
+  Real[Runtime — curriculum + prefs locales]
   Target --> Gap{Couverture}
   Real --> Gap
-  Gap --> Partial[D3 partiel — reste 0]
+  Gap --> Partial[D3 / D5 / D10 partiels]
 ```
 
 ### 7.5 Cycle d’évolution
@@ -156,7 +159,7 @@ Toute évolution du modèle de données (entité, migration, stockage local, syn
 
 ## 10. Prochaine étape
 
-Enrichir le curriculum / démarrer la pratique (`PracticeSession`) selon ticket suivant — sans anticiper hors backlog.
+Selon ticket suivant — sans anticiper hors backlog.
 
 ## 11. Références
 

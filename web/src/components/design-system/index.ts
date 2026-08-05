@@ -53,6 +53,13 @@ export { Spinner } from "@/components/ui/spinner";
 export { Skeleton } from "@/components/ui/skeleton";
 export { Progress } from "@/components/ui/progress";
 export { Badge } from "@/components/ui/badge";
+export { Switch } from "@/components/ui/switch";
+
+// Préférences
+export { PreferenceCard } from "@/components/preferences/preference-card";
+export { PreferenceSection } from "@/components/preferences/preference-section";
+export { PreferenceSwitch } from "@/components/preferences/preference-switch";
+export { PreferenceSelect } from "@/components/preferences/preference-select";
 
 // Layouts
 export { Container } from "@/components/layout/container";

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { SessionList } from "@/components/sessions/session-list";
+import { SessionLibrary } from "@/components/sessions/session-library";
 import { ContentLayout } from "@/components/layout/content-layout";
 import { ErrorState } from "@/components/states/error-state";
 import type { SessionTemplateSummary } from "@/domain/curriculum/types";
@@ -48,7 +48,7 @@ export default function BibliothequePage() {
       title="Bibliothèque"
       description="Parcourez les séances pédagogiques disponibles localement. Chaque fiche présente la structure du cursus, sans démarrer encore une pratique guidée."
     >
-      <SessionList sessions={result.sessions} />
+      <SessionLibrary sessions={result.sessions} />
     </ContentLayout>
   );
 }

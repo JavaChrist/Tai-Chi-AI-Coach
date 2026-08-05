@@ -1,79 +1,42 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useSyncExternalStore,
-  type ReactNode,
-} from "react";
+import type { ReactNode } from "react";
 
-type Theme = "light" | "dark";
+import { PreferencesProvider, usePreferences } from "@/components/preferences/preferences-provider";
+import type { ThemePreference } from "@/domain/preferences/types";
+import type { ResolvedTheme } from "@/domain/preferences/resolve-theme";
 
-type ThemeContextValue = {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
+type ThemeContextCompat = {
+  /** Thème résolu (clair / sombre). */
+  theme: ResolvedTheme;
+  /** Préférence utilisateur (clair / sombre / système). */
+  themePreference: ThemePreference;
+  setTheme: (theme: ThemePreference) => void;
   toggleTheme: () => void;
 };
 
-const ThemeContext = createContext<ThemeContextValue | null>(null);
-
-const STORAGE_KEY = "tai-chi-theme";
-const listeners = new Set<() => void>();
-
-function emit() {
-  listeners.forEach((listener) => listener());
-}
-
-function subscribe(listener: () => void) {
-  listeners.add(listener);
-  return () => {
-    listeners.delete(listener);
-  };
-}
-
-function readTheme(): Theme {
-  if (typeof window === "undefined") return "light";
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark") return stored;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
-
-function applyTheme(theme: Theme) {
-  document.documentElement.classList.toggle("dark", theme === "dark");
-}
-
+/**
+ * Compatibilité : ThemeProvider délègue désormais aux préférences utilisateur.
+ * Persistance via PreferenceStore (remplaçable plus tard par Supabase).
+ */
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const theme = useSyncExternalStore(subscribe, readTheme, () => "light" as Theme);
-
-  useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
-
-  const setTheme = useCallback((next: Theme) => {
-    window.localStorage.setItem(STORAGE_KEY, next);
-    applyTheme(next);
-    emit();
-  }, []);
-
-  const toggleTheme = useCallback(() => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  }, [setTheme, theme]);
-
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <PreferencesProvider>{children}</PreferencesProvider>;
 }
 
-export function useTheme() {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) {
-    throw new Error("useTheme must be used within ThemeProvider");
-  }
-  return ctx;
+export function useTheme(): ThemeContextCompat {
+  const { resolvedTheme, preferences, setThemePreference } = usePreferences();
+
+  const toggleTheme = () => {
+    const order: ThemePreference[] = ["light", "dark", "system"];
+    const index = order.indexOf(preferences.theme);
+    const next = order[(index + 1) % order.length] ?? "system";
+    setThemePreference(next);
+  };
+
+  return {
+    theme: resolvedTheme,
+    themePreference: preferences.theme,
+    setTheme: setThemePreference,
+    toggleTheme,
+  };
 }

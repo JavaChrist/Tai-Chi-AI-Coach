@@ -1,13 +1,22 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
+import { Monitor, Moon, Sun } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme/theme-provider";
+import { themePreferenceLabels } from "@/domain/preferences/labels";
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === "dark";
+  const { themePreference, toggleTheme } = useTheme();
+
+  const Icon =
+    themePreference === "dark"
+      ? Moon
+      : themePreference === "light"
+        ? Sun
+        : Monitor;
+
+  const label = `Thème : ${themePreferenceLabels[themePreference]}. Changer le thème.`;
 
   return (
     <Button
@@ -15,10 +24,10 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
-      aria-label={isDark ? "Activer le thème clair" : "Activer le thème sombre"}
-      title={isDark ? "Thème clair" : "Thème sombre"}
+      aria-label={label}
+      title={`Thème : ${themePreferenceLabels[themePreference]}`}
     >
-      {isDark ? <Sun className="size-5" aria-hidden /> : <Moon className="size-5" aria-hidden />}
+      <Icon className="size-5" aria-hidden />
     </Button>
   );
 }
