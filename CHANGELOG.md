@@ -14,6 +14,9 @@ Ce document ne doit pas encore être considéré comme validé.
 
 ### 6 août 2026
 
+- Validation de `docs/12B_VISUAL_ASSET_GUIDE.md` (Visual Asset Guide v1.0) — Draft → **VALIDÉ**.
+- Validation de `docs/12B-A_OFFICIAL_BRAND_MARK.md` (Official Brand Mark v1.0) — Draft → **VALIDÉ**.
+- L’Experience Design officiel est constitué de `12A` + `12B` + `12B-A` ; fin officielle de la phase Experience Design.
 - Clôture **MVP-008A** — refonte UI selon `12A_EXPERIENCE_DESIGN_SYSTEM` (présentation seule).
 - Tokens, primitives, layouts et écrans MVP alignés 12A ; CH-009 enregistré.
 - Aucune fonctionnalité ni logique métier ajoutée.

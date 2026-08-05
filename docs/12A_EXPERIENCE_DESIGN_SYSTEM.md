@@ -10,12 +10,12 @@
 | Version | 1.0 |
 | Statut | **VALIDÉ** |
 | Phase | Design System |
-| Dernière mise à jour | 5 août 2026 — Passage VALIDÉ |
+| Dernière mise à jour | 6 août 2026 — Références Experience Design (12B / 12B-A) |
 | Auteur | Projet Tai-Chi-AI-Coach |
 | Documents dépendants | `docs/01_VISION.md`, `docs/12_UX_UI.md`, `docs/13_TECH_ARCHITECTURE.md` |
-| Documents utilisant celui-ci | Tickets UI, Design System, écrans Frontend |
+| Documents utilisant celui-ci | `docs/12B_VISUAL_ASSET_GUIDE.md`, `docs/12B-A_OFFICIAL_BRAND_MARK.md`, Tickets UI, Design System, écrans Frontend |
 | Décisions concernées | À compléter après validation |
-| Dernière revue | 5 août 2026 — Audit final VALIDÉ |
+| Dernière revue | 6 août 2026 — Clôture phase Experience Design |
 | Autorise le code | Oui — interfaces devant respecter ce guide |
 
 > **VALIDÉ**
@@ -34,9 +34,19 @@
 
 Ce document complète `docs/12_UX_UI.md`.
 
-Il constitue la référence officielle de l’Experience Design de Tai-Chi AI Coach.
+Il constitue la référence officielle de l’**expérience d’interface** de Tai-Chi AI Coach.
 
-Il prépare son intégration dans la baseline post–Design Freeze.
+L’Experience Design officiel est constitué de :
+
+- `docs/12A_EXPERIENCE_DESIGN_SYSTEM.md` — expérience d’interface (présent document) ;
+- `docs/12B_VISUAL_ASSET_GUIDE.md` — univers graphique et assets ;
+- `docs/12B-A_OFFICIAL_BRAND_MARK.md` — symbole officiel (Brand Mark).
+
+En cas de doute sur l’interface : `12A` prévaut.
+
+En cas de doute sur un asset : `12B` prévaut, sans contredire `12A`.
+
+En cas de doute sur le Brand Mark : `12B-A` prévaut, sans contredire `12A` ni `12B`.
 
 Toute évolution future de ce document devra faire l’objet d’une Impact Analysis.
 
