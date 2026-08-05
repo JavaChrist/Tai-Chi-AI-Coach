@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-005 (F-013 / F-032) |
+| Dernière mise à jour | 5 août 2026 — MVP-006 (F-009 / F-010) |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -22,15 +22,15 @@
 | --- | --- |
 | Total des fonctionnalités | **41** (`F-001` … `F-041`) |
 | Terminées (Validé / Livré) | **0** |
-| En cours (En développement / En test) | **2** (`F-013`, `F-032`) |
-| Restantes (Non commencé) | **39** |
+| En cours (En développement / En test) | **4** (`F-009`, `F-010`, `F-013`, `F-032`) |
+| Restantes (Non commencé) | **37** |
 
 ### Répartition par version cible (conception)
 
 | Version cible | Nombre | Statut d’implémentation |
 | --- | --- | --- |
 | Pré-MVP | 2 | 0 livré / 2 non commencés |
-| MVP | 17 | 0 livré / 2 en cours (`F-013` En test, `F-032` En développement) / 15 non commencés |
+| MVP | 17 | 0 livré / 4 en cours (`F-009`, `F-010`, `F-013`, `F-032`) / 13 non commencés |
 | V1 | 10 | 0 livré / 10 non commencés |
 | V2 | 7 | 0 livré / 7 non commencés |
 | V3 | 2 | 0 livré / 2 non commencés |
@@ -52,11 +52,11 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-006 | Vidéo pédagogique | MVP | Non commencé | — | — | — |
 | F-007 | Images de référence | MVP | Non commencé | — | — | — |
 | F-008 | Programme quotidien | MVP | Non commencé | — | — | — |
-| F-009 | Historique | MVP | Non commencé | — | — | — |
-| F-010 | Progression | MVP | Non commencé | — | — | — |
+| F-009 | Historique | MVP | En développement | MVP-006 | 5 août 2026 | Historique localStorage ; pas de sync ; pas de stats avancées V1 (F-024) |
+| F-010 | Progression | MVP | En développement | MVP-006 | 5 août 2026 | Stats locales + prochaine étape sobre ; pas de gamification ; pas de parcours F-003 branché |
 | F-011 | Favoris | V1 | Non commencé | — | — | — |
 | F-012 | Recherche | V1 | Non commencé | — | — | — |
-| F-013 | Séances guidées | MVP | En test | MVP-005 | 5 août 2026 | Parcours local complet (démarrer → étapes → bilan) ; pas de vidéo/médias ; pas de persistance |
+| F-013 | Séances guidées | MVP | En test | MVP-006 | 5 août 2026 | Parcours local + enregistrement historique en fin de séance ; pas de vidéo/médias |
 | F-014 | Exercices de respiration | MVP | Non commencé | — | — | — |
 | F-015 | Relaxation | MVP | Non commencé | — | — | — |
 | F-016 | Conseils de sécurité | Pré-MVP | Non commencé | — | — | — |
@@ -92,8 +92,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | --- | --- |
 | Features MVP (+ Pré-MVP héritées) | 19 (`17` MVP + `2` Pré-MVP) |
 | Livrées / validées | 0 |
-| En cours | 2 (`F-013`, `F-032`) |
-| Non commencées | 17 |
+| En cours | 4 (`F-009`, `F-010`, `F-013`, `F-032`) |
+| Non commencées | 15 |
 
 ## 5. Historique
 
@@ -105,6 +105,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 5 août 2026 | MVP-003 : `F-013` → **En développement** (fondation catalogue + fiche) ; démarrage guidé hors périmètre ; `F-004` inchangé. |
 | 5 août 2026 | MVP-004 : fondation assets / manifeste — **aucune** `F-xxx` modifiée (hors périmètre métier ; Mei/V2 non activée ; Offline non livré). |
 | 5 août 2026 | MVP-005 : `F-013` → **En test** ; `F-032` → **En développement** (pause/reprise locale) ; bilan non persistant. |
+| 5 août 2026 | MVP-006 : `F-009` / `F-010` → **En développement** ; historique + stats localStorage ; `F-024` inchangé (V1). |
 
 ## 6. Diagrammes
 
@@ -112,8 +113,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 
 ```mermaid
 pie title MVP + Pré-MVP — état réel
-  "Non commencé" : 17
-  "En développement / En test" : 2
+  "Non commencé" : 15
+  "En développement / En test" : 4
   "Livré / validé" : 0
 ```
 

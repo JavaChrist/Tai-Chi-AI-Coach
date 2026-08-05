@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useReducer, useState } from "react";
+import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 
 import { ConfirmationDialog } from "@/components/dialogs/confirmation-dialog";
 import { PracticeIntro } from "@/components/practice/practice-intro";
@@ -11,8 +11,13 @@ import {
   buildPracticeSummary,
   createInitialPracticeState,
   practiceReducer,
+  type PracticeAction,
 } from "@/domain/practice/practice-reducer";
-import type { PracticeTemplateSnapshot } from "@/domain/practice/types";
+import type {
+  LocalPracticeSession,
+  PracticeTemplateSnapshot,
+} from "@/domain/practice/types";
+import { getProgressService } from "@/services/progression/progress-service";
 
 type PracticePlayerProps = {
   template: PracticeTemplateSnapshot;
@@ -22,9 +27,43 @@ function createStartedState(template: PracticeTemplateSnapshot) {
   return practiceReducer(createInitialPracticeState(template), { type: "START" });
 }
 
+function persistIfNeeded(
+  next: LocalPracticeSession,
+  plannedDurationMinutes: number,
+  recordedRef: { current: boolean },
+  onSaved: () => void,
+  onError: (message: string) => void,
+) {
+  if (next.phase !== "summary" || !next.endReason || recordedRef.current) return;
+  const summary = buildPracticeSummary(next, plannedDurationMinutes);
+  if (!summary) return;
+
+  try {
+    getProgressService().recordPractice({
+      sessionTemplateId: summary.templateId,
+      sessionTitle: summary.templateTitle,
+      durationMs: summary.activeElapsedMs,
+      status: summary.endReason,
+      stepsCompleted: summary.stepsCompleted,
+      stepsTotal: summary.stepsTotal,
+    });
+    recordedRef.current = true;
+    onSaved();
+  } catch (error) {
+    onError(
+      error instanceof Error
+        ? error.message
+        : "Impossible d’enregistrer cette pratique localement.",
+    );
+  }
+}
+
 export function PracticePlayer({ template }: PracticePlayerProps) {
   const [state, dispatch] = useReducer(practiceReducer, template, createStartedState);
   const [quitOpen, setQuitOpen] = useState(false);
+  const [savedLocally, setSavedLocally] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const recordedRef = useRef(false);
 
   useEffect(() => {
     if (state.status !== "running") return;
@@ -39,6 +78,24 @@ export function PracticePlayer({ template }: PracticePlayerProps) {
     [state, template.plannedDurationMinutes],
   );
 
+  const runAction = (action: PracticeAction) => {
+    const next = practiceReducer(state, action);
+    dispatch(action);
+    persistIfNeeded(
+      next,
+      template.plannedDurationMinutes,
+      recordedRef,
+      () => {
+        setSavedLocally(true);
+        setSaveError(null);
+      },
+      (message) => {
+        setSavedLocally(false);
+        setSaveError(message);
+      },
+    );
+  };
+
   const currentStep = state.steps[state.currentStepIndex];
   const isLastStep = state.currentStepIndex >= state.steps.length - 1;
 
@@ -48,9 +105,9 @@ export function PracticePlayer({ template }: PracticePlayerProps) {
         <PracticeIntro
           template={template}
           paused={state.status === "paused"}
-          onContinue={() => dispatch({ type: "BEGIN_STEPS" })}
-          onResume={() => dispatch({ type: "RESUME" })}
-          onPause={() => dispatch({ type: "PAUSE" })}
+          onContinue={() => runAction({ type: "BEGIN_STEPS" })}
+          onResume={() => runAction({ type: "RESUME" })}
+          onPause={() => runAction({ type: "PAUSE" })}
           onQuit={() => setQuitOpen(true)}
         />
       ) : null}
@@ -62,15 +119,20 @@ export function PracticePlayer({ template }: PracticePlayerProps) {
           stepsTotal={state.steps.length}
           paused={state.status === "paused"}
           isLastStep={isLastStep}
-          onNext={() => dispatch({ type: "NEXT_STEP" })}
-          onPause={() => dispatch({ type: "PAUSE" })}
-          onResume={() => dispatch({ type: "RESUME" })}
+          onNext={() => runAction({ type: "NEXT_STEP" })}
+          onPause={() => runAction({ type: "PAUSE" })}
+          onResume={() => runAction({ type: "RESUME" })}
           onQuit={() => setQuitOpen(true)}
         />
       ) : null}
 
       {state.phase === "summary" && summary ? (
-        <PracticeSummaryView summary={summary} templateId={template.id} />
+        <PracticeSummaryView
+          summary={summary}
+          templateId={template.id}
+          savedLocally={savedLocally}
+          saveError={saveError}
+        />
       ) : null}
 
       {state.phase === "step" && !currentStep ? (
@@ -81,7 +143,7 @@ export function PracticePlayer({ template }: PracticePlayerProps) {
           <Button
             type="button"
             variant="primary"
-            onClick={() => dispatch({ type: "COMPLETE" })}
+            onClick={() => runAction({ type: "COMPLETE" })}
           >
             Voir le bilan
           </Button>
@@ -92,11 +154,11 @@ export function PracticePlayer({ template }: PracticePlayerProps) {
         open={quitOpen}
         onOpenChange={setQuitOpen}
         title="Quitter la séance ?"
-        description="Vous pourrez revenir plus tard. Aucun reproche — la pause fait partie du parcours. Le bilan local ne sera pas conservé."
+        description="Vous pourrez revenir plus tard. Aucun reproche. Un bilan local pourra être enregistré dans votre historique navigateur."
         confirmLabel="Quitter"
         cancelLabel="Rester"
         destructive
-        onConfirm={() => dispatch({ type: "ABANDON" })}
+        onConfirm={() => runAction({ type: "ABANDON" })}
       />
     </>
   );

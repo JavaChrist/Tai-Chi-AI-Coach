@@ -4,16 +4,20 @@ import { InformationCard } from "@/components/cards/information-card";
 import { SuccessState } from "@/components/states/success-state";
 import { Button } from "@/components/ui/button";
 import { formatActiveDuration } from "@/domain/practice/practice-reducer";
-import type { PracticeSummary } from "@/domain/practice/types";
+import type { PracticeSummary as SessionBilanSummary } from "@/domain/practice/types";
 
 type PracticeSummaryViewProps = {
-  summary: PracticeSummary;
+  summary: SessionBilanSummary;
   templateId: string;
+  savedLocally?: boolean;
+  saveError?: string | null;
 };
 
 export function PracticeSummaryView({
   summary,
   templateId,
+  savedLocally = false,
+  saveError = null,
 }: PracticeSummaryViewProps) {
   const completed = summary.endReason === "completed";
 
@@ -38,9 +42,20 @@ export function PracticeSummaryView({
         >
           Bilan local
         </h2>
-        <p className="text-muted-foreground text-sm">
-          Ce bilan n’est pas enregistré. Il disparaîtra en quittant cet écran.
-        </p>
+        {saveError ? (
+          <p role="alert" className="text-destructive text-sm">
+            {saveError}
+          </p>
+        ) : savedLocally ? (
+          <p className="text-muted-foreground text-sm">
+            Cette pratique a été enregistrée dans votre historique local
+            (navigateur uniquement).
+          </p>
+        ) : (
+          <p className="text-muted-foreground text-sm">
+            Enregistrement de l’historique en cours…
+          </p>
+        )}
         <dl className="border-border bg-card grid gap-3 rounded-xl border p-4 text-sm sm:grid-cols-2">
           <div>
             <dt className="text-muted-foreground">Séance</dt>
@@ -67,10 +82,13 @@ export function PracticeSummaryView({
 
       <div className="flex flex-wrap gap-3">
         <Button variant="primary" asChild>
-          <Link href={`/bibliotheque/${templateId}`}>Retour à la fiche</Link>
+          <Link href="/">Retour à l’accueil</Link>
+        </Button>
+        <Button variant="secondary" asChild>
+          <Link href="/progression">Voir la progression</Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/bibliotheque">Bibliothèque</Link>
+          <Link href={`/bibliotheque/${templateId}`}>Retour à la fiche</Link>
         </Button>
       </div>
     </section>

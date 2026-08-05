@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — CH-005 MVP-005 |
-| Phase actuelle | Développement MVP — pratique locale |
+| Dernière mise à jour | 5 août 2026 — CH-006 MVP-006 |
+| Phase actuelle | Développement MVP — progression locale |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **5** |
-| Changements majeurs | **5** |
+| Changements enregistrés | **6** |
+| Changements majeurs | **6** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements
@@ -29,7 +29,8 @@
 | CH-002 | Design System & UI Foundation | MVP-002 | `00`, `01`, `02`, `17` | — | 5 août 2026 | Appliqué |
 | CH-003 | Curriculum local + bibliothèque / fiches | MVP-003 | `00`, `01`, `02`, `03`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-004 | Fondation assets / manifeste PWA / AppBrand | MVP-004 | `00`, `01`, `02`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
-| CH-005 | Parcours pratique local (démarrage, étapes, pause/reprise, bilan) | MVP-005 | `00`, `01`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
+| CH-005 | Parcours pratique local | MVP-005 | `00`, `01`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
+| CH-006 | Progression / historique local (localStorage) + page `/progression` | MVP-006 | `00`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
 
 ## 4. Gouvernance
 
@@ -37,34 +38,20 @@ Un changement Runtime n’est enregistré que s’il est effectivement réalisé
 
 ## 5. Diagrammes
 
-### 5.1 Chronologie
-
 ```mermaid
 timeline
   title Changements Runtime
   section MVP
-    5 août 2026 : CH-001 App Shell
-    5 août 2026 : CH-002 Design System
-    5 août 2026 : CH-003 Curriculum
-    5 août 2026 : CH-004 Assets
-    5 août 2026 : CH-005 Pratique locale
-```
-
-### 5.2 Typologie
-
-```mermaid
-pie title Typologie des changements
-  "Majeurs" : 5
-  "Mineurs" : 0
+    5 août 2026 : CH-001 à CH-005
+    5 août 2026 : CH-006 Progression locale
 ```
 
 ## 6. Historique
 
 | Date | Événement |
 | --- | --- |
-| 5 août 2026 | Création du registre. |
-| 5 août 2026 | CH-001 … CH-004 enregistrés. |
-| 5 août 2026 | CH-005 — MVP-005 parcours pratique local enregistré. |
+| 5 août 2026 | CH-001 … CH-005 enregistrés. |
+| 5 août 2026 | CH-006 — MVP-006 progression / historique local enregistré. |
 
 ---
 

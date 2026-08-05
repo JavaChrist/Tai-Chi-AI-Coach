@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/03_DATA_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-005 |
+| Dernière mise à jour | 5 août 2026 — MVP-006 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel du modèle de données |
 | Référence conception | `docs/14_DATA_MODEL.md` (modèle cible / gelé — non recopié comme implémenté) |
@@ -21,10 +21,10 @@
 | --- | --- |
 | Domaines suivis | 14 (périmètre demandé) |
 | Implémentés | **0** |
-| En validation / développement | **2** (Curriculum ; Séances — PracticeSession locale mémoire) |
-| Non commencés | **12** |
+| En validation / développement | **3** (Curriculum ; Séances ; Progression — localStorage) |
+| Non commencés | **11** |
 | Schéma DB / migrations applicatives | Absents |
-| Données métier | Curriculum local + exécution pratique **éphémère** (mémoire page) ; **aucune** persistance utilisateur |
+| Données métier | Curriculum embarqué + pratique mémoire + **historique localStorage** ; pas de sync / Supabase |
 
 ## 3. Domaines — état réel
 
@@ -36,7 +36,7 @@ Statuts autorisés : Non commencé · En développement · En validation · Impl
 | Préférences | D10 | Non commencé | — | — | — |
 | Curriculum | D3 | En développement | MVP-003 | 5 août 2026 | Types + données locales + reader ; `SessionTemplate` / `SessionStep` / phases ; pas SQL |
 | Séances | D4 Pratique | En développement | MVP-005 | 5 août 2026 | `LocalPracticeSession` en mémoire (reducer) ; **non** persistée ; pas de SQL |
-| Progression | D5 | Non commencé | — | — | — |
+| Progression | D5 | En développement | MVP-006 | 5 août 2026 | `PracticeRecord` / stats via `ProgressStore` (localStorage) ; interface remplaçable |
 | Recommandations | D6 | Non commencé | — | — | — |
 | IA | D7 IA Coach | Non commencé | — | — | — |
 | Computer Vision | D8 | Non commencé | — | — | — |
@@ -54,8 +54,8 @@ Domaines `14` non listés dans la table de suivi demandée (Onboarding D2, Expor
 | Élément | Statut | Justification |
 | --- | --- | --- |
 | Modèle de données conception | Conforme (gelé) | Baseline Design Freeze |
-| Implémentation réelle | Partielle | D3 local + D4 éphémère en mémoire ; pas de persistance distante |
-| Divergence | **Aucune** | Séparation `SessionTemplate` / `PracticeSession` respectée (pratique non persistée) |
+| Implémentation réelle | Partielle | D3 local + D4 mémoire + D5 localStorage ; pas de persistance distante |
+| Divergence | **Aucune** | Séparation template / exécution respectée ; historique = agrégat local non sync |
 
 ## 5. Écarts
 
@@ -70,6 +70,7 @@ Note : les 3 séances locales sont des **placeholders structurels** (`isStructur
 | 5 août 2026 | Création initiale — tous domaines **Non commencé** ; aucune donnée métier ; aucune divergence. |
 | 5 août 2026 | MVP-003 — Curriculum → **En développement** (types + `local-curriculum` + reader) ; 0 SQL / 0 Supabase. |
 | 5 août 2026 | MVP-005 — Séances (pratique) → **En développement** (état local non persistant). |
+| 5 août 2026 | MVP-006 — Progression → **En développement** (localStorage, pas IndexedDB / Supabase). |
 
 ## 7. Diagrammes
 
@@ -80,11 +81,11 @@ flowchart TB
   subgraph EnDev[En développement]
     C[Curriculum]
     S[Séances pratique]
+    PR[Progression]
   end
   subgraph NonCommence[Non commencé]
     U[Utilisateur]
     P[Préférences]
-    PR[Progression]
     R[Recommandations]
     IA[IA]
     CV[Computer Vision]
@@ -101,8 +102,8 @@ flowchart TB
 
 ```mermaid
 pie title Domaines data — état réel
-  "Non commencé" : 12
-  "En développement" : 2
+  "Non commencé" : 11
+  "En développement" : 3
   "Implémenté" : 0
 ```
 

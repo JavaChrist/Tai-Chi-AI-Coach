@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { PagePlaceholder } from "@/components/ui/page-placeholder";
+import { ContentLayout } from "@/components/layout/content-layout";
+import { ProgressionDashboard } from "@/components/progression/progression-dashboard";
 
 export const metadata: Metadata = {
   title: "Progression",
@@ -8,9 +9,11 @@ export const metadata: Metadata = {
 
 export default function ProgressionPage() {
   return (
-    <PagePlaceholder
+    <ContentLayout
       title="Progression"
-      description="Page temporaire de progression personnelle. Aucune donnée ni statistique n’est encore connectée."
-    />
+      description="Retrouvez votre historique local et des indicateurs calmes sur votre pratique."
+    >
+      <ProgressionDashboard />
+    </ContentLayout>
   );
 }

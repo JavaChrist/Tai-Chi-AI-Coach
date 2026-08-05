@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/07_OFFLINE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-004 |
+| Dernière mise à jour | 5 août 2026 — MVP-006 |
 | Phase actuelle | Développement MVP — fondation manifeste uniquement |
 | Document de référence | `docs/18_PWA_OFFLINE.md` |
 | Type | Runtime Register — état réel Offline First / PWA |
@@ -60,7 +60,7 @@ Aucune fonctionnalité `F-xxx` n’est classée en Runtime (catalogue conception
 | Domaine | État réel |
 | --- | --- |
 | Préférences | Non commencé |
-| Progression | Non commencé |
+| Progression | localStorage (MVP-006) — **pas** IndexedDB / SW / sync |
 | Curriculum | Embarqué en code (MVP-003) — pas de cache PWA |
 | Médias | Non commencé — arborescence `public/` documentée (MVP-004) ; fichiers absents |
 | Cache | Non commencé |
@@ -156,6 +156,7 @@ Toute évolution Offline devra :
 | 5 août 2026 | Création du registre ; initialisation depuis l’état réel ; aucune implémentation Offline. |
 | 5 août 2026 | MVP-004 — manifeste PWA + emplacements icônes ; Offline/SW restent Non commencé. |
 | 5 août 2026 | MVP-005 — pratique locale en mémoire ; **pas** d’Offline First / SW (état pratique perdu au refresh). |
+| 5 août 2026 | MVP-006 — historique progression en localStorage ; Offline First / SW toujours Non commencé. |
 
 ## 11. Références
 
