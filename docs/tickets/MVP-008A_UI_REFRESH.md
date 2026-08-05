@@ -369,6 +369,6 @@ refactor(ui): apply Experience Design System across MVP interface
 | Refonte écrans (Partie 3) | **Fait** (6 août 2026) |
 | Validation émotionnelle | **Fait** (Partie 4 — 6 août 2026) |
 | Runtime CH-009 | **Fait** |
-| Commit | **Proposé** — en attente d’exécution |
+| Commit | **Fait** — `b6bad27` |
 
 *Fin du ticket MVP-008A.*
