@@ -26,12 +26,18 @@ export function AppShell({ children }: AppShellProps) {
           <Toaster position="top-center" richColors closeButton />
         </>
       ) : (
-        <div className="bg-background text-foreground flex min-h-dvh flex-col">
+        <div
+          className={cn(
+            "text-foreground flex min-h-dvh flex-col",
+            /* Pratique : fond uni. Autres écrans : Hero = fond de page (fallback Rice Paper body). */
+            isPractice ? "bg-background" : "bg-transparent",
+          )}
+        >
           <AppHeader discreet={isPractice} />
           <main
             id="contenu-principal"
             className={cn(
-              "flex-1",
+              "relative flex-1",
               isPractice ? "pb-10" : "pb-24 md:pb-10",
             )}
           >

@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 6 août 2026 — CH-009 MVP-008A |
-| Phase actuelle | Développement MVP — identité UI 12A |
+| Dernière mise à jour | 6 août 2026 — CH-010 MVP-008B Sprint 3 |
+| Phase actuelle | Développement MVP — environnements Hero Light |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **9** |
-| Changements majeurs | **9** |
+| Changements enregistrés | **10** |
+| Changements majeurs | **10** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements
@@ -34,6 +34,7 @@
 | CH-007 | Préférences utilisateur locales + page `/profil` (thème / pratique / a11y) | MVP-007 | `00`, `02`, `03`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-008 | Onboarding local `/onboarding` (F-033) + gate + intégration préférences | MVP-008 | `00`, `01`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-009 | Refonte UI Experience Design System (12A) — présentation seule | MVP-008A | `00`, `01`, `02`, `09`, `17` | — | 6 août 2026 | Appliqué |
+| CH-010 | Hero Light responsive (15 exports) + intégration écrans — présentation seule | MVP-008B | `00`, `01`, `02`, `09`, `17` | — | 6 août 2026 | Appliqué |
 
 ## 4. Gouvernance
 
@@ -47,6 +48,7 @@ timeline
   section MVP
     5 août 2026 : CH-001 à CH-008
     6 août 2026 : CH-009 UI Refresh 12A
+    6 août 2026 : CH-010 Hero Light MVP-008B
 ```
 
 ## 6. Historique
@@ -56,6 +58,7 @@ timeline
 | 5 août 2026 | CH-001 … CH-007 enregistrés. |
 | 5 août 2026 | CH-008 — MVP-008 onboarding local enregistré. |
 | 6 août 2026 | CH-009 — MVP-008A refonte UI 12A enregistré. |
+| 6 août 2026 | CH-010 — MVP-008B Sprint 3 Hero Light exports + intégration ; ticket reste ouvert (Dark manquant). |
 
 ---
 

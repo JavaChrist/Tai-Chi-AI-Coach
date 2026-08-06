@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { PageEnvironment } from "@/components/environment/page-environment";
 import { Container } from "@/components/layout/container";
 import { OnboardingProgress } from "@/components/onboarding/onboarding-progress";
 import type { OnboardingStepId } from "@/domain/onboarding/types";
@@ -12,7 +13,7 @@ type OnboardingShellProps = {
 
 export function OnboardingShell({ currentStep, children }: OnboardingShellProps) {
   return (
-    <div className="bg-background text-foreground min-h-dvh">
+    <PageEnvironment family="dojo" className="text-foreground min-h-dvh">
       <Container size="sm" className="space-y-12 py-12">
         <header className="space-y-6">
           <p className="text-primary text-caption font-medium tracking-wide">
@@ -23,6 +24,6 @@ export function OnboardingShell({ currentStep, children }: OnboardingShellProps)
         {children}
         <div className="min-h-16" aria-hidden />
       </Container>
-    </div>
+    </PageEnvironment>
   );
 }

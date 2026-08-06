@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { PageEnvironment } from "@/components/environment/page-environment";
 import { SessionLibrary } from "@/components/sessions/session-library";
 import { ContentLayout } from "@/components/layout/content-layout";
 import { ErrorState } from "@/components/states/error-state";
@@ -31,24 +32,28 @@ export default function BibliothequePage() {
 
   if (!result.ok) {
     return (
-      <ContentLayout
-        title="Bibliothèque"
-        description="Des séances pour pratiquer, quand vous le souhaitez."
-      >
-        <ErrorState
-          title="Lecture momentanément indisponible"
-          description="Les séances n’ont pas pu être chargées. Vous pouvez réessayer dans un instant — rien n’est perdu."
-        />
-      </ContentLayout>
+      <PageEnvironment family="bamboo">
+        <ContentLayout
+          title="Bibliothèque"
+          description="Des séances pour pratiquer, quand vous le souhaitez."
+        >
+          <ErrorState
+            title="Lecture momentanément indisponible"
+            description="Les séances n’ont pas pu être chargées. Vous pouvez réessayer dans un instant — rien n’est perdu."
+          />
+        </ContentLayout>
+      </PageEnvironment>
     );
   }
 
   return (
-    <ContentLayout
-      title="Bibliothèque"
-      description="Choisissez une séance. Prenez votre temps."
-    >
-      <SessionLibrary sessions={result.sessions} />
-    </ContentLayout>
+    <PageEnvironment family="bamboo">
+      <ContentLayout
+        title="Bibliothèque"
+        description="Choisissez une séance. Prenez votre temps."
+      >
+        <SessionLibrary sessions={result.sessions} />
+      </ContentLayout>
+    </PageEnvironment>
   );
 }

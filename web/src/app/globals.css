@@ -76,7 +76,8 @@
   /* Sémantique → palette */
   --background: var(--rice-paper);
   --foreground: var(--ink);
-  --card: var(--surface);
+  /* Cartes : Rice Paper (pas blanc pur) — transparence via utilitaires / composant Card */
+  --card: var(--rice-paper);
   --card-foreground: var(--ink);
   --popover: var(--surface-elevated);
   --popover-foreground: var(--ink);
@@ -161,7 +162,8 @@
 
   --background: var(--rice-paper);
   --foreground: var(--ink);
-  --card: var(--surface);
+  /* Cartes : Rice Paper (pas blanc pur) — transparence via utilitaires / composant Card */
+  --card: var(--rice-paper);
   --card-foreground: var(--ink);
   --popover: var(--surface-elevated);
   --popover-foreground: var(--ink);

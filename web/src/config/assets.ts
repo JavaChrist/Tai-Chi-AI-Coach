@@ -1,7 +1,12 @@
 /**
  * Catalogue central des chemins d’assets publics.
  * Les fichiers peuvent être absents : l’UI ne doit jamais casser.
+ *
+ * Environnements visuels (Hero, Splash, sections…) :
+ * `web/src/config/background-assets.ts` + `web/public/backgrounds/`.
  */
+
+import { backgroundAssets } from "@/config/background-assets";
 
 export type AssetStatus = "missing" | "placeholder" | "final";
 
@@ -14,6 +19,14 @@ export type AssetRef = {
   transparent?: boolean;
   role: string;
 };
+
+export {
+  backgroundAssets,
+  SCREEN_HERO_MAP,
+  type BackgroundAssetRef,
+  type BackgroundTheme,
+  type BackgroundViewport,
+} from "@/config/background-assets";
 
 /** Un asset est affichable seulement s’il n’est pas manquant. */
 export function isAssetReady(asset: AssetRef): boolean {
@@ -183,11 +196,14 @@ export const assets = {
     format: "webmanifest",
     role: "Manifeste PWA (fondation — sans Service Worker)",
   },
+  /** Environnements MVP-008B — tous `missing` jusqu’à validation des fichiers. */
+  backgrounds: backgroundAssets,
 } as const satisfies {
   brand: Record<string, AssetRef>;
   characters: { mei: Record<string, AssetRef> };
   placeholders: Record<string, AssetRef>;
   manifest: AssetRef;
+  backgrounds: typeof backgroundAssets;
 };
 
 export type AssetsCatalog = typeof assets;

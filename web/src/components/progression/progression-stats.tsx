@@ -26,7 +26,7 @@ export function ProgressionStats({ statistics }: ProgressionStatsProps) {
         : `${statistics.totalSessions} pratiques enregistrées. Continuez à votre rythme.`;
 
   return (
-    <div className="bg-card border-border shadow-medium space-y-5 rounded-card border p-6">
+    <div className="bg-card/88 border-border shadow-medium space-y-5 rounded-card border p-6">
       <p className="text-body text-foreground">{habitLine}</p>
       <dl className="text-small text-muted-foreground space-y-3">
         <div className="flex flex-wrap justify-between gap-2">

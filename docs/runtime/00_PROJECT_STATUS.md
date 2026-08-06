@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 6 août 2026 — MVP-008A / CH-009 |
+| Dernière mise à jour | 6 août 2026 — MVP-008B Sprint 3 / CH-010 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,8 +22,8 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — identité UI 12A appliquée (MVP-008A) |
-| Statut global | Conception close ; Runtime 20/20 ; Experience Design System appliqué à l’UI ; onboarding local `/onboarding` ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; **aucune** `F-xxx` Validé/Livré ; pas de sync |
+| Phase | Développement MVP — UI 12A + Hero Light intégrés (MVP-008B ouvert) |
+| Statut global | Conception close ; Runtime 20/20 ; Experience Design System appliqué ; **15 Hero Light** exportés/intégrés (CH-010) ; Hero Dark manquants ; onboarding local ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; **aucune** `F-xxx` Validé/Livré ; pas de sync |
 | Dernière mise à jour globale | 6 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
@@ -33,8 +33,8 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | Socle + pratique + progression + préférences + onboarding + **refonte UI 12A** (MVP-008A) |
-| Tests | **En cours** | Vitest : **45** tests OK ; pas de campagne produit E2E complète |
+| Développement | **En cours** | Socle + pratique + progression + préférences + onboarding + UI 12A + **Hero Light** (MVP-008B Sprint 3) |
+| Tests | **En cours** | Vitest OK ; pas de campagne produit E2E complète |
 | Release | **Non commencé** | 0 Release (`19`) ; déploiement absent (`10`) |
 
 ## 4. Vue d’ensemble Runtime
@@ -59,10 +59,10 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Tickets ouverts | 0 |
+| Tickets ouverts | 1 (MVP-008B — Hero Dark restant) |
 | Tickets terminés | 9 (MVP-001 … MVP-008, MVP-008A) |
 | Tickets bloqués | 0 |
-| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + pratique + progression + préférences + onboarding local (`web/`) |
+| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero Light + pratique + progression + préférences + onboarding local (`web/`) |
 
 Prérequis Runtime (D-022 / D-215) : **satisfait**.
 

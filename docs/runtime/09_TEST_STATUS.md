@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 6 août 2026 — MVP-008A |
+| Dernière mise à jour | 6 août 2026 — MVP-008B Sprint 3 / CH-010 |
 | Phase actuelle | Développement MVP — tests unitaires Vitest |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
@@ -17,20 +17,21 @@
 
 | Domaine | État réel |
 | --- | --- |
-| Tests unitaires | **En cours** — Vitest ; **45** tests |
-| Intégration / E2E / UX | Non commencé (validation UX / émotionnelle manuelle MVP-008A) |
+| Tests unitaires | **En cours** — Vitest |
+| Intégration / E2E / UX | Non commencé (validation Hero Light manuelle Sprint 3) |
 
 ## 3. Couverture
 
 | Périmètre | Couverture réelle |
 | --- | --- |
 | Curriculum reader | Partielle |
-| Assets / manifeste | Partielle |
+| Assets / manifeste / Hero Light catalogue | Partielle (15 Light `final` + fichiers disque ; 15 Dark `missing`) |
 | Practice reducer | Partielle |
 | Progress service / stats | Partielle (MVP-006) |
 | Preference store / thème / tri | Partielle (MVP-007) |
 | Onboarding service / steps / prefs | Partielle (MVP-008) |
 | UI / Design System 12A | Revue manuelle + build (MVP-008A) — pas de suite E2E |
+| Environnements Hero Light | Catalogue + présence fichiers (MVP-008B Sprint 3) |
 
 ## 4. Exécutions
 
@@ -54,6 +55,16 @@
 | Résultat cumulé | **45 / 45 passed** |
 | Build / TypeScript / ESLint | OK |
 
+### Campagne MVP-008B Sprint 3 (Hero Light)
+
+| Champ | Valeur |
+| --- | --- |
+| Date | 6 août 2026 |
+| Outil | Vitest + Next build + ESLint + `tsc` |
+| Périmètre | catalogue Hero Light/Dark + régression suites |
+| Résultat cumulé | **48 / 48 passed** |
+| Build / TypeScript / ESLint | OK |
+
 ## 5. Historique
 
 | Date | Événement |
@@ -61,6 +72,7 @@
 | 5 août 2026 | MVP-003…007 — suites unitaires cumulées. |
 | 5 août 2026 | MVP-008 — 45 tests cumulés (onboarding service). |
 | 6 août 2026 | MVP-008A — régression 45/45 + build OK (refonte UI). |
+| 6 août 2026 | MVP-008B Sprint 3 — tests catalogue Hero Light `final` + Dark `missing` ; CH-010. |
 
 ---
 

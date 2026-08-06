@@ -55,7 +55,23 @@ Les vrais fichiers graphiques sont déposés progressivement par le Product Owne
 | `mei-placeholder.svg` | `/characters/mei/` | SVG | — | oui | Placeholder Mei | manquant |
 | `brand-mark-temp.svg` | `/placeholders/` | SVG | — | oui | Marque temporaire de test | placeholder |
 
-Détails par dossier : voir les `README.md` enfants.
+### Backgrounds (MVP-008B — univers visuel)
+
+Tous les fichiers d’environnement sont définis dans `backgrounds/` et catalogués dans `assets.backgrounds`.  
+Statut actuel : **missing** (arborescence + briefs prêts ; images à produire).
+
+| Famille | Chemin | Format | Dimensions | Usage | État |
+| --- | --- | --- | --- | --- | --- |
+| Hero Masters (source, jamais UI) | `/backgrounds/hero/masters/` | WebP | Master | Source → exports | morning présent ; autres missing |
+| Hero exports (5 × light/dark × 3 viewports) | `/backgrounds/hero/light|dark/` | WebP | 1920×1080 / 1280×1024 / 1080×1920 | Accueil, bibliothèque… | missing (depuis Masters) |
+| Splash main | `/backgrounds/splash/` | WebP | idem | Entrée univers | missing |
+| Sections (4 familles × light/dark) | `/backgrounds/sections/` | WebP | 1600×900 | Respirations | missing |
+| Textures (3) | `/backgrounds/textures/` | WebP | tile léger | Matière | missing |
+| Patterns (3) | `/backgrounds/patterns/` | SVG/WebP | motif partiel | Secondaire | missing |
+
+Détails : `backgrounds/README.md` et README enfants. Ticket : `docs/tickets/MVP-008B_VISUAL_ENVIRONMENT.md`.
+
+Détails brand / Mei : voir les `README.md` enfants.
 
 ## Règles produit
 

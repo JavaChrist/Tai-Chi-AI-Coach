@@ -311,8 +311,9 @@ Tous les développements de Tai-Chi AI Coach devront obligatoirement être réal
 | MVP-007 | `MVP-007_USER_PREFERENCES.md` | **Fermé** | CH-007 | `16cafbe` |
 | MVP-008 | `MVP-008_LOCAL_ONBOARDING.md` | **Fermé** | CH-008 | — |
 | MVP-008A | `MVP-008A_UI_REFRESH.md` | **Fermé** | CH-009 | `b6bad27` |
+| MVP-008B | `MVP-008B_VISUAL_ENVIRONMENT.md` | **En développement** | — | — |
 
-Ticket actif : aucun (prochain ticket MVP à ouvrir).
+Ticket actif : MVP-008B (Sprint 3 Light fait — CH-010 ; Hero Dark restant).
 
 Note : MVP-002 et MVP-003 ont été livrés dans le même commit (`696a76f`).
 

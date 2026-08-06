@@ -25,7 +25,7 @@ export function ChoiceCard({
     <label
       htmlFor={id}
       className={cn(
-        "border-border bg-card shadow-medium block cursor-pointer rounded-card border p-6",
+        "border-border bg-card/88 shadow-medium block cursor-pointer rounded-card border p-6",
         "ease-calm duration-normal transition-colors",
         "hover:border-primary/40 focus-within:border-ring focus-within:ring-ring/40 focus-within:ring-3",
         selected && "border-primary bg-primary/5 ring-primary/15 ring-2",

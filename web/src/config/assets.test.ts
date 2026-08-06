@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -11,6 +11,11 @@ import {
   assets,
   isAssetReady,
 } from "@/config/assets";
+import {
+  HERO_DARK_ASSET_PATHS,
+  HERO_LIGHT_ASSET_PATHS,
+  SCREEN_HERO_MAP,
+} from "@/config/background-assets";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -52,6 +57,88 @@ describe("catalogue assets", () => {
     expect(BRAND_NAME).toBe("Tai-Chi AI Coach");
     expect(BRAND_DESCRIPTION.length).toBeGreaterThan(10);
     expect(BRAND_THEME.themeColor).toMatch(/^#/);
+  });
+
+  it("expose splash et mapping écrans Hero (MVP-008B)", () => {
+    expect(assets.backgrounds.splash.main.light.mobile.family).toBe(
+      "splash-main",
+    );
+    expect(SCREEN_HERO_MAP.home).toBe("morning");
+    expect(SCREEN_HERO_MAP.bibliotheque).toBe("bamboo");
+    expect(SCREEN_HERO_MAP.sessions).toBe("bamboo");
+    expect(SCREEN_HERO_MAP.progression).toBe("mist");
+    expect(SCREEN_HERO_MAP.bilan).toBe("mist");
+    expect(SCREEN_HERO_MAP.onboarding).toBe("dojo");
+    expect(SCREEN_HERO_MAP.profil).toBe("mountain");
+    expect(SCREEN_HERO_MAP.pratique).toBeNull();
+  });
+
+  it("enregistre les 15 Hero Light (Sprint 3) en status final avec fichiers présents", () => {
+    const hero = assets.backgrounds.hero;
+    const lightRefs = [
+      hero.morning.light.desktop,
+      hero.morning.light.tablet,
+      hero.morning.light.mobile,
+      hero.bamboo.light.desktop,
+      hero.bamboo.light.tablet,
+      hero.bamboo.light.mobile,
+      hero.mist.light.desktop,
+      hero.mist.light.tablet,
+      hero.mist.light.mobile,
+      hero.dojo.light.desktop,
+      hero.dojo.light.tablet,
+      hero.dojo.light.mobile,
+      hero.mountain.light.desktop,
+      hero.mountain.light.tablet,
+      hero.mountain.light.mobile,
+    ];
+
+    expect(lightRefs).toHaveLength(15);
+    expect(HERO_LIGHT_ASSET_PATHS).toHaveLength(15);
+
+    for (const [index, ref] of lightRefs.entries()) {
+      expect(ref.path).toBe(HERO_LIGHT_ASSET_PATHS[index]);
+      expect(ref.status).toBe("final");
+      expect(ref.theme).toBe("light");
+      expect(ref.format).toBe("webp");
+      expect(ref.width).toBeGreaterThan(0);
+      expect(ref.height).toBeGreaterThan(0);
+      expect(isAssetReady(ref)).toBe(true);
+      const diskPath = path.join(rootDir, "public", ref.path.replace(/^\//, ""));
+      expect(existsSync(diskPath)).toBe(true);
+    }
+  });
+
+  it("conserve les 15 Hero Dark (Sprint 2) en status missing", () => {
+    const hero = assets.backgrounds.hero;
+    const darkRefs = [
+      hero.morning.dark.desktop,
+      hero.morning.dark.tablet,
+      hero.morning.dark.mobile,
+      hero.bamboo.dark.desktop,
+      hero.bamboo.dark.tablet,
+      hero.bamboo.dark.mobile,
+      hero.mist.dark.desktop,
+      hero.mist.dark.tablet,
+      hero.mist.dark.mobile,
+      hero.dojo.dark.desktop,
+      hero.dojo.dark.tablet,
+      hero.dojo.dark.mobile,
+      hero.mountain.dark.desktop,
+      hero.mountain.dark.tablet,
+      hero.mountain.dark.mobile,
+    ];
+
+    expect(darkRefs).toHaveLength(15);
+    expect(HERO_DARK_ASSET_PATHS).toHaveLength(15);
+
+    for (const [index, ref] of darkRefs.entries()) {
+      expect(ref.path).toBe(HERO_DARK_ASSET_PATHS[index]);
+      expect(ref.status).toBe("missing");
+      expect(ref.theme).toBe("dark");
+      expect(ref.format).toBe("webp");
+      expect(isAssetReady(ref)).toBe(false);
+    }
   });
 });
 
