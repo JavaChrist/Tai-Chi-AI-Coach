@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -16,19 +15,6 @@ export async function generateStaticParams() {
   return curriculumReader
     .listSessions({ publicationStatus: "published" })
     .map((session) => ({ sessionId: session.id }));
-}
-
-export async function generateMetadata({
-  params,
-}: PracticePageProps): Promise<Metadata> {
-  const { sessionId } = await params;
-  const result = curriculumReader.getSessionById(sessionId);
-
-  if (!result.ok) {
-    return { title: "Pratique" };
-  }
-
-  return { title: `Pratique · ${result.session.title}` };
 }
 
 export default async function PracticePage({ params }: PracticePageProps) {

@@ -33,7 +33,7 @@ export function PreferenceSection({
         {description ? (
           <p
             id={descriptionId}
-            className="text-small text-muted-foreground leading-relaxed"
+            className="text-small text-foreground leading-relaxed"
           >
             {description}
           </p>

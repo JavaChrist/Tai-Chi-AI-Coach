@@ -1,12 +1,11 @@
 /**
  * Catalogue typé des environnements visuels (MVP-008B).
- * Tous les fichiers sont `missing` jusqu’à dépôt et validation artistique.
  * (Pas d’import depuis `assets.ts` — évite les dépendances circulaires.)
  *
- * Hero Dark (Sprint 2) — infrastructure seule, aucun fichier image :
- * MASTER → Version Light → Version Dark
- * Chemins : `/backgrounds/hero/dark/hero-<family>-dark-<viewport>.webp`
- * Statut : toujours `missing` jusqu’à production graphique.
+ * Pipeline Hero :
+ * Masters Light (`masters/`) → exports `light/`
+ * Masters Dark (`masters-dark/`) → exports `dark/`
+ * Chemins exports : `/backgrounds/hero/<theme>/hero-<family>-<theme>-<viewport>.webp`
  */
 
 export type BackgroundTheme = "light" | "dark";
@@ -106,7 +105,7 @@ type HeroFamily = keyof typeof HERO_ROLES;
 
 function heroFamily(family: HeroFamily) {
   const role = HERO_ROLES[family];
-  /** Sprint 3 : Light `final` (fichiers présents) ; Dark toujours `missing`. */
+  /** Light + Dark : `final` (15 + 15 fichiers présents). */
   return {
     light: {
       desktop: heroAsset(family, "light", "desktop", role, "final"),
@@ -114,9 +113,9 @@ function heroFamily(family: HeroFamily) {
       mobile: heroAsset(family, "light", "mobile", role, "final"),
     },
     dark: {
-      desktop: heroAsset(family, "dark", "desktop", role, "missing"),
-      tablet: heroAsset(family, "dark", "tablet", role, "missing"),
-      mobile: heroAsset(family, "dark", "mobile", role, "missing"),
+      desktop: heroAsset(family, "dark", "desktop", role, "final"),
+      tablet: heroAsset(family, "dark", "tablet", role, "final"),
+      mobile: heroAsset(family, "dark", "mobile", role, "final"),
     },
   } as const;
 }
@@ -140,7 +139,7 @@ export const HERO_LIGHT_ASSET_PATHS = [
   "/backgrounds/hero/light/hero-mountain-light-mobile.webp",
 ] as const;
 
-/** Familles Hero × viewports Dark — 15 références catalogue (toutes `missing`). */
+/** Familles Hero × viewports Dark — 15 références catalogue (Sprint Dark `final`). */
 export const HERO_DARK_ASSET_PATHS = [
   "/backgrounds/hero/dark/hero-morning-dark-desktop.webp",
   "/backgrounds/hero/dark/hero-morning-dark-tablet.webp",

@@ -30,7 +30,7 @@ export function Section({
               <h2 className="text-h2 text-foreground tracking-tight">{title}</h2>
             ) : null}
             {description ? (
-              <p className="text-small text-muted-foreground">{description}</p>
+              <p className="text-small text-foreground">{description}</p>
             ) : null}
           </div>
           {action ? <div className="shrink-0">{action}</div> : null}

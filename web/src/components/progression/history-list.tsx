@@ -39,10 +39,7 @@ export function HistoryList({ summaries }: HistoryListProps) {
   return (
     <ul className="space-y-4">
       {summaries.map((summary) => (
-        <li
-          key={summary.id}
-          className="border-border border-b pb-4 last:border-b-0 last:pb-0"
-        >
+        <li key={summary.id} className="surface-card space-y-2 p-5">
           <div className="space-y-1">
             <p className="text-body text-foreground font-medium">
               {summary.sessionTitle}
@@ -54,7 +51,7 @@ export function HistoryList({ summaries }: HistoryListProps) {
               {summary.status === "abandoned" ? " · interrompue" : null}
             </p>
           </div>
-          <p className="mt-2">
+          <p>
             <Link
               href={`/bibliotheque/${summary.sessionTemplateId}`}
               className="text-primary text-small font-medium underline-offset-4 hover:underline focus-visible:ring-ring rounded-[var(--radius)] focus-visible:ring-2 focus-visible:outline-none"

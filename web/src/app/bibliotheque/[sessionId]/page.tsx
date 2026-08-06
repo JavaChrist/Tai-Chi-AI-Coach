@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -17,19 +16,6 @@ export async function generateStaticParams() {
   return curriculumReader.listSessions({ publicationStatus: "any" }).map((session) => ({
     sessionId: session.id,
   }));
-}
-
-export async function generateMetadata({
-  params,
-}: SessionPageProps): Promise<Metadata> {
-  const { sessionId } = await params;
-  const result = curriculumReader.getSessionById(sessionId);
-
-  if (!result.ok) {
-    return { title: "Séance introuvable" };
-  }
-
-  return { title: result.session.title };
 }
 
 export default async function SessionPage({ params }: SessionPageProps) {

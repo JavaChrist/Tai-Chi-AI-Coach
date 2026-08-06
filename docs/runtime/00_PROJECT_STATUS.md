@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 6 août 2026 — MVP-008B Sprint 3 / CH-010 |
+| Dernière mise à jour | 7 août 2026 — MVP-008B Sprint Dark / CH-011 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,9 +22,9 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — UI 12A + Hero Light intégrés (MVP-008B ouvert) |
-| Statut global | Conception close ; Runtime 20/20 ; Experience Design System appliqué ; **15 Hero Light** exportés/intégrés (CH-010) ; Hero Dark manquants ; onboarding local ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; **aucune** `F-xxx` Validé/Livré ; pas de sync |
-| Dernière mise à jour globale | 6 août 2026 |
+| Phase | Développement MVP — UI 12A + Hero Light/Dark intégrés (MVP-008B proposable clôture) |
+| Statut global | Conception close ; Runtime 20/20 ; Experience Design System appliqué ; **15 Hero Light + 15 Hero Dark** exportés/intégrés (CH-010 / CH-011) ; onboarding local ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; **aucune** `F-xxx` Validé/Livré ; pas de sync |
+| Dernière mise à jour globale | 7 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
 ## 3. État général
@@ -33,7 +33,7 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | Socle + pratique + progression + préférences + onboarding + UI 12A + **Hero Light** (MVP-008B Sprint 3) |
+| Développement | **En cours** | Socle + pratique + progression + préférences + onboarding + UI 12A + **Hero Light/Dark** (MVP-008B) |
 | Tests | **En cours** | Vitest OK ; pas de campagne produit E2E complète |
 | Release | **Non commencé** | 0 Release (`19`) ; déploiement absent (`10`) |
 
@@ -59,10 +59,10 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Tickets ouverts | 1 (MVP-008B — Hero Dark restant) |
+| Tickets ouverts | 1 (MVP-008B — **proposable à la clôture** après validation visuelle explicite) |
 | Tickets terminés | 9 (MVP-001 … MVP-008, MVP-008A) |
 | Tickets bloqués | 0 |
-| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero Light + pratique + progression + préférences + onboarding local (`web/`) |
+| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero Light/Dark + pratique + progression + préférences + onboarding local (`web/`) |
 
 Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
@@ -211,6 +211,8 @@ Détail : `12_TECH_DEBT.md`.
 | 5 août 2026 | **MVP-007** : préférences utilisateur locales + page `/profil` ; CH-007 ; F-028 / F-029 En développement. |
 | 5 août 2026 | **MVP-008** : onboarding local `/onboarding` ; CH-008 ; F-033 En développement ; Offline (localStorage). |
 | 6 août 2026 | **MVP-008A** : refonte UI Experience Design System (12A) ; CH-009 ; aucune `F-xxx` nouvelle ; présentation seule. |
+| 6 août 2026 | **MVP-008B Sprint 3** : 15 Hero Light ; CH-010 ; Dark manquant. |
+| 7 août 2026 | **MVP-008B Sprint Dark** : 5 Masters Dark + 15 exports Dark ; CH-011 ; ticket proposable à la clôture. |
 
 ## 17. Diagrammes
 

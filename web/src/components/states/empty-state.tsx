@@ -24,7 +24,7 @@ export function EmptyState({
     <div
       role="status"
       className={cn(
-        "flex flex-col items-center justify-center gap-5 px-6 py-14 text-center",
+        "surface-card flex flex-col items-center justify-center gap-5 px-6 py-14 text-center",
         className,
       )}
     >

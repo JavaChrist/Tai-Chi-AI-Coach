@@ -1,14 +1,9 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { PageEnvironment } from "@/components/environment/page-environment";
 import { ContentLayout } from "@/components/layout/content-layout";
 import { EmptyState } from "@/components/states/empty-state";
 import { Button } from "@/components/ui/button";
-
-export const metadata: Metadata = {
-  title: "Séances",
-};
 
 /** Route héritée — invitation vers la bibliothèque (Hero Bamboo, même univers). */
 export default function SessionsPage() {

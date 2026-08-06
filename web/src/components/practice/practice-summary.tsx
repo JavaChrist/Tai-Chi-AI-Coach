@@ -21,7 +21,11 @@ export function PracticeSummaryView({
   const completed = summary.endReason === "completed";
 
   return (
-    <PageEnvironment family="mist" className="min-h-[60dvh]">
+    <PageEnvironment
+      family="mist"
+      withBottomNavInset={false}
+      className="min-h-full"
+    >
       <section
         className="mx-auto max-w-reading space-y-10 px-4 py-8 sm:px-6"
         aria-labelledby="practice-summary-heading"

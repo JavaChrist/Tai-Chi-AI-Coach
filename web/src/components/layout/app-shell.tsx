@@ -29,7 +29,7 @@ export function AppShell({ children }: AppShellProps) {
         <div
           className={cn(
             "text-foreground flex min-h-dvh flex-col",
-            /* Pratique : fond uni. Autres écrans : Hero = fond de page (fallback Rice Paper body). */
+            /* Pratique : fond uni. Autres écrans : le Hero remplit PageEnvironment (pas de bande sous main). */
             isPractice ? "bg-background" : "bg-transparent",
           )}
         >
@@ -37,8 +37,9 @@ export function AppShell({ children }: AppShellProps) {
           <main
             id="contenu-principal"
             className={cn(
-              "relative flex-1",
-              isPractice ? "pb-10" : "pb-24 md:pb-10",
+              "relative flex min-h-0 flex-1 flex-col",
+              /* Padding bas uniquement hors Hero (pratique). Les pages Hero gèrent l’inset dans PageEnvironment. */
+              isPractice && "pb-10",
             )}
           >
             {children}

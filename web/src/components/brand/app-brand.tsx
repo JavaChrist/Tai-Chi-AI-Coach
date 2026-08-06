@@ -35,7 +35,29 @@ function TextMark({ size }: { size: number }) {
 }
 
 /**
- * Marque officielle — logos via assets.ts, fallback textuel si absents.
+ * Résout la source du monogramme / logo.
+ * Ordre : logoSrc → logo SVG catalogue → icon512 → null (fallback TC).
+ */
+export function resolveBrandMarkSrc(
+  variant: AppBrandVariant,
+  logoSrc?: string,
+  preferText = false,
+): string | null {
+  if (preferText) return null;
+  if (logoSrc) return logoSrc;
+
+  const catalogLogo =
+    variant === "full" ? assets.brand.logo : assets.brand.logoCompact;
+  if (isAssetReady(catalogLogo)) return catalogLogo.path;
+
+  if (isAssetReady(assets.brand.icon512)) return assets.brand.icon512.path;
+
+  return null;
+}
+
+/**
+ * Marque officielle — logos via assets.ts.
+ * Fallback : SVG → icon512 → texte TC.
  */
 export function AppBrand({
   variant = "compact",
@@ -46,13 +68,20 @@ export function AppBrand({
   preferText = false,
 }: AppBrandProps) {
   const dims = sizeMap[size];
-  const catalogLogo =
-    variant === "full" ? assets.brand.logo : assets.brand.logoCompact;
-  const resolvedSrc =
-    logoSrc ?? (isAssetReady(catalogLogo) ? catalogLogo.path : null);
-  const showLogo = Boolean(resolvedSrc) && !preferText;
+  const resolvedSrc = resolveBrandMarkSrc(variant, logoSrc, preferText);
+  const showLogo = Boolean(resolvedSrc);
   const showMark = variant !== "wordmark";
-  const showWordmark = true;
+  /** Wordmark masqué sur très étroit si une icône porte déjà le nom accessible. */
+  const wordmarkClass =
+    showMark && showLogo
+      ? cn(
+          "font-heading text-foreground font-semibold tracking-tight max-sm:sr-only",
+          dims.text,
+        )
+      : cn(
+          "font-heading text-foreground font-semibold tracking-tight",
+          dims.text,
+        );
 
   const content = (
     <>
@@ -64,22 +93,14 @@ export function AppBrand({
             width={dims.mark}
             height={dims.mark}
             className="rounded-[var(--radius)]"
+            imgClassName="object-contain"
             fallback={<TextMark size={dims.mark} />}
           />
         ) : (
           <TextMark size={dims.mark} />
         )
       ) : null}
-      {showWordmark ? (
-        <span
-          className={cn(
-            "font-heading text-foreground font-semibold tracking-tight",
-            dims.text,
-          )}
-        >
-          {BRAND_NAME}
-        </span>
-      ) : null}
+      <span className={wordmarkClass}>{BRAND_NAME}</span>
     </>
   );
 

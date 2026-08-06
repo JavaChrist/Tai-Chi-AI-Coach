@@ -23,10 +23,13 @@ const fraunces = Fraunces({
   subsets: ["latin"],
 });
 
+/**
+ * Titre d’onglet fixe : le nom de marque uniquement.
+ * Les H1 de page restent dans l’UI — jamais dans l’onglet.
+ */
 export const metadata: Metadata = {
   title: {
-    default: BRAND_NAME,
-    template: `%s · ${BRAND_NAME}`,
+    absolute: BRAND_NAME,
   },
   description: BRAND_DESCRIPTION,
   applicationName: BRAND_NAME,

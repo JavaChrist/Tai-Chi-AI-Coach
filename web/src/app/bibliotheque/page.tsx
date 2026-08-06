@@ -1,15 +1,9 @@
-import type { Metadata } from "next";
-
 import { PageEnvironment } from "@/components/environment/page-environment";
 import { SessionLibrary } from "@/components/sessions/session-library";
 import { ContentLayout } from "@/components/layout/content-layout";
 import { ErrorState } from "@/components/states/error-state";
 import type { SessionTemplateSummary } from "@/domain/curriculum/types";
 import { curriculumReader } from "@/services/curriculum/curriculum-reader";
-
-export const metadata: Metadata = {
-  title: "Bibliothèque",
-};
 
 function readPublishedSessions():
   | { ok: true; sessions: SessionTemplateSummary[] }

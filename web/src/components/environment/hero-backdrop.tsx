@@ -21,16 +21,20 @@ const objectPositionClass: Record<HeroFamily, string> = {
 };
 
 /**
- * Fond Hero d’environnement — intensité unique (référence Accueil).
- * Responsive via `<picture>` ; Masters jamais chargés ici.
- * Thème sombre : exports dark si `final`, sinon fallback Design System.
+ * Fond Hero — couvre entièrement le PageEnvironment parent (`absolute inset-0`).
+ * La hauteur suit le contenu (pas une hauteur viewport fixe).
  */
 export function HeroBackdrop({ family, className }: HeroBackdropProps) {
   const { theme } = useTheme();
   const set = backgroundAssets.hero[family];
   const variant = theme === "dark" ? set.dark : set.light;
 
-  if (!isAssetReady(variant.desktop)) {
+  /* Fallback Design System uniquement si l’export thème n’est pas prêt. */
+  if (
+    !isAssetReady(variant.desktop) ||
+    !isAssetReady(variant.tablet) ||
+    !isAssetReady(variant.mobile)
+  ) {
     return null;
   }
 
@@ -72,8 +76,8 @@ export function HeroBackdrop({ family, className }: HeroBackdropProps) {
         className={cn(
           "absolute inset-0 bg-linear-to-b",
           theme === "dark"
-            ? "from-background/80 via-background/55 to-background/40"
-            : "from-background/45 via-background/18 to-background/8",
+            ? "from-background/80 via-background/55 to-background/45"
+            : "from-background/50 via-background/28 to-background/22",
         )}
       />
     </div>

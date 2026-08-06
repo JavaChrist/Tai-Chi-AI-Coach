@@ -25,7 +25,7 @@ export function InformationCard({
   className,
 }: InformationCardProps) {
   return (
-    <Card className={cn("bg-muted/40", className)}>
+    <Card className={cn(className)}>
       <CardHeader>
         <div className="flex items-start gap-3">
           <span className="bg-surface text-muted-foreground mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-[var(--radius)] border border-border">

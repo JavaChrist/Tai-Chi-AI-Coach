@@ -62,8 +62,9 @@ Statut actuel : **missing** (arborescence + briefs prêts ; images à produire).
 
 | Famille | Chemin | Format | Dimensions | Usage | État |
 | --- | --- | --- | --- | --- | --- |
-| Hero Masters (source, jamais UI) | `/backgrounds/hero/masters/` | WebP | Master | Source → exports | morning présent ; autres missing |
-| Hero exports (5 × light/dark × 3 viewports) | `/backgrounds/hero/light|dark/` | WebP | 1920×1080 / 1280×1024 / 1080×1920 | Accueil, bibliothèque… | missing (depuis Masters) |
+| Hero Masters Light (source, jamais UI) | `/backgrounds/hero/masters/` | WebP | Master | Source → exports Light | 5 Masters `final` |
+| Hero Masters Dark (source, jamais UI) | `/backgrounds/hero/masters-dark/` | WebP | Master | Source → exports Dark | 5 Masters `final` |
+| Hero exports (5 × light/dark × 3 viewports) | `/backgrounds/hero/light|dark/` | WebP | 1920×1080 / 1280×1024 / 1080×1920 | Accueil, bibliothèque… | 30 exports `final` |
 | Splash main | `/backgrounds/splash/` | WebP | idem | Entrée univers | missing |
 | Sections (4 familles × light/dark) | `/backgrounds/sections/` | WebP | 1600×900 | Respirations | missing |
 | Textures (3) | `/backgrounds/textures/` | WebP | tile léger | Matière | missing |

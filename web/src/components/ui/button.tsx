@@ -21,8 +21,11 @@ const buttonVariants = cva(
         primary: "bg-primary text-primary-foreground hover:bg-primary/90",
         outline:
           "border-border bg-surface text-foreground hover:bg-secondary",
+        /* Bordure + fond opaque : lisible sur les Hero (évite de se fondre dans la brume). */
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "border-border bg-secondary text-secondary-foreground hover:bg-secondary/90",
+        /* Même famille que `.surface-card` — transparent au repos, plus opaque au hover. */
+        surface: "surface-card text-foreground",
         ghost: "hover:bg-secondary hover:text-foreground",
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/15 focus-visible:border-destructive/40 focus-visible:ring-destructive/20",
@@ -63,7 +66,7 @@ function Button({
       data-slot="button"
       data-variant={variant}
       data-size={size}
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size }), className)}
       {...props}
     />
   );

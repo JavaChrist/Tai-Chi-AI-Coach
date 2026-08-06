@@ -109,7 +109,7 @@ describe("catalogue assets", () => {
     }
   });
 
-  it("conserve les 15 Hero Dark (Sprint 2) en status missing", () => {
+  it("enregistre les 15 Hero Dark (Sprint Dark) en status final avec fichiers présents", () => {
     const hero = assets.backgrounds.hero;
     const darkRefs = [
       hero.morning.dark.desktop,
@@ -134,11 +134,53 @@ describe("catalogue assets", () => {
 
     for (const [index, ref] of darkRefs.entries()) {
       expect(ref.path).toBe(HERO_DARK_ASSET_PATHS[index]);
-      expect(ref.status).toBe("missing");
+      expect(ref.status).toBe("final");
       expect(ref.theme).toBe("dark");
       expect(ref.format).toBe("webp");
-      expect(isAssetReady(ref)).toBe(false);
+      expect(ref.width).toBeGreaterThan(0);
+      expect(ref.height).toBeGreaterThan(0);
+      expect(isAssetReady(ref)).toBe(true);
+      const diskPath = path.join(rootDir, "public", ref.path.replace(/^\//, ""));
+      expect(existsSync(diskPath)).toBe(true);
     }
+  });
+
+  it("mappe Light et Dark par famille avec les mêmes viewports", () => {
+    const hero = assets.backgrounds.hero;
+    const families = ["morning", "bamboo", "mist", "dojo", "mountain"] as const;
+    const viewports = ["desktop", "tablet", "mobile"] as const;
+
+    for (const family of families) {
+      for (const viewport of viewports) {
+        const light = hero[family].light[viewport];
+        const dark = hero[family].dark[viewport];
+        expect(light.family).toBe(dark.family);
+        expect(light.viewport).toBe(dark.viewport);
+        expect(light.width).toBe(dark.width);
+        expect(light.height).toBe(dark.height);
+        expect(light.path).toContain(`hero-${family}-light-`);
+        expect(dark.path).toContain(`hero-${family}-dark-`);
+        expect(isAssetReady(light)).toBe(true);
+        expect(isAssetReady(dark)).toBe(true);
+      }
+    }
+  });
+
+  it("n’active le fallback Hero que si l’asset n’est pas prêt", () => {
+    const ready = assets.backgrounds.hero.morning.dark.desktop;
+    expect(isAssetReady(ready)).toBe(true);
+
+    const absent = {
+      ...ready,
+      status: "missing" as const,
+      path: "/backgrounds/hero/dark/hero-absent-dark-desktop.webp",
+    };
+    expect(isAssetReady(absent)).toBe(false);
+    expect(
+      existsSync(
+        path.join(rootDir, "public", absent.path.replace(/^\//, "")),
+      ),
+    ).toBe(false);
   });
 });
 

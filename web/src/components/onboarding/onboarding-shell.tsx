@@ -13,7 +13,11 @@ type OnboardingShellProps = {
 
 export function OnboardingShell({ currentStep, children }: OnboardingShellProps) {
   return (
-    <PageEnvironment family="dojo" className="text-foreground min-h-dvh">
+    <PageEnvironment
+      family="dojo"
+      withBottomNavInset={false}
+      className="text-foreground min-h-dvh"
+    >
       <Container size="sm" className="space-y-12 py-12">
         <header className="space-y-6">
           <p className="text-primary text-caption font-medium tracking-wide">

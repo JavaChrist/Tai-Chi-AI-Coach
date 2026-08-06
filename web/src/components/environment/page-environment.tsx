@@ -10,26 +10,35 @@ type PageEnvironmentProps = {
   family: HeroFamily;
   children: ReactNode;
   className?: string;
+  /**
+   * Réserve l’espace de la bottom nav dans le fond Hero
+   * (évite une bande uni sous le paysage). Défaut : true.
+   */
+  withBottomNavInset?: boolean;
 };
 
 /**
- * Fond de page Hero — le paysage remplit la page et accompagne le scroll.
- * Référence visuelle : Accueil (intensité unique).
+ * Fond de page Hero — le paysage couvre toute la hauteur du contenu
+ * (y compris le padding bas), pas seulement le viewport.
  */
 export function PageEnvironment({
   family,
   children,
   className,
+  withBottomNavInset = true,
 }: PageEnvironmentProps) {
   return (
     <div
       className={cn(
-        "relative isolate min-h-[calc(100dvh-5.5rem)] md:min-h-[calc(100dvh-4rem)]",
+        /* flex-1 + min-h-full : remplit <main> ; grandit avec le contenu */
+        "relative isolate min-h-full flex-1",
+        withBottomNavInset && "pb-24 md:pb-10",
         className,
       )}
     >
       <HeroBackdrop family={family} />
-      <div className="relative">{children}</div>
+      {/* z-10 + text-on-hero : lisibilité du texte sur le paysage. */}
+      <div className="text-on-hero-scope relative z-10">{children}</div>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach  
 > Version : 1.0  
-> Statut : **En développement**  
+> Statut : **Proposable à la clôture** (Light + Dark livrés — validation visuelle explicite requise)  
 > Phase : MVP  
 > Emplacement : `docs/tickets/MVP-008B_VISUAL_ENVIRONMENT.md`  
 > Dépend de :  
@@ -249,14 +249,10 @@ Transformer l’univers Partie 1 en bibliothèque concrète : arborescence, brie
 web/public/backgrounds/
 ├── README.md
 ├── hero/
-│   ├── masters/
-│   │   ├── MASTER_HERO_MORNING.webp
-│   │   ├── MASTER_HERO_BAMBOO.webp
-│   │   ├── MASTER_HERO_MIST.webp
-│   │   ├── MASTER_HERO_DOJO.webp
-│   │   └── MASTER_HERO_MOUNTAIN.webp
-│   ├── light/
-│   └── dark/
+│   ├── masters/            ← Masters Light
+│   ├── masters-dark/       ← Masters Dark (WebP)
+│   ├── light/              ← 15 exports Light final
+│   └── dark/               ← 15 exports Dark final
 ├── splash/{light,dark}/README.md
 ├── sections/{light,dark}/README.md
 ├── patterns/README.md
@@ -360,11 +356,53 @@ Desktop 1920×1080 · Tablet 1280×1024 · Mobile 1080×1920 — recadrage Maste
 
 ### Dark
 
-15 Hero Dark : statut **`missing`** — fallback Design System en thème sombre (pas de Light brut).
+Voir §3.4 Sprint Dark Exports.
 
 ### Runtime
 
-CH-010 enregistré.
+CH-010 enregistré (Light). CH-011 enregistré (Dark).
+
+---
+
+## 3.4 Sprint Dark — Hero Dark (exports + catalogue)
+
+**Statut : Fait** (7 août 2026) — MVP-008B **proposable à la clôture** (Light + Dark + responsive validés).
+
+### Masters Dark
+
+| Master | Famille | Format | Dimensions |
+| --- | --- | --- | --- |
+| `masters-dark/MASTER_HERO_MORNING_DARK.webp` | morning | WebP | 1672 × 941 |
+| `masters-dark/MASTER_HERO_BAMBOO_DARK.webp` | bamboo | WebP | 1672 × 941 |
+| `masters-dark/MASTER_HERO_MIST_DARK.webp` | mist | WebP | 1672 × 941 |
+| `masters-dark/MASTER_HERO_DOJO_DARK.webp` | dojo | WebP | 1672 × 941 |
+| `masters-dark/MASTER_HERO_MOUNTAIN_DARK.webp` | mountain | WebP | 1672 × 941 |
+
+PNG sources convertis puis retirés de `dark/` (non utilisés par l’app).
+
+### 15 exports Dark (`final`)
+
+Desktop 1920×1080 · Tablet 1280×1024 · Mobile 1080×1920 — recadrage Master Dark uniquement (script `web/scripts/export-hero-dark.mjs`).
+
+### Affectation (identique au Light)
+
+| Famille | Écran |
+| --- | --- |
+| Morning Dark | Accueil `/` |
+| Bamboo Dark | Bibliothèque `/bibliotheque` (+ séances / fiche) |
+| Mist Dark | Progression `/progression` + bilan |
+| Dojo Dark | Onboarding `/onboarding` |
+| Mountain Dark | Profil `/profil` |
+| — | Pratique : **aucun** Hero |
+
+### Intégration
+
+`HeroBackdrop` : thème Light → exports Light ; thème Dark → exports Dark.  
+Fallback (`null`) uniquement si l’asset n’est pas `ready`.
+
+### Runtime
+
+CH-011 enregistré.
 
 ---
 

@@ -1,9 +1,9 @@
 # Hero — Dark
 
-Exports sombres des Hero Backgrounds (MVP-008B — Sprint 2).
+Exports sombres des Hero Backgrounds (MVP-008B — Sprint Dark Exports).
 
-**Aucun fichier image n’est présent dans ce dossier pour l’instant.**  
-Infrastructure prête — production graphique ultérieure.
+**Source obligatoire :** `../masters-dark/MASTER_HERO_<FAMILY>_DARK.webp`  
+Aucune variante ne doit être créée indépendamment du Master Dark.
 
 ## Rôle
 
@@ -14,110 +14,61 @@ Ils représentent le **calme du soir** :
 - lumière plus froide ;
 - contraste plus doux ;
 - couleurs plus profondes ;
-- même univers, même composition, mêmes émotions que le Light.
+- même univers, mêmes cadrages viewport, mêmes émotions que le Light.
 
 Jamais :
 
-- la nuit profonde ;
-- une ambiance dramatique ;
-- un simple assombrissement du Light ou du Master.
+- la nuit profonde dramatique ;
+- un simple assombrissement du Light ;
+- génération IA indépendante.
 
-## Workflow obligatoire
+## Pipeline
 
 ```text
-MASTER
-   ↓
-Version Light
-   ↓
-Version Dark
+Master Dark (masters-dark/)
+        ↓
+Exports dark (desktop → tablet → mobile)
+        ↓
+Catalogue final
 ```
 
-Les Hero Dark ne sont **jamais** créés indépendamment.
-
-Ils représentent une **évolution artistique** du Hero Light correspondant (mêmes cadrages desktop / tablet / mobile).
-
-Le Master reste la source unique de l’œuvre.
-
-Le Light est la référence artistique figée.
-
-Le Dark en dérive artistiquement — sans filtre automatique.
-
-## Relation avec les Masters
+## Relation Masters Dark → exports
 
 | Master | Famille Dark |
 | --- | --- |
-| `../masters/MASTER_HERO_MORNING.webp` | `hero-morning-dark-*` |
-| `../masters/MASTER_HERO_BAMBOO.webp` | `hero-bamboo-dark-*` |
-| `../masters/MASTER_HERO_MIST.webp` | `hero-mist-dark-*` |
-| `../masters/MASTER_HERO_DOJO.webp` | `hero-dojo-dark-*` |
-| `../masters/MASTER_HERO_MOUNTAIN.webp` | `hero-mountain-dark-*` |
+| `../masters-dark/MASTER_HERO_MORNING_DARK.webp` | `hero-morning-dark-*` |
+| `../masters-dark/MASTER_HERO_BAMBOO_DARK.webp` | `hero-bamboo-dark-*` |
+| `../masters-dark/MASTER_HERO_MIST_DARK.webp` | `hero-mist-dark-*` |
+| `../masters-dark/MASTER_HERO_DOJO_DARK.webp` | `hero-dojo-dark-*` |
+| `../masters-dark/MASTER_HERO_MOUNTAIN_DARK.webp` | `hero-mountain-dark-*` |
 
-Les Masters ne sont jamais utilisés directement par l’UI.
-
-## Relation avec les Hero Light
-
-| Light (référence) | Dark (évolution) |
-| --- | --- |
-| `../light/hero-<family>-light-desktop.webp` | `hero-<family>-dark-desktop.webp` |
-| `../light/hero-<family>-light-tablet.webp` | `hero-<family>-dark-tablet.webp` |
-| `../light/hero-<family>-light-mobile.webp` | `hero-<family>-dark-mobile.webp` |
-
-Même cadrage viewport à viewport.
-
-Seule la direction artistique (soirée paisible) change.
-
-## Nommage
-
-```text
-hero-<family>-dark-<viewport>.webp
-```
-
-Exemple : `hero-morning-dark-desktop.webp`
-
-## Formats et dimensions
-
-| Viewport | Dimensions |
-| --- | --- |
-| Desktop | 1920 × 1080 |
-| Tablet | 1280 × 1024 |
-| Mobile | 1080 × 1920 |
-
-Format : WebP uniquement.
-
-## Direction artistique
-
-Palette indicative (12A nuit) :
-
-Night Paper · Night Mist · Surface Night · Soft Jade · Bamboo Soft · Mist Ink
-
-Lumière : soirée paisible, froide et douce — jamais filtre noir, jamais inversion.
-
-## Fichiers attendus (tous `missing`)
+## Fichiers (exports `final`)
 
 | Fichier | Famille | Viewport | Statut |
 | --- | --- | --- | --- |
-| `hero-morning-dark-desktop.webp` | morning | desktop | missing |
-| `hero-morning-dark-tablet.webp` | morning | tablet | missing |
-| `hero-morning-dark-mobile.webp` | morning | mobile | missing |
-| `hero-bamboo-dark-desktop.webp` | bamboo | desktop | missing |
-| `hero-bamboo-dark-tablet.webp` | bamboo | tablet | missing |
-| `hero-bamboo-dark-mobile.webp` | bamboo | mobile | missing |
-| `hero-mist-dark-desktop.webp` | mist | desktop | missing |
-| `hero-mist-dark-tablet.webp` | mist | tablet | missing |
-| `hero-mist-dark-mobile.webp` | mist | mobile | missing |
-| `hero-dojo-dark-desktop.webp` | dojo | desktop | missing |
-| `hero-dojo-dark-tablet.webp` | dojo | tablet | missing |
-| `hero-dojo-dark-mobile.webp` | dojo | mobile | missing |
-| `hero-mountain-dark-desktop.webp` | mountain | desktop | missing |
-| `hero-mountain-dark-tablet.webp` | mountain | tablet | missing |
-| `hero-mountain-dark-mobile.webp` | mountain | mobile | missing |
+| `hero-morning-dark-desktop.webp` | morning | desktop | **final** |
+| `hero-morning-dark-tablet.webp` | morning | tablet | **final** |
+| `hero-morning-dark-mobile.webp` | morning | mobile | **final** |
+| `hero-bamboo-dark-desktop.webp` | bamboo | desktop | **final** |
+| `hero-bamboo-dark-tablet.webp` | bamboo | tablet | **final** |
+| `hero-bamboo-dark-mobile.webp` | bamboo | mobile | **final** |
+| `hero-mist-dark-desktop.webp` | mist | desktop | **final** |
+| `hero-mist-dark-tablet.webp` | mist | tablet | **final** |
+| `hero-mist-dark-mobile.webp` | mist | mobile | **final** |
+| `hero-dojo-dark-desktop.webp` | dojo | desktop | **final** |
+| `hero-dojo-dark-tablet.webp` | dojo | tablet | **final** |
+| `hero-dojo-dark-mobile.webp` | dojo | mobile | **final** |
+| `hero-mountain-dark-desktop.webp` | mountain | desktop | **final** |
+| `hero-mountain-dark-tablet.webp` | mountain | tablet | **final** |
+| `hero-mountain-dark-mobile.webp` | mountain | mobile | **final** |
 
-Catalogue typé : `web/src/config/background-assets.ts` → `backgroundAssets.hero.*.dark`.
+Format : WebP. Dimensions : Desktop 1920×1080 · Tablet 1280×1024 · Mobile 1080×1920.
+
+Catalogue : `web/src/config/background-assets.ts` → `backgroundAssets.hero.*.dark`.
 
 ## Usages interdits
 
 - Light + overlay noir comme « dark » ;
-- Génération IA indépendante du Master / Light ;
-- Contrastes durs / néons / dramaturgie ;
 - Brand Mark ou Mei dans le fichier ;
-- Intégration UI tant que le statut n’est pas `placeholder` ou `final`.
+- Déposer des Masters (`MASTER_HERO_*`) dans ce dossier ;
+- PNG source dans ce dossier (réservés à `masters-dark/` en WebP).

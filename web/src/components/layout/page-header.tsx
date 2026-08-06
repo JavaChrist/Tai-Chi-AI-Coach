@@ -27,7 +27,7 @@ export function PageHeader({
       <div className="min-w-0 max-w-reading space-y-2">
         <h1 className="text-h1 text-foreground tracking-tight">{title}</h1>
         {description ? (
-          <p className="text-body text-muted-foreground">{description}</p>
+          <p className="text-body text-foreground">{description}</p>
         ) : null}
       </div>
       {actions ? (

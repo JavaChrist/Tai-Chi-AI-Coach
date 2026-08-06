@@ -21,12 +21,7 @@ type SessionCardProps = {
 /** Carte séance — titre, durée, niveau, objectif (12A §7.3 / ticket §39). */
 export function SessionCard({ session, className }: SessionCardProps) {
   return (
-    <Card
-      className={cn(
-        "relative h-full min-h-40 ease-calm duration-normal transition-colors hover:bg-secondary/50",
-        className,
-      )}
-    >
+    <Card className={cn("relative h-full min-h-40", className)}>
       <CardHeader className="gap-3">
         <CardTitle>
           <Link

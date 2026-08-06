@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 6 août 2026 — CH-010 MVP-008B Sprint 3 |
-| Phase actuelle | Développement MVP — environnements Hero Light |
+| Dernière mise à jour | 7 août 2026 — CH-011 MVP-008B Sprint Dark |
+| Phase actuelle | Développement MVP — environnements Hero Light + Dark |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **10** |
-| Changements majeurs | **10** |
+| Changements enregistrés | **11** |
+| Changements majeurs | **11** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements
@@ -35,6 +35,7 @@
 | CH-008 | Onboarding local `/onboarding` (F-033) + gate + intégration préférences | MVP-008 | `00`, `01`, `02`, `03`, `07`, `09`, `17` | — | 5 août 2026 | Appliqué |
 | CH-009 | Refonte UI Experience Design System (12A) — présentation seule | MVP-008A | `00`, `01`, `02`, `09`, `17` | — | 6 août 2026 | Appliqué |
 | CH-010 | Hero Light responsive (15 exports) + intégration écrans — présentation seule | MVP-008B | `00`, `01`, `02`, `09`, `17` | — | 6 août 2026 | Appliqué |
+| CH-011 | Hero Dark responsive (5 Masters + 15 exports) + catalogue final — présentation seule | MVP-008B | `00`, `01`, `02`, `09`, `17` | — | 7 août 2026 | Appliqué |
 
 ## 4. Gouvernance
 
@@ -49,6 +50,7 @@ timeline
     5 août 2026 : CH-001 à CH-008
     6 août 2026 : CH-009 UI Refresh 12A
     6 août 2026 : CH-010 Hero Light MVP-008B
+    7 août 2026 : CH-011 Hero Dark MVP-008B
 ```
 
 ## 6. Historique
@@ -59,6 +61,7 @@ timeline
 | 5 août 2026 | CH-008 — MVP-008 onboarding local enregistré. |
 | 6 août 2026 | CH-009 — MVP-008A refonte UI 12A enregistré. |
 | 6 août 2026 | CH-010 — MVP-008B Sprint 3 Hero Light exports + intégration ; ticket reste ouvert (Dark manquant). |
+| 7 août 2026 | CH-011 — MVP-008B Sprint Dark : Masters Dark + 15 exports + catalogue `final` ; MVP-008B proposable à la clôture. |
 
 ---
 
