@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Fermé** (GO — 7 août 2026 — validation PO — commit `7c5dc03`)
+> Statut : **Fermé** (GO — 7 août 2026 — validation PO — commit `9495f58`)
 > Phase : MVP (socle Pré-MVP hérité)
 > Emplacement : `docs/tickets/MVP-009_SAFETY_WARNINGS.md`
 > Dépend de :
@@ -155,6 +155,6 @@ feat(safety): add practice safety advice and pre-session warnings (MVP-009)
 | Ticket créé | **Fait** (7 août 2026) — formalisation roadmap |
 | Implémentation F-016 / F-031 | **Fait** (7 août 2026) |
 | Validation PO | **Fait** (7 août 2026) — F-016 / F-031 + Hero pratique |
-| Clôture | **Fermé** — commit `7c5dc03` |
+| Clôture | **Fermé** — commit `9495f58` |
 
 *Fin du ticket MVP-009 (Fermé).*

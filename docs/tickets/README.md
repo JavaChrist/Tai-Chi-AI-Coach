@@ -312,7 +312,7 @@ Tous les développements de Tai-Chi AI Coach devront obligatoirement être réal
 | MVP-008 | `MVP-008_LOCAL_ONBOARDING.md` | **Fermé** | CH-008 | — |
 | MVP-008A | `MVP-008A_UI_REFRESH.md` | **Fermé** | CH-009 | `b6bad27` |
 | MVP-008B | `MVP-008B_VISUAL_ENVIRONMENT.md` | **Fermé** | CH-010 / CH-011 | `50bf954` |
-| MVP-009 | `MVP-009_SAFETY_WARNINGS.md` | **Fermé** | CH-012 | `7c5dc03` |
+| MVP-009 | `MVP-009_SAFETY_WARNINGS.md` | **Fermé** | CH-012 | `9495f58` |
 
 **Ticket actif :** aucun — prochain = **ouverture MVP-010** (fichier à créer ; aucun développement démarré).
 
