@@ -1,11 +1,11 @@
 # Tickets
 
-> Tai-Chi AI Coach  
-> Version 1.0  
-> Statut : **VALIDÉ**  
-> Phase : Développement  
-> Dépend de :  
-> - `docs/25_DESIGN_FREEZE.md`  
+> Tai-Chi AI Coach
+> Version 1.0
+> Statut : **VALIDÉ**
+> Phase : Développement
+> Dépend de :
+> - `docs/25_DESIGN_FREEZE.md`
 > - `docs/runtime/README.md`
 
 ---
@@ -87,15 +87,15 @@ Les tickets décrivent uniquement le travail à effectuer.
 
 Chaque ticket doit respecter la structure suivante :
 
-1. En-tête  
-2. Objectif  
-3. Documents de référence  
-4. Travail demandé  
-5. Hors périmètre  
-6. Critères d'acceptation  
-7. Runtime Registers à mettre à jour  
-8. Rapport attendu  
-9. Contraintes  
+1. En-tête
+2. Objectif
+3. Documents de référence
+4. Travail demandé
+5. Hors périmètre
+6. Critères d'acceptation
+7. Runtime Registers à mettre à jour
+8. Rapport attendu
+9. Contraintes
 
 Aucune autre structure ne doit être utilisée.
 
@@ -311,11 +311,46 @@ Tous les développements de Tai-Chi AI Coach devront obligatoirement être réal
 | MVP-007 | `MVP-007_USER_PREFERENCES.md` | **Fermé** | CH-007 | `16cafbe` |
 | MVP-008 | `MVP-008_LOCAL_ONBOARDING.md` | **Fermé** | CH-008 | — |
 | MVP-008A | `MVP-008A_UI_REFRESH.md` | **Fermé** | CH-009 | `b6bad27` |
-| MVP-008B | `MVP-008B_VISUAL_ENVIRONMENT.md` | **En développement** | — | — |
+| MVP-008B | `MVP-008B_VISUAL_ENVIRONMENT.md` | **Fermé** | CH-010 / CH-011 | `50bf954` |
+| MVP-009 | `MVP-009_SAFETY_WARNINGS.md` | **À développer** | — | — |
 
-Ticket actif : MVP-008B (Sprint 3 Light fait — CH-010 ; Hero Dark restant).
+**Ticket actif :** MVP-009 (F-016 + F-031 — prudence / sécurité).
 
 Note : MVP-002 et MVP-003 ont été livrés dans le même commit (`696a76f`).
+
+---
+
+# 20. Roadmap tickets post-MVP-008B (officielle)
+
+Source de vérité de la **séquence de développement** après clôture de MVP-008B
+(`50bf954e3bc7b3ecc4b90278c7f7a4184b080016`).
+
+Les IDs `F-xxx` restent définis par `docs/02_PRODUCT_SCOPE.md` / `docs/05_FEATURES.md` / `docs/22_ROADMAP.md`.
+Ce tableau fixe uniquement l’**ordre des tickets** MVP restants.
+
+| Ticket | Périmètre | Titre | Statut fichier |
+| --- | --- | --- | --- |
+| MVP-009 | F-016 + F-031 | Prudence / sécurité avant pratique | **À développer** (`MVP-009_SAFETY_WARNINGS.md`) |
+| MVP-010 | F-001 + F-002 | Présentation du Tai Chi + styles | Planifié (fichier à créer à l’ouverture) |
+| MVP-011 | F-005 + F-004 + F-007 | Bibliothèque mouvements + explications + images | Planifié |
+| MVP-012 | F-006 + enrichissement F-013 | Vidéos pédagogiques + intégration séances/mouvements | Planifié |
+| MVP-013 | F-003 | Parcours débutant structuré | Planifié |
+| MVP-014 | F-008 + F-014 + F-015 | Programme quotidien + respiration + relaxation | Planifié |
+| MVP-015 | F-009 + F-010 + F-032 + F-013 | Historique, progression, reprise persistante, séances complètes | Planifié |
+| MVP-016 | F-033 + F-028 + F-029 | Onboarding final + paramètres + accessibilité | Planifié |
+| MVP-017 | Offline / PWA | Service Worker + cache cœur | Planifié |
+| MVP-018 | Recette / gates | Validation contenus, tests finaux, publiabilité | Planifié |
+
+### Frontière de version (cette roadmap)
+
+**Hors MVP — ne pas introduire dans MVP-009…018 :**
+
+- authentification, synchronisation cloud, compte (`F-039`, `F-027` → **V1**) ;
+- AI Coach / Q-R (`F-019`, `F-020` → **V1**) ;
+- Computer Vision, caméra, corrections posture (`F-021`, `F-022` → **V2**) ;
+- Virtual Humans / Mei (`F-023` → **V2**).
+
+Les fichiers détaillés MVP-010 → MVP-018 sont créés **uniquement à l’ouverture** de chaque ticket.
 
 ---
 
@@ -323,9 +358,10 @@ Note : MVP-002 et MVP-003 ont été livrés dans le même commit (`696a76f`).
 
 | Champ | Valeur |
 | --- | --- |
-| Version | 1.0 |
+| Version | 1.1 |
 | Statut | VALIDÉ |
 | Emplacement | `docs/tickets/README.md` |
+| Dernière mise à jour | 7 août 2026 — roadmap MVP-009→018 |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

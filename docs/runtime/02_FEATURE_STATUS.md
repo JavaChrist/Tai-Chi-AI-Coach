@@ -8,12 +8,12 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 6 août 2026 — MVP-008A (UI seule, aucune F-xxx nouvelle) |
+| Dernière mise à jour | 7 août 2026 — roadmap MVP-009→018 (aucune F-xxx modifiée) |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
 
-> Ce registre décrit uniquement l’état **réel** d’implémentation des `F-xxx`.  
+> Ce registre décrit uniquement l’état **réel** d’implémentation des `F-xxx`.
 > Aucune fonctionnalité n’est marquée avancée sans validation réelle.
 
 ## 2. Synthèse
@@ -110,7 +110,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 5 août 2026 | MVP-008 : `F-033` → **En développement** ; onboarding local + reprise + skip ; pas Mei/caméra. |
 | 6 août 2026 | MVP-008A : **aucune** `F-xxx` créée ni passée Validé/Livré — refonte présentation 12A uniquement (CH-009). |
 | 6 août 2026 | MVP-008B Sprint 3 : **aucune** `F-xxx` créée ni modifiée — Hero Light présentation seule (CH-010) ; ticket reste ouvert (Dark). |
-| 7 août 2026 | MVP-008B Sprint Dark : **aucune** `F-xxx` créée ni modifiée — Hero Dark présentation seule (CH-011) ; ticket proposable à la clôture. |
+| 7 août 2026 | MVP-008B Sprint Dark : **aucune** `F-xxx` créée ni modifiée — Hero Dark présentation seule (CH-011). |
+| 7 août 2026 | MVP-008B **fermé** ; roadmap tickets MVP-009→018 officialisée — **aucune** `F-xxx` modifiée (F-016 / F-031 restent Non commencé jusqu’à MVP-009). |
 
 ## 6. Diagrammes
 
@@ -180,8 +181,8 @@ Ne jamais marquer **Validé** ou **Livré** sans preuve réelle.
 
 ## 8. Règles de mise à jour
 
-- après chaque ticket touchant un `F-xxx` ;  
-- après chaque Release impactant le catalogue ;  
+- après chaque ticket touchant un `F-xxx` ;
+- après chaque Release impactant le catalogue ;
 - après tout abandon / report documenté d’une feature en cours.
 
 ## 9. Prochaine étape documentaire
@@ -190,9 +191,9 @@ Ne jamais marquer **Validé** ou **Livré** sans preuve réelle.
 
 ## 10. Références
 
-- `docs/runtime/README.md`  
-- `docs/05_FEATURES.md`  
-- `docs/25_DESIGN_FREEZE.md`  
+- `docs/runtime/README.md`
+- `docs/05_FEATURES.md`
+- `docs/25_DESIGN_FREEZE.md`
 
 ---
 

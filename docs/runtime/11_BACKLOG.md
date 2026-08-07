@@ -8,65 +8,63 @@
 | Fichier | `docs/runtime/11_BACKLOG.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 |
-| Phase actuelle | Post–Design Freeze — initialisation Runtime |
-| Document de référence (intentions) | `docs/22_ROADMAP.md`, `BACKLOG.md` (racine) |
+| Dernière mise à jour | 7 août 2026 — roadmap MVP-009→018 |
+| Phase actuelle | Développement MVP — suite fonctionnelle |
+| Document de référence (intentions) | `docs/22_ROADMAP.md`, `docs/tickets/README.md` §20 |
 | Type | Runtime Register — travaux **réellement ouverts** |
 
-> Ce registre ne remplace pas la Roadmap.  
-> La Roadmap définit les intentions.  
-> Ici : uniquement les travaux Runtime réellement ouverts (tickets).
+> Ce registre ne remplace pas la Roadmap.
+> La Roadmap définit les intentions `F-xxx`.
+> `docs/tickets/README.md` §20 définit la **séquence de tickets**.
+> Ici : uniquement les tickets **réellement ouverts** (fichier existant, non fermé).
 
 ## 2. État général
 
 | Catégorie | Nombre réel |
 | --- | --- |
-| Tickets ouverts | **0** |
+| Tickets ouverts | **1** (MVP-009) |
 | Améliorations ouvertes | **0** |
 | Reports ouverts | **0** |
 | Idées retenues (ticketées) | **0** |
-| Priorités Runtime actives | Aucune |
+| Priorités Runtime actives | P0 — prudence Pré-MVP |
 
-**Synthèse :** backlog Runtime **vide**. Aucun ticket ouvert.
+**Synthèse :** prochain travail = MVP-009 (F-016 + F-031). Suite planifiée MVP-010→018 sans fichier ticket tant que non ouverts.
 
 ## 3. Tickets ouverts
 
 | ID ticket | Titre | Priorité | Statut | Date ouverture | Remarque |
 | --- | --- | --- | --- | --- | --- |
-| — | — | — | — | — | Aucun |
+| MVP-009 | Prudence / sécurité avant pratique (F-016 + F-031) | P0 | À développer | 7 août 2026 | `docs/tickets/MVP-009_SAFETY_WARNINGS.md` |
 
-## 4. Améliorations / reports
+## 4. Séquence planifiée (non ouverte — pas d’entrée backlog)
+
+Voir `docs/tickets/README.md` §20 : MVP-010 → MVP-018.
+
+Ne pas dupliquer ici les tickets sans fichier.
+
+## 5. Améliorations / reports
 
 | Type | ID | Description | Ticket | Statut |
 | --- | --- | --- | --- | --- |
 | — | — | — | — | Aucun élément |
 
-## 5. Règle d’entrée
+## 6. Règle d’entrée
 
-Un élément n’apparaît ici que s’il est **réellement ouvert** (ticket existant).
+Un élément n’apparaît en §3 que s’il est **réellement ouvert** (fichier ticket existant, statut non Fermé).
 
-Les idées uniquement présentes dans `22_ROADMAP.md` ou `BACKLOG.md` **ne doivent pas** être copiées ici.
+Les intentions `22_ROADMAP.md` **ne doivent pas** être copiées en masse.
 
-## 6. Diagrammes
+## 7. Diagrammes
 
-### 6.1 État du backlog
+### 7.1 État du backlog
 
 ```mermaid
 pie title Backlog Runtime — état réel
-  "Vide" : 1
-  "Ouvert" : 0
+  "Ouvert (MVP-009)" : 1
+  "Fermé / hors liste" : 0
 ```
 
-### 6.2 Priorités
-
-```mermaid
-flowchart LR
-  P0[P0 — 0] --- P1[P1 — 0]
-  P1 --- P2[P2 — 0]
-  P2 --- P3[P3 — 0]
-```
-
-### 6.3 Cycle d’un ticket
+### 7.2 Cycle d’un ticket
 
 ```mermaid
 stateDiagram-v2
@@ -74,43 +72,30 @@ stateDiagram-v2
   Ouvert --> EnCours
   EnCours --> Termine: MAJ registres
   Termine --> [*]
-  note right of Ouvert: Aucun ticket aujourd'hui
+  note right of Ouvert: MVP-009 À développer
 ```
 
-### 6.4 Répartition
+## 8. Gouvernance
 
-```mermaid
-flowchart TB
-  Empty[Backlog Runtime vide]
-```
+1. Ouvrir un ticket (fichier) avant inscription §3.
+2. Retirer à la clôture.
+3. Synchroniser `00_PROJECT_STATUS.md` (§ Développement).
+4. Respecter la frontière V1/V2 (pas d’auth/sync/IA/CV/Mei dans MVP-009…018).
 
-### 6.5 Évolution
-
-```mermaid
-flowchart LR
-  Roadmap[22 Roadmap intentions] -.->|ne pas copier| BR[11 Backlog Runtime]
-  Ticket[Ticket réel] --> BR
-```
-
-## 7. Gouvernance
-
-1. Ouvrir un ticket avant inscription ici.  
-2. Retirer / archiver à la clôture (ne pas laisser d’entrées fantômes).  
-3. Synchroniser `00_PROJECT_STATUS.md` (§ Développement) à chaque changement de volume.  
-4. Ne jamais importer massivement la Roadmap.
-
-## 8. Historique
+## 9. Historique
 
 | Date | Événement |
 | --- | --- |
-| 5 août 2026 | Création du registre ; initialisation ; aucune implémentation ; aucun ticket Runtime. |
+| 5 août 2026 | Création du registre ; initialisation ; aucun ticket Runtime. |
+| 7 août 2026 | Formalisation roadmap tickets MVP-009→018 ; MVP-008B fermé ; MVP-009 ouvert (À développer). |
 
-## 9. Références
+## 10. Références
 
-- `docs/22_ROADMAP.md`  
-- `BACKLOG.md`  
-- `docs/runtime/README.md`  
-- `docs/25_DESIGN_FREEZE.md`  
+- `docs/22_ROADMAP.md` §7.5
+- `docs/tickets/README.md` §19–§20
+- `docs/tickets/MVP-009_SAFETY_WARNINGS.md`
+- `docs/runtime/README.md`
+- `docs/25_DESIGN_FREEZE.md`
 
 ---
 
@@ -120,7 +105,6 @@ flowchart LR
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain document | `docs/runtime/12_TECH_DEBT.md` |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

@@ -1,14 +1,14 @@
 # MVP-008B_VISUAL_ENVIRONMENT
 
-> Tai-Chi AI Coach  
-> Version : 1.0  
-> Statut : **Proposable à la clôture** (Light + Dark livrés — validation visuelle explicite requise)  
-> Phase : MVP  
-> Emplacement : `docs/tickets/MVP-008B_VISUAL_ENVIRONMENT.md`  
-> Dépend de :  
-> - MVP-008A_UI_REFRESH (Fermé — CH-009)  
-> - `docs/12A_EXPERIENCE_DESIGN_SYSTEM.md` (VALIDÉ)  
-> - `docs/12B_VISUAL_ASSET_GUIDE.md` (VALIDÉ)  
+> Tai-Chi AI Coach
+> Version : 1.0
+> Statut : **Fermé** (GO — 7 août 2026 — commit `50bf954`)
+> Phase : MVP
+> Emplacement : `docs/tickets/MVP-008B_VISUAL_ENVIRONMENT.md`
+> Dépend de :
+> - MVP-008A_UI_REFRESH (Fermé — CH-009)
+> - `docs/12A_EXPERIENCE_DESIGN_SYSTEM.md` (VALIDÉ)
+> - `docs/12B_VISUAL_ASSET_GUIDE.md` (VALIDÉ)
 > - `docs/12B-A_OFFICIAL_BRAND_MARK.md` (VALIDÉ)
 
 ---
@@ -293,9 +293,9 @@ Règles figées :
 
 ### Catalogue typé
 
-- `web/src/config/background-assets.ts` — Hero ×5, Splash, sections ×4, textures ×3, patterns ×3  
-- `web/src/config/assets.ts` → `assets.backgrounds`  
-- `SCREEN_HERO_MAP` — mapping écrans → familles  
+- `web/src/config/background-assets.ts` — Hero ×5, Splash, sections ×4, textures ×3, patterns ×3
+- `web/src/config/assets.ts` → `assets.backgrounds`
+- `SCREEN_HERO_MAP` — mapping écrans → familles
 - Tous les fichiers graphiques : statut **`missing`** (aucune image inventée)
 
 ### Familles Hero (rôle exclusif)
@@ -312,22 +312,22 @@ Plus : `splash-main`, `section-*`, textures, patterns (voir README + ticket §27
 
 ### Règles figées dans la bibliothèque
 
-- Formats WebP ; dimensions desktop / tablet / mobile ; nommage `<usage>-<theme>-<variant>-<viewport>`  
-- Light/Dark pensés séparément ; Mei absente des paysages ; Brand Mark hors fichiers Hero  
-- Pratique : aucun Hero ; intensités indicatives par écran  
+- Formats WebP ; dimensions desktop / tablet / mobile ; nommage `<usage>-<theme>-<variant>-<viewport>`
+- Light/Dark pensés séparément ; Mei absente des paysages ; Brand Mark hors fichiers Hero
+- Pratique : aucun Hero ; intensités indicatives par écran
 - Validation artistique §47 / technique §48 du brief Partie 2
 
 ### Hors livrable Partie 2 (parties suivantes)
 
-- ~~Production réelle des fichiers WebP / SVG~~ → Sprint 3 Light fait  
-- ~~Intégration UI des backgrounds sur les écrans~~ → Sprint 3 Light fait  
+- ~~Production réelle des fichiers WebP / SVG~~ → Sprint 3 Light fait
+- ~~Intégration UI des backgrounds sur les écrans~~ → Sprint 3 Light fait
 - Hero Dark + Splash / sections / textures — restants
 
 ---
 
 ## 3.3 Sprint 3 — Hero Light (exports + intégration)
 
-**Statut : Fait** (6 août 2026) — ticket MVP-008B **reste ouvert** (Dark manquant).
+**Statut : Fait** (6 août 2026) — à cette date Dark encore manquant (complété au Sprint Dark).
 
 ### Masters retenus
 
@@ -366,7 +366,7 @@ CH-010 enregistré (Light). CH-011 enregistré (Dark).
 
 ## 3.4 Sprint Dark — Hero Dark (exports + catalogue)
 
-**Statut : Fait** (7 août 2026) — MVP-008B **proposable à la clôture** (Light + Dark + responsive validés).
+**Statut : Fait** (7 août 2026) — Light + Dark + responsive validés ; ticket **fermé** (`50bf954`).
 
 ### Masters Dark
 
@@ -397,7 +397,7 @@ Desktop 1920×1080 · Tablet 1280×1024 · Mobile 1080×1920 — recadrage Maste
 
 ### Intégration
 
-`HeroBackdrop` : thème Light → exports Light ; thème Dark → exports Dark.  
+`HeroBackdrop` : thème Light → exports Light ; thème Dark → exports Dark.
 Fallback (`null`) uniquement si l’asset n’est pas `ready`.
 
 ### Runtime
@@ -485,9 +485,9 @@ En fin de ticket :
 | Pipeline Hero Dark (infra) | **Fait** (Sprint 2 — aucun fichier image) |
 | Production Hero Light (15 exports) | **Fait** (Sprint 3) |
 | Intégration écrans Light | **Fait** (Sprint 3) |
-| Production / intégration Hero Dark | À faire |
-| Validation émotionnelle globale | Partielle (Light) |
-| Runtime CH-010 | **Fait** |
-| Clôture ticket | **Non** — Dark restant |
+| Production / intégration Hero Dark | **Fait** (Sprint Dark — CH-011) |
+| Validation émotionnelle globale | **Fait** (Light + Dark — validation PO) |
+| Runtime CH-010 / CH-011 | **Fait** |
+| Clôture ticket | **Fermé** — commit `50bf954` |
 
-*Fin du ticket MVP-008B (Parties 1–2 documentées).*
+*Fin du ticket MVP-008B.*

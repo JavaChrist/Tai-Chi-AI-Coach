@@ -61,7 +61,8 @@ timeline
 | 5 août 2026 | CH-008 — MVP-008 onboarding local enregistré. |
 | 6 août 2026 | CH-009 — MVP-008A refonte UI 12A enregistré. |
 | 6 août 2026 | CH-010 — MVP-008B Sprint 3 Hero Light exports + intégration ; ticket reste ouvert (Dark manquant). |
-| 7 août 2026 | CH-011 — MVP-008B Sprint Dark : Masters Dark + 15 exports + catalogue `final` ; MVP-008B proposable à la clôture. |
+| 7 août 2026 | CH-011 — MVP-008B Sprint Dark : Masters Dark + 15 exports + catalogue `final`. |
+| 7 août 2026 | MVP-008B **fermé** (commit `50bf954`) ; formalisation roadmap tickets MVP-009→018 (documentaire — pas de nouveau CH code). |
 
 ---
 

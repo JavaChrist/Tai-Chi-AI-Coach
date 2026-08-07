@@ -9,7 +9,7 @@
 | Fichier | `docs/22_ROADMAP.md` |
 | Version | 1.0 |
 | Statut | EN REVUE |
-| Dernière mise à jour | 5 août 2026 |
+| Dernière mise à jour | 7 août 2026 — §7.5 séquence tickets MVP-009→018 |
 | Auteur | Projet Tai-Chi-AI-Coach |
 | Documents dépendants | `docs/00_MASTER_PLAN.md`, `docs/01_VISION.md`, `docs/02_PRODUCT_SCOPE.md`, `docs/03_PERSONAS.md`, `docs/04_USER_JOURNEYS.md`, `docs/05_FEATURES.md`, `docs/06_BUSINESS_MODEL.md`, `docs/08_TAI_CHI_CURRICULUM.md`, `docs/09_AI_COACH.md`, `docs/10_COMPUTER_VISION.md`, `docs/11_VIRTUAL_HUMANS.md`, `docs/12_UX_UI.md`, `docs/13_TECH_ARCHITECTURE.md`, `docs/14_DATA_MODEL.md`, `docs/15_API_ARCHITECTURE.md`, `docs/16_AUTH_SECURITY.md`, `docs/17_PRIVACY_RGPD.md`, `docs/18_PWA_OFFLINE.md`, `docs/19_ANALYTICS.md`, `docs/20_TEST_STRATEGY.md`, `docs/21_DEPLOYMENT.md` |
 | Documents utilisant celui-ci | `docs/23_RELEASE_PLAN.md`, `docs/24_DEVELOPER_HANDOVER.md`, `docs/25_DESIGN_FREEZE.md` |
@@ -125,6 +125,29 @@ Architecture : Offline First local ; PWA ; pas de runtime tant que Design Freeze
 - parcours P-001/P-002/P-003 praticables ;
 - aucune dérive médicale / compétitive ;
 - gates MVP → V1 de `02` observés (mesure d’intérêt **méthode ouverte**).
+
+### 7.5 Séquence de tickets de développement (post–MVP-008B)
+
+La classification `F-xxx` / versions de ce document **ne change pas**.
+
+L’ordre **opérationnel** des tickets MVP restants est fixé dans :
+
+`docs/tickets/README.md` §20
+
+| Ticket | Périmètre |
+| --- | --- |
+| MVP-009 | F-016 + F-031 |
+| MVP-010 | F-001 + F-002 |
+| MVP-011 | F-005 + F-004 + F-007 |
+| MVP-012 | F-006 + enrichissement F-013 |
+| MVP-013 | F-003 |
+| MVP-014 | F-008 + F-014 + F-015 |
+| MVP-015 | F-009 + F-010 + F-032 + F-013 |
+| MVP-016 | F-033 + F-028 + F-029 |
+| MVP-017 | Offline / PWA (SW + cache cœur) |
+| MVP-018 | Recette / gates / publiabilité |
+
+**Hors cette séquence MVP :** auth / sync / compte / IA (V1) ; CV / caméra / VH / Mei (V2).
 
 ## 8. Version 1
 
