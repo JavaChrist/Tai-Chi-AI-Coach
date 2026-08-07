@@ -9,7 +9,7 @@
 | Fichier | `docs/26_PWA_APP_UPDATE.md` |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Dernière mise à jour | 7 août 2026 |
+| Dernière mise à jour | 7 août 2026 — commit `79b0a4e` |
 | Auteur | Projet Tai-Chi-AI-Coach |
 | Documents dépendants | `docs/18_PWA_OFFLINE.md`, `docs/21_DEPLOYMENT.md` (D-178), `docs/24_DEVELOPER_HANDOVER.md`, `docs/98_DEVELOPMENT_DOCUMENTATION_STANDARD.md` |
 | Documents utilisant celui-ci | Développement frontend PWA, diagnostic, futures apps réutilisant ce socle |

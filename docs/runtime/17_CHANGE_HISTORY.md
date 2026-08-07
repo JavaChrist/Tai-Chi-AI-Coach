@@ -38,7 +38,7 @@
 | CH-011 | Hero Dark responsive (5 Masters + 15 exports) + catalogue final — présentation seule | MVP-008B | `00`, `01`, `02`, `09`, `17` | — | 7 août 2026 | Appliqué |
 | CH-012 | Conseils de sécurité (F-016) + avertissements pré-pratique (F-031) ; Hero pratique `morning` | MVP-009 | `00`, `02`, `09`, `11`, `17` | — | 7 août 2026 | Appliqué — MVP-009 fermé |
 | CH-013 | Présentation Tai Chi (F-001) + découverte styles (F-002) — page `/decouverte` | MVP-010 | `00`, `02`, `09`, `11`, `17` | — | 7 août 2026 | Appliqué — MVP-010 fermé |
-| CH-014 | Socle PWA App Update — SW minimal, build id auto, modale contrôlée, différé `/pratique` | Socle (`docs/26`) | `00`, `01`, `07`, `09`, `17` | — | 7 août 2026 | Appliqué |
+| CH-014 | Socle PWA App Update — SW minimal, build id auto, modale contrôlée, différé `/pratique` | Socle (`docs/26`) | `00`, `01`, `07`, `09`, `17` | — | 7 août 2026 | Appliqué — commit `79b0a4e` |
 
 ## 4. Gouvernance
 
