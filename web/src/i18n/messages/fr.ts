@@ -5,6 +5,12 @@ export const fr: MessageDictionary = {
     name: "Tai-Chi AI Coach",
     shortDescription: "Accompagnement calme pour pratiquer le Tai Chi à votre rythme.",
   },
+  appUpdate: {
+    title: "Mise à jour disponible",
+    description:
+      "Une nouvelle version de l’application est prête. Mettez à jour pour continuer avec la dernière version.",
+    updateLabel: "Mettre à jour",
+  },
   profile: {
     title: "Profil",
     description: "Quelques réglages simples. Vos choix restent sur cet appareil.",
@@ -29,6 +35,7 @@ export const fr: MessageDictionary = {
     reduceMotionHelp:
       "Limite les animations de l’interface pour un affichage plus calme.",
     version: "Version de l’application",
+    buildId: "Identifiant de build",
     storage: "Stockage des préférences",
     storageLocal: "Local uniquement (cet appareil) — aucune synchronisation.",
     safetyAdvice: "Conseils de sécurité",

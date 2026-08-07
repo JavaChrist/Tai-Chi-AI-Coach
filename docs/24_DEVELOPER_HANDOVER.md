@@ -9,7 +9,7 @@
 | Fichier | `docs/24_DEVELOPER_HANDOVER.md` |
 | Version | 1.0 |
 | Statut | EN REVUE |
-| Dernière mise à jour | 5 août 2026 |
+| Dernière mise à jour | 7 août 2026 — section diagnostic PWA / lien `26` |
 | Auteur | Projet Tai-Chi-AI-Coach |
 | Documents dépendants | `docs/00_MASTER_PLAN.md` … `docs/23_RELEASE_PLAN.md`, `docs/98_DEVELOPMENT_DOCUMENTATION_STANDARD.md`, `docs/99_DOCUMENTATION_STANDARD.md`, `DECISIONS.md`, `CHANGELOG.md`, `WORKING_RULES.md` |
 | Documents utilisant celui-ci | `docs/25_DESIGN_FREEZE.md`, reprise d’équipe / IA |
@@ -163,6 +163,25 @@ MVP d’abord : ne pas construire CV/VH « parce que intéressant ».
 7. Pas d’`alert`/`confirm` natifs ; modales projet.  
 8. Pas de gamification compétitive ni promesse médicale.  
 9. Client non fiable ; entitlements et progression côté services.
+10. **PWA / version exécutée** — ne jamais conclure à une régression fonctionnelle avant d’avoir vérifié que la PWA exécute bien la dernière version disponible (`docs/26_PWA_APP_UPDATE.md`).
+
+## 9A. Diagnostic PWA / Service Worker (obligatoire)
+
+Référence complète : [`docs/26_PWA_APP_UPDATE.md`](26_PWA_APP_UPDATE.md).
+
+Avant tout diagnostic fonctionnel suspect « ça ne marche plus » / « je ne vois pas mon code » :
+
+1. Vérifier si un Service Worker contrôle la page.
+2. Vérifier `waiting` / `installing`.
+3. Déclencher `registration.update()`.
+4. Appliquer la mise à jour (modale **Mettre à jour**).
+5. Attendre `controllerchange`.
+6. Reload unique prévu.
+7. Confirmer l’**Identifiant de build** (Profil) vs build attendu.
+8. Seulement ensuite investiguer un bug applicatif.
+
+Secure Context uniquement (`https`, `localhost` / `127.0.0.1`) — **pas** sur `http://192.168.x.x`.
+Offline/cache métier = MVP-017 (non ouvert) ; le SW actuel est un **socle update** uniquement.
 
 ## 10. Documents de référence (rôles)
 
@@ -175,10 +194,11 @@ MVP d’abord : ne pas construire CV/VH « parce que intéressant ».
 | `09`–`11` | IA, CV, VH |
 | `12`–`15` | UX, tech, data, API |
 | `16`–`17` | Auth/sécu, RGPD |
-| `18`–`19` | Offline, Analytics |
+| `18`–`19` | Offline (conception), Analytics |
 | `20`–`23` | Tests, deploy, roadmap, releases |
 | `24` | Ce handover |
 | `25` | Gel avant code |
+| `26` | **PWA App Update** — socle SW / diagnostic version |
 | `98`/`99` | Standards doc dev / forme |
 | `DECISIONS` / `CHANGELOG` | Traçabilité |
 

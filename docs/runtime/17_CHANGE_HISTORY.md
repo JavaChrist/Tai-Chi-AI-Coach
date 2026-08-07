@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — CH-013 MVP-010 fermé |
-| Phase actuelle | Développement MVP — présentation / styles Livré |
+| Dernière mise à jour | 7 août 2026 — CH-014 PWA App Update socle |
+| Phase actuelle | Développement MVP — SW update socle |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **13** |
-| Changements majeurs | **13** |
+| Changements enregistrés | **14** |
+| Changements majeurs | **14** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements
@@ -38,6 +38,7 @@
 | CH-011 | Hero Dark responsive (5 Masters + 15 exports) + catalogue final — présentation seule | MVP-008B | `00`, `01`, `02`, `09`, `17` | — | 7 août 2026 | Appliqué |
 | CH-012 | Conseils de sécurité (F-016) + avertissements pré-pratique (F-031) ; Hero pratique `morning` | MVP-009 | `00`, `02`, `09`, `11`, `17` | — | 7 août 2026 | Appliqué — MVP-009 fermé |
 | CH-013 | Présentation Tai Chi (F-001) + découverte styles (F-002) — page `/decouverte` | MVP-010 | `00`, `02`, `09`, `11`, `17` | — | 7 août 2026 | Appliqué — MVP-010 fermé |
+| CH-014 | Socle PWA App Update — SW minimal, build id auto, modale contrôlée, différé `/pratique` | Socle (`docs/26`) | `00`, `01`, `07`, `09`, `17` | — | 7 août 2026 | Appliqué |
 
 ## 4. Gouvernance
 
@@ -55,6 +56,7 @@ timeline
     7 août 2026 : CH-011 Hero Dark MVP-008B
     7 août 2026 : CH-012 Safety Warnings MVP-009
     7 août 2026 : CH-013 Discovery MVP-010
+    7 août 2026 : CH-014 PWA App Update socle
 ```
 
 ## 6. Historique
@@ -71,6 +73,7 @@ timeline
 | 7 août 2026 | CH-012 clôturé — MVP-009 **fermé** (validation PO) ; F-016 / F-031 Livré. |
 | 7 août 2026 | CH-013 — MVP-010 `/decouverte` F-001 / F-002 (code local ; commit PO en attente). |
 | 7 août 2026 | CH-013 clôturé — MVP-010 **fermé** (validation PO) ; F-001 / F-002 Livré. |
+| 7 août 2026 | CH-014 — SW socle App Update (`docs/26_PWA_APP_UPDATE.md`) ; MVP-017 non ouvert. |
 
 ---
 

@@ -11,6 +11,11 @@ export type MessageDictionary = {
     name: string;
     shortDescription: string;
   };
+  appUpdate: {
+    title: string;
+    description: string;
+    updateLabel: string;
+  };
   profile: {
     title: string;
     description: string;
@@ -31,6 +36,7 @@ export type MessageDictionary = {
     reduceMotion: string;
     reduceMotionHelp: string;
     version: string;
+    buildId: string;
     storage: string;
     storageLocal: string;
     safetyAdvice: string;

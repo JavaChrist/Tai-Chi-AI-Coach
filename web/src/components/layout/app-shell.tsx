@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import { AppHeader } from "@/components/layout/app-header";
 import { BottomNav } from "@/components/layout/bottom-nav";
 import { OnboardingGate } from "@/components/onboarding/onboarding-gate";
+import { AppUpdateGate } from "@/components/pwa/app-update-gate";
 import { Toaster } from "@/components/ui/sonner";
 
 type AppShellProps = {
@@ -22,6 +23,7 @@ export function AppShell({ children }: AppShellProps) {
       {isOnboarding ? (
         <>
           {children}
+          <AppUpdateGate />
           <Toaster position="top-center" richColors closeButton />
         </>
       ) : (
@@ -34,6 +36,7 @@ export function AppShell({ children }: AppShellProps) {
             {children}
           </main>
           {isPractice ? null : <BottomNav />}
+          <AppUpdateGate />
           <Toaster position="top-center" richColors closeButton />
         </div>
       )}

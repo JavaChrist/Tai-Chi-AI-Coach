@@ -27,8 +27,7 @@ import { DISCOVERY_PATH } from "@/domain/discovery/content";
 import { SAFETY_ADVICE_PATH } from "@/domain/safety/content";
 import { availableLocales, getMessages } from "@/i18n";
 import { BRAND_NAME } from "@/config/assets";
-
-const APP_VERSION = "0.1.0";
+import { APP_BUILD_ID, APP_PACKAGE_VERSION } from "@/lib/pwa/build-id";
 
 export function ProfilePreferences() {
   const {
@@ -198,7 +197,11 @@ export function ProfilePreferences() {
             </Button>
           }
         />
-        <PreferenceCard title={t.version} description={`${BRAND_NAME} · ${APP_VERSION}`} />
+        <PreferenceCard
+          title={t.version}
+          description={`${BRAND_NAME} · ${APP_PACKAGE_VERSION}`}
+        />
+        <PreferenceCard title={t.buildId} description={APP_BUILD_ID} />
         <PreferenceCard title={t.storage} description={t.storageLocal} />
       </PreferenceSection>
     </div>

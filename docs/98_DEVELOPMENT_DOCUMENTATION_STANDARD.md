@@ -688,6 +688,7 @@ Cursor doit appliquer intégralement les règles suivantes :
 12. Ajouter une entrée `MEM-xxx` lorsqu’un compromis ou enseignement apparaît.
 13. Ne pas élargir le périmètre du ticket sans demande.
 14. En fin de tâche, lister les registres modifiés.
+15. **PWA :** ne jamais conclure à une régression fonctionnelle avant d’avoir vérifié que la PWA exécute bien la dernière version disponible (`docs/26_PWA_APP_UPDATE.md`, procédure diagnostic §7).
 
 Modèle de signalement :
 
@@ -714,6 +715,7 @@ ChatGPT / assistants externes doivent respecter les mêmes contraintes :
 8. Utiliser les modèles copiables de ce document.
 9. Rappeler qu’un commit est interdit sans documentation synchronisée.
 10. Séparer clairement conception (`99`, `00`–`25`) et runtime (`docs/runtime/`).
+11. **PWA :** ne jamais conclure à une régression fonctionnelle avant d’avoir vérifié que la PWA exécute bien la dernière version disponible (`docs/26_PWA_APP_UPDATE.md`).
 
 Prompt minimal recommandé :
 

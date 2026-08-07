@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — MVP-010 fermé (F-001 / F-002 Livré) |
+| Dernière mise à jour | 7 août 2026 — CH-014 PWA App Update socle |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -62,7 +62,7 @@
 | Tickets ouverts | **0** |
 | Tickets terminés | **12** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010) |
 | Tickets bloqués | 0 |
-| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero Light/Dark + pratique + prudence (F-016/F-031) + progression + préférences + onboarding local (`web/`) |
+| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero + pratique + prudence + découverte + progression + prefs + onboarding + **SW App Update socle** (`web/`) |
 
 Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
@@ -117,10 +117,10 @@ Détail : `12_TECH_DEBT.md`.
 
 | Domaine | État réel |
 | --- | --- |
-| Architecture | Spécifiée ; registre `01` ; Frontend **en cours** (+ onboarding / préférences / progression localStorage) ; Offline/PWA non implémentés |
+| Architecture | Spécifiée ; registre `01` ; Frontend **en cours** ; SW **socle update** (`26`) ; Offline/cache métier non commencés (MVP-017) |
 | Sécurité | Spécifiée ; registre `05` ACTIF ; **non implémentée** (0 contrôle runtime) |
 | RGPD | Spécifié ; registre `06` ACTIF ; **non implémenté** (0 traitement / consentement runtime) |
-| Offline | Spécifié ; registre `07` ACTIF ; **non implémenté** (0 SW / cache / sync) |
+| Offline | Spécifié ; registre `07` ACTIF ; SW update socle présent ; cache / sync **non** commencés |
 | Analytics | Spécifié ; registre `08` ACTIF ; **non implémenté** (0 événement / KPI) |
 | Documentation | Conception gelée ; Runtime infrastructure complète |
 
@@ -136,7 +136,7 @@ Détail : `12_TECH_DEBT.md`.
 | `04_API_STATUS.md` | API réelle | **ACTIF** | 5 août 2026 |
 | `05_SECURITY_STATUS.md` | Sécurité réelle | **ACTIF** | 5 août 2026 |
 | `06_PRIVACY_STATUS.md` | RGPD réel | **ACTIF** | 5 août 2026 |
-| `07_OFFLINE_STATUS.md` | Offline réel | **ACTIF** | 5 août 2026 — MVP-008 |
+| `07_OFFLINE_STATUS.md` | Offline réel | **ACTIF** | 7 août 2026 — CH-014 SW update |
 | `08_ANALYTICS_STATUS.md` | Analytics réel | **ACTIF** | 5 août 2026 |
 | `09_TEST_STATUS.md` | Tests réels | **ACTIF** | 6 août 2026 — MVP-008A |
 | `10_DEPLOYMENT_STATUS.md` | Déploiement réel | **ACTIF** | 5 août 2026 |
@@ -220,6 +220,7 @@ Détail : `12_TECH_DEBT.md`.
 | 7 août 2026 | **MVP-010 ouvert** (cadrage F-001 + F-002) ; fichier ticket créé ; aucune implémentation. |
 | 7 août 2026 | **MVP-010** code : `/decouverte` ; F-001 / F-002 En test ; CH-013 ; commit PO en attente. |
 | 7 août 2026 | **MVP-010 fermé** (validation PO) ; F-001 / F-002 → **Livré** ; CH-013 clôturé ; prochain = ouverture MVP-011. |
+| 7 août 2026 | **CH-014** — socle PWA App Update (`docs/26`) ; SW minimal + modale ; Offline cache / MVP-017 non ouverts. |
 
 ## 17. Diagrammes
 

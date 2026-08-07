@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/01_ARCHITECTURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — MVP-008B Sprint Dark / CH-011 |
+| Dernière mise à jour | 7 août 2026 — CH-014 PWA App Update socle |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel de l’architecture |
 | Référence conception | `docs/13_TECH_ARCHITECTURE.md` (architecture cible / gelée — non recopié ici) |
@@ -23,14 +23,14 @@ Référentiel de lecture des noms de couches : conception `13` (pour comparaison
 
 | Couche | État réel | Constat |
 | --- | --- | --- |
-| Frontend | **En cours** | Socle Next.js + shell + **EDS 12A** + **Hero Light/Dark** responsive (`HeroBackdrop`, 30 exports `final`) + bibliothèque + assets + pratique + préférences + onboarding (MVP-001…008B) ; curriculum local ; **pas** de PWA installable complète |
+| Frontend | **En cours** | Socle Next.js + shell + EDS 12A + Hero + bibliothèque + pratique + prefs + onboarding + découverte ; **SW socle App Update** (`/sw.js`, modale) ; PWA installable complète / offline cache **non** |
 | Backend | **Non commencé** | Aucun service backend |
 | API | **Non commencé** | Aucun endpoint exposé |
 | Base de données | **Non commencé** | Aucun schéma / instance applicative |
 | IA Coach | **Non commencé** | Aucune couche d’abstraction ni fournisseur branché |
 | Computer Vision | **Non commencé** | Aucun pipeline CV |
 | Virtual Humans | **Non commencé** | Aucun guide / runtime VH |
-| Offline | **Non commencé** | Manifeste PWA déclaré (MVP-004) ; **aucun** Service Worker / cache / IndexedDB |
+| Offline | **Partiel (update only)** | Manifeste (MVP-004) + SW **socle update** (CH-014 / `docs/26`) ; cache / IndexedDB / sync **non** commencés (MVP-017) |
 | Analytics | **Non commencé** | Aucun pipeline / sink analytics |
 | Sécurité | **Non commencé** | Aucun contrôle auth / sécu applicatif déployé |
 
@@ -40,7 +40,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 
 | Module | État | Responsable | Ticket d’origine | Dernière mise à jour |
 | --- | --- | --- | --- | --- |
-| Interface utilisateur (PWA) | En cours | Projet | MVP-008B | 7 août 2026 — shell + DS 12A + Hero Light/Dark (CH-010 / CH-011) ; SW absent ; logos SVG manquants (fallback icône / TC) |
+| Interface utilisateur (PWA) | En cours | Projet | CH-014 | 7 août 2026 — shell + DS + Hero + SW socle App Update ; cache offline absent ; logos SVG manquants (fallback) |
 | Couche application / orchestration client | En cours | Projet | MVP-001 | 5 août 2026 — layout / navigation |
 | Modules métiers (curriculum, progression, etc.) | En cours | Projet | MVP-008 | 5 août 2026 — curriculum + pratique + progression + préférences + onboarding localStorage ; pas de backend ; **aucune** logique modifiée par MVP-008A |
 | Couche d’abstraction IA | Non commencé | — | — | — |
@@ -48,7 +48,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 | Persistance (PostgreSQL) | Non commencé | — | — | — |
 | Stockage objet | Non commencé | — | — | — |
 | Synchronisation | Non commencé | — | — | — |
-| Offline / cache PWA | Non commencé | — | MVP-004 | 5 août 2026 — manifeste seulement ; pas de SW/cache |
+| Offline / cache PWA | Partiel | Projet | CH-014 | 7 août 2026 — SW update socle ; cache métier Non commencé (MVP-017) |
 | Computer Vision | Non commencé | — | — | — |
 | Virtual Humans / Mei | Non commencé | — | MVP-004 | Emplacements assets documentés ; **aucune** UI Mei |
 | Analytics (technique / produit) | Non commencé | — | — | — |
@@ -60,7 +60,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 | Élément | Statut | Justification |
 | --- | --- | --- |
 | Architecture cible documentée (`13`) | Conforme (conception) | Baseline figée par `25` ; non remise en cause |
-| Architecture réellement déployée | Partielle | Frontend + curriculum + assets + Hero Light/Dark + pratique + préférences + onboarding local + UI 12A ; conforme MVP-001…008B ; pas de backend / DB / SW |
+| Architecture réellement déployée | Partielle | Frontend + curriculum + assets + Hero + pratique + prefs + onboarding + découverte + SW update socle ; pas de backend / DB / cache offline |
 | Divergence d’implémentation | **Aucune** | Stack Next.js/React/TS/Tailwind alignée `13` ; pas de backend inventé |
 
 ## 5. Écarts
@@ -95,6 +95,7 @@ Aucune.
 | 6 août 2026 | MVP-008A : tokens 12A (`globals.css`) + primitives + écrans MVP ; aucune couche métier / service / store / route ajoutée. |
 | 6 août 2026 | MVP-008B Sprint 3 : 15 Hero Light + `HeroBackdrop` + affectation écrans ; Dark `missing` ; CH-010 ; aucune logique métier. |
 | 7 août 2026 | MVP-008B Sprint Dark : 5 Masters Dark + 15 exports Dark `final` ; catalogue + tests ; CH-011 ; aucune logique métier. |
+| 7 août 2026 | CH-014 — SW socle App Update (`/sw.js`, hook, modale, build id) ; Offline cache reste Non commencé. |
 
 ## 9. Diagrammes
 
@@ -105,6 +106,9 @@ flowchart TB
   subgraph EnCours[En cours]
     FE[Frontend]
   end
+  subgraph Partiel[Partiel]
+    OFF[Offline SW update only]
+  end
   subgraph NonCommence[Non commencé]
     BE[Backend]
     API[API]
@@ -112,7 +116,6 @@ flowchart TB
     AI[IA Coach]
     CV[Computer Vision]
     VH[Virtual Humans]
-    OFF[Offline]
     AN[Analytics]
     SEC[Sécurité]
   end

@@ -8,9 +8,9 @@
 | Fichier | `docs/runtime/07_OFFLINE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-008 |
-| Phase actuelle | Développement MVP — localStorage applicatif partiel ; Offline First non complet |
-| Document de référence | `docs/18_PWA_OFFLINE.md` |
+| Dernière mise à jour | 7 août 2026 — SW socle App Update (CH-014) |
+| Phase actuelle | Développement MVP — SW update minimal ; Offline First / cache métier non commencés |
+| Document de référence | `docs/18_PWA_OFFLINE.md`, `docs/26_PWA_APP_UPDATE.md` |
 | Type | Runtime Register — état réel Offline First / PWA |
 | Décisions conception | D-132 … D-142 (intention — non implémentées) |
 
@@ -21,7 +21,7 @@
 
 | Domaine | État réel |
 | --- | --- |
-| Service Worker | Non commencé |
+| Service Worker | **Socle update** — registration `/sw.js`, détection waiting, modale contrôlée (`docs/26`) ; **pas** de cache métier |
 | Cache | Non commencé |
 | IndexedDB | Non commencé |
 | Synchronisation | Non commencé |
@@ -33,7 +33,7 @@
 | Virtual Humans Offline | Non commencé |
 | Manifeste Web App | Fondation (MVP-004) — fichier + métadonnées ; **pas** d’installabilité garantie (icônes absentes) |
 
-**Synthèse :** Offline First **non** implémenté (pas de SW / cache / IndexedDB / sync). Stockage applicatif local partiel via **localStorage** (progression, préférences, onboarding). Manifeste PWA fondation (MVP-004).
+**Synthèse :** Offline First **non** implémenté (pas de cache / IndexedDB / sync). Service Worker **socle App Update** uniquement (CH-014 / `docs/26`) — hors MVP-017. Stockage applicatif local partiel via **localStorage**. Manifeste PWA fondation (MVP-004).
 
 ## 3. Classification Offline / Hybrid / Online
 
@@ -70,7 +70,7 @@ Classification D-142 pour F-033 uniquement parmi les features touchées par MVP-
 
 | Élément | Statut |
 | --- | --- |
-| Conformité vs `18` | Conforme : fondation manifeste sans SW (Offline First non anticipé) |
+| Conformité vs `18` | Conforme : Offline First non anticipé ; SW limité au cycle update (D-178 / `26`) ; cache métier reporté MVP-017 |
 | Divergences | **Aucune** |
 | Décisions Runtime | **Aucune** |
 
@@ -88,14 +88,16 @@ Classification D-142 pour F-033 uniquement parmi les features touchées par MVP-
 
 ```mermaid
 flowchart TB
+  subgraph Socle[Socle update]
+    SW[Service Worker minimal]
+  end
   subgraph Absent[Non commencé]
-    SW[Service Worker]
     Cache[Cache]
     IDB[IndexedDB]
     Q[Queue Offline]
     Sync[Sync engine]
   end
-  UI[PWA UI] -.-> SW
+  UI[PWA UI] --> SW
   SW -.-> Cache
   SW -.-> IDB
   IDB -.-> Q
@@ -106,8 +108,8 @@ flowchart TB
 
 ```mermaid
 pie title Offline Runtime — état réel
-  "Non commencé" : 1
-  "Implémenté" : 0
+  "Non commencé Offline" : 1
+  "SW update socle" : 1
 ```
 
 ### 8.3 Synchronisation
@@ -159,13 +161,15 @@ Toute évolution Offline devra :
 | 5 août 2026 | MVP-005 — pratique locale en mémoire ; **pas** d’Offline First / SW (état pratique perdu au refresh). |
 | 5 août 2026 | MVP-006 — historique progression en localStorage ; Offline First / SW toujours Non commencé. |
 | 5 août 2026 | MVP-008 — onboarding localStorage classé **Offline** (D-142) ; Offline First / SW toujours Non commencé. |
+| 7 août 2026 | CH-014 — SW **socle App Update** (`/sw.js`, modale, SKIP_WAITING) ; cache / Offline First toujours Non commencé ; MVP-017 non ouvert. |
 
 ## 11. Références
 
 - `docs/18_PWA_OFFLINE.md`  
-- `docs/runtime/README.md`  
-- `docs/runtime/01_ARCHITECTURE_STATUS.md`  
-- `docs/25_DESIGN_FREEZE.md`  
+- `docs/26_PWA_APP_UPDATE.md`
+- `docs/runtime/README.md`
+- `docs/runtime/01_ARCHITECTURE_STATUS.md`
+- `docs/25_DESIGN_FREEZE.md`
 
 ---
 
