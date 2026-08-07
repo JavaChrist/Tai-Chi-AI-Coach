@@ -29,3 +29,24 @@ Mei est la **guide virtuelle envisagée** (`docs/11_VIRTUAL_HUMANS.md`).
 | `mei-placeholder.svg` | — | SVG | oui | Placeholder documentaire | manquant |
 
 Tone : calme, rassurant, non infantilisant, non médical.
+
+## Tenue Tai Chi — référence officielle
+
+Dossier : `tai-chi/`
+
+| Fichier | Dimensions | Format | Rôle | État |
+| --- | --- | --- | --- | --- |
+| `mei-tai-chi-reference-front.webp` | 768×1280 | WebP (VP8) | **Référence officielle Mei — tenue Tai Chi** | **livré** |
+| `mei-tai-chi-reference-front.png` | source | PNG | Source de retraitement (non servie par l’app) | conservée |
+
+Cette image fixe :
+
+- tenue ivoire / crème ;
+- veste Tai Chi (col mandarin, brandebourgs) ;
+- pantalon ample ;
+- chaussures ;
+- apparence / coiffure de référence.
+
+Elle sert aux futurs assets pédagogiques et au pipeline vidéo.
+
+**Ce n’est pas** un asset F-007 de mouvement : les références pédagogiques MV-001…003 vivent sous `web/public/curriculum/movements/`.

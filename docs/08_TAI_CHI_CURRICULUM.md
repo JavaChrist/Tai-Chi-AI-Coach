@@ -7,9 +7,9 @@
 | Nom du document | Tai Chi Curriculum |
 | Numéro | 08 |
 | Fichier | `docs/08_TAI_CHI_CURRICULUM.md` |
-| Version | 1.0 |
+| Version | 1.1 |
 | Statut | EN REVUE |
-| Dernière mise à jour | 4 août 2026 |
+| Dernière mise à jour | 7 août 2026 — corpus MVP MV-001…003 (validation PO) |
 | Auteur | Projet Tai-Chi-AI-Coach |
 | Documents dépendants | `docs/00_MASTER_PLAN.md`, `docs/01_VISION.md`, `docs/02_PRODUCT_SCOPE.md`, `docs/03_PERSONAS.md`, `docs/04_USER_JOURNEYS.md`, `docs/05_FEATURES.md`, `docs/06_BUSINESS_MODEL.md`, `docs/07_CONTENT_STRATEGY.md` |
 | Documents utilisant celui-ci | `docs/09_AI_COACH.md`, `docs/10_COMPUTER_VISION.md`, `docs/11_VIRTUAL_HUMANS.md`, `docs/12_UX_UI.md`, `docs/22_ROADMAP.md` |
@@ -20,7 +20,9 @@
 > **NOTE**
 >
 > Référentiel pédagogique officiel.
-> Aucun style Tai Chi définitif, aucun nombre de mouvements, aucun planning journalier figé.
+> Aucun style Tai Chi définitif (Yang / Chen / Wu / Sun restent ouverts).
+> Aucun planning journalier figé.
+> **Corpus MVP initial** de trois fondamentaux (MV-001…003) validé PO — §27 ; catalogue complet et forme entière restent ouverts.
 > Structure réutilisable pour Yang, Chen, Wu, Sun, Qi Gong, mobilité, respiration.
 > Correspondance avec D-041 : Découverte ; Initiation ≈ Débutant ; Progression ; Consolidation ; Autonomie ≈ Maîtrise.
 > Document conforme à `docs/99_DOCUMENTATION_STANDARD.md`.
@@ -30,7 +32,7 @@
 Définir la progression pédagogique officielle : dans quel ordre apprendre, pourquoi, comment mémoriser, pratiquer, consolider, réviser et devenir autonome.
 
 Ce document explique **comment le Tai Chi est enseigné**.  
-Il ne décrit pas encore précisément une forme ni une liste de mouvements.
+Il contient désormais le **corpus minimal MVP** de mouvements fondamentaux (§27), sans figer une forme complète ni un style.
 
 ## 3. Philosophie pédagogique
 
@@ -433,23 +435,162 @@ Un contenu de cursus n’est admissible que s’il :
 | H-K4 | Les critères de passage qualitatifs conviennent mieux que des scores. |
 | H-K5 | La répétition valorisée accélère la mémorisation plus que l’ajout rapide de gestes. |
 
-## 27. Décisions ouvertes
+## 27. Corpus mouvements MVP — fondamentaux (F-004 / F-005 / F-007)
 
-- style(s) et forme(s) retenus ;
-- nombre de mouvements ;
-- mapping exact geste → phase ;
+> **Source de vérité contenu** pour MVP-011.
+> Validé Product Owner — 7 août 2026.
+> `styleKey = null` (indépendant de Yang / Chen / Wu / Sun).
+> Les IDs métier `MV-00x` sont stables ; les slugs techniques suivent les conventions `web/public/curriculum/`.
+
+### 27.1 Synthèse
+
+| ID métier | Slug technique | Titre FR | Niveau | Catégorie | Phase |
+| --- | --- | --- | --- | --- | --- |
+| MV-001 | `posture-de-depart` | Posture de départ | Initiation (débutant) | Fondamentaux | Initiation |
+| MV-002 | `transfert-poids-lateral` | Transfert de poids latéral | Initiation (débutant) | Fondamentaux | Initiation |
+| MV-003 | `pas-avant-controle` | Pas avant contrôlé | Initiation (débutant) | Déplacement | Initiation |
+
+Ordre pédagogique recommandé : MV-001 → MV-002 → MV-003.
+
+### 27.2 MV-001 — Posture de départ
+
+| Champ | Contenu officiel |
+| --- | --- |
+| ID | MV-001 |
+| Slug | `posture-de-depart` |
+| Titre | Posture de départ |
+| Niveau | Initiation |
+| Catégorie | Fondamentaux |
+| Objectif | Trouver une position stable et détendue avant de commencer à bouger. |
+| Placement | Pieds posés confortablement au sol ; genoux souples, sans chercher à descendre ; buste vertical sans rigidité ; épaules et bras relâchés ; regard naturellement dirigé devant soi. |
+| Déroulement | 1. S’installer dans une position confortable. 2. Répartir tranquillement le poids entre les deux jambes. 3. Relâcher les épaules et les bras. 4. Garder les genoux souples. 5. Observer simplement la posture et la respiration quelques instants. |
+| Respiration | Naturelle, sans imposer de rythme. |
+| Rythme | Immobile et calme. Environ 20 à 30 secondes pour l’apprentissage. |
+| Points d’attention | Chercher confort et stabilité plutôt qu’une posture parfaite. |
+| Erreurs fréquentes | Verrouiller les genoux ; hausser les épaules ; retenir sa respiration ; rechercher volontairement une position très basse. |
+| Prudence | En cas d’inconfort ou de douleur, réduire l’amplitude ou interrompre l’exercice. |
+| styleKey | `null` |
+| Image F-007 (direction) | Mei ; plein pied ; posture neutre ; vue de face ; fond neutre ; pas de texte / flèche / annotation. |
+| Fichier média | `/curriculum/movements/movement-posture-de-depart-key.webp` (WebP réel 768×1280 — livré) |
+
+### 27.3 MV-002 — Transfert de poids latéral
+
+| Champ | Contenu officiel |
+| --- | --- |
+| ID | MV-002 |
+| Slug | `transfert-poids-lateral` |
+| Titre | Transfert de poids latéral |
+| Niveau | Initiation |
+| Catégorie | Fondamentaux |
+| Objectif | Sentir progressivement le passage du poids d’une jambe vers l’autre. |
+| Placement | Position stable proche de la posture de départ avec suffisamment d’espace entre les pieds pour rester confortable. |
+| Déroulement | 1. Commencer avec le poids réparti entre les deux jambes. 2. Déplacer lentement le poids vers une jambe. 3. Garder les deux pieds en contact avec le sol. 4. Arrêter le déplacement avant toute sensation d’instabilité. 5. Revenir progressivement au centre. 6. Répéter vers l’autre côté. |
+| Respiration | Naturelle et continue. |
+| Rythme | Lent, régulier, sans à-coup. |
+| Points d’attention | Le déplacement doit rester contrôlé. Il n’est pas nécessaire de transférer tout le poids sur une seule jambe. |
+| Erreurs fréquentes | Déplacer brusquement le bassin ; se pencher fortement sur le côté ; bloquer la respiration ; rechercher une amplitude excessive. |
+| Prudence | Conserver une amplitude permettant de revenir facilement au centre. |
+| styleKey | `null` |
+| Image F-007 (direction) | Mei ; plein pied ; position représentative du transfert latéral ; fond neutre ; pas de texte / flèche / annotation. |
+| Fichier média | `/curriculum/movements/movement-transfert-poids-lateral-key.webp` (WebP réel 768×1280 — livré) |
+
+### 27.4 MV-003 — Pas avant contrôlé
+
+| Champ | Contenu officiel |
+| --- | --- |
+| ID | MV-003 |
+| Slug | `pas-avant-controle` |
+| Titre | Pas avant contrôlé |
+| Niveau | Initiation |
+| Catégorie | Déplacement |
+| Objectif | Découvrir comment déplacer un pied tout en conservant contrôle et stabilité. |
+| Placement | Position confortable et stable avec suffisamment d’espace libre devant soi. |
+| Déroulement | 1. Transférer progressivement le poids sur une jambe. 2. Lorsque l’autre pied devient suffisamment léger, le soulever sans précipitation. 3. L’avancer d’une petite distance. 4. Poser doucement le pied devant soi. 5. Stabiliser la position. 6. Transférer progressivement une partie du poids vers l’avant. 7. Revenir tranquillement à la position de départ. |
+| Respiration | Naturelle. Ne pas chercher à synchroniser artificiellement chaque étape avec une inspiration ou une expiration. |
+| Rythme | Lent, avec une courte pause possible entre les différentes phases. |
+| Points d’attention | Privilégier un petit pas maîtrisé plutôt qu’un grand pas. |
+| Erreurs fréquentes | Avancer avant d’avoir suffisamment transféré le poids ; faire un pas trop grand ; déplacer le corps brutalement ; accélérer pour retrouver l’équilibre. |
+| Prudence | Pratiquer dans un espace dégagé et réduire la longueur du pas dès que la stabilité diminue. |
+| styleKey | `null` |
+| Image F-007 (direction) | Mei ; plein pied ; face presque frontale ; jambe arrière porteuse ; petit pas avant (talon avant venant se poser) ; bras détendus ; fond neutre ; pas de texte / flèche / annotation. |
+| Fichier média | `/curriculum/movements/movement-pas-avant-controle-key.webp` (WebP réel 768×1280 — livré) |
+
+### 27.5 Spécifications images F-007 (issues de `12B` + conventions dépôt)
+
+| Règle | Source | Application MVP |
+| --- | --- | --- |
+| Format | `web/public/curriculum/README.md` | **WebP** |
+| Cadre Mei plein pied | `12B` §8.8 | Corps entier, marge généreuse |
+| Dimensions de référence plein pied Mei | `web/public/characters/mei/README.md` (`mei-full-body-guide.webp`) | **768×1280** (ratio **3:5** portrait) — cible pour références mouvement |
+| Transparence | `12B` §8 / README Mei | Recommandée si fond isolable ; fond neutre/simple accepté |
+| Interdits image | `12B` ch.6 / §8.11 ; direction PO | Pas de texte intégré, flèches, annotations ; pas de pose publicitaire / agressive / médicale |
+| Naming | Convention curriculum | `movement-<slug>-key.webp` |
+| Responsive | Pratique Hero vs média pédagogique | **Un asset** par mouvement (pas 3 viewports Hero) |
+| MVP vs Mei V2 | `12B` §8.10 ; README Mei | Mei non obligatoire MVP en général ; **ici** direction PO = références F-007 avec Mei pour ce corpus |
+
+### 27.6 Modèle Movement documentaire (MVP-011)
+
+Aligné `14_DATA_MODEL` + champs du corpus §27.2–27.4. **Pas de TypeScript dans cette étape.**
+
+```text
+Movement
+  id                 // métier stable : "MV-001" …
+  slug               // URL : "posture-de-depart" …
+  title              // titre FR
+  summary            // = objectif pédagogique (carte liste)
+  level              // "initiation" (DifficultyLevel débutant / phase Initiation)
+  category           // "fondamentaux" | "deplacement"
+  curriculumPhaseKey // "initiation"
+  placement          // texte
+  instructions[]     // étapes ordonnées du déroulement { sortOrder, body }
+  breathing          // texte
+  rhythm             // texte
+  attentionPoints[]  // textes
+  commonMistakes[]   // textes non médicaux
+  safetyNote         // prudence (alignement F-016)
+  styleKey           // null
+  mediaKeyImage      // logicalLocator MediaAsset image F-007 (nullable jusqu’à livraison asset)
+  publicationStatus  // draft | in_review | validated | published | archived
+  contentVersion     // SemVer contenu
+  locale             // "fr"
+  sortOrder          // 1, 2, 3
+```
+
+`Instruction` minimale : `{ id?, sortOrder, body }`.
+Lien média : `MediaAsset` type `image` + `ContentMediaLink` vers Movement (`14`).
+
+### 27.7 Relation aux séances structurelles actuelles
+
+| Séance (`local-curriculum`) | Usage prévu du corpus |
+| --- | --- |
+| `st-decouverte-premiere-courte` | Optionnel : MV-001 en corps très léger (après wiring) ; rituel reste prioritaire |
+| `st-initiation-rituel-base` | Principal : corps de séance → MV-001 puis MV-002 (MV-003 selon charge) |
+| `st-progression-liaison-legere` | Après familiarité : liaison entre MV-002 / MV-003 déjà connus — **pas** de nouveau geste inventé ici |
+
+Le mapping SessionStep ↔ Movement sera implémenté au développement (MVP-011 / enrichissements F-013) ; il n’existe pas encore en code.
+
+### 27.8 Relation MVP-013 (F-003)
+
+Le parcours débutant référencera ces IDs `MV-00x` dans l’ordre Initiation. **Ne pas ouvrir MVP-013** dans MVP-011.
+
+## 28. Décisions ouvertes
+
+- style(s) et forme(s) retenus (toujours ouverts) ;
+- **catalogue au-delà de MV-001…003** (nombre et contenu) ;
+- mapping exact geste → étapes de chaque séance publiée ;
 - durées cibles des leçons/séances ;
 - calendrier d’introduction des enchaînements ;
-- place de la respiration/méditation dans chaque phase ;
+- place de la respiration/méditation dédiée (F-014 / F-015) dans chaque phase ;
 - critères opérationnels détaillés de passage (sans compétition) ;
-- éventuelle déclinaison Qi Gong / mobilité sur la même architecture.
+- éventuelle déclinaison Qi Gong / mobilité sur la même architecture ;
+- éventuels mouvements F-007 au-delà de MV-001…003.
 
-## 28. Critères de validation
+## 29. Critères de validation
 
 1. Document relu et accepté explicitement.
 2. Cinq phases stables et ordonnées.
 3. Structures officielles de leçon et de séance définies.
-4. Aucun style ni nombre de mouvements indûment figé.
+4. Style non figé ; corpus MVP initial MV-001…003 tracé (§27) sans figer une forme complète.
 5. Mei = guide ; IA = assistant.
 6. Réutilisabilité multi-disciplines affirmée.
 7. Décisions D-046 à D-050 tracées.
@@ -457,13 +598,14 @@ Un contenu de cursus n’est admissible que s’il :
 
 Statut actuel : **EN REVUE**.
 
-## 29. Conclusion
+## 30. Conclusion
 
 Le cursus officiel de Tai-Chi AI Coach repose sur cinq phases — Découverte, Initiation, Progression, Consolidation, Autonomie — et sur des structures stables de leçon et de séance.
 
-Il enseigne dans un ordre logique, par répétition intelligente, vers une autonomie progressive, indépendamment du style finalement choisi. Mei guide ; l’IA assiste ; le silence permet de pratiquer.
+Un **premier corpus MVP** de trois fondamentaux (MV-001…003) est désormais documenté pour la bibliothèque et les séances d’Initiation, sans figer le style ni la forme complète. Mei guide ; l’IA assiste ; le silence permet de pratiquer.
 
-Prochaine étape documentaire : `docs/09_AI_COACH.md`.
+Prochaine étape documentaire historique : `docs/09_AI_COACH.md`.
+Prochaine étape produit : développement MVP-011 (**READY FOR CODE** — assets F-007 livrés §27.5).
 
 ---
 
@@ -471,7 +613,7 @@ Prochaine étape documentaire : `docs/09_AI_COACH.md`.
 
 | Champ | Valeur |
 | --- | --- |
-| Version | 1.0 |
+| Version | 1.1 |
 | Statut | EN REVUE |
 | Prochain document | `docs/09_AI_COACH.md` |
 | Fin officielle | Oui |

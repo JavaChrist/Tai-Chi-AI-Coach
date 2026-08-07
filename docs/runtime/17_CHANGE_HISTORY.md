@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — CH-014 PWA App Update socle |
-| Phase actuelle | Développement MVP — SW update socle |
+| Dernière mise à jour | 8 août 2026 — CH-015 clôturé (MVP-011 fermé) |
+| Phase actuelle | Développement MVP — MVP-011 fermé |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **14** |
-| Changements majeurs | **14** |
+| Changements enregistrés | **15** |
+| Changements majeurs | **15** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements

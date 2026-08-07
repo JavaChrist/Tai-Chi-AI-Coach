@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/03_DATA_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 — MVP-008 |
+| Dernière mise à jour | 8 août 2026 — MVP-011 Movements |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel du modèle de données |
 | Référence conception | `docs/14_DATA_MODEL.md` (modèle cible / gelé — non recopié comme implémenté) |
@@ -35,7 +35,7 @@ Statuts autorisés : Non commencé · En développement · En validation · Impl
 | Utilisateur | D1 Identité | Non commencé | — | — | Aucun compte runtime (page Profil = préférences + statut onboarding) |
 | Onboarding | D2 | En développement | MVP-008 | 5 août 2026 | `OnboardingState` via `OnboardingStore` (localStorage `…onboarding.v1`) ; durée via préférences (pas de doublon) |
 | Préférences | D10 | En développement | MVP-007 | 5 août 2026 | `UserPreferences` via `PreferenceStore` (localStorage) ; durée/niveau aussi écrits depuis l’onboarding |
-| Curriculum | D3 | En développement | MVP-003 | 5 août 2026 | Types + données locales + reader ; `SessionTemplate` / `SessionStep` / phases ; pas SQL |
+| Curriculum | D3 | En développement | MVP-003 / MVP-011 | 8 août 2026 | Sessions + **Movement** (MV-001…003) ; `local-movements` + `movementReader` ; pas SQL |
 | Séances | D4 Pratique | En développement | MVP-005 | 5 août 2026 | `LocalPracticeSession` en mémoire (reducer) ; **non** persistée ; pas de SQL |
 | Progression | D5 | En développement | MVP-006 | 5 août 2026 | `PracticeRecord` / stats via `ProgressStore` (localStorage) ; interface remplaçable |
 | Recommandations | D6 | Non commencé | — | — | — |
@@ -44,7 +44,7 @@ Statuts autorisés : Non commencé · En développement · En validation · Impl
 | Virtual Humans | D9 | Non commencé | — | — | — |
 | Notifications | D11 | Non commencé | — | — | — |
 | Premium | D12 | Non commencé | — | — | — |
-| Médias | D13 | Non commencé | — | — | — |
+| Médias | D13 | En développement | MVP-011 | 8 août 2026 | `mediaKeyImage` WebP F-007 liés aux Movements ; pas de MediaAsset table / pas de vidéo F-006 |
 | Consentements | D14 | Non commencé | — | — | — |
 | Analytics | D15 | Non commencé | — | — | Produit = V1 en conception ; rien en runtime |
 

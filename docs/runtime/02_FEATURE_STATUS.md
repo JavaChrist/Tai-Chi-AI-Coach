@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — MVP-010 fermé ; F-001 / F-002 Livré |
+| Dernière mise à jour | 8 août 2026 — MVP-011 fermé ; F-004/F-005/F-007 Livré |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -21,16 +21,16 @@
 | Indicateur | Valeur réelle |
 | --- | --- |
 | Total des fonctionnalités | **41** (`F-001` … `F-041`) |
-| Terminées (Validé / Livré) | **4** (`F-001`, `F-002`, `F-016`, `F-031`) |
+| Terminées (Validé / Livré) | **7** (`F-001`, `F-002`, `F-004`, `F-005`, `F-007`, `F-016`, `F-031`) |
 | En cours (En développement / En test) | **7** (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
-| Restantes (Non commencé) | **30** |
+| Restantes (Non commencé) | **27** |
 
 ### Répartition par version cible (conception)
 
 | Version cible | Nombre | Statut d’implémentation |
 | --- | --- | --- |
 | Pré-MVP | 2 | **2 livré** (`F-016`, `F-031`) |
-| MVP | 17 | 2 livré (`F-001`, `F-002`) / 7 en cours (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) / 8 non commencés |
+| MVP | 17 | 5 livré (`F-001`, `F-002`, `F-004`, `F-005`, `F-007`) / 7 en cours (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) / 5 non commencés |
 | V1 | 10 | 0 livré / 10 non commencés |
 | V2 | 7 | 0 livré / 7 non commencés |
 | V3 | 2 | 0 livré / 2 non commencés |
@@ -47,10 +47,10 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-001 | Présentation du Tai Chi | MVP | Livré | MVP-010 | 7 août 2026 | Page `/decouverte` ; Hero `mountain` ; non médical ; validé PO |
 | F-002 | Découverte des styles | MVP | Livré | MVP-010 | 7 août 2026 | Section légère `/decouverte` ; Yang/Chen/Wu/Sun ; aucun choix obligatoire ; validé PO |
 | F-003 | Parcours débutant | MVP | Non commencé | — | — | — |
-| F-004 | Bibliothèque des mouvements | MVP | Non commencé | — | — | `/bibliotheque` sert pour l’instant le catalogue de **séances** (F-013) ; pas de catalogue Mouvement |
-| F-005 | Explication détaillée d’un mouvement | MVP | Non commencé | — | — | — |
-| F-006 | Vidéo pédagogique | MVP | Non commencé | — | — | — |
-| F-007 | Images de référence | MVP | Non commencé | — | — | — |
+| F-004 | Bibliothèque des mouvements | MVP | Livré | MVP-011 | 8 août 2026 | `/bibliotheque/mouvements` ; MV-001…003 ; Hero bamboo ; validé PO |
+| F-005 | Explication détaillée d’un mouvement | MVP | Livré | MVP-011 | 8 août 2026 | Fiches `/bibliotheque/mouvements/[slug]` ; contenu `08` §27 ; validé PO |
+| F-006 | Vidéo pédagogique | MVP | Non commencé | — | — | Réservé MVP-012 |
+| F-007 | Images de référence | MVP | Livré | MVP-011 | 8 août 2026 | WebP F-007 768×1280 ; fallback sans média ; validé PO |
 | F-008 | Programme quotidien | MVP | Non commencé | — | — | — |
 | F-009 | Historique | MVP | En développement | MVP-006 | 6 août 2026 | Historique localStorage ; UI carnet 12A (MVP-008A) ; pas de sync ; pas de stats avancées V1 (F-024) |
 | F-010 | Progression | MVP | En développement | MVP-006 | 6 août 2026 | Stats locales sobres (carnet, pas dashboard) ; pas de gamification ; pas de parcours F-003 branché |
@@ -117,6 +117,11 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 7 août 2026 | MVP-010 **ouvert** (cadrage) ; `F-001` / `F-002` restent **Non commencé** (pré-développement documentaire) ; aucune implémentation. |
 | 7 août 2026 | MVP-010 code : `F-001` / `F-002` → **En test** ; `/decouverte` ; CH-013 ; clôture Git en attente PO. |
 | 7 août 2026 | MVP-010 **fermé** (validation PO) ; `F-001` / `F-002` → **Livré** ; CH-013 clôturé. |
+| 7 août 2026 | MVP-011 **ouvert** (cadrage) ; `F-004` / `F-005` / `F-007` restent **Non commencé** (pré-développement documentaire) ; inventaire : 0 mouvement / 0 image F-007 ; aucune implémentation. |
+| 7 août 2026 | MVP-011 corpus **MV-001…003** validé PO → `docs/08` §27 ; F-005 doc OK ; F-007 **ASSET BLOCKED** (3 images absentes) ; aucun code. |
+| 8 août 2026 | MVP-011 F-007 : 3 WebP réels 768×1280 livrés ; référence Mei tenue documentée ; gate **READY FOR CODE** ; aucun code. |
+| 8 août 2026 | MVP-011 code : `F-004` / `F-005` / `F-007` → **En test** ; CH-015 ; attente validation PO ; MVP-012 non ouvert. |
+| 8 août 2026 | MVP-011 **fermé** (validation PO) ; `F-004` / `F-005` / `F-007` → **Livré** ; CH-015 clôturé ; MVP-012 non ouvert. |
 
 ## 6. Diagrammes
 
@@ -124,9 +129,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 
 ```mermaid
 pie title MVP + Pré-MVP — état réel
-  "Non commencé" : 8
+  "Non commencé" : 5
   "En développement / En test" : 7
-  "Livré / validé" : 4
+  "Livré / validé" : 7
 ```
 
 ### 6.2 Répartition des versions

@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — CH-014 PWA App Update |
+| Dernière mise à jour | 8 août 2026 — MVP-011 fermé / CH-015 |
 | Phase actuelle | Développement MVP — tests unitaires Vitest |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
@@ -35,6 +35,7 @@
 | Safety F-016 / F-031 | Partielle (contenu + gate + page — MVP-009) |
 | Discovery F-001 / F-002 | Partielle (contenu + page `/decouverte` — MVP-010) |
 | PWA App Update socle | Partielle (SW source, register, prompt, route `/sw.js` — CH-014) |
+| Mouvements F-004 / F-005 / F-007 | Partielle (reader + catalogue + fiche + accès bibliothèque — MVP-011) |
 
 ## 4. Exécutions
 
@@ -108,6 +109,16 @@
 | Résultat cumulé | **81 / 81 passed** |
 | Build / TypeScript / ESLint | OK |
 
+### Campagne MVP-011 (Movements Library)
+
+| Champ | Valeur |
+| --- | --- |
+| Date | 8 août 2026 |
+| Outil | Vitest + Next build + ESLint + `tsc` |
+| Périmètre | F-004 / F-005 / F-007 ; reader ; catalogue ; fiche ; régression `/bibliotheque` |
+| Résultat cumulé | **95 / 95 passed** |
+| Build / TypeScript / ESLint | OK |
+
 ## 5. Historique
 
 | Date | Événement |
@@ -122,6 +133,8 @@
 | 7 août 2026 | MVP-010 — 68/68 ; `/decouverte` ; CH-013. |
 | 7 août 2026 | MVP-010 **fermé** — campagne 68/68 confirmée (validation PO). |
 | 7 août 2026 | CH-014 — PWA App Update socle ; 81/81 ; build OK ; MVP-017 non ouvert. |
+| 8 août 2026 | MVP-011 — 95/95 ; F-004/F-005/F-007 En test ; CH-015 ; MVP-012 non ouvert. |
+| 8 août 2026 | MVP-011 **fermé** — campagne 95/95 confirmée (validation PO). |
 
 ---
 

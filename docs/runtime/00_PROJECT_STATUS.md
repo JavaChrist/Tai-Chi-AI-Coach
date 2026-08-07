@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — CH-014 PWA App Update socle |
+| Dernière mise à jour | 8 août 2026 — MVP-011 fermé (F-004/F-005/F-007 Livré) |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,8 +22,8 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — prochain = ouverture MVP-011 |
-| Statut global | Conception close ; Runtime 20/20 ; **MVP-009** / **MVP-010 fermés** ; **F-001** / **F-002** / **F-016** / **F-031** **Livré** ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; auth/sync hors MVP (V1) |
+| Phase | Développement MVP — MVP-011 fermé ; prochain MVP-012 (planifié) |
+| Statut global | Conception close ; Runtime 20/20 ; **MVP-009** / **MVP-010** / **MVP-011 fermés** ; **F-001** / **F-002** / **F-004** / **F-005** / **F-007** / **F-016** / **F-031** **Livré** ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; auth/sync hors MVP (V1) |
 | Dernière mise à jour globale | 7 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
@@ -33,7 +33,7 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | Prudence + découverte livrées ; prochain = **ouverture MVP-011** (fichier à créer) |
+| Développement | **En cours** | **MVP-011 fermé** ; F-004/F-005/F-007 **Livré** ; prochain **MVP-012** planifié (non ouvert) |
 | Tests | **En cours** | Vitest OK ; pas de campagne produit E2E complète |
 | Release | **Non commencé** | 0 Release (`19`) ; déploiement absent (`10`) |
 
@@ -59,7 +59,7 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Tickets ouverts | **0** |
+| Tickets ouverts | **0** (prochain planifié : MVP-012) |
 | Tickets terminés | **12** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010) |
 | Tickets bloqués | 0 |
 | Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero + pratique + prudence + découverte + progression + prefs + onboarding + **SW App Update socle** (`web/`) |
@@ -182,10 +182,10 @@ Détail : `12_TECH_DEBT.md`.
 
 ## 15. Prochaines étapes (réelles, non estimées)
 
-1. **Ouvrir MVP-011** — F-005 + F-004 + F-007 (créer le fichier ticket ; aucun développement tant que non ouvert).
-2. Enchaîner **MVP-012 → MVP-018** selon `docs/tickets/README.md` §20.
+1. **MVP-012** — ouvrir administrativement puis développer F-006 + enrichissement F-013 (pas maintenant).
+2. Enchaîner **MVP-012 → MVP-018** selon `docs/tickets/README.md` §20 (ne pas ouvrir MVP-012 maintenant).
 3. Appliquer Impact Analysis + cycle Ticket → Dev → Tests → Validation → MAJ Runtime → Commit.
-4. **Ne pas** ouvrir auth / sync / IA / CV / Mei dans cette séquence MVP (V1 / V2).
+4. **Ne pas** ouvrir auth / sync / IA / CV / Mei ni MVP-017 dans cette étape.
 5. Compléter les logos SVG officiels (fallback icône / « TC »).
 
 ## 16. Historique du registre
@@ -221,6 +221,10 @@ Détail : `12_TECH_DEBT.md`.
 | 7 août 2026 | **MVP-010** code : `/decouverte` ; F-001 / F-002 En test ; CH-013 ; commit PO en attente. |
 | 7 août 2026 | **MVP-010 fermé** (validation PO) ; F-001 / F-002 → **Livré** ; CH-013 clôturé ; prochain = ouverture MVP-011. |
 | 7 août 2026 | **CH-014** — socle PWA App Update (`docs/26`) ; SW minimal + modale ; Offline cache / MVP-017 non ouverts. |
+| 7 août 2026 | **MVP-011 ouvert** (cadrage F-005 + F-004 + F-007) ; inventaire : 0 mouvement / 0 image F-007 ; aucun développement. |
+| 8 août 2026 | **MVP-011** F-007 livrés (3 WebP 768×1280) ; gate **READY FOR CODE** ; aucun code démarré. |
+| 8 août 2026 | **MVP-011** code livré — `/bibliotheque/mouvements` ; F-004/F-005/F-007 En test ; CH-015 ; attente PO. |
+| 8 août 2026 | **MVP-011 fermé** (validation PO) ; F-004/F-005/F-007 → **Livré** ; CH-015 ; MVP-012 non ouvert. |
 
 ## 17. Diagrammes
 
@@ -321,7 +325,7 @@ Jamais anticiper un avancement non réalisé.
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain jalon | Ouverture MVP-011 — F-005 + F-004 + F-007 |
+| Prochain jalon | MVP-012 — vidéos pédagogiques (F-006) + enrichissement séances/mouvements (non ouvert) |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

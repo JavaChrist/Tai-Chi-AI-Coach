@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/11_BACKLOG.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — MVP-010 fermé |
-| Phase actuelle | Développement MVP — prochain = ouverture MVP-011 |
+| Dernière mise à jour | 8 août 2026 — MVP-011 fermé |
+| Phase actuelle | Développement MVP — backlog vide ; prochain MVP-012 |
 | Document de référence (intentions) | `docs/22_ROADMAP.md`, `docs/tickets/README.md` §20 |
 | Type | Runtime Register — travaux **réellement ouverts** |
 
@@ -26,9 +26,9 @@
 | Améliorations ouvertes | **0** |
 | Reports ouverts | **0** |
 | Idées retenues (ticketées) | **0** |
-| Priorités Runtime actives | P0 — ouverture MVP-011 |
+| Priorités Runtime actives | P0 — prochain MVP-012 (planifié, non ouvert) |
 
-**Synthèse :** MVP-010 **fermé**. Aucun ticket ouvert. Prochain = **ouvrir MVP-011** (fichier à créer à l’ouverture ; aucun développement démarré).
+**Synthèse :** MVP-011 **fermé**. Aucun ticket ouvert. Prochain planifié : **MVP-012**. MVP-017 non ouvert.
 
 ## 3. Tickets ouverts
 
@@ -38,7 +38,7 @@
 
 ## 4. Séquence planifiée (non ouverte — pas d’entrée backlog)
 
-Voir `docs/tickets/README.md` §20 : MVP-011 → MVP-018.
+Voir `docs/tickets/README.md` §20 : MVP-012 → MVP-018.
 
 Ne pas dupliquer ici les tickets sans fichier.
 
@@ -60,8 +60,8 @@ Les intentions `22_ROADMAP.md` **ne doivent pas** être copiées en masse.
 
 ```mermaid
 pie title Backlog Runtime — état réel
-  "Ouvert" : 0
-  "Fermé / hors liste" : 1
+  "Ouvert" : 1
+  "Fermé / hors liste" : 0
 ```
 
 ### 7.2 Cycle d’un ticket
@@ -72,7 +72,7 @@ stateDiagram-v2
   Ouvert --> EnCours
   EnCours --> Termine: MAJ registres
   Termine --> [*]
-  note right of Termine: MVP-010 Fermé
+  note right of Ouvert: aucun (prochain MVP-012)
 ```
 
 ## 8. Gouvernance
@@ -93,12 +93,17 @@ stateDiagram-v2
 | 7 août 2026 | MVP-010 **ouvert** (cadrage F-001 + F-002) ; seul ticket ouvert. |
 | 7 août 2026 | MVP-010 code livré (`/decouverte`) ; reste seul ticket ouvert jusqu’à clôture PO. |
 | 7 août 2026 | MVP-010 **fermé** (PO) ; backlog vide ; prochain = ouverture MVP-011. |
+| 7 août 2026 | CH-014 PWA App Update socle ; backlog toujours vide ; prochain = ouverture MVP-011. |
+| 7 août 2026 | MVP-011 **ouvert** (cadrage F-005 + F-004 + F-007) ; seul ticket ouvert ; aucun développement. |
+| 8 août 2026 | MVP-011 gate **READY FOR CODE** ; F-007 livrés (3 WebP 768×1280) ; aucun code. |
+| 8 août 2026 | MVP-011 code livré ; F-004/F-005/F-007 En test ; CH-015 ; MVP-012 non ouvert. |
+| 8 août 2026 | MVP-011 **fermé** (validation PO) ; backlog vide ; prochain = ouverture MVP-012. |
 
 ## 10. Références
 
 - `docs/22_ROADMAP.md` §7.5
 - `docs/tickets/README.md` §19–§20
-- `docs/tickets/MVP-010_PRESENTATION_AND_STYLES.md`
+- `docs/tickets/MVP-011_MOVEMENTS_LIBRARY.md`
 - `docs/runtime/README.md`
 - `docs/25_DESIGN_FREEZE.md`
 
