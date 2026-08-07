@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **À développer**
+> Statut : **Fermé** (GO — 7 août 2026 — validation PO — commit `7c5dc03`)
 > Phase : MVP (socle Pré-MVP hérité)
 > Emplacement : `docs/tickets/MVP-009_SAFETY_WARNINGS.md`
 > Dépend de :
@@ -106,12 +106,12 @@ Intégration attendue sur le parcours de démarrage de pratique existant (`/prat
 
 # 5. Critères d’acceptation
 
-- [ ] F-016 consultable ; indique l’arrêt en cas de douleur ; exclut diagnostic et traitement
-- [ ] F-031 visible avant de pratiquer ; mentionne l’arrêt si douleur ; exclut la promesse médicale
-- [ ] Gate Pré-MVP documentaire respecté (`02` §17) pour ces deux IDs
-- [ ] Build / TypeScript / ESLint / tests OK
-- [ ] Runtime synchronisé (`02` Feature Status : F-016 / F-031)
-- [ ] Aucune feature V1/V2 introduite
+- [x] F-016 consultable ; indique l’arrêt en cas de douleur ; exclut diagnostic et traitement
+- [x] F-031 visible avant de pratiquer ; mentionne l’arrêt si douleur ; exclut la promesse médicale
+- [x] Gate Pré-MVP documentaire respecté (`02` §17) pour ces deux IDs
+- [x] Build / TypeScript / ESLint / tests OK
+- [x] Runtime synchronisé (`02` Feature Status : F-016 / F-031)
+- [x] Aucune feature V1/V2 introduite
 
 ---
 
@@ -153,7 +153,8 @@ feat(safety): add practice safety advice and pre-session warnings (MVP-009)
 | Étape | État |
 | --- | --- |
 | Ticket créé | **Fait** (7 août 2026) — formalisation roadmap |
-| Implémentation F-016 / F-031 | **Non commencé** |
-| Clôture | **Non** |
+| Implémentation F-016 / F-031 | **Fait** (7 août 2026) |
+| Validation PO | **Fait** (7 août 2026) — F-016 / F-031 + Hero pratique |
+| Clôture | **Fermé** — commit `7c5dc03` |
 
-*Fin du ticket MVP-009 (spécification — développement ultérieur).*
+*Fin du ticket MVP-009 (Fermé).*

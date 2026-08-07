@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 import { ProfileOnboardingSection } from "@/components/onboarding/profile-onboarding-section";
 import { PreferenceSection } from "@/components/preferences/preference-section";
@@ -21,6 +23,7 @@ import type {
   ThemePreference,
 } from "@/domain/preferences/types";
 import type { DifficultyLevel } from "@/domain/curriculum/types";
+import { SAFETY_ADVICE_PATH } from "@/domain/safety/content";
 import { availableLocales, getMessages } from "@/i18n";
 import { BRAND_NAME } from "@/config/assets";
 
@@ -169,6 +172,20 @@ export function ProfilePreferences() {
       </PreferenceSection>
 
       <PreferenceSection id="about" title={t.about}>
+        <PreferenceCard
+          title={t.safetyAdvice}
+          description={t.safetyAdviceHelp}
+          action={
+            <Button variant="secondary" size="sm" asChild>
+              <Link
+                href={SAFETY_ADVICE_PATH}
+                data-testid="profile-safety-advice-link"
+              >
+                {t.safetyAdviceAction}
+              </Link>
+            </Button>
+          }
+        />
         <PreferenceCard title={t.version} description={`${BRAND_NAME} · ${APP_VERSION}`} />
         <PreferenceCard title={t.storage} description={t.storageLocal} />
       </PreferenceSection>

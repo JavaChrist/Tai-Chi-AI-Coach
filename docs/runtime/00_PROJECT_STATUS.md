@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — roadmap MVP-009→018 / MVP-008B fermé |
+| Dernière mise à jour | 7 août 2026 — MVP-009 fermé (F-016 / F-031 Livré) |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,8 +22,8 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — suite fonctionnelle (ticket actif MVP-009) |
-| Statut global | Conception close ; Runtime 20/20 ; Hero Light/Dark livrés (MVP-008B **fermé** `50bf954`) ; roadmap tickets **MVP-009→018** officialisée ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; **F-016** / **F-031** non commencés (prochain) ; **aucune** `F-xxx` Validé/Livré ; auth/sync hors MVP (V1) |
+| Phase | Développement MVP — suite fonctionnelle (prochain : ouverture MVP-010) |
+| Statut global | Conception close ; Runtime 20/20 ; Hero Light/Dark (MVP-008B **fermé**) ; **MVP-009 fermé** ; **F-016** / **F-031** **Livré** ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; auth/sync hors MVP (V1) |
 | Dernière mise à jour globale | 7 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
@@ -33,7 +33,7 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | Socle + UI 12A + Hero Light/Dark fermés ; prochain = **MVP-009** (F-016 + F-031) |
+| Développement | **En cours** | Socle + UI 12A + Hero + prudence Pré-MVP **livrée** ; prochain = **ouverture MVP-010** (fichier à créer) |
 | Tests | **En cours** | Vitest OK ; pas de campagne produit E2E complète |
 | Release | **Non commencé** | 0 Release (`19`) ; déploiement absent (`10`) |
 
@@ -59,10 +59,10 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Tickets ouverts | 1 (**MVP-009** — À développer) |
-| Tickets terminés | 10 (MVP-001 … MVP-008, MVP-008A, MVP-008B) |
+| Tickets ouverts | **0** |
+| Tickets terminés | **11** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009) |
 | Tickets bloqués | 0 |
-| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero Light/Dark + pratique + progression + préférences + onboarding local (`web/`) |
+| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero Light/Dark + pratique + prudence (F-016/F-031) + progression + préférences + onboarding local (`web/`) |
 
 Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
@@ -70,11 +70,11 @@ Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
 | Catégorie | État |
 | --- | --- |
-| Fonctionnalités terminées | **Aucune** |
+| Fonctionnalités terminées | **2** (`F-016`, `F-031` — Livré) |
 | Fonctionnalités en cours | **7** (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
-| Fonctionnalités restantes | **34** non commencées (`02_FEATURE_STATUS`) |
+| Fonctionnalités restantes | **32** non commencées (`02_FEATURE_STATUS`) |
 
-Aucune fonctionnalité `F-xxx` n’est marquée Validé / Livré. Détail : `02_FEATURE_STATUS.md`.
+Détail : `02_FEATURE_STATUS.md`.
 
 ## 8. Décisions Runtime
 
@@ -91,7 +91,7 @@ Les décisions de conception (`DECISIONS.md`, D-001…D-222) ne sont pas des dé
 | --- | --- |
 | Risques Runtime ouverts (`15`) | **0** `RR-xxx` |
 | Limitations Runtime (`16`) | **0** `KL-xxx` |
-| Changements Runtime (`17`) | **11** `CH-001`…`CH-011` (MVP-001…MVP-008B) |
+| Changements Runtime (`17`) | **12** `CH-001`…`CH-012` (MVP-001…MVP-009) |
 | Métriques Runtime (`18`) | **0** `MT-xxx` |
 | Releases publiées (`19`) | **0** `REL-xxx` |
 
@@ -182,8 +182,8 @@ Détail : `12_TECH_DEBT.md`.
 
 ## 15. Prochaines étapes (réelles, non estimées)
 
-1. **Développer MVP-009** — F-016 + F-031 (`docs/tickets/MVP-009_SAFETY_WARNINGS.md`).
-2. Enchaîner la séquence officielle **MVP-010 → MVP-018** (`docs/tickets/README.md` §20).
+1. **Ouvrir MVP-010** — F-001 + F-002 (créer le fichier ticket ; aucun développement tant que non ouvert).
+2. Enchaîner **MVP-011 → MVP-018** selon `docs/tickets/README.md` §20.
 3. Appliquer Impact Analysis + cycle Ticket → Dev → Tests → Validation → MAJ Runtime → Commit.
 4. **Ne pas** ouvrir auth / sync / IA / CV / Mei dans cette séquence MVP (V1 / V2).
 5. Compléter les logos SVG officiels (fallback icône / « TC »).
@@ -215,6 +215,8 @@ Détail : `12_TECH_DEBT.md`.
 | 6 août 2026 | **MVP-008B Sprint 3** : 15 Hero Light ; CH-010 ; Dark manquant. |
 | 7 août 2026 | **MVP-008B Sprint Dark** : 5 Masters Dark + 15 exports Dark ; CH-011. |
 | 7 août 2026 | **MVP-008B fermé** (`50bf954`) ; roadmap tickets **MVP-009→018** officialisée ; MVP-009 À développer. |
+| 7 août 2026 | **MVP-009** code : F-016 / F-031 En test ; CH-012 ; commit / clôture Git en attente PO. |
+| 7 août 2026 | **MVP-009 fermé** (validation PO) ; F-016 / F-031 → **Livré** ; CH-012 clôturé ; prochain = ouverture MVP-010. |
 
 ## 17. Diagrammes
 
@@ -315,7 +317,7 @@ Jamais anticiper un avancement non réalisé.
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain jalon | MVP-009 — F-016 + F-031 (prudence) |
+| Prochain jalon | Ouverture MVP-010 — F-001 + F-002 |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — CH-011 MVP-008B Sprint Dark |
-| Phase actuelle | Développement MVP — environnements Hero Light + Dark |
+| Dernière mise à jour | 7 août 2026 — CH-012 MVP-009 fermé |
+| Phase actuelle | Développement MVP — prudence Pré-MVP Livré |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **11** |
-| Changements majeurs | **11** |
+| Changements enregistrés | **12** |
+| Changements majeurs | **12** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements
@@ -36,6 +36,7 @@
 | CH-009 | Refonte UI Experience Design System (12A) — présentation seule | MVP-008A | `00`, `01`, `02`, `09`, `17` | — | 6 août 2026 | Appliqué |
 | CH-010 | Hero Light responsive (15 exports) + intégration écrans — présentation seule | MVP-008B | `00`, `01`, `02`, `09`, `17` | — | 6 août 2026 | Appliqué |
 | CH-011 | Hero Dark responsive (5 Masters + 15 exports) + catalogue final — présentation seule | MVP-008B | `00`, `01`, `02`, `09`, `17` | — | 7 août 2026 | Appliqué |
+| CH-012 | Conseils de sécurité (F-016) + avertissements pré-pratique (F-031) ; Hero pratique `morning` | MVP-009 | `00`, `02`, `09`, `11`, `17` | — | 7 août 2026 | Appliqué — MVP-009 fermé |
 
 ## 4. Gouvernance
 
@@ -51,6 +52,7 @@ timeline
     6 août 2026 : CH-009 UI Refresh 12A
     6 août 2026 : CH-010 Hero Light MVP-008B
     7 août 2026 : CH-011 Hero Dark MVP-008B
+    7 août 2026 : CH-012 Safety Warnings MVP-009
 ```
 
 ## 6. Historique
@@ -63,6 +65,8 @@ timeline
 | 6 août 2026 | CH-010 — MVP-008B Sprint 3 Hero Light exports + intégration ; ticket reste ouvert (Dark manquant). |
 | 7 août 2026 | CH-011 — MVP-008B Sprint Dark : Masters Dark + 15 exports + catalogue `final`. |
 | 7 août 2026 | MVP-008B **fermé** (commit `50bf954`) ; formalisation roadmap tickets MVP-009→018 (documentaire — pas de nouveau CH code). |
+| 7 août 2026 | CH-012 — MVP-009 F-016 / F-031 (code local ; commit PO en attente). |
+| 7 août 2026 | CH-012 clôturé — MVP-009 **fermé** (validation PO) ; F-016 / F-031 Livré. |
 
 ---
 

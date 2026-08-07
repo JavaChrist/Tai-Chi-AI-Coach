@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { PageEnvironment } from "@/components/environment/page-environment";
 import { ContentLayout } from "@/components/layout/content-layout";
 import { PracticePlayer } from "@/components/practice/practice-player";
 import { ErrorState } from "@/components/states/error-state";
@@ -27,35 +28,39 @@ export default async function PracticePage({ params }: PracticePageProps) {
 
   if (result.session.publicationStatus !== "published") {
     return (
-      <ContentLayout>
-        <ErrorState
-          title="Séance non disponible"
-          description="Cette séance ne peut pas être démarrée pour le moment. Choisissez-en une autre — vous pourrez y revenir plus tard."
-          action={
-            <Button variant="primary" asChild>
-              <Link href="/bibliotheque">Voir la bibliothèque</Link>
-            </Button>
-          }
-        />
-      </ContentLayout>
+      <PageEnvironment family="morning" withBottomNavInset={false}>
+        <ContentLayout>
+          <ErrorState
+            title="Séance non disponible"
+            description="Cette séance ne peut pas être démarrée pour le moment. Choisissez-en une autre — vous pourrez y revenir plus tard."
+            action={
+              <Button variant="primary" asChild>
+                <Link href="/bibliotheque">Voir la bibliothèque</Link>
+              </Button>
+            }
+          />
+        </ContentLayout>
+      </PageEnvironment>
     );
   }
 
   const session = result.session;
 
   return (
-    <ContentLayout>
-      <PracticePlayer
-        template={{
-          id: session.id,
-          title: session.title,
-          contentVersion: session.contentVersion,
-          plannedDurationMinutes: session.plannedDurationMinutes,
-          objectives: session.objectives,
-          steps: session.steps,
-          isStructuralPlaceholder: session.isStructuralPlaceholder,
-        }}
-      />
-    </ContentLayout>
+    <PageEnvironment family="morning" withBottomNavInset={false}>
+      <ContentLayout>
+        <PracticePlayer
+          template={{
+            id: session.id,
+            title: session.title,
+            contentVersion: session.contentVersion,
+            plannedDurationMinutes: session.plannedDurationMinutes,
+            objectives: session.objectives,
+            steps: session.steps,
+            isStructuralPlaceholder: session.isStructuralPlaceholder,
+          }}
+        />
+      </ContentLayout>
+    </PageEnvironment>
   );
 }

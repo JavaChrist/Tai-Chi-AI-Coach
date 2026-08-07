@@ -7,7 +7,6 @@ import { AppHeader } from "@/components/layout/app-header";
 import { BottomNav } from "@/components/layout/bottom-nav";
 import { OnboardingGate } from "@/components/onboarding/onboarding-gate";
 import { Toaster } from "@/components/ui/sonner";
-import { cn } from "@/lib/utils";
 
 type AppShellProps = {
   children: ReactNode;
@@ -26,21 +25,11 @@ export function AppShell({ children }: AppShellProps) {
           <Toaster position="top-center" richColors closeButton />
         </>
       ) : (
-        <div
-          className={cn(
-            "text-foreground flex min-h-dvh flex-col",
-            /* Pratique : fond uni. Autres écrans : le Hero remplit PageEnvironment (pas de bande sous main). */
-            isPractice ? "bg-background" : "bg-transparent",
-          )}
-        >
+        <div className="text-foreground flex min-h-dvh flex-col bg-transparent">
           <AppHeader discreet={isPractice} />
           <main
             id="contenu-principal"
-            className={cn(
-              "relative flex min-h-0 flex-1 flex-col",
-              /* Padding bas uniquement hors Hero (pratique). Les pages Hero gèrent l’inset dans PageEnvironment. */
-              isPractice && "pb-10",
-            )}
+            className="relative flex min-h-0 flex-1 flex-col"
           >
             {children}
           </main>

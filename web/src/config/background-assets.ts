@@ -267,6 +267,7 @@ export const SCREEN_HERO_MAP = {
   bilan: "mist",
   about: "mountain",
   onboarding: "dojo",
-  pratique: null,
+  /** Continuité Accueil → pratique guidée (même famille morning). */
+  pratique: "morning",
   profil: "mountain",
 } as const;

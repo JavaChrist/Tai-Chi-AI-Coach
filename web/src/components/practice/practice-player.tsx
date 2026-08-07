@@ -7,6 +7,7 @@ import { usePreferences } from "@/components/preferences/preferences-provider";
 import { PracticeIntro } from "@/components/practice/practice-intro";
 import { PracticeStepView } from "@/components/practice/practice-step-view";
 import { PracticeSummaryView } from "@/components/practice/practice-summary";
+import { PracticeSafetyGate } from "@/components/safety/practice-safety-gate";
 import { Button } from "@/components/ui/button";
 import {
   buildPracticeSummary,
@@ -62,6 +63,8 @@ function persistIfNeeded(
 export function PracticePlayer({ template }: PracticePlayerProps) {
   const { preferences } = usePreferences();
   const [state, dispatch] = useReducer(practiceReducer, template, createStartedState);
+  /** F-031 — acknowledgement requis avant l’intro / les étapes (session de page). */
+  const [safetyAcknowledged, setSafetyAcknowledged] = useState(false);
   const [quitOpen, setQuitOpen] = useState(false);
   const [savedLocally, setSavedLocally] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
@@ -100,6 +103,12 @@ export function PracticePlayer({ template }: PracticePlayerProps) {
 
   const currentStep = state.steps[state.currentStepIndex];
   const isLastStep = state.currentStepIndex >= state.steps.length - 1;
+
+  if (!safetyAcknowledged) {
+    return (
+      <PracticeSafetyGate onAcknowledge={() => setSafetyAcknowledged(true)} />
+    );
+  }
 
   return (
     <>

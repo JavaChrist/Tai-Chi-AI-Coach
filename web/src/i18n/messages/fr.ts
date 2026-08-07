@@ -31,6 +31,10 @@ export const fr: MessageDictionary = {
     version: "Version de l’application",
     storage: "Stockage des préférences",
     storageLocal: "Local uniquement (cet appareil) — aucune synchronisation.",
+    safetyAdvice: "Conseils de sécurité",
+    safetyAdviceHelp:
+      "Repères de prudence : arrêt si douleur, adaptation de l’effort, limites non médicales.",
+    safetyAdviceAction: "Consulter",
     saving: "Enregistrement…",
     loadError: "Les préférences n’ont pas pu être lues sur cet appareil.",
     retry: "Réessayer",

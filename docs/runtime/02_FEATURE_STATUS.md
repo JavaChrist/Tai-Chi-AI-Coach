@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — roadmap MVP-009→018 (aucune F-xxx modifiée) |
+| Dernière mise à jour | 7 août 2026 — MVP-009 fermé ; F-016 / F-031 Livré |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -21,15 +21,15 @@
 | Indicateur | Valeur réelle |
 | --- | --- |
 | Total des fonctionnalités | **41** (`F-001` … `F-041`) |
-| Terminées (Validé / Livré) | **0** |
+| Terminées (Validé / Livré) | **2** (`F-016`, `F-031`) |
 | En cours (En développement / En test) | **7** (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
-| Restantes (Non commencé) | **34** |
+| Restantes (Non commencé) | **32** |
 
 ### Répartition par version cible (conception)
 
 | Version cible | Nombre | Statut d’implémentation |
 | --- | --- | --- |
-| Pré-MVP | 2 | 0 livré / 2 non commencés |
+| Pré-MVP | 2 | **2 livré** (`F-016`, `F-031`) |
 | MVP | 17 | 0 livré / 7 en cours (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) / 10 non commencés |
 | V1 | 10 | 0 livré / 10 non commencés |
 | V2 | 7 | 0 livré / 7 non commencés |
@@ -59,7 +59,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-013 | Séances guidées | MVP | En test | MVP-006 | 5 août 2026 | Parcours local + enregistrement historique en fin de séance ; pas de vidéo/médias |
 | F-014 | Exercices de respiration | MVP | Non commencé | — | — | — |
 | F-015 | Relaxation | MVP | Non commencé | — | — | — |
-| F-016 | Conseils de sécurité | Pré-MVP | Non commencé | — | — | — |
+| F-016 | Conseils de sécurité | Pré-MVP | Livré | MVP-009 | 7 août 2026 | Page `/conseils-de-securite` + lien Profil ; Hero `mountain` ; contenu non médical ; validé PO |
 | F-017 | Notifications | V1 | Non commencé | — | — | — |
 | F-018 | Objectifs personnels | V1 | Non commencé | — | — | — |
 | F-019 | Assistant IA | V1 | Non commencé | — | — | — |
@@ -74,9 +74,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-028 | Paramètres | MVP | En développement | MVP-007 | 6 août 2026 | Page `/profil` + préférences locales ; UI densifiée 12A (MVP-008A) ; pas d’auth / sync / notifications |
 | F-029 | Accessibilité | MVP | En développement | MVP-007 | 6 août 2026 | Préférence « animations réduites » + tokens contraste 12A + `prefers-reduced-motion` ; pas encore tailles de texte avancées |
 | F-030 | Export utilisateur | V1 | Non commencé | — | — | — |
-| F-031 | Avertissements avant pratique | Pré-MVP | Non commencé | — | — | — |
+| F-031 | Avertissements avant pratique | Pré-MVP | Livré | MVP-009 | 7 août 2026 | Gate pré-pratique `/pratique/...` ; Hero `morning` ; lien F-016 ; validé PO |
 | F-032 | Reprise de séance | MVP | En développement | MVP-005 | 5 août 2026 | Pause/reprise **en mémoire de page** uniquement ; pas de reprise après fermeture / refresh |
-| F-033 | Première découverte guidée | MVP | En développement | MVP-008 | 5 août 2026 | Onboarding local court (bienvenue, niveau, objectif, durée, confirmation) + « Plus tard » ; pas Mei/caméra ; prudence mentionnée en bienvenue (F-016/F-031 non livrés) |
+| F-033 | Première découverte guidée | MVP | En développement | MVP-008 | 5 août 2026 | Onboarding local court (bienvenue, niveau, objectif, durée, confirmation) + « Plus tard » ; pas Mei/caméra ; prudence bienvenue + socle F-016/F-031 (MVP-009) |
 | F-034 | Personnalisation avancée | V2 | Non commencé | — | — | — |
 | F-035 | Programmes adaptés | V2 | Non commencé | — | — | — |
 | F-036 | Moteur de coaching réutilisable | V3 | Non commencé | — | — | — |
@@ -91,9 +91,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | Indicateur MVP | Valeur |
 | --- | --- |
 | Features MVP (+ Pré-MVP héritées) | 19 (`17` MVP + `2` Pré-MVP) |
-| Livrées / validées | 0 |
+| Livrées / validées | 2 (`F-016`, `F-031`) |
 | En cours | 7 (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
-| Non commencées | 12 |
+| Non commencées | 10 |
 
 ## 5. Historique
 
@@ -112,6 +112,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 6 août 2026 | MVP-008B Sprint 3 : **aucune** `F-xxx` créée ni modifiée — Hero Light présentation seule (CH-010) ; ticket reste ouvert (Dark). |
 | 7 août 2026 | MVP-008B Sprint Dark : **aucune** `F-xxx` créée ni modifiée — Hero Dark présentation seule (CH-011). |
 | 7 août 2026 | MVP-008B **fermé** ; roadmap tickets MVP-009→018 officialisée — **aucune** `F-xxx` modifiée (F-016 / F-031 restent Non commencé jusqu’à MVP-009). |
+| 7 août 2026 | MVP-009 : `F-016` / `F-031` → **En test** ; conseils consultables + gate pré-pratique ; CH-012 ; clôture Git en attente PO. |
+| 7 août 2026 | MVP-009 **fermé** (validation PO) ; `F-016` / `F-031` → **Livré** ; CH-012 clôturé. |
 
 ## 6. Diagrammes
 
@@ -119,9 +121,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 
 ```mermaid
 pie title MVP + Pré-MVP — état réel
-  "Non commencé" : 12
+  "Non commencé" : 10
   "En développement / En test" : 7
-  "Livré / validé" : 0
+  "Livré / validé" : 2
 ```
 
 ### 6.2 Répartition des versions

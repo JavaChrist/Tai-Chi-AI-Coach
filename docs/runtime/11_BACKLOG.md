@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/11_BACKLOG.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — roadmap MVP-009→018 |
-| Phase actuelle | Développement MVP — suite fonctionnelle |
+| Dernière mise à jour | 7 août 2026 — MVP-009 fermé |
+| Phase actuelle | Développement MVP — prochain = ouverture MVP-010 |
 | Document de référence (intentions) | `docs/22_ROADMAP.md`, `docs/tickets/README.md` §20 |
 | Type | Runtime Register — travaux **réellement ouverts** |
 
@@ -22,19 +22,19 @@
 
 | Catégorie | Nombre réel |
 | --- | --- |
-| Tickets ouverts | **1** (MVP-009) |
+| Tickets ouverts | **0** |
 | Améliorations ouvertes | **0** |
 | Reports ouverts | **0** |
 | Idées retenues (ticketées) | **0** |
-| Priorités Runtime actives | P0 — prudence Pré-MVP |
+| Priorités Runtime actives | P0 — ouverture MVP-010 |
 
-**Synthèse :** prochain travail = MVP-009 (F-016 + F-031). Suite planifiée MVP-010→018 sans fichier ticket tant que non ouverts.
+**Synthèse :** MVP-009 **fermé**. Aucun ticket ouvert. Prochain = **ouvrir MVP-010** (fichier à créer à l’ouverture ; aucun développement démarré).
 
 ## 3. Tickets ouverts
 
 | ID ticket | Titre | Priorité | Statut | Date ouverture | Remarque |
 | --- | --- | --- | --- | --- | --- |
-| MVP-009 | Prudence / sécurité avant pratique (F-016 + F-031) | P0 | À développer | 7 août 2026 | `docs/tickets/MVP-009_SAFETY_WARNINGS.md` |
+| — | — | — | — | — | Aucun ticket ouvert |
 
 ## 4. Séquence planifiée (non ouverte — pas d’entrée backlog)
 
@@ -60,8 +60,8 @@ Les intentions `22_ROADMAP.md` **ne doivent pas** être copiées en masse.
 
 ```mermaid
 pie title Backlog Runtime — état réel
-  "Ouvert (MVP-009)" : 1
-  "Fermé / hors liste" : 0
+  "Ouvert" : 0
+  "Fermé / hors liste" : 1
 ```
 
 ### 7.2 Cycle d’un ticket
@@ -72,7 +72,7 @@ stateDiagram-v2
   Ouvert --> EnCours
   EnCours --> Termine: MAJ registres
   Termine --> [*]
-  note right of Ouvert: MVP-009 À développer
+  note right of Termine: MVP-009 Fermé
 ```
 
 ## 8. Gouvernance
@@ -88,6 +88,8 @@ stateDiagram-v2
 | --- | --- |
 | 5 août 2026 | Création du registre ; initialisation ; aucun ticket Runtime. |
 | 7 août 2026 | Formalisation roadmap tickets MVP-009→018 ; MVP-008B fermé ; MVP-009 ouvert (À développer). |
+| 7 août 2026 | MVP-009 code livré (F-016 / F-031) ; retiré des tickets ouverts ; prochain = ouverture MVP-010. |
+| 7 août 2026 | MVP-009 **fermé** (PO) ; backlog vide ; prochain = ouverture administrative MVP-010. |
 
 ## 10. Références
 

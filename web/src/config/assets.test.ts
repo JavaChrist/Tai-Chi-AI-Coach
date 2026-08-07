@@ -70,7 +70,7 @@ describe("catalogue assets", () => {
     expect(SCREEN_HERO_MAP.bilan).toBe("mist");
     expect(SCREEN_HERO_MAP.onboarding).toBe("dojo");
     expect(SCREEN_HERO_MAP.profil).toBe("mountain");
-    expect(SCREEN_HERO_MAP.pratique).toBeNull();
+    expect(SCREEN_HERO_MAP.pratique).toBe("morning");
   });
 
   it("enregistre les 15 Hero Light (Sprint 3) en status final avec fichiers présents", () => {
