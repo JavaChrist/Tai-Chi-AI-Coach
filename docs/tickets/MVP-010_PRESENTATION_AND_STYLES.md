@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Fermé** (GO — 7 août 2026 — validation PO)
+> Statut : **Fermé** (GO — 7 août 2026 — validation PO — commit `f40d34c`)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-010_PRESENTATION_AND_STYLES.md`
 > Dépend de :
@@ -327,6 +327,6 @@ feat(discovery): add Tai Chi presentation and styles overview (MVP-010)
 | Ticket créé / ouvert | **Fait** (7 août 2026) — cadrage F-001 + F-002 |
 | Implémentation F-001 / F-002 | **Fait** (7 août 2026) — `/decouverte` |
 | Validation PO | **Fait** (7 août 2026) |
-| Clôture | **Fermé** — commit de clôture MVP-010 |
+| Clôture | **Fermé** — commit `f40d34c` |
 
 *Fin du ticket MVP-010 (Fermé).*
