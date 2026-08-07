@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — CH-012 MVP-009 fermé |
-| Phase actuelle | Développement MVP — prudence Pré-MVP Livré |
+| Dernière mise à jour | 7 août 2026 — CH-013 MVP-010 fermé |
+| Phase actuelle | Développement MVP — présentation / styles Livré |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
 
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **12** |
-| Changements majeurs | **12** |
+| Changements enregistrés | **13** |
+| Changements majeurs | **13** |
 | Changements mineurs | **0** |
 
 ## 3. Registre des changements
@@ -37,6 +37,7 @@
 | CH-010 | Hero Light responsive (15 exports) + intégration écrans — présentation seule | MVP-008B | `00`, `01`, `02`, `09`, `17` | — | 6 août 2026 | Appliqué |
 | CH-011 | Hero Dark responsive (5 Masters + 15 exports) + catalogue final — présentation seule | MVP-008B | `00`, `01`, `02`, `09`, `17` | — | 7 août 2026 | Appliqué |
 | CH-012 | Conseils de sécurité (F-016) + avertissements pré-pratique (F-031) ; Hero pratique `morning` | MVP-009 | `00`, `02`, `09`, `11`, `17` | — | 7 août 2026 | Appliqué — MVP-009 fermé |
+| CH-013 | Présentation Tai Chi (F-001) + découverte styles (F-002) — page `/decouverte` | MVP-010 | `00`, `02`, `09`, `11`, `17` | — | 7 août 2026 | Appliqué — MVP-010 fermé |
 
 ## 4. Gouvernance
 
@@ -53,6 +54,7 @@ timeline
     6 août 2026 : CH-010 Hero Light MVP-008B
     7 août 2026 : CH-011 Hero Dark MVP-008B
     7 août 2026 : CH-012 Safety Warnings MVP-009
+    7 août 2026 : CH-013 Discovery MVP-010
 ```
 
 ## 6. Historique
@@ -67,6 +69,8 @@ timeline
 | 7 août 2026 | MVP-008B **fermé** (commit `50bf954`) ; formalisation roadmap tickets MVP-009→018 (documentaire — pas de nouveau CH code). |
 | 7 août 2026 | CH-012 — MVP-009 F-016 / F-031 (code local ; commit PO en attente). |
 | 7 août 2026 | CH-012 clôturé — MVP-009 **fermé** (validation PO) ; F-016 / F-031 Livré. |
+| 7 août 2026 | CH-013 — MVP-010 `/decouverte` F-001 / F-002 (code local ; commit PO en attente). |
+| 7 août 2026 | CH-013 clôturé — MVP-010 **fermé** (validation PO) ; F-001 / F-002 Livré. |
 
 ---
 

@@ -23,6 +23,7 @@ import type {
   ThemePreference,
 } from "@/domain/preferences/types";
 import type { DifficultyLevel } from "@/domain/curriculum/types";
+import { DISCOVERY_PATH } from "@/domain/discovery/content";
 import { SAFETY_ADVICE_PATH } from "@/domain/safety/content";
 import { availableLocales, getMessages } from "@/i18n";
 import { BRAND_NAME } from "@/config/assets";
@@ -172,6 +173,17 @@ export function ProfilePreferences() {
       </PreferenceSection>
 
       <PreferenceSection id="about" title={t.about}>
+        <PreferenceCard
+          title={t.discovery}
+          description={t.discoveryHelp}
+          action={
+            <Button variant="secondary" size="sm" asChild>
+              <Link href={DISCOVERY_PATH} data-testid="profile-discovery-link">
+                {t.discoveryAction}
+              </Link>
+            </Button>
+          }
+        />
         <PreferenceCard
           title={t.safetyAdvice}
           description={t.safetyAdviceHelp}

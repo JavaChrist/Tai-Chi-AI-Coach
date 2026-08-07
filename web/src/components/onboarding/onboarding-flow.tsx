@@ -25,7 +25,9 @@ import {
 } from "@/services/onboarding/onboarding-snapshot";
 import { getOnboardingService } from "@/services/onboarding/onboarding-service";
 
-const POST_ONBOARDING_HREF = "/bibliotheque";
+/** Après skip : bibliothèque. Après complétion : présentation F-001 (`04`). */
+const POST_ONBOARDING_SKIP_HREF = "/bibliotheque";
+const POST_ONBOARDING_COMPLETE_HREF = "/decouverte";
 
 const serverSnapshot: OnboardingFlowSnapshot = {
   kind: "ready",
@@ -58,8 +60,12 @@ export function OnboardingFlow() {
     if (status === "error") return;
     try {
       const service = getOnboardingService();
-      if (status === "completed" || status === "skipped") {
-        router.replace(POST_ONBOARDING_HREF);
+      if (status === "completed") {
+        router.replace(POST_ONBOARDING_COMPLETE_HREF);
+        return;
+      }
+      if (status === "skipped") {
+        router.replace(POST_ONBOARDING_SKIP_HREF);
         return;
       }
       if (status === "not_started") {
@@ -84,7 +90,7 @@ export function OnboardingFlow() {
             <Button
               type="button"
               variant="primary"
-              onClick={() => router.replace(POST_ONBOARDING_HREF)}
+              onClick={() => router.replace(POST_ONBOARDING_SKIP_HREF)}
             >
               Continuer vers l’application
             </Button>
@@ -103,8 +109,12 @@ export function OnboardingFlow() {
   });
 
   const goApp = (stateAfter: OnboardingState) => {
-    if (stateAfter.status === "completed" || stateAfter.status === "skipped") {
-      router.replace(POST_ONBOARDING_HREF);
+    if (stateAfter.status === "completed") {
+      router.replace(POST_ONBOARDING_COMPLETE_HREF);
+      return;
+    }
+    if (stateAfter.status === "skipped") {
+      router.replace(POST_ONBOARDING_SKIP_HREF);
     }
   };
 

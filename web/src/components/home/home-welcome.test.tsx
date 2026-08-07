@@ -52,6 +52,8 @@ describe("HomeWelcomeView — actions Accueil", () => {
     expect(html).toContain("Parcourir");
     expect(html).toContain('data-testid="home-browse-action"');
     expect(html).toContain('href="/bibliotheque"');
+    expect(html).toContain('data-testid="home-discovery-action"');
+    expect(html).toContain('href="/decouverte"');
     expect(html).toContain('data-variant="surface"');
     expect(html).not.toContain("Reprendre cette séance");
     expect(html).not.toContain('data-testid="home-resume-action"');

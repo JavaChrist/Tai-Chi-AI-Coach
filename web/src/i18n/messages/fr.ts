@@ -35,6 +35,10 @@ export const fr: MessageDictionary = {
     safetyAdviceHelp:
       "Repères de prudence : arrêt si douleur, adaptation de l’effort, limites non médicales.",
     safetyAdviceAction: "Consulter",
+    discovery: "Découverte du Tai Chi",
+    discoveryHelp:
+      "Présentation courte de la pratique et repère léger sur les styles.",
+    discoveryAction: "Lire",
     saving: "Enregistrement…",
     loadError: "Les préférences n’ont pas pu être lues sur cet appareil.",
     retry: "Réessayer",

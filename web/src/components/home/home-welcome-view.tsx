@@ -105,6 +105,26 @@ export function HomeWelcomeView({
 
         <section
           className="space-y-3"
+          aria-labelledby="home-discovery-heading"
+          data-testid="home-discovery-section"
+        >
+          <h2 id="home-discovery-heading" className="text-h2 text-foreground">
+            Découvrir le Tai Chi
+          </h2>
+          <p className="text-body text-foreground">
+            Une courte présentation pour poser le cadre, sans pression.
+          </p>
+          <Button
+            variant="surface"
+            asChild
+            data-testid="home-discovery-action"
+          >
+            <Link href="/decouverte">Lire la présentation</Link>
+          </Button>
+        </section>
+
+        <section
+          className="space-y-3"
           aria-labelledby="home-library-heading"
           data-testid="home-library-section"
         >

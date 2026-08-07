@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — MVP-009 Safety Warnings / CH-012 |
+| Dernière mise à jour | 7 août 2026 — MVP-010 Discovery / CH-013 |
 | Phase actuelle | Développement MVP — tests unitaires Vitest |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
@@ -33,6 +33,7 @@
 | UI / Design System 12A | Revue manuelle + build (MVP-008A) — pas de suite E2E |
 | Environnements Hero | Catalogue + présence fichiers Light/Dark (MVP-008B) |
 | Safety F-016 / F-031 | Partielle (contenu + gate + page — MVP-009) |
+| Discovery F-001 / F-002 | Partielle (contenu + page `/decouverte` — MVP-010) |
 
 ## 4. Exécutions
 
@@ -86,6 +87,16 @@
 | Résultat cumulé | **63 / 63 passed** |
 | Build / TypeScript / ESLint | OK |
 
+### Campagne MVP-010 (Discovery)
+
+| Champ | Valeur |
+| --- | --- |
+| Date | 7 août 2026 |
+| Outil | Vitest + Next build + ESLint + `tsc` |
+| Périmètre | F-001 / F-002 `/decouverte` ; accès Accueil ; régression |
+| Résultat cumulé | **68 / 68 passed** |
+| Build / TypeScript / ESLint | OK |
+
 ## 5. Historique
 
 | Date | Événement |
@@ -97,6 +108,8 @@
 | 7 août 2026 | MVP-008B Sprint Dark — 15 Light + 15 Dark `final` + fichiers ; CH-011. |
 | 7 août 2026 | MVP-009 — tests F-016 / F-031 + régression ; CH-012. |
 | 7 août 2026 | MVP-009 **fermé** — campagne 63/63 confirmée (validation PO). |
+| 7 août 2026 | MVP-010 — 68/68 ; `/decouverte` ; CH-013. |
+| 7 août 2026 | MVP-010 **fermé** — campagne 68/68 confirmée (validation PO). |
 
 ---
 

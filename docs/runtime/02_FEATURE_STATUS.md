@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — MVP-009 fermé ; F-016 / F-031 Livré |
+| Dernière mise à jour | 7 août 2026 — MVP-010 fermé ; F-001 / F-002 Livré |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -21,16 +21,16 @@
 | Indicateur | Valeur réelle |
 | --- | --- |
 | Total des fonctionnalités | **41** (`F-001` … `F-041`) |
-| Terminées (Validé / Livré) | **2** (`F-016`, `F-031`) |
+| Terminées (Validé / Livré) | **4** (`F-001`, `F-002`, `F-016`, `F-031`) |
 | En cours (En développement / En test) | **7** (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
-| Restantes (Non commencé) | **32** |
+| Restantes (Non commencé) | **30** |
 
 ### Répartition par version cible (conception)
 
 | Version cible | Nombre | Statut d’implémentation |
 | --- | --- | --- |
 | Pré-MVP | 2 | **2 livré** (`F-016`, `F-031`) |
-| MVP | 17 | 0 livré / 7 en cours (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) / 10 non commencés |
+| MVP | 17 | 2 livré (`F-001`, `F-002`) / 7 en cours (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) / 8 non commencés |
 | V1 | 10 | 0 livré / 10 non commencés |
 | V2 | 7 | 0 livré / 7 non commencés |
 | V3 | 2 | 0 livré / 2 non commencés |
@@ -44,8 +44,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 
 | ID | Nom | Version cible | Statut | Ticket | Dernière MAJ | Remarques |
 | --- | --- | --- | --- | --- | --- | --- |
-| F-001 | Présentation du Tai Chi | MVP | Non commencé | — | — | — |
-| F-002 | Découverte des styles | MVP | Non commencé | — | — | — |
+| F-001 | Présentation du Tai Chi | MVP | Livré | MVP-010 | 7 août 2026 | Page `/decouverte` ; Hero `mountain` ; non médical ; validé PO |
+| F-002 | Découverte des styles | MVP | Livré | MVP-010 | 7 août 2026 | Section légère `/decouverte` ; Yang/Chen/Wu/Sun ; aucun choix obligatoire ; validé PO |
 | F-003 | Parcours débutant | MVP | Non commencé | — | — | — |
 | F-004 | Bibliothèque des mouvements | MVP | Non commencé | — | — | `/bibliotheque` sert pour l’instant le catalogue de **séances** (F-013) ; pas de catalogue Mouvement |
 | F-005 | Explication détaillée d’un mouvement | MVP | Non commencé | — | — | — |
@@ -91,9 +91,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | Indicateur MVP | Valeur |
 | --- | --- |
 | Features MVP (+ Pré-MVP héritées) | 19 (`17` MVP + `2` Pré-MVP) |
-| Livrées / validées | 2 (`F-016`, `F-031`) |
+| Livrées / validées | 4 (`F-001`, `F-002`, `F-016`, `F-031`) |
 | En cours | 7 (`F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
-| Non commencées | 10 |
+| Non commencées | 8 |
 
 ## 5. Historique
 
@@ -114,6 +114,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 7 août 2026 | MVP-008B **fermé** ; roadmap tickets MVP-009→018 officialisée — **aucune** `F-xxx` modifiée (F-016 / F-031 restent Non commencé jusqu’à MVP-009). |
 | 7 août 2026 | MVP-009 : `F-016` / `F-031` → **En test** ; conseils consultables + gate pré-pratique ; CH-012 ; clôture Git en attente PO. |
 | 7 août 2026 | MVP-009 **fermé** (validation PO) ; `F-016` / `F-031` → **Livré** ; CH-012 clôturé. |
+| 7 août 2026 | MVP-010 **ouvert** (cadrage) ; `F-001` / `F-002` restent **Non commencé** (pré-développement documentaire) ; aucune implémentation. |
+| 7 août 2026 | MVP-010 code : `F-001` / `F-002` → **En test** ; `/decouverte` ; CH-013 ; clôture Git en attente PO. |
+| 7 août 2026 | MVP-010 **fermé** (validation PO) ; `F-001` / `F-002` → **Livré** ; CH-013 clôturé. |
 
 ## 6. Diagrammes
 
@@ -121,9 +124,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 
 ```mermaid
 pie title MVP + Pré-MVP — état réel
-  "Non commencé" : 10
+  "Non commencé" : 8
   "En développement / En test" : 7
-  "Livré / validé" : 2
+  "Livré / validé" : 4
 ```
 
 ### 6.2 Répartition des versions

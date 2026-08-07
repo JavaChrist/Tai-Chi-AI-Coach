@@ -36,6 +36,9 @@ export type MessageDictionary = {
     safetyAdvice: string;
     safetyAdviceHelp: string;
     safetyAdviceAction: string;
+    discovery: string;
+    discoveryHelp: string;
+    discoveryAction: string;
     saving: string;
     loadError: string;
     retry: string;
