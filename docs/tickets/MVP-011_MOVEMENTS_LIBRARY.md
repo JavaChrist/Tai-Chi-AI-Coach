@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Fermé** (GO — 8 août 2026 — validation PO — commit `PLACEHOLDER_SHA`)
+> Statut : **Fermé** (GO — 8 août 2026 — validation PO — commit `e8eebff`)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-011_MOVEMENTS_LIBRARY.md`
 > Dépend de :
@@ -363,7 +363,7 @@ Ouverture (cette étape) : `00`, `02`, `11`, `docs/tickets/README.md` — **pas*
 | Images F-007 | **Livrées** — 3 WebP réels 768×1280 (`08` §27.5) |
 | Implémentation code | **Livrée** — validée PO |
 | Validation PO visuelle | **Fait** — Desktop/Mobile × Light/Dark |
-| Clôture | **Fermé** — commit `PLACEHOLDER_SHA` |
+| Clôture | **Fermé** — commit `e8eebff` |
 
 ---
 

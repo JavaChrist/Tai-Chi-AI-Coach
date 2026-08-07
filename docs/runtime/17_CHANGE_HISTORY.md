@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — CH-015 clôturé (MVP-011 fermé) |
+| Dernière mise à jour | 8 août 2026 — CH-015 clôturé (MVP-011 fermé — `e8eebff`) |
 | Phase actuelle | Développement MVP — MVP-011 fermé |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
@@ -39,6 +39,7 @@
 | CH-012 | Conseils de sécurité (F-016) + avertissements pré-pratique (F-031) ; Hero pratique `morning` | MVP-009 | `00`, `02`, `09`, `11`, `17` | — | 7 août 2026 | Appliqué — MVP-009 fermé |
 | CH-013 | Présentation Tai Chi (F-001) + découverte styles (F-002) — page `/decouverte` | MVP-010 | `00`, `02`, `09`, `11`, `17` | — | 7 août 2026 | Appliqué — MVP-010 fermé |
 | CH-014 | Socle PWA App Update — SW minimal, build id auto, modale contrôlée, différé `/pratique` | Socle (`docs/26`) | `00`, `01`, `07`, `09`, `17` | — | 7 août 2026 | Appliqué — commit `79b0a4e` |
+| CH-015 | Bibliothèque mouvements + fiches + images (F-004 / F-005 / F-007) — `/bibliotheque/mouvements` | MVP-011 | `00`, `02`, `03`, `09`, `11`, `17` | — | 8 août 2026 | Appliqué — MVP-011 fermé — commit `e8eebff` |
 
 ## 4. Gouvernance
 
@@ -57,6 +58,7 @@ timeline
     7 août 2026 : CH-012 Safety Warnings MVP-009
     7 août 2026 : CH-013 Discovery MVP-010
     7 août 2026 : CH-014 PWA App Update socle
+    8 août 2026 : CH-015 MVP-011 Movements
 ```
 
 ## 6. Historique
@@ -74,6 +76,7 @@ timeline
 | 7 août 2026 | CH-013 — MVP-010 `/decouverte` F-001 / F-002 (code local ; commit PO en attente). |
 | 7 août 2026 | CH-013 clôturé — MVP-010 **fermé** (validation PO) ; F-001 / F-002 Livré. |
 | 7 août 2026 | CH-014 — SW socle App Update (`docs/26_PWA_APP_UPDATE.md`) ; MVP-017 non ouvert. |
+| 8 août 2026 | CH-015 — MVP-011 F-004/F-005/F-007 (`e8eebff`) ; MVP-011 **fermé** ; MVP-012 non ouvert. |
 
 ---
 
