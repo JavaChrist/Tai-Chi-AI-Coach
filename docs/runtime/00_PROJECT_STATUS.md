@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — MVP-012 code livré (F-006 En test ; MEDIA BLOCKED) |
+| Dernière mise à jour | 8 août 2026 — MVP-013 fermé / F-003 Livré / CH-017 ; MVP-012 MEDIA BLOCKED |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,8 +22,8 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — MVP-012 Livré (code) / MEDIA BLOCKED / attente média |
-| Statut global | Conception close ; Runtime 20/20 ; **MVP-009** / **MVP-010** / **MVP-011 fermés** ; **MVP-012** ouvert (code livré, non fermé) ; **F-001** / **F-002** / **F-004** / **F-005** / **F-007** / **F-016** / **F-031** **Livré** ; **F-006** En test ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; auth/sync hors MVP (V1) |
+| Phase | Développement MVP — MVP-013 fermé ; MVP-012 MEDIA BLOCKED |
+| Statut global | Conception close ; Runtime 20/20 ; **MVP-009** / **MVP-010** / **MVP-011** / **MVP-013 fermés** ; **MVP-012** ouvert (MEDIA BLOCKED) ; **F-001** / **F-002** / **F-003** / **F-004** / **F-005** / **F-007** / **F-016** / **F-031** **Livré** ; **F-006** En test ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; auth/sync hors MVP (V1) |
 | Dernière mise à jour globale | 7 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
@@ -33,7 +33,7 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | **MVP-012** — code F-006 + mapping F-013 ; **0** MP4 ; MEDIA BLOCKED ; attente média ; MVP-013 non ouvert |
+| Développement | **En cours** | **MVP-013 fermé** (F-003 Livré) ; **MVP-012** MEDIA BLOCKED ; MVP-014/015 non ouverts |
 | Tests | **En cours** | Vitest OK ; pas de campagne produit E2E complète |
 | Release | **Non commencé** | 0 Release (`19`) ; déploiement absent (`10`) |
 
@@ -59,10 +59,10 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Tickets ouverts | **1** (**MVP-012** — Livré code / MEDIA BLOCKED / attente média) |
-| Tickets terminés | **13** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010, MVP-011) |
+| Tickets ouverts | **1** (**MVP-012** — MEDIA BLOCKED / REFERENCE MOTION BLOCKED) |
+| Tickets terminés | **14** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010, MVP-011, MVP-013) |
 | Tickets bloqués | 0 |
-| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero + pratique + prudence + découverte + progression + prefs + onboarding + **SW App Update socle** (`web/`) |
+| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero + pratique + prudence + découverte + parcours débutant + progression + prefs + onboarding + **SW App Update socle** (`web/`) |
 
 Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
@@ -70,9 +70,9 @@ Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
 | Catégorie | État |
 | --- | --- |
-| Fonctionnalités terminées | **7** (`F-001`, `F-002`, `F-004`, `F-005`, `F-007`, `F-016`, `F-031` — Livré) |
+| Fonctionnalités terminées | **8** (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-016`, `F-031` — Livré) |
 | Fonctionnalités en cours | **8** (`F-006`, `F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
-| Fonctionnalités restantes | **26** non commencées (`02_FEATURE_STATUS`) |
+| Fonctionnalités restantes | **25** non commencées (`02_FEATURE_STATUS`) |
 
 Détail : `02_FEATURE_STATUS.md`.
 
@@ -182,11 +182,11 @@ Détail : `12_TECH_DEBT.md`.
 
 ## 15. Prochaines étapes (réelles, non estimées)
 
-1. **MVP-012** — obtenir sources de mouvement fiables (MEDIA BLOCKED) ; développement UI autorisé (CODE READY) au GO PO ; ne pas ouvrir MVP-013.
-2. Enchaîner **MVP-012 → MVP-018** selon `docs/tickets/README.md` §20 (ne pas ouvrir MVP-012 maintenant).
-3. Appliquer Impact Analysis + cycle Ticket → Dev → Tests → Validation → MAJ Runtime → Commit.
-4. **Ne pas** ouvrir auth / sync / IA / CV / Mei ni MVP-017 dans cette étape.
-5. Compléter les logos SVG officiels (fallback icône / « TC »).
+1. **MVP-012** — rester ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED jusqu’à sources de mouvement fiables + MP4 validés.
+2. Prochain ticket roadmap : **MVP-014** (F-008 + F-014 + F-015) — **non ouvert** (fichier créé uniquement à l’ouverture).
+3. Enchaîner **MVP-014 → MVP-018** selon `docs/tickets/README.md` §20.
+4. Appliquer Impact Analysis + cycle Ticket → Dev → Tests → Validation → MAJ Runtime → Commit.
+5. **Ne pas** ouvrir auth / sync / IA / CV / Mei ni MVP-017 dans cette étape.
 
 ## 16. Historique du registre
 
@@ -226,7 +226,11 @@ Détail : `12_TECH_DEBT.md`.
 | 8 août 2026 | **MVP-011** code livré — `/bibliotheque/mouvements` ; F-004/F-005/F-007 En test ; CH-015 ; attente PO. |
 | 8 août 2026 | **MVP-011 fermé** (validation PO) ; F-004/F-005/F-007 → **Livré** ; CH-015 ; MVP-012 non ouvert. |
 | 8 août 2026 | **MVP-012 ouvert** (cadrage F-006 + enrichissement F-013) ; CODE READY / MEDIA REFERENCE MOTION BLOCKED ; aucun développement. |
-| 8 août 2026 | **MVP-012** code livré — infra F-006 + mapping F-013 ; F-006 En test ; **0** MP4 ; MEDIA BLOCKED / attente média ; ticket non fermé ; MVP-013 non ouvert. |
+| 8 août 2026 | **MVP-012** code livré — infra F-006 + mapping F-013 ; F-006 En test ; **0** MP4 ; MEDIA BLOCKED / attente média ; ticket non fermé. |
+| 8 août 2026 | **CH-016** — correctif UX F-031 (`a35c6fb`) ; MVP-009 reste fermé. |
+| 8 août 2026 | **MVP-013 ouvert** (cadrage F-003) ; CODE READY ; corpus 3 séances + MV-001…003 ; MVP-012 reste MEDIA BLOCKED ; aucun code. |
+| 8 août 2026 | **MVP-013** code livré — `/parcours/debutant` ; F-003 En test ; attente PO ; MVP-012 MEDIA BLOCKED ; MVP-014/015 non ouverts. |
+| 8 août 2026 | **MVP-013 fermé** (validation PO) ; F-003 → **Livré** ; CH-017 ; MVP-012 reste MEDIA BLOCKED ; MVP-014 non ouvert. |
 
 ## 17. Diagrammes
 
@@ -327,7 +331,7 @@ Jamais anticiper un avancement non réalisé.
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain jalon | MVP-012 — sources de mouvement fiables + implémentation F-006 (GO PO) |
+| Prochain jalon | MVP-014 (planifié, non ouvert) ; MVP-012 reste MEDIA BLOCKED |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

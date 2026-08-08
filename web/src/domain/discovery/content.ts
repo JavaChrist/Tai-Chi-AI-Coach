@@ -63,6 +63,8 @@ export const STYLES_DISCOVERY = {
 export const DISCOVERY_CTA = {
   practiceLabel: "Voir les séances",
   practiceHref: "/bibliotheque",
+  pathLabel: "Parcours débutant",
+  pathHref: "/parcours/debutant",
   safetyLabel: "Conseils de sécurité",
   safetyHref: "/conseils-de-securite",
 } as const;

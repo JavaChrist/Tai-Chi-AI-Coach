@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — MVP-011 fermé / CH-015 |
+| Dernière mise à jour | 8 août 2026 — MVP-013 fermé / CH-017 |
 | Phase actuelle | Développement MVP — tests unitaires Vitest |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
@@ -36,6 +36,7 @@
 | Discovery F-001 / F-002 | Partielle (contenu + page `/decouverte` — MVP-010) |
 | PWA App Update socle | Partielle (SW source, register, prompt, route `/sw.js` — CH-014) |
 | Mouvements F-004 / F-005 / F-007 | Partielle (reader + catalogue + fiche + accès bibliothèque — MVP-011) |
+| Parcours débutant F-003 | Partielle (BeginnerPath reader + page `/parcours/debutant` + accès Accueil/Découverte/Séances — MVP-013) |
 
 ## 4. Exécutions
 
@@ -119,6 +120,16 @@
 | Résultat cumulé | **95 / 95 passed** |
 | Build / TypeScript / ESLint | OK |
 
+### Campagne MVP-013 (Beginner Path)
+
+| Champ | Valeur |
+| --- | --- |
+| Date | 8 août 2026 |
+| Outil | Vitest + Next build + ESLint + `tsc` |
+| Périmètre | F-003 `/parcours/debutant` ; BeginnerPath ; accès Accueil/Découverte/Séances ; régression |
+| Résultat cumulé | **116 / 116 passed** |
+| Build / TypeScript / ESLint | OK |
+
 ## 5. Historique
 
 | Date | Événement |
@@ -135,6 +146,8 @@
 | 7 août 2026 | CH-014 — PWA App Update socle ; 81/81 ; build OK ; MVP-017 non ouvert. |
 | 8 août 2026 | MVP-011 — 95/95 ; F-004/F-005/F-007 En test ; CH-015 ; MVP-012 non ouvert. |
 | 8 août 2026 | MVP-011 **fermé** — campagne 95/95 confirmée (validation PO). |
+| 8 août 2026 | MVP-013 — 116/116 ; F-003 En test ; CH-017 ; MVP-012 MEDIA BLOCKED. |
+| 8 août 2026 | MVP-013 **fermé** — campagne 116/116 confirmée (validation PO). |
 
 ---
 

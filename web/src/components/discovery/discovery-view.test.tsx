@@ -31,8 +31,10 @@ describe("DiscoveryView — F-001 / F-002", () => {
     expect(html).toContain('data-testid="discovery-no-style-choice"');
     expect(html).not.toContain("<select");
     expect(html).not.toContain('type="radio"');
+    expect(html).toContain('href="/parcours/debutant"');
     expect(html).toContain('href="/bibliotheque"');
     expect(html).toContain('href="/conseils-de-securite"');
+    expect(html).toContain('data-testid="discovery-cta-path"');
     expect(html).toContain('data-testid="discovery-cta-practice"');
   });
 });

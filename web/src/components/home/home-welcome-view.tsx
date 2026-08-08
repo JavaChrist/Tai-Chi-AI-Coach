@@ -105,6 +105,27 @@ export function HomeWelcomeView({
 
         <section
           className="space-y-3"
+          aria-labelledby="home-path-heading"
+          data-testid="home-beginner-path-section"
+        >
+          <h2 id="home-path-heading" className="text-h2 text-foreground">
+            Parcours débutant
+          </h2>
+          <p className="text-body text-foreground">
+            Trois séances ordonnées pour savoir par où commencer, puis quoi faire
+            ensuite.
+          </p>
+          <Button
+            variant="surface"
+            asChild
+            data-testid="home-beginner-path-action"
+          >
+            <Link href="/parcours/debutant">Voir le parcours</Link>
+          </Button>
+        </section>
+
+        <section
+          className="space-y-3"
           aria-labelledby="home-discovery-heading"
           data-testid="home-discovery-section"
         >

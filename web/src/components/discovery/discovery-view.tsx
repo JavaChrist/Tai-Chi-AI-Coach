@@ -93,6 +93,15 @@ export function DiscoveryView() {
           <Button
             variant="primary"
             asChild
+            data-testid="discovery-cta-path"
+          >
+            <Link href={DISCOVERY_CTA.pathHref}>
+              {DISCOVERY_CTA.pathLabel}
+            </Link>
+          </Button>
+          <Button
+            variant="secondary"
+            asChild
             data-testid="discovery-cta-practice"
           >
             <Link href={DISCOVERY_CTA.practiceHref}>
@@ -100,7 +109,7 @@ export function DiscoveryView() {
             </Link>
           </Button>
           <Button
-            variant="secondary"
+            variant="ghost"
             asChild
             data-testid="discovery-cta-safety"
           >

@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/11_BACKLOG.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — MVP-012 code livré (attente média) |
-| Phase actuelle | Développement MVP — MVP-012 Livré (code) / MEDIA BLOCKED |
+| Dernière mise à jour | 8 août 2026 — MVP-013 fermé ; MVP-012 MEDIA BLOCKED |
+| Phase actuelle | Développement MVP — MVP-012 MEDIA BLOCKED ; MVP-014 planifié non ouvert |
 | Document de référence (intentions) | `docs/22_ROADMAP.md`, `docs/tickets/README.md` §20 |
 | Type | Runtime Register — travaux **réellement ouverts** |
 
@@ -26,19 +26,19 @@
 | Améliorations ouvertes | **0** |
 | Reports ouverts | **0** |
 | Idées retenues (ticketées) | **0** |
-| Priorités Runtime actives | P0 — MVP-012 (code livré ; MEDIA BLOCKED ; attente média) |
+| Priorités Runtime actives | P0 — MVP-012 (MEDIA BLOCKED / REFERENCE MOTION BLOCKED) |
 
-**Synthèse :** MVP-012 **ouvert** (non fermé). F-006 En test (infra). Sources de mouvement dynamiques **absentes** (0 MP4). MVP-013 / MVP-017 non ouverts.
+**Synthèse :** MVP-013 **fermé** (F-003 Livré). MVP-012 **ouvert** (MEDIA BLOCKED ; 0 MP4). MVP-014 / MVP-015 / MVP-017 non ouverts.
 
 ## 3. Tickets ouverts
 
 | ID ticket | Titre | Priorité | Statut | Date ouverture | Remarque |
 | --- | --- | --- | --- | --- | --- |
-| MVP-012 | Vidéos pédagogiques + intégration séances/mouvements (F-006 + enrichissement F-013) | P0 | Livré (code) / MEDIA BLOCKED / attente média | 8 août 2026 | Player + mapping ; 0 MP4 ; non fermé ; MVP-013 non ouvert |
+| MVP-012 | Vidéos pédagogiques + intégration séances/mouvements (F-006 + enrichissement F-013) | P0 | Livré (code) / MEDIA BLOCKED / REFERENCE MOTION BLOCKED / attente média | 8 août 2026 | Player + mapping ; 0 MP4 ; non fermé |
 
 ## 4. Séquence planifiée (non ouverte — pas d’entrée backlog)
 
-Voir `docs/tickets/README.md` §20 : MVP-012 → MVP-018.
+Voir `docs/tickets/README.md` §20 : MVP-014 → MVP-018.
 
 Ne pas dupliquer ici les tickets sans fichier.
 
@@ -72,7 +72,7 @@ stateDiagram-v2
   Ouvert --> EnCours
   EnCours --> Termine: MAJ registres
   Termine --> [*]
-  note right of Ouvert: MVP-012 code / attente média
+  note right of Ouvert: MVP-012 ouvert (MEDIA BLOCKED)
 ```
 
 ## 8. Gouvernance
@@ -98,13 +98,17 @@ stateDiagram-v2
 | 8 août 2026 | MVP-011 gate **READY FOR CODE** ; F-007 livrés (3 WebP 768×1280) ; aucun code. |
 | 8 août 2026 | MVP-011 code livré ; F-004/F-005/F-007 En test ; CH-015 ; MVP-012 non ouvert. |
 | 8 août 2026 | MVP-011 **fermé** (validation PO) ; backlog vide ; prochain = ouverture MVP-012. |
+| 8 août 2026 | MVP-012 **ouvert** (MEDIA BLOCKED) ; code livré ; non fermé. |
+| 8 août 2026 | MVP-013 **ouvert** (cadrage F-003) ; parallèle à MVP-012. |
+| 8 août 2026 | MVP-013 code livré ; attente PO. |
+| 8 août 2026 | MVP-013 **fermé** (validation PO) ; F-003 Livré ; CH-017 ; seul ouvert = MVP-012 MEDIA BLOCKED ; MVP-014 non ouvert. |
 
 ## 10. Références
 
 - `docs/22_ROADMAP.md` §7.5
 - `docs/tickets/README.md` §19–§20
-- `docs/tickets/MVP-011_MOVEMENTS_LIBRARY.md`
 - `docs/tickets/MVP-012_PEDAGOGICAL_VIDEOS.md`
+- `docs/tickets/MVP-013_BEGINNER_PATH.md`
 - `docs/runtime/README.md`
 - `docs/25_DESIGN_FREEZE.md`
 
