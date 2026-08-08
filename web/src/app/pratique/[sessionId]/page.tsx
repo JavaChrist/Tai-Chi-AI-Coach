@@ -10,6 +10,7 @@ import { curriculumReader } from "@/services/curriculum/curriculum-reader";
 
 type PracticePageProps = {
   params: Promise<{ sessionId: string }>;
+  searchParams: Promise<{ fresh?: string }>;
 };
 
 export async function generateStaticParams() {
@@ -18,8 +19,13 @@ export async function generateStaticParams() {
     .map((session) => ({ sessionId: session.id }));
 }
 
-export default async function PracticePage({ params }: PracticePageProps) {
+export default async function PracticePage({
+  params,
+  searchParams,
+}: PracticePageProps) {
   const { sessionId } = await params;
+  const { fresh } = await searchParams;
+  const preferFresh = fresh === "1";
   const result = curriculumReader.getSessionById(sessionId);
 
   if (!result.ok) {
@@ -50,6 +56,7 @@ export default async function PracticePage({ params }: PracticePageProps) {
     <PageEnvironment family="morning" withBottomNavInset={false}>
       <ContentLayout>
         <PracticePlayer
+          preferFresh={preferFresh}
           template={{
             id: session.id,
             title: session.title,

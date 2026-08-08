@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Leaf, RotateCcw } from "lucide-react";
+import { BookOpen, Leaf, Play, RotateCcw } from "lucide-react";
 
 import { AppBrand } from "@/components/brand/app-brand";
 import { PageEnvironment } from "@/components/environment/page-environment";
@@ -11,21 +11,30 @@ import type { UserStatistics } from "@/domain/progression/types";
 type HomeWelcomeViewProps = {
   /** Suggestion F-008 du jour (null si indisponible). */
   dailySession: SessionTemplateSummary | null;
-  resumeSession: SessionTemplateSummary | null;
+  /** PO-F — informatif uniquement. */
+  dailyAlreadyPracticedToday?: boolean;
+  /** Vraie reprise mid-session (PracticeResumeState). */
+  activeResume: SessionTemplateSummary | null;
+  /** Dernière séance d’historique à refaire (pas une reprise). */
+  redoSession: SessionTemplateSummary | null;
   stats: UserStatistics;
   progressLabel: string;
+  onAbandonResume?: () => void;
 };
 
 /**
- * Présentation Accueil — actions toujours structurées ici.
- * `Séance du jour` (F-008) = proposition, jamais une obligation.
- * `Parcourir` / parcours restent des accès secondaires.
+ * Présentation Accueil — priorité PO-C :
+ * reprise persistante > séance du jour > refaire dernière séance.
+ * « Reprendre » est réservé à PracticeResumeState.
  */
 export function HomeWelcomeView({
   dailySession,
-  resumeSession,
+  dailyAlreadyPracticedToday = false,
+  activeResume,
+  redoSession,
   stats,
   progressLabel,
+  onAbandonResume,
 }: HomeWelcomeViewProps) {
   return (
     <PageEnvironment family="morning">
@@ -39,6 +48,43 @@ export function HomeWelcomeView({
             </p>
           </div>
         </header>
+
+        {activeResume ? (
+          <section
+            className="space-y-3"
+            aria-labelledby="home-resume-heading"
+            data-testid="home-resume-section"
+          >
+            <h2 id="home-resume-heading" className="text-h2 text-foreground">
+              Reprendre
+            </h2>
+            <p className="text-small text-foreground">
+              Séance en cours : {activeResume.title}
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button
+                variant="primary"
+                asChild
+                data-testid="home-resume-action"
+              >
+                <Link href={`/pratique/${activeResume.id}`}>
+                  <RotateCcw className="size-4" strokeWidth={1.75} aria-hidden />
+                  Reprendre la séance
+                </Link>
+              </Button>
+              {onAbandonResume ? (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  data-testid="home-abandon-resume-action"
+                  onClick={onAbandonResume}
+                >
+                  Abandonner
+                </Button>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
 
         {dailySession ? (
           <section
@@ -64,6 +110,15 @@ export function HomeWelcomeView({
                     ? ` · ${dailySession.primaryObjectiveLabel}`
                     : null}
                 </p>
+                {dailyAlreadyPracticedToday ? (
+                  <p
+                    className="text-small text-foreground"
+                    data-testid="home-daily-practiced-today"
+                    role="status"
+                  >
+                    Déjà pratiquée aujourd’hui
+                  </p>
+                ) : null}
                 {dailySession.shortDescription ? (
                   <p className="text-body text-foreground">
                     {dailySession.shortDescription}
@@ -72,7 +127,7 @@ export function HomeWelcomeView({
               </div>
               <Button variant="primary" asChild>
                 <Link
-                  href={`/pratique/${dailySession.id}`}
+                  href={`/pratique/${dailySession.id}?fresh=1`}
                   data-testid="home-daily-cta"
                 >
                   <Leaf className="size-4" strokeWidth={1.75} aria-hidden />
@@ -83,26 +138,20 @@ export function HomeWelcomeView({
           </section>
         ) : null}
 
-        {resumeSession ? (
+        {redoSession ? (
           <section
             className="space-y-3"
-            aria-labelledby="home-resume-heading"
-            data-testid="home-resume-section"
+            aria-labelledby="home-redo-heading"
+            data-testid="home-redo-section"
           >
-            <h2 id="home-resume-heading" className="text-h2 text-foreground">
-              Reprendre
+            <h2 id="home-redo-heading" className="text-h2 text-foreground">
+              Dernière séance
             </h2>
-            <p className="text-small text-foreground">
-              Dernière séance : {resumeSession.title}
-            </p>
-            <Button
-              variant="surface"
-              asChild
-              data-testid="home-resume-action"
-            >
-              <Link href={`/pratique/${resumeSession.id}`}>
-                <RotateCcw className="size-4" strokeWidth={1.75} aria-hidden />
-                Reprendre cette séance
+            <p className="text-small text-foreground">{redoSession.title}</p>
+            <Button variant="surface" asChild data-testid="home-redo-action">
+              <Link href={`/pratique/${redoSession.id}?fresh=1`}>
+                <Play className="size-4" strokeWidth={1.75} aria-hidden />
+                Refaire cette séance
               </Link>
             </Button>
           </section>

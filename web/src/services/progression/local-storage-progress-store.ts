@@ -11,7 +11,7 @@ function isPracticeHistory(value: unknown): value is PracticeHistory {
 }
 
 export function createLocalStorageProgressStore(
-  storage?: Pick<Storage, "getItem" | "setItem">,
+  storage?: Pick<Storage, "getItem" | "setItem" | "removeItem">,
 ): ProgressStore {
   const resolveStorage = () => {
     if (storage) return storage;
@@ -45,6 +45,17 @@ export function createLocalStorageProgressStore(
           throw error;
         }
         throw new Error("Impossible d’enregistrer l’historique local.");
+      }
+    },
+
+    clearHistory() {
+      try {
+        resolveStorage().removeItem(PROGRESS_STORAGE_KEY);
+      } catch (error) {
+        if (error instanceof Error && error.message.includes("disponible")) {
+          throw error;
+        }
+        throw new Error("Impossible d’effacer l’historique local.");
       }
     },
   };

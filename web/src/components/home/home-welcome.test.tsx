@@ -27,7 +27,7 @@ vi.mock("next/link", () => ({
   ),
 }));
 
-describe("HomeWelcomeView — Séance du jour F-008", () => {
+describe("HomeWelcomeView — Accueil MVP-015", () => {
   const pathResult = beginnerPathReader.getPublishedPath();
   if (!pathResult.ok) throw new Error("BeginnerPath requis pour les tests Accueil");
 
@@ -49,55 +49,83 @@ describe("HomeWelcomeView — Séance du jour F-008", () => {
     lastPracticedAt: null,
   };
 
-  it("affiche Séance du jour avec CTA vers la bonne session", () => {
+  it("affiche Séance du jour avec CTA fresh", () => {
     const html = renderToStaticMarkup(
       <HomeWelcomeView
         dailySession={dailySession}
-        resumeSession={null}
+        activeResume={null}
+        redoSession={null}
         stats={emptyStats}
         progressLabel="Votre carnet est encore vide. Une première séance suffit pour commencer."
       />,
     );
 
     expect(html).toContain("Séance du jour");
-    expect(html).toContain('data-testid="home-daily-section"');
-    expect(html).toContain('data-testid="home-daily-cta"');
-    expect(html).toContain(`href="/pratique/${dailySession.id}"`);
-    expect(html).toContain(dailySession.title);
+    expect(html).toContain(`href="/pratique/${dailySession.id}?fresh=1"`);
     expect(html).toContain("libre de l’ignorer");
-    expect(html).not.toContain("obligatoire");
-    expect(html).not.toContain("retard");
     expect(html).not.toContain("streak");
-    expect(html).not.toContain("rattraper");
-    expect(html).not.toContain("validé aujourd");
-    expect(html).toContain("Parcourir");
-    expect(html).toContain('href="/parcours/debutant"');
-    expect(html).toContain('data-testid="home-breathing-action"');
     expect(html).toContain('href="/respiration"');
-    expect(html).toContain("Respiration calme");
   });
 
-  it("État A — historique vide : Parcourir, pas de Reprendre", () => {
+  it("affiche le badge Déjà pratiquée aujourd’hui sans changer la reco", () => {
     const html = renderToStaticMarkup(
       <HomeWelcomeView
         dailySession={dailySession}
-        resumeSession={null}
+        dailyAlreadyPracticedToday
+        activeResume={null}
+        redoSession={null}
+        stats={emptyStats}
+        progressLabel="1 pratique"
+      />,
+    );
+    expect(html).toContain("Déjà pratiquée aujourd’hui");
+    expect(html).toContain('data-testid="home-daily-practiced-today"');
+    expect(html).toContain(`href="/pratique/${dailySession.id}?fresh=1"`);
+  });
+
+  it("État A — pas de Reprendre ni Refaire", () => {
+    const html = renderToStaticMarkup(
+      <HomeWelcomeView
+        dailySession={dailySession}
+        activeResume={null}
+        redoSession={null}
         stats={emptyStats}
         progressLabel="Votre carnet est encore vide. Une première séance suffit pour commencer."
       />,
     );
 
-    expect(html).toContain("Parcourir");
-    expect(html).toContain('data-testid="home-browse-action"');
-    expect(html).not.toContain("Reprendre cette séance");
+    expect(html).not.toContain("Reprendre la séance");
     expect(html).not.toContain('data-testid="home-resume-action"');
+    expect(html).not.toContain("Refaire cette séance");
   });
 
-  it("État B — séance reprenable : Parcourir + Reprendre", () => {
+  it("priorité — vraie reprise utilise Reprendre", () => {
     const html = renderToStaticMarkup(
       <HomeWelcomeView
         dailySession={dailySession}
-        resumeSession={dailySession}
+        activeResume={dailySession}
+        redoSession={null}
+        stats={{
+          ...emptyStats,
+          totalSessions: 1,
+          completedSessions: 0,
+        }}
+        progressLabel="1 pratique"
+      />,
+    );
+
+    expect(html).toContain("Reprendre la séance");
+    expect(html).toContain('data-testid="home-resume-action"');
+    expect(html).toContain(`href="/pratique/${dailySession.id}"`);
+    expect(html).not.toContain("?fresh=1\" data-testid=\"home-resume-action\"");
+  });
+
+  it("Refaire pour une séance passée sans snapshot", () => {
+    const html = renderToStaticMarkup(
+      <HomeWelcomeView
+        dailySession={dailySession}
+        activeResume={null}
+        redoSession={dailySession}
         stats={{
           ...emptyStats,
           totalSessions: 1,
@@ -108,8 +136,9 @@ describe("HomeWelcomeView — Séance du jour F-008", () => {
       />,
     );
 
-    expect(html).toContain("Parcourir");
-    expect(html).toContain("Reprendre cette séance");
-    expect(html).toContain('data-testid="home-resume-action"');
+    expect(html).toContain("Refaire cette séance");
+    expect(html).toContain('data-testid="home-redo-action"');
+    expect(html).not.toContain("Reprendre cette séance");
+    expect(html).not.toContain("Reprendre la séance");
   });
 });

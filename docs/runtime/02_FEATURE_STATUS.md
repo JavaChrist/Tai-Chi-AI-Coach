@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-014 fermé / F-008·F-014·F-015 Livré / CH-018 |
+| Dernière mise à jour | 9 août 2026 — MVP-015 Fermé ; F-009/F-010/F-032/F-013 Livré |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -21,8 +21,8 @@
 | Indicateur | Valeur réelle |
 | --- | --- |
 | Total des fonctionnalités | **41** (`F-001` … `F-041`) |
-| Terminées (Validé / Livré) | **11** (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-014`, `F-015`, `F-016`, `F-031`) |
-| En cours (En développement / En test) | **8** (`F-006`, `F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
+| Terminées (Validé / Livré) | **15** (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-016`, `F-031`, `F-032`) |
+| En cours (En développement / En test) | **4** (`F-006`, `F-028`, `F-029`, `F-033`) |
 | Restantes (Non commencé) | **22** |
 
 ### Répartition par version cible (conception)
@@ -30,7 +30,7 @@
 | Version cible | Nombre | Statut d’implémentation |
 | --- | --- | --- |
 | Pré-MVP | 2 | **2 livré** (`F-016`, `F-031`) |
-| MVP | 17 | 9 livré (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-014`, `F-015`) / 8 en cours (`F-006`, `F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) / 0 non commencés MVP restants hors backlog ticket |
+| MVP | 17 | 13 livré (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-032`) / 4 en cours (`F-006`, `F-028`, `F-029`, `F-033`) / 0 non commencés MVP restants hors backlog ticket |
 | V1 | 10 | 0 livré / 10 non commencés |
 | V2 | 7 | 0 livré / 7 non commencés |
 | V3 | 2 | 0 livré / 2 non commencés |
@@ -52,11 +52,11 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-006 | Vidéo pédagogique | MVP | En test | MVP-012 | 8 août 2026 | Infra player + `mediaKeyVideo` ; fallback sans MP4 ; **0** fichier vidéo ; MEDIA REFERENCE MOTION BLOCKED ; attente média |
 | F-007 | Images de référence | MVP | Livré | MVP-011 | 8 août 2026 | WebP F-007 768×1280 ; fallback sans média ; validé PO |
 | F-008 | Programme quotidien | MVP | Livré | MVP-014 | 9 août 2026 | Accueil « Séance du jour » ; `resolveDailyProgram` déterministe local ; pool BeginnerPath ; ignorable ; validé PO |
-| F-009 | Historique | MVP | En développement | MVP-006 | 6 août 2026 | Historique localStorage ; UI carnet 12A (MVP-008A) ; pas de sync ; pas de stats avancées V1 (F-024) |
-| F-010 | Progression | MVP | En développement | MVP-006 | 6 août 2026 | Stats locales sobres (carnet, pas dashboard) ; pas de gamification ; pas de parcours F-003 branché |
+| F-009 | Historique | MVP | Livré | MVP-015 | 9 août 2026 | `PracticeRecord` + FIFO 200 ; `/progression` ; Accueil « Refaire » ; pas de sync ; pas F-024 ; validé PO |
+| F-010 | Progression | MVP | Livré | MVP-015 | 9 août 2026 | `ProgressSummary` calculé ; BeginnerPath enrichi ; stats sobres ; pas de gamification / streak / XP ; validé PO |
 | F-011 | Favoris | V1 | Non commencé | — | — | — |
 | F-012 | Recherche | V1 | Non commencé | — | — | — |
-| F-013 | Séances guidées | MVP | En test | MVP-006 / MVP-012 | 8 août 2026 | Parcours local OK ; **enrichissement mapping** `movementIds` + liens fiche (MVP-012) ; F-013 **pas** Livré global ; pas de player dans PracticePlayer |
+| F-013 | Séances guidées | MVP | Livré | MVP-015 / MVP-012 | 9 août 2026 | Lifecycle local complet (pratique + historique + reprise) ; médias PracticePlayer = MVP-012 MEDIA BLOCKED (hors Livré médias) ; validé PO |
 | F-014 | Exercices de respiration | MVP | Livré | MVP-014 | 9 août 2026 | `/respiration` ; Respiration calme (`08` §28.1) ; Hero mist ; texte seul ; non médical ; validé PO |
 | F-015 | Relaxation | MVP | Livré | MVP-014 | 9 août 2026 | Steps `retour` enrichis (3 séances) ; PracticePlayer inchangé ; non médical ; validé PO |
 | F-016 | Conseils de sécurité | Pré-MVP | Livré | MVP-009 | 7 août 2026 | Page `/conseils-de-securite` + lien Profil ; Hero `mountain` ; contenu non médical ; validé PO |
@@ -75,7 +75,7 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-029 | Accessibilité | MVP | En développement | MVP-007 | 6 août 2026 | Préférence « animations réduites » + tokens contraste 12A + `prefers-reduced-motion` ; pas encore tailles de texte avancées |
 | F-030 | Export utilisateur | V1 | Non commencé | — | — | — |
 | F-031 | Avertissements avant pratique | Pré-MVP | Livré | MVP-009 | 7 août 2026 | Gate pré-pratique `/pratique/...` ; Hero `morning` ; lien F-016 ; validé PO |
-| F-032 | Reprise de séance | MVP | En développement | MVP-005 | 5 août 2026 | Pause/reprise **en mémoire de page** uniquement ; pas de reprise après fermeture / refresh |
+| F-032 | Reprise de séance | MVP | Livré | MVP-015 | 9 août 2026 | `PracticeResumeState` localStorage ; hydrate post F-031 ; Accueil « Reprendre » = vraie reprise ; pagehide / step / pause ; validé PO |
 | F-033 | Première découverte guidée | MVP | En développement | MVP-008 | 5 août 2026 | Onboarding local court (bienvenue, niveau, objectif, durée, confirmation) + « Plus tard » ; pas Mei/caméra ; prudence bienvenue + socle F-016/F-031 (MVP-009) |
 | F-034 | Personnalisation avancée | V2 | Non commencé | — | — | — |
 | F-035 | Programmes adaptés | V2 | Non commencé | — | — | — |
@@ -91,8 +91,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | Indicateur MVP | Valeur |
 | --- | --- |
 | Features MVP (+ Pré-MVP héritées) | 19 (`17` MVP + `2` Pré-MVP) |
-| Livrées / validées | 11 (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-014`, `F-015`, `F-016`, `F-031`) |
-| En cours | 8 (`F-006`, `F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
+| Livrées / validées | 15 (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-016`, `F-031`, `F-032`) |
+| En cours | 4 (`F-006`, `F-028`, `F-029`, `F-033`) |
 | Non commencées | 0 |
 
 ## 5. Historique
@@ -132,6 +132,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 8 août 2026 | MVP-014 code partiel : `F-008` / `F-015` → **En test** ; `F-014` reste **Non commencé** / CONTENT BLOCKED ; ticket **non fermé** ; MVP-015 non ouvert. |
 | 9 août 2026 | MVP-014 F-014 : corpus `08` §28.1 ; `F-014` → **En test** ; CONTENT BLOCKED levé ; ticket **non fermé** ; MVP-015 non ouvert. |
 | 9 août 2026 | MVP-014 **fermé** (validation PO) ; `F-008` / `F-014` / `F-015` → **Livré** ; CH-018 ; MVP-012 MEDIA BLOCKED ; MVP-015 non ouvert. |
+| 9 août 2026 | MVP-015 **ouvert** (cadrage) ; F-009/F-010/F-032 → ticket MVP-015 ; F-013 finalisation lifecycle ; aucun code ; MVP-012 MEDIA BLOCKED. |
+| 9 août 2026 | MVP-015 **Livré (code)** ; PO-A…G validées ; `F-009`/`F-010`/`F-032`/`F-013` → **En test** ; attente PO ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
+| 9 août 2026 | MVP-015 **fermé** (validation PO) ; `F-009` / `F-010` / `F-032` / `F-013` → **Livré** ; CH-019 ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
 
 ## 6. Diagrammes
 
@@ -140,8 +143,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 ```mermaid
 pie title MVP + Pré-MVP — état réel
   "Non commencé" : 0
-  "En développement / En test" : 8
-  "Livré / validé" : 11
+  "En développement / En test" : 4
+  "Livré / validé" : 15
 ```
 
 ### 6.2 Répartition des versions

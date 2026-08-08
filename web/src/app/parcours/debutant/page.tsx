@@ -1,5 +1,5 @@
 import { PageEnvironment } from "@/components/environment/page-environment";
-import { BeginnerPathView } from "@/components/beginner-path/beginner-path-view";
+import { BeginnerPathProgress } from "@/components/beginner-path/beginner-path-progress";
 import { ContentLayout } from "@/components/layout/content-layout";
 import { ErrorState } from "@/components/states/error-state";
 import { beginnerPathReader } from "@/services/beginner-path/beginner-path-reader";
@@ -43,7 +43,10 @@ export default function ParcoursDebutantPage() {
   return (
     <PageEnvironment family="morning">
       <ContentLayout>
-        <BeginnerPathView path={pathResult.path} steps={stepsResult.steps} />
+        <BeginnerPathProgress
+          path={pathResult.path}
+          steps={stepsResult.steps}
+        />
       </ContentLayout>
     </PageEnvironment>
   );

@@ -14,6 +14,9 @@ function memoryStorage(initial: Record<string, string> = {}) {
     setItem: (key: string, value: string) => {
       map.set(key, value);
     },
+    removeItem: (key: string) => {
+      map.delete(key);
+    },
   };
 }
 
@@ -114,5 +117,38 @@ describe("progressService", () => {
     const summaries = service.listSummaries();
     expect(summaries[0]?.sessionTitle).toBe("Récente");
     expect(summaries[1]?.sessionTitle).toBe("Ancienne");
+  });
+
+  it("applique la limite FIFO 200", () => {
+    const service = createProgressService(createMemoryProgressStore());
+    for (let i = 0; i < 205; i += 1) {
+      service.recordPractice({
+        sessionTemplateId: `st-${i}`,
+        sessionTitle: `S${i}`,
+        practicedAt: `2026-01-01T00:00:${String(i % 60).padStart(2, "0")}.000Z`,
+        durationMs: 1000,
+        status: "completed",
+        stepsCompleted: 1,
+        stepsTotal: 1,
+      });
+    }
+    const history = service.getHistory();
+    expect(history.records).toHaveLength(200);
+    expect(history.records[0]?.sessionTitle).toBe("S204");
+    expect(history.records.some((r) => r.sessionTitle === "S0")).toBe(false);
+  });
+
+  it("clearHistory vide l’historique", () => {
+    const service = createProgressService(createMemoryProgressStore());
+    service.recordPractice({
+      sessionTemplateId: "a",
+      sessionTitle: "A",
+      durationMs: 1,
+      status: "completed",
+      stepsCompleted: 1,
+      stepsTotal: 1,
+    });
+    service.clearHistory();
+    expect(service.getHistory().records).toHaveLength(0);
   });
 });

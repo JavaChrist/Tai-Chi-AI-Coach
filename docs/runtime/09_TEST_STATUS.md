@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-014 fermé / CH-018 |
+| Dernière mise à jour | 9 août 2026 — MVP-015 Fermé ; 161/161 |
 | Phase actuelle | Développement MVP — tests unitaires Vitest |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
@@ -38,6 +38,7 @@
 | Mouvements F-004 / F-005 / F-007 | Partielle (reader + catalogue + fiche + accès bibliothèque — MVP-011) |
 | Parcours débutant F-003 | Partielle (BeginnerPath reader + page `/parcours/debutant` + accès Accueil/Découverte/Séances — MVP-013) |
 | Programme quotidien F-008 / Respiration F-014 / Relaxation F-015 | Partielle (`resolveDailyProgram` + `/respiration` + steps `retour` — MVP-014) |
+| Historique / progression / reprise F-009·F-010·F-032 | Partielle (resume store, FIFO 200, ProgressSummary, Accueil, wipe Profil — MVP-015) |
 
 ## 4. Exécutions
 
@@ -151,6 +152,17 @@
 | Résultat cumulé | **136 / 136 passed** |
 | Build / TypeScript / ESLint | OK |
 
+### Campagne MVP-015 (History / Progress / Resume)
+
+| Champ | Valeur |
+| --- | --- |
+| Date | 9 août 2026 |
+| Outil | Vitest + Next build + ESLint + `tsc` |
+| Périmètre | F-009/F-010/F-032/F-013 ; resume store ; FIFO 200 ; ProgressSummary ; Accueil ; wipe Profil ; régression |
+| Résultat cumulé | **161 / 161 passed** |
+| Build / TypeScript / ESLint | OK |
+| Validation PO | Desktop/Mobile × Light/Dark OK |
+
 ## 5. Historique
 
 | Date | Événement |
@@ -172,6 +184,8 @@
 | 8 août 2026 | MVP-014 partiel — 132/132 ; F-008/F-015 En test ; F-014 CONTENT BLOCKED. |
 | 9 août 2026 | MVP-014 F-014 — 136/136 ; Respiration calme ; CONTENT BLOCKED levé. |
 | 9 août 2026 | MVP-014 **fermé** — campagne 136/136 confirmée (validation PO). |
+| 9 août 2026 | MVP-015 — 161/161 ; reprise persistante + progression path + FIFO + wipe ; attente PO. |
+| 9 août 2026 | MVP-015 **fermé** — campagne 161/161 confirmée (validation PO) ; CH-019. |
 
 ---
 

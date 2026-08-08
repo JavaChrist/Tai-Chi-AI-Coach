@@ -12,7 +12,8 @@ export type PracticeAction =
   | { type: "RESUME" }
   | { type: "COMPLETE" }
   | { type: "ABANDON" }
-  | { type: "TICK"; now: number };
+  | { type: "TICK"; now: number }
+  | { type: "HYDRATE"; session: LocalPracticeSession };
 
 function createId(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -204,6 +205,10 @@ export function practiceReducer(
         activeElapsedMs: flushActiveTime(state, now),
         activeSegmentStartedAt: now,
       };
+    }
+
+    case "HYDRATE": {
+      return action.session;
     }
 
     default:

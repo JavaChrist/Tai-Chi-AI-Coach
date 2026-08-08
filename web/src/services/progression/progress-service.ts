@@ -1,3 +1,4 @@
+import { withTrimmedHistory } from "@/domain/progression/history-limit";
 import {
   computeUserStatistics,
   emptyHistory,
@@ -13,11 +14,14 @@ import type {
 import { createLocalStorageProgressStore } from "@/services/progression/local-storage-progress-store";
 import type { ProgressStore } from "@/services/progression/progress-store";
 
+export const PROGRESS_UPDATED_EVENT = "tai-chi-progress-updated";
+
 export type ProgressService = {
   getHistory: () => PracticeHistory;
   listSummaries: () => PracticeSummary[];
   getStatistics: () => UserStatistics;
   recordPractice: (input: RecordPracticeInput) => PracticeRecord;
+  clearHistory: () => void;
 };
 
 function createId(): string {
@@ -25,6 +29,12 @@ function createId(): string {
     return crypto.randomUUID();
   }
   return `practice-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function notifyUpdated() {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new Event(PROGRESS_UPDATED_EVENT));
+  }
 }
 
 export function createProgressService(store: ProgressStore): ProgressService {
@@ -54,15 +64,22 @@ export function createProgressService(store: ProgressStore): ProgressService {
         stepsTotal: Math.max(0, input.stepsTotal),
       };
 
-      const next: PracticeHistory = {
+      const next = withTrimmedHistory({
         version: 1,
         records: [record, ...history.records],
-      };
+      });
       store.saveHistory(next);
-      if (typeof window !== "undefined") {
-        window.dispatchEvent(new Event("tai-chi-progress-updated"));
-      }
+      notifyUpdated();
       return record;
+    },
+
+    clearHistory() {
+      if (store.clearHistory) {
+        store.clearHistory();
+      } else {
+        store.saveHistory(emptyHistory());
+      }
+      notifyUpdated();
     },
   };
 }
@@ -77,6 +94,11 @@ export function getProgressService(): ProgressService {
   return browserService;
 }
 
+/** Tests uniquement. */
+export function __resetProgressServiceForTests() {
+  browserService = null;
+}
+
 export function createMemoryProgressStore(
   initial: PracticeHistory = emptyHistory(),
 ): ProgressStore {
@@ -85,6 +107,9 @@ export function createMemoryProgressStore(
     loadHistory: () => history,
     saveHistory: (next) => {
       history = next;
+    },
+    clearHistory: () => {
+      history = emptyHistory();
     },
   };
 }

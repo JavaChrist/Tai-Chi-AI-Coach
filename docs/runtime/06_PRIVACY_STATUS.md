@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/06_PRIVACY_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 |
-| Phase actuelle | Post–Design Freeze — initialisation Runtime |
+| Dernière mise à jour | 9 août 2026 — MVP-015 Fermé ; wipe pratique locale Profil |
+| Phase actuelle | Développement MVP — données locales (prefs / onboarding / progress / resume) ; pas de compte |
 | Document de référence | `docs/17_PRIVACY_RGPD.md` |
 | Type | Runtime Register — état réel RGPD / privacy |
 
@@ -23,7 +23,7 @@
 | Registre des traitements | Non commencé |
 | Consentements | Non commencé |
 | Export utilisateur | Non commencé |
-| Suppression | Non commencé |
+| Suppression | Partiel — wipe pratique locale Profil (MVP-015) ; pas de compte |
 | Anonymisation | Non commencé |
 | Conservation | Non commencé |
 | Journalisation RGPD | Non commencé |
@@ -32,7 +32,7 @@
 | Privacy by Design (implémenté) | Non commencé |
 | Privacy by Default (implémenté) | Non commencé |
 
-**Synthèse :** aucune implémentation RGPD Runtime. Aucun traitement applicatif opérationnel.
+**Synthèse :** pas de compte / export / consentements Runtime. Wipe local MVP-015 : historique + reprise (prefs / onboarding conservés).
 
 ## 3. Consentements
 
@@ -151,13 +151,17 @@ Toute évolution impactant des données personnelles devra :
 | Date | Événement |
 | --- | --- |
 | 5 août 2026 | Création du registre ; initialisation depuis l’état réel ; aucune implémentation RGPD. |
+| 9 août 2026 | MVP-015 **ouvert** — cadrage wipe historique/reprise locaux (PO-E) ; aucune implémentation. |
+| 9 août 2026 | MVP-015 **Livré (code)** — Profil « Effacer mes données de pratique » (history + resume). |
+| 9 août 2026 | MVP-015 **fermé** (validation PO) — wipe local validé ; prefs / onboarding conservés ; CH-019. |
 
 ## 11. Références
 
-- `docs/17_PRIVACY_RGPD.md`  
-- `docs/runtime/README.md`  
-- `docs/runtime/05_SECURITY_STATUS.md`  
-- `docs/25_DESIGN_FREEZE.md`  
+- `docs/17_PRIVACY_RGPD.md`
+- `docs/runtime/README.md`
+- `docs/runtime/05_SECURITY_STATUS.md`
+- `docs/tickets/MVP-015_HISTORY_PROGRESS_RESUME.md`
+- `docs/25_DESIGN_FREEZE.md`
 
 ---
 

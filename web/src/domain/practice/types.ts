@@ -2,7 +2,7 @@ import type { SessionStep, SessionTemplate } from "@/domain/curriculum/types";
 
 /**
  * Exécution locale d’une séance (`PracticeSession` conceptuel — D-088).
- * Non persistée (MVP-005) : mémoire de page uniquement.
+ * État live en mémoire ; reprise mid-session via `PracticeResumeState` (MVP-015).
  */
 
 export type PracticePhase =

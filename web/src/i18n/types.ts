@@ -48,6 +48,14 @@ export type MessageDictionary = {
     saving: string;
     loadError: string;
     retry: string;
+    clearPractice: string;
+    clearPracticeHelp: string;
+    clearPracticeAction: string;
+    clearPracticeConfirmTitle: string;
+    clearPracticeConfirmDescription: string;
+    clearPracticeConfirmLabel: string;
+    clearPracticeCancelLabel: string;
+    clearPracticeDone: string;
   };
 };
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { ProfileOnboardingSection } from "@/components/onboarding/profile-onboarding-section";
+import { ProfileClearPractice } from "@/components/preferences/profile-clear-practice";
 import { PreferenceSection } from "@/components/preferences/preference-section";
 import { PreferenceSelect } from "@/components/preferences/preference-select";
 import { PreferenceSwitch } from "@/components/preferences/preference-switch";
@@ -170,6 +171,8 @@ export function ProfilePreferences() {
           disabled={isSaving}
         />
       </PreferenceSection>
+
+      <ProfileClearPractice />
 
       <PreferenceSection id="about" title={t.about}>
         <PreferenceCard

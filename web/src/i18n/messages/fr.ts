@@ -49,5 +49,15 @@ export const fr: MessageDictionary = {
     saving: "Enregistrement…",
     loadError: "Les préférences n’ont pas pu être lues sur cet appareil.",
     retry: "Réessayer",
+    clearPractice: "Données de pratique",
+    clearPracticeHelp:
+      "Efface l’historique et la reprise de séance sur cet appareil. Les préférences et l’onboarding sont conservés.",
+    clearPracticeAction: "Effacer mes données de pratique",
+    clearPracticeConfirmTitle: "Effacer mes données de pratique ?",
+    clearPracticeConfirmDescription:
+      "Votre historique local et toute reprise en cours seront supprimés de cet appareil. Cette action est définitive. Les préférences et l’onboarding restent inchangés.",
+    clearPracticeConfirmLabel: "Effacer",
+    clearPracticeCancelLabel: "Annuler",
+    clearPracticeDone: "Données de pratique effacées.",
   },
 };

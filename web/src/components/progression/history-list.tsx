@@ -48,7 +48,10 @@ export function HistoryList({ summaries }: HistoryListProps) {
               {formatDate(summary.practicedAt)}
               {" · "}
               {formatActiveDuration(summary.durationMs)}
-              {summary.status === "abandoned" ? " · interrompue" : null}
+              {" · "}
+              <span data-testid="history-status">
+                {summary.status === "abandoned" ? "interrompue" : "terminée"}
+              </span>
             </p>
           </div>
           <p>
