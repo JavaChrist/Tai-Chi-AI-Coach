@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Fermé** (GO — 9 août 2026 — validation PO — CH-018 ; SHA à enregistrer)
+> Statut : **Fermé** (GO — 9 août 2026 — validation PO — CH-018 ; commit `d0574f9`)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-014_DAILY_PROGRAM.md`
 > Dépend de :
@@ -451,7 +451,7 @@ Aucun nouvel asset.
 | Implémentation code F-014 | **Livrée** — `08` §28.1 + `/respiration` ; validée PO |
 | Validation PO visuelle | **Fait** — Desktop/Mobile × Light/Dark |
 | Dette UI shell | **TD-001** notée (chrome thème Mobile — hors scope correctif) |
-| Clôture | **Fermé** — CH-018 (SHA à enregistrer) |
+| Clôture | **Fermé** — CH-018 — commit `d0574f9` |
 
 ---
 
