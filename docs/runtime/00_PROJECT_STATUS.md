@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-015 Fermé ; F-009/F-010/F-032/F-013 Livré ; MVP-012 MEDIA BLOCKED |
+| Dernière mise à jour | 9 août 2026 — MVP-016 Fermé ; F-033/F-028/F-029 Livré ; MVP-012 MEDIA BLOCKED |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,8 +22,8 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — MVP-015 Fermé ; MVP-012 MEDIA BLOCKED |
-| Statut global | Conception close ; Runtime 20/20 ; **MVP-009** / **MVP-010** / **MVP-011** / **MVP-013** / **MVP-014** / **MVP-015 fermés** ; **MVP-012** ouvert (MEDIA BLOCKED) ; **F-001** / **F-002** / **F-003** / **F-004** / **F-005** / **F-007** / **F-008** / **F-009** / **F-010** / **F-013** / **F-014** / **F-015** / **F-016** / **F-031** / **F-032** **Livré** ; **F-006** En test ; **F-028** / **F-029** / **F-033** en cours ; auth/sync hors MVP (V1) |
+| Phase | Développement MVP — MVP-016 Fermé ; MVP-012 MEDIA BLOCKED |
+| Statut global | Conception close ; Runtime 20/20 ; **MVP-009** / **MVP-010** / **MVP-011** / **MVP-013** / **MVP-014** / **MVP-015** / **MVP-016 fermés** ; **MVP-012** ouvert (MEDIA BLOCKED) ; **F-001** / **F-002** / **F-003** / **F-004** / **F-005** / **F-007** / **F-008** / **F-009** / **F-010** / **F-013** / **F-014** / **F-015** / **F-016** / **F-028** / **F-029** / **F-031** / **F-032** / **F-033** **Livré** ; **F-006** En test ; auth/sync hors MVP (V1) |
 | Dernière mise à jour globale | 7 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
@@ -33,7 +33,7 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | **MVP-015 Fermé** (F-009/F-010/F-032/F-013 Livré) ; **MVP-012** MEDIA BLOCKED ; prochain planifié MVP-016 (non ouvert) ; TD-001 Mineure |
+| Développement | **En cours** | **MVP-016 Fermé** (F-033/F-028/F-029 Livré) ; **MVP-012** MEDIA BLOCKED ; prochain planifié MVP-017 (non ouvert) ; TD-001 **fermée** |
 | Tests | **En cours** | Vitest OK ; pas de campagne produit E2E complète |
 | Release | **Non commencé** | 0 Release (`19`) ; déploiement absent (`10`) |
 
@@ -60,7 +60,7 @@
 | Indicateur | Valeur réelle |
 | --- | --- |
 | Tickets ouverts | **1** (**MVP-012** — MEDIA BLOCKED / REFERENCE MOTION BLOCKED) |
-| Tickets terminés | **16** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010, MVP-011, MVP-013, MVP-014, MVP-015) |
+| Tickets terminés | **17** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010, MVP-011, MVP-013, MVP-014, MVP-015, MVP-016) |
 | Tickets bloqués | 0 |
 | Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero + pratique + prudence + découverte + parcours débutant + progression + prefs + onboarding + **SW App Update socle** (`web/`) |
 
@@ -70,8 +70,8 @@ Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
 | Catégorie | État |
 | --- | --- |
-| Fonctionnalités terminées | **15** (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-016`, `F-031`, `F-032` — Livré) |
-| Fonctionnalités en cours | **4** (`F-006`, `F-028`, `F-029`, `F-033`) |
+| Fonctionnalités terminées | **18** (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-016`, `F-028`, `F-029`, `F-031`, `F-032`, `F-033` — Livré) |
+| Fonctionnalités en cours | **1** (`F-006`) |
 | Fonctionnalités restantes | **22** non commencées (`02_FEATURE_STATUS`) |
 
 Détail : `02_FEATURE_STATUS.md`.
@@ -91,7 +91,7 @@ Les décisions de conception (`DECISIONS.md`, D-001…D-222) ne sont pas des dé
 | --- | --- |
 | Risques Runtime ouverts (`15`) | **0** `RR-xxx` |
 | Limitations Runtime (`16`) | **0** `KL-xxx` |
-| Changements Runtime (`17`) | **19** `CH-001`…`CH-019` |
+| Changements Runtime (`17`) | **20** `CH-001`…`CH-020` |
 | Métriques Runtime (`18`) | **0** `MT-xxx` |
 | Releases publiées (`19`) | **0** `REL-xxx` |
 
@@ -107,7 +107,7 @@ Aucun blocage connu.
 
 | Synthèse | Valeur |
 | --- | --- |
-| Dette technique applicative constatée | **1 Mineure** (`12_TECH_DEBT` — TD-001 chrome thème Mobile) |
+| Dette technique applicative constatée | **0** (`12_TECH_DEBT` — TD-001 fermée MVP-016) |
 | Bugs ouverts | **0** (`13_BUGS`) |
 | Dette documentaire runtime | Écart nomenclature `98` vs `runtime/README` (non bloquant) |
 
@@ -183,10 +183,10 @@ Détail : `12_TECH_DEBT.md`.
 ## 15. Prochaines étapes (réelles, non estimées)
 
 1. **MVP-012** — rester ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED jusqu’à sources de mouvement fiables + MP4 validés.
-2. Ouvrir **MVP-016** (F-033 + F-028 + F-029) selon `docs/tickets/README.md` §20 — **non ouvert** à cette clôture.
-3. Enchaîner **MVP-016 → MVP-018** après ouverture administrative dédiée.
+2. Ouvrir **MVP-017** (Offline / PWA — cache cœur) selon `docs/tickets/README.md` §20 — **non ouvert** à cette clôture ; préserver le socle App Update existant.
+3. Enchaîner **MVP-017 → MVP-018** après ouverture administrative dédiée.
 4. Appliquer Impact Analysis + cycle Ticket → Dev → Tests → Validation → MAJ Runtime → Commit.
-5. **Ne pas** ouvrir auth / sync / IA / CV / Mei ni MVP-017 dans cette étape.
+5. **Ne pas** ouvrir auth / sync / IA / CV / Mei dans cette étape.
 
 ## 16. Historique du registre
 
@@ -238,6 +238,9 @@ Détail : `12_TECH_DEBT.md`.
 | 9 août 2026 | **MVP-015 ouvert** (cadrage F-009 + F-010 + F-032 + finalisation F-013) ; gate DESIGN DECISION REQUIRED ; aucun code ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
 | 9 août 2026 | **MVP-015 Livré (code)** ; PO-A…G validées ; READY FOR CODE ; F-009/F-010/F-032/F-013 En test ; attente PO ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
 | 9 août 2026 | **MVP-015 fermé** (validation PO) ; F-009/F-010/F-032/F-013 → **Livré** ; CH-019 ; correctifs QA F-031 + server snapshot ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
+| 9 août 2026 | **MVP-016 ouvert** (cadrage F-033 + F-028 + F-029) ; gate DESIGN DECISION REQUIRED ; aucun code ; MVP-012 MEDIA BLOCKED ; MVP-017 non ouvert. |
+| 9 août 2026 | **MVP-016 Livré (code)** ; PO-A…F validées ; F-033/F-028/F-029 En test ; TD-001 fermée ; attente PO ; MVP-012 MEDIA BLOCKED ; MVP-017 non ouvert. |
+| 9 août 2026 | **MVP-016 fermé** (validation PO) ; F-033/F-028/F-029 → **Livré** ; CH-020 ; correctif QA `.z-dropdown` ; MVP-012 MEDIA BLOCKED ; MVP-017 non ouvert. |
 
 ## 17. Diagrammes
 
@@ -338,7 +341,7 @@ Jamais anticiper un avancement non réalisé.
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain jalon | MVP-016 (planifié, non ouvert) ; MVP-012 reste MEDIA BLOCKED |
+| Prochain jalon | MVP-017 (planifié, non ouvert) ; MVP-012 reste MEDIA BLOCKED |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

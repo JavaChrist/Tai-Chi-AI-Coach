@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/02_FEATURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-015 Fermé ; F-009/F-010/F-032/F-013 Livré |
+| Dernière mise à jour | 9 août 2026 — MVP-016 Fermé ; F-028/F-029/F-033 Livré |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel des fonctionnalités |
 | Référence conception | `docs/05_FEATURES.md` (catalogue figé — intention, non recopié comme livré) |
@@ -21,8 +21,8 @@
 | Indicateur | Valeur réelle |
 | --- | --- |
 | Total des fonctionnalités | **41** (`F-001` … `F-041`) |
-| Terminées (Validé / Livré) | **15** (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-016`, `F-031`, `F-032`) |
-| En cours (En développement / En test) | **4** (`F-006`, `F-028`, `F-029`, `F-033`) |
+| Terminées (Validé / Livré) | **18** (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-016`, `F-028`, `F-029`, `F-031`, `F-032`, `F-033`) |
+| En cours (En développement / En test) | **1** (`F-006`) |
 | Restantes (Non commencé) | **22** |
 
 ### Répartition par version cible (conception)
@@ -30,7 +30,7 @@
 | Version cible | Nombre | Statut d’implémentation |
 | --- | --- | --- |
 | Pré-MVP | 2 | **2 livré** (`F-016`, `F-031`) |
-| MVP | 17 | 13 livré (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-032`) / 4 en cours (`F-006`, `F-028`, `F-029`, `F-033`) / 0 non commencés MVP restants hors backlog ticket |
+| MVP | 17 | 16 livré (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-028`, `F-029`, `F-032`, `F-033`) / 1 en cours (`F-006`) / 0 non commencés MVP restants hors backlog ticket |
 | V1 | 10 | 0 livré / 10 non commencés |
 | V2 | 7 | 0 livré / 7 non commencés |
 | V3 | 2 | 0 livré / 2 non commencés |
@@ -71,12 +71,12 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | F-025 | Contenus Premium | V2 | Non commencé | — | — | — |
 | F-026 | Téléchargement hors ligne | V2 | Non commencé | — | — | — |
 | F-027 | Synchronisation multi-appareils | V1 | Non commencé | — | — | — |
-| F-028 | Paramètres | MVP | En développement | MVP-007 | 6 août 2026 | Page `/profil` + préférences locales ; UI densifiée 12A (MVP-008A) ; pas d’auth / sync / notifications |
-| F-029 | Accessibilité | MVP | En développement | MVP-007 | 6 août 2026 | Préférence « animations réduites » + tokens contraste 12A + `prefers-reduced-motion` ; pas encore tailles de texte avancées |
+| F-028 | Paramètres | MVP | Livré | MVP-016 / MVP-007 | 9 août 2026 | `/profil` Pref/Info/Action ; thème light/dark/system ; pratique ; reduceMotion ; pas `/parametres` ; pas d’auth / sync ; validé PO |
+| F-029 | Accessibilité | MVP | Livré | MVP-016 / MVP-007 | 9 août 2026 | Skip link ; Switch touch ≥44px ; reduceMotion réel ; TD-001 fermée ; utilitaire `.z-dropdown` ; pas de préférence taille texte / contraste renforcé ; validé PO |
 | F-030 | Export utilisateur | V1 | Non commencé | — | — | — |
 | F-031 | Avertissements avant pratique | Pré-MVP | Livré | MVP-009 | 7 août 2026 | Gate pré-pratique `/pratique/...` ; Hero `morning` ; lien F-016 ; validé PO |
 | F-032 | Reprise de séance | MVP | Livré | MVP-015 | 9 août 2026 | `PracticeResumeState` localStorage ; hydrate post F-031 ; Accueil « Reprendre » = vraie reprise ; pagehide / step / pause ; validé PO |
-| F-033 | Première découverte guidée | MVP | En développement | MVP-008 | 5 août 2026 | Onboarding local court (bienvenue, niveau, objectif, durée, confirmation) + « Plus tard » ; pas Mei/caméra ; prudence bienvenue + socle F-016/F-031 (MVP-009) |
+| F-033 | Première découverte guidée | MVP | Livré | MVP-016 / MVP-008 | 9 août 2026 | Onboarding 5 étapes ; CTA secondaire BeginnerPath ; complete→`/decouverte` ; skip→`/bibliotheque` ; relance Profil ; pas Mei/caméra ; validé PO |
 | F-034 | Personnalisation avancée | V2 | Non commencé | — | — | — |
 | F-035 | Programmes adaptés | V2 | Non commencé | — | — | — |
 | F-036 | Moteur de coaching réutilisable | V3 | Non commencé | — | — | — |
@@ -91,8 +91,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | Indicateur MVP | Valeur |
 | --- | --- |
 | Features MVP (+ Pré-MVP héritées) | 19 (`17` MVP + `2` Pré-MVP) |
-| Livrées / validées | 15 (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-016`, `F-031`, `F-032`) |
-| En cours | 4 (`F-006`, `F-028`, `F-029`, `F-033`) |
+| Livrées / validées | 18 (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-009`, `F-010`, `F-013`, `F-014`, `F-015`, `F-016`, `F-028`, `F-029`, `F-031`, `F-032`, `F-033`) |
+| En cours | 1 (`F-006`) |
 | Non commencées | 0 |
 
 ## 5. Historique
@@ -135,6 +135,9 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 | 9 août 2026 | MVP-015 **ouvert** (cadrage) ; F-009/F-010/F-032 → ticket MVP-015 ; F-013 finalisation lifecycle ; aucun code ; MVP-012 MEDIA BLOCKED. |
 | 9 août 2026 | MVP-015 **Livré (code)** ; PO-A…G validées ; `F-009`/`F-010`/`F-032`/`F-013` → **En test** ; attente PO ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
 | 9 août 2026 | MVP-015 **fermé** (validation PO) ; `F-009` / `F-010` / `F-032` / `F-013` → **Livré** ; CH-019 ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
+| 9 août 2026 | MVP-016 **ouvert** (cadrage) ; `F-028` / `F-029` / `F-033` restent **En développement** ; DESIGN DECISION REQUIRED ; aucun code ; MVP-012 MEDIA BLOCKED ; MVP-017 non ouvert. |
+| 9 août 2026 | MVP-016 **Livré (code)** ; PO-A…F validées ; `F-028` / `F-029` / `F-033` → **En test** ; TD-001 fermée ; attente PO ; MVP-012 MEDIA BLOCKED ; MVP-017 non ouvert. |
+| 9 août 2026 | MVP-016 **fermé** (validation PO) ; `F-028` / `F-029` / `F-033` → **Livré** ; CH-020 ; MVP-012 MEDIA BLOCKED ; MVP-017 non ouvert. |
 
 ## 6. Diagrammes
 
@@ -143,8 +146,8 @@ Statuts autorisés : Non commencé · En développement · En test · Validé ·
 ```mermaid
 pie title MVP + Pré-MVP — état réel
   "Non commencé" : 0
-  "En développement / En test" : 4
-  "Livré / validé" : 15
+  "En test" : 1
+  "Livré / validé" : 18
 ```
 
 ### 6.2 Répartition des versions

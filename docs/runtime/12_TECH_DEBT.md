@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/12_TECH_DEBT.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — TD-001 (chrome thème Mobile) |
-| Phase actuelle | Développement MVP — MVP-012 MEDIA BLOCKED |
+| Dernière mise à jour | 9 août 2026 — TD-001 fermée (MVP-016) |
+| Phase actuelle | Développement MVP — MVP-016 Fermé ; MVP-012 MEDIA BLOCKED |
 | Type | Runtime Register — dette technique **constatée** |
 
 > Uniquement de la dette technique observée.
@@ -20,14 +20,14 @@
 | Domaine | Dette identifiée |
 | --- | --- |
 | Architecture | Aucune dette identifiée |
-| Code / UI shell | **1** (TD-001 — Mineure) |
+| Code / UI shell | **0** (TD-001 fermée) |
 | Performances | Aucune dette identifiée |
 | Sécurité | Aucune dette identifiée |
 | Offline | Aucune dette identifiée |
 | Tests | Aucune dette identifiée |
 | Documentation Runtime | Aucune dette technique applicative (écarts doc hors scope TD-xxx — voir `00` R-PS-002) |
 
-**Synthèse :** 1 dette UI shell Mineure (chrome thème Mobile) — non bloquante ; hors correction MVP-014.
+**Synthèse :** aucune dette ouverte — TD-001 **fermée** (correction shell MVP-016 / PO-D).
 
 ## 3. Dette détaillée
 
@@ -35,7 +35,7 @@ Identifiants : `TD-xxx` (non réutilisés).
 
 | ID | Description | Module | Sévérité | Ticket | Statut | Date |
 | --- | --- | --- | --- | --- | --- | --- |
-| TD-001 | Sur Mobile, le chrome flottant de bascule thème peut chevaucher légèrement le contenu long (constaté sur `/respiration` ; transversal shell, non spécifique F-014) | App Shell / thème | Mineure | MVP-014 (constat) | Ouverte — non corrigée dans MVP-014 | 9 août 2026 |
+| TD-001 | Sur Mobile, le chrome flottant de bascule thème pouvait chevaucher légèrement le contenu long (constaté sur `/respiration`) | App Shell / thème | Mineure | MVP-014 (constat) / MVP-016 (fix) | **Fermée** — utilitaire `.z-dropdown` + header/nav ; Hero sans z concurrent ; validé PO Mobile | 9 août 2026 |
 
 ## 4. Gouvernance
 
@@ -93,6 +93,8 @@ flowchart TB
 | --- | --- |
 | 5 août 2026 | Création du registre ; initialisation ; aucune dette ; aucun bug associé. |
 | 9 août 2026 | TD-001 — chevauchement chrome thème Mobile (constat clôture MVP-014 ; non corrigé dans le ticket). |
+| 9 août 2026 | TD-001 — candidat correction MVP-016 (PO-D) ; ticket ouvert cadrage ; aucun fix appliqué. |
+| 9 août 2026 | TD-001 **fermée** — fix shell MVP-016 (PO-D) : utilitaire CSS `.z-dropdown` ; `AppHeader`/`BottomNav` ; `PageEnvironment` sans z concurrent ; validé PO. |
 
 ## 7. Références
 

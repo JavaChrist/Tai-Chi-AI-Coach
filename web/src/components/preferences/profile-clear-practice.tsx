@@ -31,9 +31,13 @@ export function ProfileClearPractice() {
 
   return (
     <>
-      <PreferenceSection id="practice-data" title={t.clearPractice}>
+      <PreferenceSection
+        id="practice-data"
+        title={t.clearPractice}
+        description="Action définitive — efface uniquement l’historique et la reprise sur cet appareil."
+      >
         <PreferenceCard
-          title={t.clearPractice}
+          title={t.clearPracticeAction}
           description={t.clearPracticeHelp}
           action={
             <Button

@@ -20,9 +20,13 @@ export type MessageDictionary = {
     title: string;
     description: string;
     appearance: string;
+    appearanceHelp: string;
     practice: string;
+    practiceHelp: string;
     accessibility: string;
+    accessibilityHelp: string;
     about: string;
+    aboutHelp: string;
     theme: string;
     themeHelp: string;
     language: string;

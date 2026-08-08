@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/11_BACKLOG.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-015 Fermé ; MVP-012 MEDIA BLOCKED |
-| Phase actuelle | Développement MVP — MVP-012 MEDIA BLOCKED ; MVP-016 planifié non ouvert |
+| Dernière mise à jour | 9 août 2026 — MVP-016 Fermé ; MVP-012 MEDIA BLOCKED |
+| Phase actuelle | Développement MVP — MVP-012 MEDIA BLOCKED ; MVP-017 planifié non ouvert |
 | Document de référence (intentions) | `docs/22_ROADMAP.md`, `docs/tickets/README.md` §20 |
 | Type | Runtime Register — travaux **réellement ouverts** |
 
@@ -26,9 +26,9 @@
 | Améliorations ouvertes | **0** |
 | Reports ouverts | **0** |
 | Idées retenues (ticketées) | **0** |
-| Priorités Runtime actives | P0 — MVP-012 (MEDIA BLOCKED) ; prochain planifié MVP-016 (non ouvert) |
+| Priorités Runtime actives | P0 — MVP-012 (MEDIA BLOCKED) ; prochain planifié MVP-017 (non ouvert) |
 
-**Synthèse :** MVP-015 **fermé** (F-009/F-010/F-032/F-013 Livré ; CH-019). MVP-012 **ouvert** (MEDIA BLOCKED ; 0 MP4). MVP-016 / MVP-017 non ouverts. TD-001 Mineure.
+**Synthèse :** MVP-016 **fermé** (F-033/F-028/F-029 Livré ; CH-020 ; TD-001 fermée). MVP-012 **ouvert** (MEDIA BLOCKED ; 0 MP4). MVP-017 non ouvert.
 
 ## 3. Tickets ouverts
 
@@ -38,7 +38,7 @@
 
 ## 4. Séquence planifiée (non ouverte — pas d’entrée backlog)
 
-Voir `docs/tickets/README.md` §20 : MVP-016 → MVP-018.
+Voir `docs/tickets/README.md` §20 : MVP-017 → MVP-018.
 
 Ne pas dupliquer ici les tickets sans fichier.
 
@@ -95,6 +95,9 @@ stateDiagram-v2
 | 9 août 2026 | MVP-015 **ouvert** (cadrage F-009 + F-010 + F-032 + finalisation F-013) ; DESIGN DECISION REQUIRED ; aucun code ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
 | 9 août 2026 | MVP-015 **Livré (code)** ; PO-A…G validées ; F-009/F-010/F-032/F-013 En test ; attente PO ; MVP-016 non ouvert. |
 | 9 août 2026 | MVP-015 **fermé** (validation PO) ; F-009/F-010/F-032/F-013 Livré ; CH-019 ; retiré du backlog ouvert ; MVP-016 non ouvert. |
+| 9 août 2026 | MVP-016 **ouvert** (cadrage F-033 + F-028 + F-029) ; DESIGN DECISION REQUIRED ; aucun code ; MVP-017 non ouvert. |
+| 9 août 2026 | MVP-016 **Livré (code)** ; PO-A…F ; F-033/F-028/F-029 En test ; TD-001 fermée ; attente PO ; MVP-017 non ouvert. |
+| 9 août 2026 | MVP-016 **fermé** (validation PO) ; F-033/F-028/F-029 Livré ; CH-020 ; retiré du backlog ouvert ; MVP-017 non ouvert. |
 
 ## 10. Références
 
@@ -103,6 +106,7 @@ stateDiagram-v2
 - `docs/tickets/MVP-012_PEDAGOGICAL_VIDEOS.md`
 - `docs/tickets/MVP-014_DAILY_PROGRAM.md`
 - `docs/tickets/MVP-015_HISTORY_PROGRESS_RESUME.md`
+- `docs/tickets/MVP-016_ONBOARDING_SETTINGS_ACCESSIBILITY.md`
 - `docs/runtime/README.md`
 - `docs/25_DESIGN_FREEZE.md`
 

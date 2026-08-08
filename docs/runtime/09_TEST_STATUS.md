@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-015 Fermé ; 161/161 |
+| Dernière mise à jour | 9 août 2026 — MVP-016 Fermé ; 167/167 |
 | Phase actuelle | Développement MVP — tests unitaires Vitest |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
@@ -39,6 +39,7 @@
 | Parcours débutant F-003 | Partielle (BeginnerPath reader + page `/parcours/debutant` + accès Accueil/Découverte/Séances — MVP-013) |
 | Programme quotidien F-008 / Respiration F-014 / Relaxation F-015 | Partielle (`resolveDailyProgram` + `/respiration` + steps `retour` — MVP-014) |
 | Historique / progression / reprise F-009·F-010·F-032 | Partielle (resume store, FIFO 200, ProgressSummary, Accueil, wipe Profil — MVP-015) |
+| Onboarding / paramètres / a11y F-033·F-028·F-029 | Partielle (CTA BeginnerPath, skip link, Switch touch, header z-index TD-001 — MVP-016) |
 
 ## 4. Exécutions
 
@@ -186,6 +187,8 @@
 | 9 août 2026 | MVP-014 **fermé** — campagne 136/136 confirmée (validation PO). |
 | 9 août 2026 | MVP-015 — 161/161 ; reprise persistante + progression path + FIFO + wipe ; attente PO. |
 | 9 août 2026 | MVP-015 **fermé** — campagne 161/161 confirmée (validation PO) ; CH-019. |
+| 9 août 2026 | MVP-016 — tests skip link / summary CTA / Switch touch / routes post-onboarding / header TD-001 ; attente PO. |
+| 9 août 2026 | MVP-016 **fermé** — campagne 167/167 confirmée (validation PO) ; CH-020. |
 
 ---
 

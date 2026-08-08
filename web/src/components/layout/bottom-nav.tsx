@@ -13,7 +13,7 @@ export function BottomNav() {
   return (
     <nav
       aria-label="Navigation mobile"
-      className="border-border bg-background fixed inset-x-0 bottom-0 z-sticky border-t md:hidden"
+      className="border-border bg-background fixed inset-x-0 bottom-0 z-dropdown border-t md:hidden"
     >
       <ul className="mx-auto flex max-w-lg items-stretch justify-between gap-1 px-2 pb-[env(safe-area-inset-bottom)] pt-1">
         {mainNavItems.map((item) => {

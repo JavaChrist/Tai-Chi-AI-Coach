@@ -37,8 +37,8 @@ export function PageEnvironment({
       )}
     >
       <HeroBackdrop family={family} />
-      {/* z-10 + text-on-hero : lisibilité du texte sur le paysage. */}
-      <div className="text-on-hero-scope relative z-10">{children}</div>
+      {/* relative (sans z concurrent au shell) + text-on-hero : lisibilité. */}
+      <div className="text-on-hero-scope relative">{children}</div>
     </div>
   );
 }

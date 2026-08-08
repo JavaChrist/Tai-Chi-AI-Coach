@@ -57,7 +57,7 @@ export function ProfileOnboardingSection() {
       <PreferenceSection
         id="onboarding"
         title="Accueil guidé"
-        description="Votre première découverte. Relancez-la si vous le souhaitez."
+        description="Action — relancer la première découverte si vous le souhaitez. Vos préférences actuelles ne sont pas effacées."
       >
         <PreferenceCard
           title="Statut"

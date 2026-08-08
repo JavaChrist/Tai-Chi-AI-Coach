@@ -12,7 +12,8 @@ export function AppHeader({ discreet = false }: AppHeaderProps) {
   return (
     <header
       className={cn(
-        "bg-background sticky top-0 z-sticky",
+        /* z-dropdown : au-dessus du contenu Hero (TD-001) ; fond opaque. */
+        "bg-background sticky top-0 z-dropdown",
         discreet ? "border-transparent" : "border-border border-b",
       )}
     >

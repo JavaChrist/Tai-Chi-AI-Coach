@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 
 import { AppHeader } from "@/components/layout/app-header";
 import { BottomNav } from "@/components/layout/bottom-nav";
+import { SkipToContent } from "@/components/layout/skip-to-content";
 import { OnboardingGate } from "@/components/onboarding/onboarding-gate";
 import { AppUpdateGate } from "@/components/pwa/app-update-gate";
 import { Toaster } from "@/components/ui/sonner";
@@ -28,10 +29,12 @@ export function AppShell({ children }: AppShellProps) {
         </>
       ) : (
         <div className="text-foreground flex min-h-dvh flex-col bg-transparent">
+          <SkipToContent />
           <AppHeader discreet={isPractice} />
           <main
             id="contenu-principal"
-            className="relative flex min-h-0 flex-1 flex-col"
+            tabIndex={-1}
+            className="relative flex min-h-0 flex-1 flex-col outline-none"
           >
             {children}
           </main>

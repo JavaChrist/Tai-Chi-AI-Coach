@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useSyncExternalStore } from "react";
 
 import { DurationChoice } from "@/components/onboarding/duration-choice";
 import { GoalChoice } from "@/components/onboarding/goal-choice";
@@ -9,13 +9,18 @@ import { LevelChoice } from "@/components/onboarding/level-choice";
 import { OnboardingShell } from "@/components/onboarding/onboarding-shell";
 import { OnboardingStepView } from "@/components/onboarding/onboarding-step-view";
 import { OnboardingSummary } from "@/components/onboarding/onboarding-summary";
+import { OnboardingSummaryActions } from "@/components/onboarding/onboarding-summary-actions";
 import { ErrorState } from "@/components/states/error-state";
 import { Button } from "@/components/ui/button";
+import {
+  POST_ONBOARDING_BEGINNER_PATH_HREF,
+  POST_ONBOARDING_COMPLETE_HREF,
+  POST_ONBOARDING_SKIP_HREF,
+} from "@/domain/onboarding/post-onboarding-routes";
 import { canAdvanceFrom } from "@/domain/onboarding/steps";
 import type {
   InitialLevel,
   LearningGoal,
-  OnboardingState,
 } from "@/domain/onboarding/types";
 import type { PreferredDurationMinutes } from "@/domain/preferences/types";
 import {
@@ -24,10 +29,6 @@ import {
   type OnboardingFlowSnapshot,
 } from "@/services/onboarding/onboarding-snapshot";
 import { getOnboardingService } from "@/services/onboarding/onboarding-service";
-
-/** Après skip : bibliothèque. Après complétion : présentation F-001 (`04`). */
-const POST_ONBOARDING_SKIP_HREF = "/bibliotheque";
-const POST_ONBOARDING_COMPLETE_HREF = "/decouverte";
 
 const serverSnapshot: OnboardingFlowSnapshot = {
   kind: "ready",
@@ -47,6 +48,7 @@ const serverSnapshot: OnboardingFlowSnapshot = {
 
 export function OnboardingFlow() {
   const router = useRouter();
+  const postCompleteHrefRef = useRef(POST_ONBOARDING_COMPLETE_HREF);
   const snapshot = useSyncExternalStore(
     subscribeOnboardingSnapshots,
     getOnboardingFlowSnapshot,
@@ -61,7 +63,7 @@ export function OnboardingFlow() {
     try {
       const service = getOnboardingService();
       if (status === "completed") {
-        router.replace(POST_ONBOARDING_COMPLETE_HREF);
+        router.replace(postCompleteHrefRef.current);
         return;
       }
       if (status === "skipped") {
@@ -108,14 +110,13 @@ export function OnboardingFlow() {
     learningGoal: state.learningGoal,
   });
 
-  const goApp = (stateAfter: OnboardingState) => {
-    if (stateAfter.status === "completed") {
-      router.replace(POST_ONBOARDING_COMPLETE_HREF);
-      return;
-    }
-    if (stateAfter.status === "skipped") {
-      router.replace(POST_ONBOARDING_SKIP_HREF);
-    }
+  const completeTo = (href: string) => {
+    postCompleteHrefRef.current = href;
+    service.complete();
+  };
+
+  const skipToApp = () => {
+    service.skip();
   };
 
   return (
@@ -136,7 +137,7 @@ export function OnboardingFlow() {
               <Button
                 type="button"
                 variant="ghost"
-                onClick={() => run(() => goApp(service.skip()))}
+                onClick={() => run(skipToApp)}
               >
                 Plus tard
               </Button>
@@ -257,22 +258,15 @@ export function OnboardingFlow() {
           title="Confirmer votre point de départ"
           description="Vérifiez vos choix, puis entrez dans l’application quand vous êtes prêt."
           actions={
-            <>
-              <Button
-                type="button"
-                variant="primary"
-                onClick={() => run(() => goApp(service.complete()))}
-              >
-                Entrer dans l’application
-              </Button>
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => run(() => service.goBack())}
-              >
-                Retour
-              </Button>
-            </>
+            <OnboardingSummaryActions
+              onComplete={() =>
+                run(() => completeTo(POST_ONBOARDING_COMPLETE_HREF))
+              }
+              onBeginnerPath={() =>
+                run(() => completeTo(POST_ONBOARDING_BEGINNER_PATH_HREF))
+              }
+              onBack={() => run(() => service.goBack())}
+            />
           }
         >
           <OnboardingSummary

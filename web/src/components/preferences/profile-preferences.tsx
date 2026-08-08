@@ -73,7 +73,11 @@ export function ProfilePreferences() {
 
       <ProfileOnboardingSection />
 
-      <PreferenceSection id="appearance" title={t.appearance}>
+      <PreferenceSection
+        id="appearance"
+        title={t.appearance}
+        description={t.appearanceHelp}
+      >
         <PreferenceSelect<ThemePreference>
           title={t.theme}
           description={t.themeHelp}
@@ -104,7 +108,11 @@ export function ProfilePreferences() {
         />
       </PreferenceSection>
 
-      <PreferenceSection id="practice" title={t.practice}>
+      <PreferenceSection
+        id="practice"
+        title={t.practice}
+        description={t.practiceHelp}
+      >
         <PreferenceSelect<`${PreferredDurationMinutes}`>
           title={t.preferredDuration}
           description={t.preferredDurationHelp}
@@ -157,7 +165,11 @@ export function ProfilePreferences() {
         />
       </PreferenceSection>
 
-      <PreferenceSection id="accessibility" title={t.accessibility}>
+      <PreferenceSection
+        id="accessibility"
+        title={t.accessibility}
+        description={t.accessibilityHelp}
+      >
         <PreferenceSwitch
           title={t.reduceMotion}
           description={t.reduceMotionHelp}
@@ -174,7 +186,7 @@ export function ProfilePreferences() {
 
       <ProfileClearPractice />
 
-      <PreferenceSection id="about" title={t.about}>
+      <PreferenceSection id="about" title={t.about} description={t.aboutHelp}>
         <PreferenceCard
           title={t.discovery}
           description={t.discoveryHelp}
