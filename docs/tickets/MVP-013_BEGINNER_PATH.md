@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Fermé** (GO — 8 août 2026 — validation PO — CH-017 ; SHA à enregistrer)
+> Statut : **Fermé** (GO — 8 août 2026 — validation PO — commit `c3b4a98`)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-013_BEGINNER_PATH.md`
 > Dépend de :
@@ -448,7 +448,7 @@ L’application peut être développée avec le corpus et les séances actuels, 
 | Gate CODE READY | **Décidé** |
 | Implémentation code | **Livrée** — validée PO |
 | Validation PO visuelle | **Fait** — Desktop/Mobile × Light/Dark |
-| Clôture | **Fermé** — CH-017 (SHA à enregistrer) |
+| Clôture | **Fermé** — commit `c3b4a98` |
 
 ---
 

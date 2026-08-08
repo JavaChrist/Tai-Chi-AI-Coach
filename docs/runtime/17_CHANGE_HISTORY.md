@@ -41,7 +41,7 @@
 | CH-014 | Socle PWA App Update — SW minimal, build id auto, modale contrôlée, différé `/pratique` | Socle (`docs/26`) | `00`, `01`, `07`, `09`, `17` | — | 7 août 2026 | Appliqué — commit `79b0a4e` |
 | CH-015 | Bibliothèque mouvements + fiches + images (F-004 / F-005 / F-007) — `/bibliotheque/mouvements` | MVP-011 | `00`, `02`, `03`, `09`, `11`, `17` | — | 8 août 2026 | Appliqué — MVP-011 fermé — commit `e8eebff` |
 | CH-016 | Correctif UX F-031 — rappel pré-pratique court ; F-016 inchangé ; MVP-009 reste fermé | Correctif (indépendant MVP-012) | `09`, `17` | — | 8 août 2026 | Appliqué |
-| CH-017 | Parcours débutant structuré (F-003) — `/parcours/debutant` ; Hero morning ; accès Accueil / Découverte / Séances | MVP-013 | `00`, `02`, `03`, `09`, `11`, `17` | — | 8 août 2026 | Appliqué — MVP-013 fermé |
+| CH-017 | Parcours débutant structuré (F-003) — `/parcours/debutant` ; Hero morning ; accès Accueil / Découverte / Séances | MVP-013 | `00`, `02`, `03`, `09`, `11`, `17` | — | 8 août 2026 | Appliqué — MVP-013 fermé — commit `c3b4a98` |
 
 ## 4. Gouvernance
 
@@ -82,7 +82,7 @@ timeline
 | 7 août 2026 | CH-014 — SW socle App Update (`docs/26_PWA_APP_UPDATE.md`) ; MVP-017 non ouvert. |
 | 8 août 2026 | CH-015 — MVP-011 F-004/F-005/F-007 (`e8eebff`) ; MVP-011 **fermé** ; MVP-012 non ouvert. |
 | 8 août 2026 | CH-016 — correctif UX F-031 (rappel court) ; F-016 intact ; MVP-009 reste **fermé** ; MVP-012 inchangé. |
-| 8 août 2026 | CH-017 — MVP-013 F-003 (`/parcours/debutant`) ; MVP-013 **fermé** (validation PO) ; MVP-012 reste MEDIA BLOCKED ; MVP-014 non ouvert. |
+| 8 août 2026 | CH-017 — MVP-013 F-003 (`c3b4a98`) ; MVP-013 **fermé** (validation PO) ; MVP-012 reste MEDIA BLOCKED ; MVP-014 non ouvert. |
 
 ---
 

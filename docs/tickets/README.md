@@ -316,7 +316,7 @@ Tous les développements de Tai-Chi AI Coach devront obligatoirement être réal
 | MVP-010 | `MVP-010_PRESENTATION_AND_STYLES.md` | **Fermé** | CH-013 | `f40d34c` |
 | MVP-011 | `MVP-011_MOVEMENTS_LIBRARY.md` | **Fermé** | CH-015 | `e8eebff` |
 | MVP-012 | `MVP-012_PEDAGOGICAL_VIDEOS.md` | **Livré (code) / MEDIA BLOCKED / REFERENCE MOTION BLOCKED / attente média** | — | `0e19f1b` |
-| MVP-013 | `MVP-013_BEGINNER_PATH.md` | **Fermé** | CH-017 | — |
+| MVP-013 | `MVP-013_BEGINNER_PATH.md` | **Fermé** | CH-017 | `c3b4a98` |
 
 **Tickets actifs :** **MVP-012** (ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED ; attente média ; non fermé).
 
@@ -338,7 +338,7 @@ Ce tableau fixe uniquement l’**ordre des tickets** MVP restants.
 | MVP-010 | F-001 + F-002 | Présentation du Tai Chi + styles | **Fermé** (`MVP-010_PRESENTATION_AND_STYLES.md`) |
 | MVP-011 | F-005 + F-004 + F-007 | Bibliothèque mouvements + explications + images | **Fermé** (`e8eebff`) |
 | MVP-012 | F-006 + enrichissement F-013 | Vidéos pédagogiques + intégration séances/mouvements | **Ouvert** — Livré (code) / MEDIA BLOCKED / REFERENCE MOTION BLOCKED / attente média (`0e19f1b`) |
-| MVP-013 | F-003 | Parcours débutant structuré | **Fermé** (CH-017) |
+| MVP-013 | F-003 | Parcours débutant structuré | **Fermé** (`c3b4a98`) |
 | MVP-014 | F-008 + F-014 + F-015 | Programme quotidien + respiration + relaxation | Planifié (non ouvert) |
 | MVP-015 | F-009 + F-010 + F-032 + F-013 | Historique, progression, reprise persistante, séances complètes | Planifié |
 | MVP-016 | F-033 + F-028 + F-029 | Onboarding final + paramètres + accessibilité | Planifié |
