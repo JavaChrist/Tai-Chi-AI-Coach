@@ -9,7 +9,8 @@ import type { SessionTemplateSummary } from "@/domain/curriculum/types";
 import type { UserStatistics } from "@/domain/progression/types";
 
 type HomeWelcomeViewProps = {
-  nextSession: SessionTemplateSummary | null;
+  /** Suggestion F-008 du jour (null si indisponible). */
+  dailySession: SessionTemplateSummary | null;
   resumeSession: SessionTemplateSummary | null;
   stats: UserStatistics;
   progressLabel: string;
@@ -17,10 +18,11 @@ type HomeWelcomeViewProps = {
 
 /**
  * Présentation Accueil — actions toujours structurées ici.
- * `Parcourir` n’a aucune condition. `Reprendre` uniquement si `resumeSession`.
+ * `Séance du jour` (F-008) = proposition, jamais une obligation.
+ * `Parcourir` / parcours restent des accès secondaires.
  */
 export function HomeWelcomeView({
-  nextSession,
+  dailySession,
   resumeSession,
   stats,
   progressLabel,
@@ -38,25 +40,41 @@ export function HomeWelcomeView({
           </div>
         </header>
 
-        {nextSession ? (
-          <section className="space-y-4" aria-labelledby="home-next-heading">
-            <h2 id="home-next-heading" className="text-h2 text-foreground">
-              Prochaine pratique
+        {dailySession ? (
+          <section
+            className="space-y-4"
+            aria-labelledby="home-daily-heading"
+            data-testid="home-daily-section"
+          >
+            <h2 id="home-daily-heading" className="text-h2 text-foreground">
+              Séance du jour
             </h2>
+            <p className="text-small text-muted-foreground">
+              Une suggestion pour aujourd’hui — libre de l’ignorer ou d’en choisir
+              une autre.
+            </p>
             <div className="surface-card space-y-4 p-6">
               <div className="space-y-2">
-                <p className="text-h3 text-foreground">{nextSession.title}</p>
+                <p className="text-h3 text-foreground">{dailySession.title}</p>
                 <p className="text-small text-muted-foreground">
-                  {formatDurationMinutes(nextSession.plannedDurationMinutes)}
+                  {formatDurationMinutes(dailySession.plannedDurationMinutes)}
                   {" · "}
-                  {difficultyLabels[nextSession.difficulty]}
-                  {nextSession.primaryObjectiveLabel
-                    ? ` · ${nextSession.primaryObjectiveLabel}`
+                  {difficultyLabels[dailySession.difficulty]}
+                  {dailySession.primaryObjectiveLabel
+                    ? ` · ${dailySession.primaryObjectiveLabel}`
                     : null}
                 </p>
+                {dailySession.shortDescription ? (
+                  <p className="text-body text-foreground">
+                    {dailySession.shortDescription}
+                  </p>
+                ) : null}
               </div>
               <Button variant="primary" asChild>
-                <Link href={`/pratique/${nextSession.id}`}>
+                <Link
+                  href={`/pratique/${dailySession.id}`}
+                  data-testid="home-daily-cta"
+                >
                   <Leaf className="size-4" strokeWidth={1.75} aria-hidden />
                   Commencer
                 </Link>

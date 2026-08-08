@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/11_BACKLOG.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — MVP-013 fermé ; MVP-012 MEDIA BLOCKED |
-| Phase actuelle | Développement MVP — MVP-012 MEDIA BLOCKED ; MVP-014 planifié non ouvert |
+| Dernière mise à jour | 8 août 2026 — MVP-014 Livré partiellement (code) ; MVP-012 MEDIA BLOCKED |
+| Phase actuelle | Développement MVP — MVP-014 F-008/F-015 En test ; F-014 CONTENT BLOCKED ; MVP-012 MEDIA BLOCKED |
 | Document de référence (intentions) | `docs/22_ROADMAP.md`, `docs/tickets/README.md` §20 |
 | Type | Runtime Register — travaux **réellement ouverts** |
 
@@ -22,23 +22,24 @@
 
 | Catégorie | Nombre réel |
 | --- | --- |
-| Tickets ouverts | **1** (**MVP-012**) |
+| Tickets ouverts | **2** (**MVP-014**, **MVP-012**) |
 | Améliorations ouvertes | **0** |
 | Reports ouverts | **0** |
 | Idées retenues (ticketées) | **0** |
-| Priorités Runtime actives | P0 — MVP-012 (MEDIA BLOCKED / REFERENCE MOTION BLOCKED) |
+| Priorités Runtime actives | P0 — MVP-014 (F-008/F-015 En test ; F-014 CONTENT BLOCKED) ; MVP-012 (MEDIA BLOCKED) |
 
-**Synthèse :** MVP-013 **fermé** (F-003 Livré). MVP-012 **ouvert** (MEDIA BLOCKED ; 0 MP4). MVP-014 / MVP-015 / MVP-017 non ouverts.
+**Synthèse :** MVP-014 **ouvert** (Livré partiellement — F-014 CONTENT BLOCKED). MVP-012 **ouvert** (MEDIA BLOCKED ; 0 MP4). MVP-015 / MVP-017 non ouverts.
 
 ## 3. Tickets ouverts
 
 | ID ticket | Titre | Priorité | Statut | Date ouverture | Remarque |
 | --- | --- | --- | --- | --- | --- |
+| MVP-014 | Programme quotidien + respiration + relaxation (F-008 + F-014 + F-015) | P0 | Livré partiellement (code) / F-014 CONTENT BLOCKED / attente PO | 8 août 2026 | F-008/F-015 En test ; F-014 non livré ; non fermé |
 | MVP-012 | Vidéos pédagogiques + intégration séances/mouvements (F-006 + enrichissement F-013) | P0 | Livré (code) / MEDIA BLOCKED / REFERENCE MOTION BLOCKED / attente média | 8 août 2026 | Player + mapping ; 0 MP4 ; non fermé |
 
 ## 4. Séquence planifiée (non ouverte — pas d’entrée backlog)
 
-Voir `docs/tickets/README.md` §20 : MVP-014 → MVP-018.
+Voir `docs/tickets/README.md` §20 : MVP-015 → MVP-018.
 
 Ne pas dupliquer ici les tickets sans fichier.
 
@@ -60,7 +61,7 @@ Les intentions `22_ROADMAP.md` **ne doivent pas** être copiées en masse.
 
 ```mermaid
 pie title Backlog Runtime — état réel
-  "Ouvert" : 1
+  "Ouvert" : 2
   "Fermé / hors liste" : 0
 ```
 
@@ -72,7 +73,7 @@ stateDiagram-v2
   Ouvert --> EnCours
   EnCours --> Termine: MAJ registres
   Termine --> [*]
-  note right of Ouvert: MVP-012 ouvert (MEDIA BLOCKED)
+  note right of Ouvert: MVP-014 + MVP-012 ouverts
 ```
 
 ## 8. Gouvernance
@@ -102,6 +103,8 @@ stateDiagram-v2
 | 8 août 2026 | MVP-013 **ouvert** (cadrage F-003) ; parallèle à MVP-012. |
 | 8 août 2026 | MVP-013 code livré ; attente PO. |
 | 8 août 2026 | MVP-013 **fermé** (validation PO) ; F-003 Livré ; CH-017 ; seul ouvert = MVP-012 MEDIA BLOCKED ; MVP-014 non ouvert. |
+| 8 août 2026 | MVP-014 **ouvert** (cadrage F-008 + F-014 + F-015) ; aucun code ; MVP-012 reste MEDIA BLOCKED ; MVP-015 non ouvert. |
+| 8 août 2026 | MVP-014 code partiel (F-008/F-015) ; F-014 CONTENT BLOCKED ; ticket reste ouvert ; MVP-015 non ouvert. |
 
 ## 10. Références
 
@@ -109,6 +112,7 @@ stateDiagram-v2
 - `docs/tickets/README.md` §19–§20
 - `docs/tickets/MVP-012_PEDAGOGICAL_VIDEOS.md`
 - `docs/tickets/MVP-013_BEGINNER_PATH.md`
+- `docs/tickets/MVP-014_DAILY_PROGRAM.md`
 - `docs/runtime/README.md`
 - `docs/25_DESIGN_FREEZE.md`
 

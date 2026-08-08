@@ -317,8 +317,9 @@ Tous les développements de Tai-Chi AI Coach devront obligatoirement être réal
 | MVP-011 | `MVP-011_MOVEMENTS_LIBRARY.md` | **Fermé** | CH-015 | `e8eebff` |
 | MVP-012 | `MVP-012_PEDAGOGICAL_VIDEOS.md` | **Livré (code) / MEDIA BLOCKED / REFERENCE MOTION BLOCKED / attente média** | — | `0e19f1b` |
 | MVP-013 | `MVP-013_BEGINNER_PATH.md` | **Fermé** | CH-017 | `c3b4a98` |
+| MVP-014 | `MVP-014_DAILY_PROGRAM.md` | **Livré partiellement (code) / F-014 CONTENT BLOCKED / attente PO** | — | — |
 
-**Tickets actifs :** **MVP-012** (ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED ; attente média ; non fermé).
+**Tickets actifs :** **MVP-014** (F-008/F-015 En test ; F-014 CONTENT BLOCKED ; non fermé) ; **MVP-012** (ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED ; attente média ; non fermé).
 
 Note : MVP-002 et MVP-003 ont été livrés dans le même commit (`696a76f`).
 
@@ -339,8 +340,8 @@ Ce tableau fixe uniquement l’**ordre des tickets** MVP restants.
 | MVP-011 | F-005 + F-004 + F-007 | Bibliothèque mouvements + explications + images | **Fermé** (`e8eebff`) |
 | MVP-012 | F-006 + enrichissement F-013 | Vidéos pédagogiques + intégration séances/mouvements | **Ouvert** — Livré (code) / MEDIA BLOCKED / REFERENCE MOTION BLOCKED / attente média (`0e19f1b`) |
 | MVP-013 | F-003 | Parcours débutant structuré | **Fermé** (`c3b4a98`) |
-| MVP-014 | F-008 + F-014 + F-015 | Programme quotidien + respiration + relaxation | Planifié (non ouvert) |
-| MVP-015 | F-009 + F-010 + F-032 + F-013 | Historique, progression, reprise persistante, séances complètes | Planifié |
+| MVP-014 | F-008 + F-014 + F-015 | Programme quotidien + respiration + relaxation | **Ouvert** — Livré partiellement (F-014 CONTENT BLOCKED) |
+| MVP-015 | F-009 + F-010 + F-032 + F-013 | Historique, progression, reprise persistante, séances complètes | Planifié (non ouvert) |
 | MVP-016 | F-033 + F-028 + F-029 | Onboarding final + paramètres + accessibilité | Planifié |
 | MVP-017 | Offline / PWA | Service Worker + cache cœur | Planifié |
 | MVP-018 | Recette / gates | Validation contenus, tests finaux, publiabilité | Planifié |
@@ -365,7 +366,7 @@ Les fichiers détaillés MVP-010 → MVP-018 sont créés **uniquement à l’ou
 | Version | 1.1 |
 | Statut | VALIDÉ |
 | Emplacement | `docs/tickets/README.md` |
-| Dernière mise à jour | 8 août 2026 — MVP-013 fermé ; MVP-012 MEDIA BLOCKED |
+| Dernière mise à jour | 8 août 2026 — MVP-014 code partiel ; MVP-012 MEDIA BLOCKED |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

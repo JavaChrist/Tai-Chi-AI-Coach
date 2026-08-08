@@ -6,8 +6,8 @@ import type { Curriculum } from "@/domain/curriculum/types";
  * Aucun style Tai Chi ni mouvement nommé inventé comme leçon officielle.
  * Contenu marqué `isStructuralPlaceholder` = structure pédagogique initiale.
  */
-/** 0.2.0 — mapping minimal SessionStep.movementIds (MVP-012 / F-013). */
-export const LOCAL_CURRICULUM_VERSION = "0.2.0";
+/** 0.3.0 — enrichissement textes F-015 (retour au calme) ; mapping MVP-012 conservé. */
+export const LOCAL_CURRICULUM_VERSION = "0.3.0";
 
 export const localCurriculum: Curriculum = {
   id: "curriculum-tai-chi-ai-coach",
@@ -103,7 +103,8 @@ export const localCurriculum: Curriculum = {
           id: "step-dec-retour",
           kind: "retour",
           title: "Retour au calme",
-          summary: "Ralentir progressivement et conclure sans pression.",
+          summary:
+            "Ralentir progressivement. Relâcher les épaules si elles sont crispées. Conclure sans pression ni évaluation — ce moment de calme clôt la séance. Aucune performance n’est attendue.",
           sortOrder: 4,
         },
         {
@@ -173,7 +174,8 @@ export const localCurriculum: Curriculum = {
           id: "step-init-retour",
           kind: "retour",
           title: "Retour au calme",
-          summary: "Transition douce vers la fin de séance.",
+          summary:
+            "Transition douce vers la fin de séance. Rester quelques instants dans une posture confortable, sans chercher à réussir quoi que ce soit. Vous pouvez passer à la suite quand vous êtes prêt.",
           sortOrder: 4,
         },
         {
@@ -248,7 +250,8 @@ export const localCurriculum: Curriculum = {
           id: "step-prog-retour",
           kind: "retour",
           title: "Retour au calme",
-          summary: "Ralentir et conclure sans évaluation compétitive.",
+          summary:
+            "Ralentir et conclure sans évaluation compétitive. Garder une sensation de calme. Vous pouvez arrêter dès que vous le souhaitez — la séance se termine en douceur.",
           sortOrder: 5,
         },
         {

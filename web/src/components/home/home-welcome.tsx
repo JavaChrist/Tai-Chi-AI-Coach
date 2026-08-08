@@ -3,16 +3,16 @@
 import { useMemo, useSyncExternalStore } from "react";
 
 import { HomeWelcomeView } from "@/components/home/home-welcome-view";
-import { usePreferences } from "@/components/preferences/preferences-provider";
 import type { SessionTemplateSummary } from "@/domain/curriculum/types";
-import { sortSessionsByPreferences } from "@/domain/preferences/sort-sessions";
 import {
   computeUserStatistics,
   emptyHistory,
   listPracticeSummaries,
 } from "@/domain/progression/statistics";
 import type { PracticeHistory } from "@/domain/progression/types";
+import { beginnerPathReader } from "@/services/beginner-path/beginner-path-reader";
 import { curriculumReader } from "@/services/curriculum/curriculum-reader";
+import { resolveDailyProgram } from "@/services/daily-program/resolve-daily-program";
 import { getProgressService } from "@/services/progression/progress-service";
 
 type Snapshot =
@@ -64,6 +64,25 @@ function listPublished(): SessionTemplateSummary[] {
   }
 }
 
+function resolveDailySessionSummary(): SessionTemplateSummary | null {
+  try {
+    const pathResult = beginnerPathReader.getPublishedPath();
+    if (!pathResult.ok) return null;
+
+    const resolved = resolveDailyProgram({ path: pathResult.path });
+    if (!resolved.ok) return null;
+
+    const sessions = listPublished();
+    return (
+      sessions.find(
+        (session) => session.id === resolved.suggestion.sessionId,
+      ) ?? null
+    );
+  } catch {
+    return null;
+  }
+}
+
 function formatSoftDate(iso: string | null): string {
   if (!iso) return "Pas encore de pratique";
   try {
@@ -75,18 +94,13 @@ function formatSoftDate(iso: string | null): string {
   }
 }
 
-/** Accueil — données locales + présentation (12A §9.3). */
+/** Accueil — données locales + présentation (12A §9.3) ; F-008 séance du jour. */
 export function HomeWelcome() {
-  const { preferences, status } = usePreferences();
   const snapshot = useSyncExternalStore(subscribe, readSnapshot, () => emptySnapshot);
 
   const sessions = useMemo(() => listPublished(), []);
-  const ordered = useMemo(() => {
-    if (status !== "ready") return sessions;
-    return sortSessionsByPreferences(sessions, preferences.practice);
-  }, [preferences.practice, sessions, status]);
+  const dailySession = useMemo(() => resolveDailySessionSummary(), []);
 
-  const nextSession = ordered[0] ?? null;
   const history =
     snapshot.status === "ready" ? snapshot.history : emptyHistory();
   const stats = computeUserStatistics(history);
@@ -102,7 +116,7 @@ export function HomeWelcome() {
 
   return (
     <HomeWelcomeView
-      nextSession={nextSession}
+      dailySession={dailySession}
       resumeSession={resumeSession || null}
       stats={stats}
       progressLabel={progressLabel}
