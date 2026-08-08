@@ -56,8 +56,10 @@ describe("PracticePlayer — gate F-031", () => {
     const html = renderToStaticMarkup(<PracticePlayer template={template} />);
 
     expect(html).toContain('data-testid="practice-safety-gate"');
-    expect(html).toContain("douleur");
-    expect(html).toContain("promesse médicale");
+    expect(html).toContain("Arrêtez en cas de douleur.");
+    expect(html).toContain("Prenez votre temps.");
+    expect(html).not.toContain("promesse médicale");
+    expect(html).toContain("Voir tous les conseils de sécurité");
     expect(html).not.toContain("practice-intro-heading");
     expect(html).not.toContain("Séance prudence");
   });

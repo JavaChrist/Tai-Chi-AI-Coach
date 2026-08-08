@@ -19,15 +19,20 @@ vi.mock("next/link", () => ({
 }));
 
 describe("PracticeSafetyGate — F-031", () => {
-  it("affiche l’avertissement avant pratique (douleur, pas de promesse médicale)", () => {
+  it("affiche un rappel court actionnable et le lien vers F-016", () => {
     const html = renderToStaticMarkup(
       <PracticeSafetyGate onAcknowledge={() => undefined} />,
     );
 
     expect(html).toContain('data-testid="practice-safety-gate"');
     expect(html).toContain("Avant de pratiquer");
-    expect(html).toContain("douleur");
-    expect(html).toContain("promesse médicale");
+    expect(html).toContain("Arrêtez en cas de douleur.");
+    expect(html).toContain(
+      "Réduisez l’amplitude ou l’effort si nécessaire.",
+    );
+    expect(html).toContain("Prenez votre temps.");
+    expect(html).not.toContain("promesse médicale");
+    expect(html).toContain("Voir tous les conseils de sécurité");
     expect(html).toContain('href="/conseils-de-securite"');
     expect(html).toContain('data-testid="pre-practice-acknowledge"');
   });

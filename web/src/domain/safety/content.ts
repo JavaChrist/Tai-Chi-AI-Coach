@@ -31,25 +31,25 @@ export const SAFETY_ADVICE = {
   ],
 } as const;
 
-/** F-031 — Avertissements avant pratique (message court avant la séance). */
+/** F-031 — Avertissements avant pratique (rappel court et actionnable). */
 export const PRE_PRACTICE_WARNING = {
   title: "Avant de pratiquer",
-  intro: "Trois points simples pour démarrer en connaissance de cause.",
+  intro: "Trois rappels pratiques avant de commencer.",
   points: [
     {
       id: "stop-pain",
-      text: "Interrompez la séance en cas de douleur.",
+      text: "Arrêtez en cas de douleur.",
     },
     {
-      id: "adapt-level",
-      text: "Adaptez le niveau et l’effort à votre forme du jour.",
+      id: "reduce-effort",
+      text: "Réduisez l’amplitude ou l’effort si nécessaire.",
     },
     {
-      id: "no-medical-promise",
-      text: "Cette application ne fait aucune promesse médicale.",
+      id: "take-time",
+      text: "Prenez votre temps.",
     },
   ],
   acknowledgeLabel: "J’ai compris, continuer",
-  adviceLinkLabel: "Lire les conseils de sécurité",
+  adviceLinkLabel: "Voir tous les conseils de sécurité",
   backLabel: "Retour",
 } as const;
