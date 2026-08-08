@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { MovementMetadata } from "@/components/movements/movement-metadata";
 import { MovementReferenceImage } from "@/components/movements/movement-reference-image";
+import { MovementVideoSection } from "@/components/movements/movement-video-section";
 import { Button } from "@/components/ui/button";
 import type { Movement } from "@/domain/movements/types";
 
@@ -10,7 +11,10 @@ type MovementDetailsProps = {
   movement: Movement;
 };
 
-/** Fiche mouvement F-005 + image F-007 — hiérarchie calme. */
+/**
+ * Fiche mouvement — ordre MVP-012 :
+ * 1) image F-007 · 2) vidéo F-006 si dispo / fallback calme · 3) contenu F-005
+ */
 export function MovementDetails({ movement }: MovementDetailsProps) {
   const instructions = [...movement.instructions].sort(
     (a, b) => a.sortOrder - b.sortOrder,
@@ -39,9 +43,6 @@ export function MovementDetails({ movement }: MovementDetailsProps) {
               level={movement.level}
               category={movement.category}
             />
-            <p className="text-body text-muted-foreground max-w-reading">
-              {movement.summary}
-            </p>
           </div>
 
           <MovementReferenceImage
@@ -52,6 +53,17 @@ export function MovementDetails({ movement }: MovementDetailsProps) {
           />
         </header>
       </div>
+
+      <MovementVideoSection movement={movement} />
+
+      <section aria-labelledby="movement-summary-heading" className="space-y-3">
+        <h2 id="movement-summary-heading" className="sr-only">
+          Présentation
+        </h2>
+        <p className="text-body text-muted-foreground max-w-reading">
+          {movement.summary}
+        </p>
+      </section>
 
       <section aria-labelledby="movement-placement-heading" className="space-y-3">
         <h2 id="movement-placement-heading" className="text-h2 text-foreground">

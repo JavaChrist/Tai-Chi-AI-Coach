@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/11_BACKLOG.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — MVP-011 fermé |
-| Phase actuelle | Développement MVP — backlog vide ; prochain MVP-012 |
+| Dernière mise à jour | 8 août 2026 — MVP-012 code livré (attente média) |
+| Phase actuelle | Développement MVP — MVP-012 Livré (code) / MEDIA BLOCKED |
 | Document de référence (intentions) | `docs/22_ROADMAP.md`, `docs/tickets/README.md` §20 |
 | Type | Runtime Register — travaux **réellement ouverts** |
 
@@ -22,19 +22,19 @@
 
 | Catégorie | Nombre réel |
 | --- | --- |
-| Tickets ouverts | **0** |
+| Tickets ouverts | **1** (**MVP-012**) |
 | Améliorations ouvertes | **0** |
 | Reports ouverts | **0** |
 | Idées retenues (ticketées) | **0** |
-| Priorités Runtime actives | P0 — prochain MVP-012 (planifié, non ouvert) |
+| Priorités Runtime actives | P0 — MVP-012 (code livré ; MEDIA BLOCKED ; attente média) |
 
-**Synthèse :** MVP-011 **fermé**. Aucun ticket ouvert. Prochain planifié : **MVP-012**. MVP-017 non ouvert.
+**Synthèse :** MVP-012 **ouvert** (non fermé). F-006 En test (infra). Sources de mouvement dynamiques **absentes** (0 MP4). MVP-013 / MVP-017 non ouverts.
 
 ## 3. Tickets ouverts
 
 | ID ticket | Titre | Priorité | Statut | Date ouverture | Remarque |
 | --- | --- | --- | --- | --- | --- |
-| — | — | — | — | — | Aucun ticket ouvert |
+| MVP-012 | Vidéos pédagogiques + intégration séances/mouvements (F-006 + enrichissement F-013) | P0 | Livré (code) / MEDIA BLOCKED / attente média | 8 août 2026 | Player + mapping ; 0 MP4 ; non fermé ; MVP-013 non ouvert |
 
 ## 4. Séquence planifiée (non ouverte — pas d’entrée backlog)
 
@@ -72,7 +72,7 @@ stateDiagram-v2
   Ouvert --> EnCours
   EnCours --> Termine: MAJ registres
   Termine --> [*]
-  note right of Ouvert: aucun (prochain MVP-012)
+  note right of Ouvert: MVP-012 code / attente média
 ```
 
 ## 8. Gouvernance
@@ -104,6 +104,7 @@ stateDiagram-v2
 - `docs/22_ROADMAP.md` §7.5
 - `docs/tickets/README.md` §19–§20
 - `docs/tickets/MVP-011_MOVEMENTS_LIBRARY.md`
+- `docs/tickets/MVP-012_PEDAGOGICAL_VIDEOS.md`
 - `docs/runtime/README.md`
 - `docs/25_DESIGN_FREEZE.md`
 

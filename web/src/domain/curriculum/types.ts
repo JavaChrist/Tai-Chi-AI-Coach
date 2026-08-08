@@ -56,6 +56,11 @@ export type SessionStep = {
   /** Description neutre ; pas de mouvement inventé présenté comme officiel. */
   summary: string;
   sortOrder: number;
+  /**
+   * IDs métier Movement liés (MVP-012 enrichissement F-013 minimal).
+   * Ex. `["MV-001"]` — optionnel ; absents = étape sans lien bibliothèque.
+   */
+  movementIds?: string[];
 };
 
 /**

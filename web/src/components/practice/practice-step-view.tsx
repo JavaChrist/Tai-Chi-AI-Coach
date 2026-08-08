@@ -1,5 +1,6 @@
 import { Pause, Play } from "lucide-react";
 
+import { AssociatedMovements } from "@/components/practice/associated-movements";
 import { PracticeProgress } from "@/components/practice/practice-progress";
 import { Button } from "@/components/ui/button";
 import type { SessionStep } from "@/domain/curriculum/types";
@@ -52,6 +53,7 @@ export function PracticeStepView({
           {step.title}
         </h1>
         <p className="text-body text-muted-foreground">{step.summary}</p>
+        <AssociatedMovements movementIds={step.movementIds} />
       </header>
 
       {paused ? (

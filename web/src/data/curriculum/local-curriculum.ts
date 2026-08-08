@@ -6,7 +6,8 @@ import type { Curriculum } from "@/domain/curriculum/types";
  * Aucun style Tai Chi ni mouvement nommé inventé comme leçon officielle.
  * Contenu marqué `isStructuralPlaceholder` = structure pédagogique initiale.
  */
-export const LOCAL_CURRICULUM_VERSION = "0.1.0";
+/** 0.2.0 — mapping minimal SessionStep.movementIds (MVP-012 / F-013). */
+export const LOCAL_CURRICULUM_VERSION = "0.2.0";
 
 export const localCurriculum: Curriculum = {
   id: "curriculum-tai-chi-ai-coach",
@@ -95,6 +96,8 @@ export const localCurriculum: Curriculum = {
           summary:
             "Pratique courte et générique (structure curriculum). Les gestes de style seront ajoutés ultérieurement ; aucun mouvement inventé n’est présenté comme leçon officielle.",
           sortOrder: 3,
+          /** Optionnel Découverte — posture de départ (curriculum §27). */
+          movementIds: ["MV-001"],
         },
         {
           id: "step-dec-retour",
@@ -163,6 +166,8 @@ export const localCurriculum: Curriculum = {
           summary:
             "Espace réservé aux gestes fondateurs du style retenu. Contenu placeholder structurel — pas de catalogue de mouvements inventé.",
           sortOrder: 3,
+          /** Initiation — MV-001 puis MV-002 (curriculum §27). */
+          movementIds: ["MV-001", "MV-002"],
         },
         {
           id: "step-init-retour",
@@ -236,6 +241,8 @@ export const localCurriculum: Curriculum = {
           summary:
             "Transition courte entre deux moments déjà connus, sans complexifier inutilement.",
           sortOrder: 4,
+          /** Progression — liaison MV-002 / MV-003 (curriculum §27). */
+          movementIds: ["MV-002", "MV-003"],
         },
         {
           id: "step-prog-retour",

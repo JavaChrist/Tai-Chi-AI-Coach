@@ -24,6 +24,8 @@ export type MovementInstruction = {
 /**
  * Mouvement pédagogique publié (bibliothèque).
  * `mediaKeyImage` = logicalLocator image F-007 (nullable).
+ * `mediaKeyVideo` = logicalLocator MP4 F-006 (nullable — null tant que non validé).
+ * Poster vidéo = `mediaKeyImage` (pas de champ poster séparé MVP).
  */
 export type Movement = {
   id: string;
@@ -43,6 +45,8 @@ export type Movement = {
   styleKey: string | null;
   /** Chemin public WebP F-007, ou null si média absent. */
   mediaKeyImage: string | null;
+  /** Chemin public MP4 F-006, ou null si démonstration absente / non validée. */
+  mediaKeyVideo: string | null;
   publicationStatus: PublicationStatus;
   contentVersion: string;
   locale: LocaleCode;

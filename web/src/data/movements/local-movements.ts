@@ -67,6 +67,8 @@ export const localMovements: MovementCatalog = {
         "En cas d’inconfort ou de douleur, réduire l’amplitude ou interrompre l’exercice.",
       styleKey: null,
       mediaKeyImage: "/curriculum/movements/movement-posture-de-depart-key.webp",
+      /** F-006 — null tant qu’aucune MP4 pédagogique n’est validée. */
+      mediaKeyVideo: null,
       publicationStatus: "published",
       contentVersion: LOCAL_MOVEMENTS_VERSION,
       locale: "fr",
@@ -132,6 +134,7 @@ export const localMovements: MovementCatalog = {
       styleKey: null,
       mediaKeyImage:
         "/curriculum/movements/movement-transfert-poids-lateral-key.webp",
+      mediaKeyVideo: null,
       publicationStatus: "published",
       contentVersion: LOCAL_MOVEMENTS_VERSION,
       locale: "fr",
@@ -203,6 +206,7 @@ export const localMovements: MovementCatalog = {
       styleKey: null,
       mediaKeyImage:
         "/curriculum/movements/movement-pas-avant-controle-key.webp",
+      mediaKeyVideo: null,
       publicationStatus: "published",
       contentVersion: LOCAL_MOVEMENTS_VERSION,
       locale: "fr",

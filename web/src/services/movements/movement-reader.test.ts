@@ -72,6 +72,34 @@ describe("movementReader — source locale", () => {
     }
   });
 
+  it("garde mediaKeyVideo null tant qu’aucune démo n’est validée", () => {
+    for (const movement of localMovements.movements) {
+      expect(movement.mediaKeyVideo).toBeNull();
+    }
+  });
+
+  it("accepte un média vidéo futur dans une source injectée", () => {
+    const futureVideo =
+      "/video/movements/movement-posture-de-depart-demo.mp4";
+    const readerWithVideo = createMovementReader({
+      getCatalog: () => ({
+        ...localMovements,
+        movements: [
+          {
+            ...localMovements.movements[0]!,
+            mediaKeyVideo: futureVideo,
+          },
+        ],
+      }),
+    });
+
+    const result = readerWithVideo.getMovementById("MV-001");
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.movement.mediaKeyVideo).toBe(futureVideo);
+    }
+  });
+
   it("supporte un mouvement sans média dans une source injectée", () => {
     const readerWithoutMedia = createMovementReader({
       getCatalog: () => ({
@@ -80,6 +108,7 @@ describe("movementReader — source locale", () => {
           {
             ...localMovements.movements[0]!,
             mediaKeyImage: null,
+            mediaKeyVideo: null,
           },
         ],
       }),
@@ -89,6 +118,7 @@ describe("movementReader — source locale", () => {
     expect(result.ok).toBe(true);
     if (result.ok) {
       expect(result.movement.mediaKeyImage).toBeNull();
+      expect(result.movement.mediaKeyVideo).toBeNull();
     }
   });
 });

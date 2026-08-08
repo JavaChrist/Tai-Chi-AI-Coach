@@ -67,16 +67,20 @@ describe("MovementDetails — F-005 / F-007", () => {
     expect(html).toContain(
       "/curriculum/movements/movement-posture-de-depart-key.webp",
     );
+    expect(html).toContain('data-testid="movement-video-section"');
+    expect(html).toContain("Démonstration vidéo à venir");
+    expect(html).not.toContain("<video");
     expect(html).toContain('href="/bibliotheque/mouvements"');
     expect(html).not.toContain("diagnostic");
     expect(html).not.toContain("médical");
   });
 
-  it("reste stable sans image de référence", () => {
+  it("reste stable sans image de référence (contenu F-005 intact)", () => {
     const base = localMovements.movements[0]!;
     const withoutMedia: Movement = {
       ...base,
       mediaKeyImage: null,
+      mediaKeyVideo: null,
     };
 
     const html = renderToStaticMarkup(
@@ -86,6 +90,30 @@ describe("MovementDetails — F-005 / F-007", () => {
     expect(html).toContain('data-has-media="false"');
     expect(html).toContain("Image de référence non disponible");
     expect(html).toContain("Posture de départ");
+    expect(html).toContain("Déroulement");
+    expect(html).toContain("Démonstration vidéo à venir");
+  });
+
+  it("affiche le player lorsque mediaKeyVideo est renseigné", () => {
+    const base = localMovements.movements[0]!;
+    const withVideo: Movement = {
+      ...base,
+      mediaKeyVideo:
+        "/video/movements/movement-posture-de-depart-demo.mp4",
+    };
+
+    const html = renderToStaticMarkup(
+      <MovementDetails movement={withVideo} />,
+    );
+
+    expect(html).toContain("<video");
+    expect(html).toContain(
+      "/video/movements/movement-posture-de-depart-demo.mp4",
+    );
+    expect(html).toContain(
+      "/curriculum/movements/movement-posture-de-depart-key.webp",
+    );
+    expect(html).toContain("Placement");
     expect(html).toContain("Déroulement");
   });
 

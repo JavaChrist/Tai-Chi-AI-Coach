@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/03_DATA_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — MVP-011 Movements |
+| Dernière mise à jour | 8 août 2026 — MVP-012 `mediaKeyVideo` + `movementIds` |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel du modèle de données |
 | Référence conception | `docs/14_DATA_MODEL.md` (modèle cible / gelé — non recopié comme implémenté) |
@@ -44,7 +44,7 @@ Statuts autorisés : Non commencé · En développement · En validation · Impl
 | Virtual Humans | D9 | Non commencé | — | — | — |
 | Notifications | D11 | Non commencé | — | — | — |
 | Premium | D12 | Non commencé | — | — | — |
-| Médias | D13 | En développement | MVP-011 | 8 août 2026 | `mediaKeyImage` WebP F-007 liés aux Movements ; pas de MediaAsset table / pas de vidéo F-006 |
+| Médias | D13 | En développement | MVP-011 / MVP-012 | 8 août 2026 | `mediaKeyImage` F-007 livré ; `mediaKeyVideo` **en code** (`null` MVP) ; `public/video/movements/` convention ; **0** MP4 ; pas de MediaAsset TS |
 | Consentements | D14 | Non commencé | — | — | — |
 | Analytics | D15 | Non commencé | — | — | Produit = V1 en conception ; rien en runtime |
 

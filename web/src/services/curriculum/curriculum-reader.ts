@@ -5,6 +5,7 @@ import type {
   SessionTemplate,
   SessionTemplateSummary,
 } from "@/domain/curriculum/types";
+import { findBrokenMovementReferences } from "@/domain/curriculum/session-movement-links";
 import type { CurriculumSource } from "@/services/curriculum/curriculum-source";
 import { localCurriculumSource } from "@/services/curriculum/local-curriculum-source";
 
@@ -12,11 +13,23 @@ export type GetSessionResult =
   | { ok: true; session: SessionTemplate }
   | { ok: false; reason: "not_found" };
 
+export type MovementLinkValidation = {
+  ok: boolean;
+  broken: Array<{ sessionId: string; stepId: string; movementId: string }>;
+};
+
 export type CurriculumReader = {
   getCurriculum: () => Curriculum;
   listPhases: () => CurriculumPhase[];
   listSessions: (filters?: SessionListFilters) => SessionTemplateSummary[];
   getSessionById: (id: string) => GetSessionResult;
+  /**
+   * Vérifie que les Movement IDs référencés par les steps existent.
+   * Pas de base de données — catalogue injecté (tests / boot).
+   */
+  validateMovementLinks: (
+    knownMovementIds: ReadonlySet<string>,
+  ) => MovementLinkValidation;
 };
 
 function isAvailable(session: SessionTemplate): boolean {
@@ -96,6 +109,14 @@ export function createCurriculumReader(source: CurriculumSource): CurriculumRead
       }
 
       return { ok: true, session };
+    },
+
+    validateMovementLinks(knownMovementIds) {
+      const broken = findBrokenMovementReferences(
+        source.getCurriculum(),
+        knownMovementIds,
+      );
+      return { ok: broken.length === 0, broken };
     },
   };
 }
