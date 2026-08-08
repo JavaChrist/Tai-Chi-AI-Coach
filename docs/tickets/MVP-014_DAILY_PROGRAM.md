@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Livré partiellement (code)** / F-014 CONTENT BLOCKED / attente PO (ouvert — non fermé — 8 août 2026 ; F-008 + F-015 En test)
+> Statut : **Livré partiellement (code)** / F-014 CONTENT BLOCKED / attente PO (ouvert — non fermé — 8 août 2026 ; F-008 + F-015 En test ; commit `f212fdb`)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-014_DAILY_PROGRAM.md`
 > Dépend de :
@@ -450,7 +450,7 @@ Livraison « F-014 acceptation forte » (`05` : lancer un exercice de respiratio
 | Corpus inventorié | **Fait** |
 | Options programme du jour | **Décidées (reco C+B)** |
 | Gate readiness | **Décidée** |
-| Implémentation code F-008 + F-015 | **Livré (code)** — attente PO |
+| Implémentation code F-008 + F-015 | **Livré (code)** — commit `f212fdb` ; attente PO |
 | F-014 dédié | **CONTENT BLOCKED** — non livré |
 | Clôture | **Non** — ticket reste ouvert |
 
