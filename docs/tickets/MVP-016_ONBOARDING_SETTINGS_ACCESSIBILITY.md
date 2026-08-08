@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Fermé** (GO — 9 août 2026 — validation PO — CH-020)
+> Statut : **Fermé** (GO — 9 août 2026 — validation PO — CH-020 ; commit `f61e139`)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-016_ONBOARDING_SETTINGS_ACCESSIBILITY.md`
 > Dépend de :
@@ -419,7 +419,7 @@ Voir §18 pour l’état livraison code. Clôture Git après validation PO visue
 | Décisions PO | **Validées** (PO-A…F) |
 | Gate readiness | **READY FOR CODE** |
 | Implémentation code | **Livrée** — validée PO |
-| Clôture | **Fermé** — CH-020 |
+| Clôture | **Fermé** — CH-020 — commit `f61e139` |
 
 ---
 

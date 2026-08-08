@@ -319,7 +319,7 @@ Tous les développements de Tai-Chi AI Coach devront obligatoirement être réal
 | MVP-013 | `MVP-013_BEGINNER_PATH.md` | **Fermé** | CH-017 | `c3b4a98` |
 | MVP-014 | `MVP-014_DAILY_PROGRAM.md` | **Fermé** | CH-018 | `d0574f9` |
 | MVP-015 | `MVP-015_HISTORY_PROGRESS_RESUME.md` | **Fermé** | CH-019 | `4c72602` |
-| MVP-016 | `MVP-016_ONBOARDING_SETTINGS_ACCESSIBILITY.md` | **Fermé** | CH-020 | — |
+| MVP-016 | `MVP-016_ONBOARDING_SETTINGS_ACCESSIBILITY.md` | **Fermé** | CH-020 | `f61e139` |
 
 **Tickets actifs :** **MVP-012** (ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED ; attente média ; non fermé).
 
