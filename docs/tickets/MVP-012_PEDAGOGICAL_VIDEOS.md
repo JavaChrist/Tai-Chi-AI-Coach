@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Livré (code)** / **MEDIA BLOCKED** / attente média (ouvert — non fermé — 8 août 2026 ; infra F-006 + mapping F-013 ; **0** MP4 ; aucune production vidéo)
+> Statut : **Livré (code)** / **MEDIA BLOCKED** / attente média (ouvert — non fermé — 8 août 2026 ; infra F-006 + mapping F-013 ; commit `0e19f1b` ; **0** MP4 ; aucune production vidéo)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-012_PEDAGOGICAL_VIDEOS.md`
 > Dépend de :
@@ -557,7 +557,7 @@ Les deux coexistent : développement UI/data autorisé avec médias absents ; **
 | Audit contenu / code | **Fait** |
 | Pipeline production documenté | **Fait** |
 | Sources de mouvement fiables | **Absentes** — MEDIA BLOCKED |
-| Implémentation code | **Livré (code)** — attente média |
+| Implémentation code | **Livré (code)** — commit `0e19f1b` ; attente média |
 | Production vidéos | **Interdite** tant que référence dynamique absente |
 | Clôture | **Non** — ticket reste ouvert |
 
