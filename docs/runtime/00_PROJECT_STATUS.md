@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — MVP-014 code partiel (F-008/F-015 En test ; F-014 CONTENT BLOCKED) ; MVP-012 MEDIA BLOCKED |
+| Dernière mise à jour | 9 août 2026 — MVP-014 fermé / F-008·F-014·F-015 Livré / CH-018 ; MVP-012 MEDIA BLOCKED |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,8 +22,8 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — MVP-014 Livré partiellement (code) ; MVP-012 MEDIA BLOCKED |
-| Statut global | Conception close ; Runtime 20/20 ; **MVP-009** / **MVP-010** / **MVP-011** / **MVP-013 fermés** ; **MVP-014** ouvert (F-008/F-015 En test ; F-014 CONTENT BLOCKED) ; **MVP-012** ouvert (MEDIA BLOCKED) ; **F-001** / **F-002** / **F-003** / **F-004** / **F-005** / **F-007** / **F-016** / **F-031** **Livré** ; **F-006** / **F-008** / **F-015** En test ; **F-014** Non commencé (CONTENT BLOCKED) ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; auth/sync hors MVP (V1) |
+| Phase | Développement MVP — MVP-014 fermé ; MVP-012 MEDIA BLOCKED |
+| Statut global | Conception close ; Runtime 20/20 ; **MVP-009** / **MVP-010** / **MVP-011** / **MVP-013** / **MVP-014 fermés** ; **MVP-012** ouvert (MEDIA BLOCKED) ; **F-001** / **F-002** / **F-003** / **F-004** / **F-005** / **F-007** / **F-008** / **F-014** / **F-015** / **F-016** / **F-031** **Livré** ; **F-006** En test ; **F-009** / **F-010** / **F-013** / **F-028** / **F-029** / **F-032** / **F-033** en cours ; auth/sync hors MVP (V1) |
 | Dernière mise à jour globale | 7 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
@@ -33,7 +33,7 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | **MVP-014** Livré partiellement (F-008/F-015 code ; F-014 CONTENT BLOCKED) ; **MVP-012** MEDIA BLOCKED ; MVP-015 non ouvert |
+| Développement | **En cours** | **MVP-014 fermé** (F-008/F-014/F-015 Livré) ; **MVP-012** MEDIA BLOCKED ; MVP-015 non ouvert ; TD-001 Mineure |
 | Tests | **En cours** | Vitest OK ; pas de campagne produit E2E complète |
 | Release | **Non commencé** | 0 Release (`19`) ; déploiement absent (`10`) |
 
@@ -59,8 +59,8 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Tickets ouverts | **2** (**MVP-014** — Livré partiellement / F-014 CONTENT BLOCKED ; **MVP-012** — MEDIA BLOCKED / REFERENCE MOTION BLOCKED) |
-| Tickets terminés | **14** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010, MVP-011, MVP-013) |
+| Tickets ouverts | **1** (**MVP-012** — MEDIA BLOCKED / REFERENCE MOTION BLOCKED) |
+| Tickets terminés | **15** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010, MVP-011, MVP-013, MVP-014) |
 | Tickets bloqués | 0 |
 | Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero + pratique + prudence + découverte + parcours débutant + progression + prefs + onboarding + **SW App Update socle** (`web/`) |
 
@@ -70,9 +70,9 @@ Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
 | Catégorie | État |
 | --- | --- |
-| Fonctionnalités terminées | **8** (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-016`, `F-031` — Livré) |
-| Fonctionnalités en cours | **10** (`F-006`, `F-008`, `F-009`, `F-010`, `F-013`, `F-015`, `F-028`, `F-029`, `F-032`, `F-033`) |
-| Fonctionnalités restantes | **23** non commencées (`02_FEATURE_STATUS`) |
+| Fonctionnalités terminées | **11** (`F-001`, `F-002`, `F-003`, `F-004`, `F-005`, `F-007`, `F-008`, `F-014`, `F-015`, `F-016`, `F-031` — Livré) |
+| Fonctionnalités en cours | **8** (`F-006`, `F-009`, `F-010`, `F-013`, `F-028`, `F-029`, `F-032`, `F-033`) |
+| Fonctionnalités restantes | **22** non commencées (`02_FEATURE_STATUS`) |
 
 Détail : `02_FEATURE_STATUS.md`.
 
@@ -107,7 +107,7 @@ Aucun blocage connu.
 
 | Synthèse | Valeur |
 | --- | --- |
-| Dette technique applicative constatée | **Aucune** (`12_TECH_DEBT` — 0 TD-xxx) |
+| Dette technique applicative constatée | **1 Mineure** (`12_TECH_DEBT` — TD-001 chrome thème Mobile) |
 | Bugs ouverts | **0** (`13_BUGS`) |
 | Dette documentaire runtime | Écart nomenclature `98` vs `runtime/README` (non bloquant) |
 
@@ -182,9 +182,9 @@ Détail : `12_TECH_DEBT.md`.
 
 ## 15. Prochaines étapes (réelles, non estimées)
 
-1. **MVP-014** — validation PO F-008/F-015 ; F-014 dédié CONTENT BLOCKED ; **ne pas fermer** le ticket sans F-014 ou arbitrage PO.
-2. **MVP-012** — rester ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED jusqu’à sources de mouvement fiables + MP4 validés.
-3. Enchaîner **MVP-015 → MVP-018** selon `docs/tickets/README.md` §20 (**ne pas ouvrir MVP-015 maintenant**).
+1. **MVP-012** — rester ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED jusqu’à sources de mouvement fiables + MP4 validés.
+2. Prochain ticket roadmap : **MVP-015** (F-009 + F-010 + F-032 + F-013) — **non ouvert**.
+3. Enchaîner **MVP-015 → MVP-018** selon `docs/tickets/README.md` §20.
 4. Appliquer Impact Analysis + cycle Ticket → Dev → Tests → Validation → MAJ Runtime → Commit.
 5. **Ne pas** ouvrir auth / sync / IA / CV / Mei ni MVP-017 dans cette étape.
 
@@ -233,6 +233,8 @@ Détail : `12_TECH_DEBT.md`.
 | 8 août 2026 | **MVP-013 fermé** (validation PO) ; F-003 → **Livré** ; CH-017 ; MVP-012 reste MEDIA BLOCKED ; MVP-014 non ouvert. |
 | 8 août 2026 | **MVP-014 ouvert** (cadrage F-008 + F-014 + F-015) ; aucun code ; F-008/F-015 READY ; F-014 CONTENT BLOCKED (dédié) ; MVP-012 MEDIA BLOCKED ; MVP-015 non ouvert. |
 | 8 août 2026 | **MVP-014** code partiel — F-008/F-015 En test ; F-014 CONTENT BLOCKED ; ticket non fermé ; MVP-012 MEDIA BLOCKED ; MVP-015 non ouvert. |
+| 9 août 2026 | **MVP-014** F-014 — corpus `08` §28.1 Respiration calme ; `/respiration` ; CONTENT BLOCKED levé ; F-008/F-014/F-015 En test ; ticket non fermé ; MVP-015 non ouvert. |
+| 9 août 2026 | **MVP-014 fermé** (validation PO) ; F-008/F-014/F-015 → **Livré** ; CH-018 ; TD-001 notée ; MVP-012 MEDIA BLOCKED ; MVP-015 non ouvert. |
 
 ## 17. Diagrammes
 
@@ -333,7 +335,7 @@ Jamais anticiper un avancement non réalisé.
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain jalon | MVP-014 — validation PO F-008/F-015 ; F-014 CONTENT BLOCKED ; MVP-012 MEDIA BLOCKED |
+| Prochain jalon | MVP-015 (planifié, non ouvert) ; MVP-012 reste MEDIA BLOCKED |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

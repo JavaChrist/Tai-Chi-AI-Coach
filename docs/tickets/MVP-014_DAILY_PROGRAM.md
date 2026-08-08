@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Livré partiellement (code)** / F-014 CONTENT BLOCKED / attente PO (ouvert — non fermé — 8 août 2026 ; F-008 + F-015 En test ; commit `f212fdb`)
+> Statut : **Fermé** (GO — 9 août 2026 — validation PO — CH-018 ; SHA à enregistrer)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-014_DAILY_PROGRAM.md`
 > Dépend de :
@@ -29,7 +29,7 @@ Cadrer officiellement (développement **ultérieur**, hors de cette ouverture) :
 
 But produit : proposer **une suggestion claire de pratique du jour** (régularité, réduction du choix), et ancrer respiration / retour au calme dans le rituel de séance — **sans** personnalisation avancée, **sans** pression, **sans** inventer de technique respiratoire ou de méditation non documentée, **sans** dépendre des vidéos F-006 ni ouvrir MVP-015.
 
-**Phase actuelle : code partiel livré (F-008 + F-015)** — F-014 dédié reste CONTENT BLOCKED. Ticket **non fermé**. Aucun commit demandé à cette étape.
+**Phase actuelle : Fermé** — F-008 / F-014 / F-015 **Livré** (validation PO). Dette UI shell TD-001 notée (chrome thème Mobile — hors correction ce ticket). MVP-012 reste MEDIA BLOCKED. MVP-015 non ouvert.
 
 ---
 
@@ -411,17 +411,14 @@ Aucun nouvel asset.
 | Feature | Gate | Justification |
 | --- | --- | --- |
 | **F-008** | **READY FOR CODE** | Séances + BeginnerPath + Accueil existent ; règle date locale déterministe documentée ; pas de média requis |
-| **F-014** | **CONTENT BLOCKED** (exercice dédié / protocole) | `08` §28 ouvert ; pas de technique documentée ; placeholder Initiation seulement. Enrichissement « respiration naturelle » possible **après** wording PO, sans inventer de rythme |
+| **F-014** | **READY / En test** | Corpus validé PO — `08` §28.1 Respiration calme ; route `/respiration` ; Hero mist ; pas de timer/audio/cadence |
 | **F-015** | **READY FOR CODE** (via étapes `retour`) | Structure `Retour au calme` déjà dans les 3 séances ; enrichissement textuel minimal documentable ; pas d’asset requis |
 | **MVP-012** | Inchangé | MEDIA BLOCKED — parallèle, non bloquant |
 | **MVP-015** | Non ouvert | Ne pas dépendre de D |
 
 ### Gate global MVP-014
 
-**READY FOR CODE (périmètre F-008 + F-015)** avec **CONTENT BLOCKED sur F-014 dédié**.
-
-L’implémentation peut démarrer sur F-008 + clôture calme F-015 sans attendre les MP4.
-Livraison « F-014 acceptation forte » (`05` : lancer un exercice de respiration) **exige** un contenu PO validé (texte minimal non inventé) — sinon F-014 reste partiel / reporté dans le ticket.
+**Fermé** — F-008 + F-014 + F-015 **Livré** (validation PO). CH-018.
 
 ---
 
@@ -430,14 +427,14 @@ Livraison « F-014 acceptation forte » (`05` : lancer un exercice de respiratio
 - [x] F-008 : suggestion du jour Accueil, déterministe locale, ignorable
 - [x] Lien BeginnerPath + SessionTemplate
 - [x] F-015 : retour au calme présent / enrichi sans promesse médicale
-- [ ] F-014 : soit contenu PO validé livré, soit écart explicitement documenté à la clôture
+- [x] F-014 : corpus PO dans `08` §28.1 + `/respiration` (CONTENT BLOCKED levé)
 - [x] Pas de progression fictive / pas d’état « jour validé » inventé
 - [x] Pas de dépendance vidéo
-- [x] Tests + validations Light/Dark (structure DS ; attente validation PO visuelle)
-- [x] Runtime synchronisé (livraison partielle)
+- [x] Tests + validations Light/Dark (Desktop/Mobile × Light/Dark — PO)
+- [x] Runtime synchronisé (F-008 / F-014 / F-015 Livré)
 - [x] MVP-012 non fermé par erreur
 - [x] MVP-015 non ouvert
-- [ ] Validation PO + clôture
+- [x] Validation PO + clôture
 
 ---
 
@@ -450,10 +447,12 @@ Livraison « F-014 acceptation forte » (`05` : lancer un exercice de respiratio
 | Corpus inventorié | **Fait** |
 | Options programme du jour | **Décidées (reco C+B)** |
 | Gate readiness | **Décidée** |
-| Implémentation code F-008 + F-015 | **Livré (code)** — commit `f212fdb` ; attente PO |
-| F-014 dédié | **CONTENT BLOCKED** — non livré |
-| Clôture | **Non** — ticket reste ouvert |
+| Implémentation code F-008 + F-015 | **Livrée** — validée PO |
+| Implémentation code F-014 | **Livrée** — `08` §28.1 + `/respiration` ; validée PO |
+| Validation PO visuelle | **Fait** — Desktop/Mobile × Light/Dark |
+| Dette UI shell | **TD-001** notée (chrome thème Mobile — hors scope correctif) |
+| Clôture | **Fermé** — CH-018 (SHA à enregistrer) |
 
 ---
 
-*Fin du ticket MVP-014 (Livré partiellement — F-014 CONTENT BLOCKED ; MVP-012 reste MEDIA BLOCKED ; MVP-015 non ouvert).*
+*Fin du ticket MVP-014 (Fermé — MVP-012 reste MEDIA BLOCKED / REFERENCE MOTION BLOCKED ; MVP-015 non ouvert).*

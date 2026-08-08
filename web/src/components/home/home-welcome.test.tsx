@@ -72,6 +72,9 @@ describe("HomeWelcomeView — Séance du jour F-008", () => {
     expect(html).not.toContain("validé aujourd");
     expect(html).toContain("Parcourir");
     expect(html).toContain('href="/parcours/debutant"');
+    expect(html).toContain('data-testid="home-breathing-action"');
+    expect(html).toContain('href="/respiration"');
+    expect(html).toContain("Respiration calme");
   });
 
   it("État A — historique vide : Parcourir, pas de Reprendre", () => {

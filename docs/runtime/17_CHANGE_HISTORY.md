@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/17_CHANGE_HISTORY.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — CH-017 (MVP-013 / F-003) |
+| Dernière mise à jour | 9 août 2026 — CH-018 (MVP-014 / F-008·F-014·F-015) |
 | Phase actuelle | Développement MVP — MVP-012 ouvert / MEDIA BLOCKED |
 | Type | Runtime Register — changements Runtime **appliqués** |
 | Ne remplace pas | `CHANGELOG.md` |
@@ -17,8 +17,8 @@
 
 | Indicateur | Valeur |
 | --- | --- |
-| Changements enregistrés | **17** |
-| Changements majeurs | **16** |
+| Changements enregistrés | **18** |
+| Changements majeurs | **17** |
 | Changements mineurs | **1** |
 
 ## 3. Registre des changements
@@ -42,6 +42,7 @@
 | CH-015 | Bibliothèque mouvements + fiches + images (F-004 / F-005 / F-007) — `/bibliotheque/mouvements` | MVP-011 | `00`, `02`, `03`, `09`, `11`, `17` | — | 8 août 2026 | Appliqué — MVP-011 fermé — commit `e8eebff` |
 | CH-016 | Correctif UX F-031 — rappel pré-pratique court ; F-016 inchangé ; MVP-009 reste fermé | Correctif (indépendant MVP-012) | `09`, `17` | — | 8 août 2026 | Appliqué |
 | CH-017 | Parcours débutant structuré (F-003) — `/parcours/debutant` ; Hero morning ; accès Accueil / Découverte / Séances | MVP-013 | `00`, `02`, `03`, `09`, `11`, `17` | — | 8 août 2026 | Appliqué — MVP-013 fermé — commit `c3b4a98` |
+| CH-018 | Programme quotidien (F-008) + Respiration calme (F-014) + retour au calme (F-015) — `/respiration` ; Accueil | MVP-014 | `00`, `02`, `03`, `09`, `11`, `12`, `17` | — | 9 août 2026 | Appliqué — MVP-014 fermé |
 
 ## 4. Gouvernance
 
@@ -63,6 +64,7 @@ timeline
     8 août 2026 : CH-015 MVP-011 Movements
     8 août 2026 : CH-016 Correctif UX F-031
     8 août 2026 : CH-017 MVP-013 Beginner Path
+    9 août 2026 : CH-018 MVP-014 Daily + Breathing
 ```
 
 ## 6. Historique
@@ -83,6 +85,7 @@ timeline
 | 8 août 2026 | CH-015 — MVP-011 F-004/F-005/F-007 (`e8eebff`) ; MVP-011 **fermé** ; MVP-012 non ouvert. |
 | 8 août 2026 | CH-016 — correctif UX F-031 (rappel court) ; F-016 intact ; MVP-009 reste **fermé** ; MVP-012 inchangé. |
 | 8 août 2026 | CH-017 — MVP-013 F-003 (`c3b4a98`) ; MVP-013 **fermé** (validation PO) ; MVP-012 reste MEDIA BLOCKED ; MVP-014 non ouvert. |
+| 9 août 2026 | CH-018 — MVP-014 F-008/F-014/F-015 ; MVP-014 **fermé** (validation PO) ; TD-001 notée ; MVP-012 MEDIA BLOCKED ; MVP-015 non ouvert. |
 
 ---
 

@@ -144,6 +144,26 @@ export function HomeWelcomeView({
 
         <section
           className="space-y-3"
+          aria-labelledby="home-breathing-heading"
+          data-testid="home-breathing-section"
+        >
+          <h2 id="home-breathing-heading" className="text-h2 text-foreground">
+            Respiration calme
+          </h2>
+          <p className="text-body text-foreground">
+            Un exercice court, non médical, pour vous poser à votre rythme.
+          </p>
+          <Button
+            variant="surface"
+            asChild
+            data-testid="home-breathing-action"
+          >
+            <Link href="/respiration">Ouvrir l’exercice</Link>
+          </Button>
+        </section>
+
+        <section
+          className="space-y-3"
           aria-labelledby="home-discovery-heading"
           data-testid="home-discovery-section"
         >

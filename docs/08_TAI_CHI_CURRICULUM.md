@@ -573,17 +573,67 @@ Le mapping SessionStep ↔ Movement sera implémenté au développement (MVP-011
 
 Le parcours débutant référencera ces IDs `MV-00x` dans l’ordre Initiation. **Ne pas ouvrir MVP-013** dans MVP-011.
 
-## 28. Décisions ouvertes
+## 28. Respiration dédiée MVP (F-014)
+
+> Source de vérité du contenu **F-014** pour le MVP.
+> Validé Product Owner — 9 août 2026.
+> Ne pas inventer de protocole rythmé, de ratio, ni de promesse médicale.
+
+### 28.1 Exercice — Respiration calme
+
+| Champ | Valeur |
+| --- | --- |
+| Identifiant métier | `EX-014-respiration-calme` |
+| Nom | Respiration calme |
+| Type | Exercice court de respiration **non médicale** |
+| Durée indicative | Environ 1 minute |
+| Usage MVP | Pratiquable **seul** (route dédiée) ; non injecté automatiquement dans toutes les séances |
+| Timer / audio / cadence visuelle | **Non requis** — le texte guide |
+
+#### Instructions (ordre officiel)
+
+1. Installe-toi confortablement, debout ou assis.
+2. Relâche les épaules et laisse les bras se détendre.
+3. Respire naturellement, sans chercher à prendre de grandes inspirations.
+4. Observe simplement l’air qui entre et qui sort.
+5. Si c’est confortable, laisse progressivement la respiration devenir plus lente et régulière.
+6. Ne retiens pas ton souffle et ne force ni l’inspiration ni l’expiration.
+7. Après quelques respirations, reprends simplement ton rythme naturel.
+
+#### Prudence
+
+Si la respiration devient inconfortable, reviens à ta respiration naturelle ou arrête l’exercice.
+
+#### Interdits normatifs (contenu)
+
+- aucune rétention volontaire / apnée guidée ;
+- aucun objectif de nombre de respirations ;
+- aucun ratio inspiration / expiration (4-4, 4-7-8, box breathing, etc.) ;
+- aucune hyperventilation ;
+- aucune promesse médicale, de relaxation garantie, ni de résultat ;
+- aucune notion de performance.
+
+La respiration reste confortable et non forcée.
+
+### 28.2 Relation aux séances et à F-015
+
+- Les mentions « respiration naturelle » sur les mouvements (`§27`) restent inchangées.
+- Les étapes `entree` / `retour` des séances structurelles ne sont **pas** remplacées par cet exercice.
+- **F-015** (retour au calme en fin de séance) reste distinct.
+- L’intégration automatique de F-014 dans chaque phase de séance reste une **décision ouverte** (§28.3).
+
+### 28.3 Décisions encore ouvertes
 
 - style(s) et forme(s) retenus (toujours ouverts) ;
 - **catalogue au-delà de MV-001…003** (nombre et contenu) ;
 - mapping exact geste → étapes de chaque séance publiée ;
 - durées cibles des leçons/séances ;
 - calendrier d’introduction des enchaînements ;
-- place de la respiration/méditation dédiée (F-014 / F-015) dans chaque phase ;
+- place de F-014 / F-015 **dans chaque phase de séance** (exercice dédié F-014 = §28.1) ;
 - critères opérationnels détaillés de passage (sans compétition) ;
 - éventuelle déclinaison Qi Gong / mobilité sur la même architecture ;
-- éventuels mouvements F-007 au-delà de MV-001…003.
+- éventuels mouvements F-007 au-delà de MV-001…003 ;
+- méditation élargie (F-038) — hors MVP.
 
 ## 29. Critères de validation
 

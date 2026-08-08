@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 8 août 2026 — MVP-014 code partiel (F-008/F-015) |
+| Dernière mise à jour | 9 août 2026 — MVP-014 fermé / CH-018 |
 | Phase actuelle | Développement MVP — tests unitaires Vitest |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
@@ -37,7 +37,7 @@
 | PWA App Update socle | Partielle (SW source, register, prompt, route `/sw.js` — CH-014) |
 | Mouvements F-004 / F-005 / F-007 | Partielle (reader + catalogue + fiche + accès bibliothèque — MVP-011) |
 | Parcours débutant F-003 | Partielle (BeginnerPath reader + page `/parcours/debutant` + accès Accueil/Découverte/Séances — MVP-013) |
-| Programme quotidien F-008 / Relaxation F-015 | Partielle (`resolveDailyProgram` + Accueil + steps `retour` — MVP-014 partiel ; F-014 non couvert) |
+| Programme quotidien F-008 / Respiration F-014 / Relaxation F-015 | Partielle (`resolveDailyProgram` + `/respiration` + steps `retour` — MVP-014) |
 
 ## 4. Exécutions
 
@@ -141,6 +141,16 @@
 | Résultat cumulé | **132 / 132 passed** |
 | Build / TypeScript / ESLint | OK |
 
+### Campagne MVP-014 F-014 (Respiration calme)
+
+| Champ | Valeur |
+| --- | --- |
+| Date | 9 août 2026 |
+| Outil | Vitest + Next build + ESLint + `tsc` |
+| Périmètre | F-014 `/respiration` ; corpus `08` §28.1 ; Accueil ; régression F-008/F-015 |
+| Résultat cumulé | **136 / 136 passed** |
+| Build / TypeScript / ESLint | OK |
+
 ## 5. Historique
 
 | Date | Événement |
@@ -160,6 +170,8 @@
 | 8 août 2026 | MVP-013 — 116/116 ; F-003 En test ; CH-017 ; MVP-012 MEDIA BLOCKED. |
 | 8 août 2026 | MVP-013 **fermé** — campagne 116/116 confirmée (validation PO). |
 | 8 août 2026 | MVP-014 partiel — 132/132 ; F-008/F-015 En test ; F-014 CONTENT BLOCKED. |
+| 9 août 2026 | MVP-014 F-014 — 136/136 ; Respiration calme ; CONTENT BLOCKED levé. |
+| 9 août 2026 | MVP-014 **fermé** — campagne 136/136 confirmée (validation PO). |
 
 ---
 
