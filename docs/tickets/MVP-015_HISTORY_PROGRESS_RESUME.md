@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Fermé** (GO — 9 août 2026 — validation PO — CH-019)
+> Statut : **Fermé** (GO — 9 août 2026 — validation PO — CH-019 ; commit `4c72602`)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-015_HISTORY_PROGRESS_RESUME.md`
 > Dépend de :
@@ -579,7 +579,7 @@ Verbes 12A : Continuer · Reprendre · Pratiquer.
 | Décisions PO | **Validées** (PO-A…G) |
 | Gate readiness | **READY FOR CODE** |
 | Implémentation code | **Livrée** — validée PO |
-| Clôture | **Fermé** — CH-019 |
+| Clôture | **Fermé** — CH-019 — commit `4c72602` |
 
 ---
 

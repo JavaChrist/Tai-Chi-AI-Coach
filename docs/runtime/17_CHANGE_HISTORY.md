@@ -43,7 +43,7 @@
 | CH-016 | Correctif UX F-031 — rappel pré-pratique court ; F-016 inchangé ; MVP-009 reste fermé | Correctif (indépendant MVP-012) | `09`, `17` | — | 8 août 2026 | Appliqué |
 | CH-017 | Parcours débutant structuré (F-003) — `/parcours/debutant` ; Hero morning ; accès Accueil / Découverte / Séances | MVP-013 | `00`, `02`, `03`, `09`, `11`, `17` | — | 8 août 2026 | Appliqué — MVP-013 fermé — commit `c3b4a98` |
 | CH-018 | Programme quotidien (F-008) + Respiration calme (F-014) + retour au calme (F-015) — `/respiration` ; Accueil | MVP-014 | `00`, `02`, `03`, `09`, `11`, `12`, `17` | — | 9 août 2026 | Appliqué — MVP-014 fermé — commit `d0574f9` |
-| CH-019 | Historique (F-009) + progression (F-010) + reprise persistante (F-032) + finalisation F-013 lifecycle ; wipe pratique locale ; badge jour | MVP-015 | `00`, `02`, `03`, `06`, `09`, `11`, `17` | — | 9 août 2026 | Appliqué — MVP-015 fermé |
+| CH-019 | Historique (F-009) + progression (F-010) + reprise persistante (F-032) + finalisation F-013 lifecycle ; wipe pratique locale ; badge jour | MVP-015 | `00`, `02`, `03`, `06`, `09`, `11`, `17` | — | 9 août 2026 | Appliqué — MVP-015 fermé — commit `4c72602` |
 
 ## 4. Gouvernance
 
@@ -88,7 +88,7 @@ timeline
 | 8 août 2026 | CH-016 — correctif UX F-031 (rappel court) ; F-016 intact ; MVP-009 reste **fermé** ; MVP-012 inchangé. |
 | 8 août 2026 | CH-017 — MVP-013 F-003 (`c3b4a98`) ; MVP-013 **fermé** (validation PO) ; MVP-012 reste MEDIA BLOCKED ; MVP-014 non ouvert. |
 | 9 août 2026 | CH-018 — MVP-014 F-008/F-014/F-015 (`d0574f9`) ; MVP-014 **fermé** (validation PO) ; TD-001 notée ; MVP-012 MEDIA BLOCKED ; MVP-015 non ouvert. |
-| 9 août 2026 | CH-019 — MVP-015 F-009/F-010/F-032/F-013 ; MVP-015 **fermé** (validation PO) ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
+| 9 août 2026 | CH-019 — MVP-015 F-009/F-010/F-032/F-013 (`4c72602`) ; MVP-015 **fermé** (validation PO) ; MVP-012 MEDIA BLOCKED ; MVP-016 non ouvert. |
 
 ---
 
