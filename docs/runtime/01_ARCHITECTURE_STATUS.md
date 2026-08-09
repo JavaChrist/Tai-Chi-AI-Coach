@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/01_ARCHITECTURE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — CH-014 PWA App Update socle |
+| Dernière mise à jour | 9 août 2026 — MVP-017 Fermé ; Offline/PWA Livré |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — état réel de l’architecture |
 | Référence conception | `docs/13_TECH_ARCHITECTURE.md` (architecture cible / gelée — non recopié ici) |
@@ -23,14 +23,14 @@ Référentiel de lecture des noms de couches : conception `13` (pour comparaison
 
 | Couche | État réel | Constat |
 | --- | --- | --- |
-| Frontend | **En cours** | Socle Next.js + shell + EDS 12A + Hero + bibliothèque + pratique + prefs + onboarding + découverte ; **SW socle App Update** (`/sw.js`, modale) ; PWA installable complète / offline cache **non** |
+| Frontend | **En cours** | Socle Next.js + shell + EDS 12A + Hero + bibliothèque + pratique + prefs + onboarding + découverte ; **SW update + cache cœur Livré** (MVP-017) + `/hors-ligne` |
 | Backend | **Non commencé** | Aucun service backend |
 | API | **Non commencé** | Aucun endpoint exposé |
 | Base de données | **Non commencé** | Aucun schéma / instance applicative |
 | IA Coach | **Non commencé** | Aucune couche d’abstraction ni fournisseur branché |
 | Computer Vision | **Non commencé** | Aucun pipeline CV |
 | Virtual Humans | **Non commencé** | Aucun guide / runtime VH |
-| Offline | **Partiel (update only)** | Manifeste (MVP-004) + SW **socle update** (CH-014 / `docs/26`) ; cache / IndexedDB / sync **non** commencés (MVP-017) |
+| Offline | **Livré** (cœur) | SW unique update + precache/runtime ; fallback `/hors-ligne` ; IndexedDB / sync non commencés ; iPhone/Safari manuel → MVP-018 |
 | Analytics | **Non commencé** | Aucun pipeline / sink analytics |
 | Sécurité | **Non commencé** | Aucun contrôle auth / sécu applicatif déployé |
 
@@ -48,7 +48,7 @@ Modules issus de l’architecture validée (`13`) — état d’**implémentatio
 | Persistance (PostgreSQL) | Non commencé | — | — | — |
 | Stockage objet | Non commencé | — | — | — |
 | Synchronisation | Non commencé | — | — | — |
-| Offline / cache PWA | Partiel | Projet | CH-014 | 7 août 2026 — SW update socle ; cache métier Non commencé (MVP-017) |
+| Offline / cache PWA | Livré | Projet | MVP-017 | 9 août 2026 — precache ≈ 4,16 Mo / 79 entrées ; CH-021 ; iPhone/Safari → MVP-018 |
 | Computer Vision | Non commencé | — | — | — |
 | Virtual Humans / Mei | Non commencé | — | MVP-004 | Emplacements assets documentés ; **aucune** UI Mei |
 | Analytics (technique / produit) | Non commencé | — | — | — |
@@ -96,6 +96,9 @@ Aucune.
 | 6 août 2026 | MVP-008B Sprint 3 : 15 Hero Light + `HeroBackdrop` + affectation écrans ; Dark `missing` ; CH-010 ; aucune logique métier. |
 | 7 août 2026 | MVP-008B Sprint Dark : 5 Masters Dark + 15 exports Dark `final` ; catalogue + tests ; CH-011 ; aucune logique métier. |
 | 7 août 2026 | CH-014 — SW socle App Update (`/sw.js`, hook, modale, build id) ; Offline cache reste Non commencé. |
+| 9 août 2026 | MVP-017 **ouvert** (cadrage Offline/PWA cache cœur) ; DESIGN DECISION REQUIRED ; aucun code ; SW unique à étendre. |
+| 9 août 2026 | MVP-017 **Livré (code)** ; SW étendu (precache/fetch/purge) ; Offline En test ; attente PO. |
+| 9 août 2026 | MVP-017 **fermé** (validation PO) ; Offline/PWA **Livré** ; CH-021. |
 
 ## 9. Diagrammes
 
@@ -107,7 +110,7 @@ flowchart TB
     FE[Frontend]
   end
   subgraph Partiel[Partiel]
-    OFF[Offline SW update only]
+    OFF[Offline cache cœur Livré]
   end
   subgraph NonCommence[Non commencé]
     BE[Backend]

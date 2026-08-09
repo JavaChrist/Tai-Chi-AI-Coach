@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/07_OFFLINE_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 7 août 2026 — SW socle App Update (CH-014) |
-| Phase actuelle | Développement MVP — SW update minimal ; Offline First / cache métier non commencés |
+| Dernière mise à jour | 9 août 2026 — MVP-017 Fermé ; Offline/PWA Livré |
+| Phase actuelle | Développement MVP — Offline cœur Livré ; sync non commencée |
 | Document de référence | `docs/18_PWA_OFFLINE.md`, `docs/26_PWA_APP_UPDATE.md` |
 | Type | Runtime Register — état réel Offline First / PWA |
 | Décisions conception | D-132 … D-142 (intention — non implémentées) |
@@ -21,19 +21,19 @@
 
 | Domaine | État réel |
 | --- | --- |
-| Service Worker | **Socle update** — registration `/sw.js`, détection waiting, modale contrôlée (`docs/26`) ; **pas** de cache métier |
-| Cache | Non commencé |
-| IndexedDB | Non commencé |
-| Synchronisation | Non commencé |
+| Service Worker | **Update + cache cœur** — `/sw.js` unique ; precache ; fetch strategies ; purge activate ; App Update préservé (`docs/26`) |
+| Cache | **Livré** — `tcac-precache-${APP_BUILD_ID}` + `tcac-runtime-${APP_BUILD_ID}` ; PO validé ≈ **4,16 Mo** / 79 entrées (≤ 8 Mo) |
+| IndexedDB | Non commencé (hors MVP-017) |
+| Synchronisation | Non commencé (V1 / `F-027`) |
 | Conflits | Non commencé |
-| Téléchargements | Non commencé |
+| Téléchargements | Non commencé (`F-026` V2) |
 | File d’attente Offline | Non commencé |
 | IA Offline | Non commencé |
 | CV Offline | Non commencé |
 | Virtual Humans Offline | Non commencé |
-| Manifeste Web App | Fondation (MVP-004) — fichier + métadonnées ; **pas** d’installabilité garantie (icônes absentes) |
+| Manifeste Web App | Présent + icônes ; fallback `/hors-ligne` ; iOS eviction possible (non garanti) |
 
-**Synthèse :** Offline First **non** implémenté (pas de cache / IndexedDB / sync). Service Worker **socle App Update** uniquement (CH-014 / `docs/26`) — hors MVP-017. Stockage applicatif local partiel via **localStorage**. Manifeste PWA fondation (MVP-004).
+**Synthèse :** Cache cœur Offline **Livré** (MVP-017 fermé / CH-021). SW unique étendu. localStorage pratique/prefs/onboarding **hors** Cache Storage. Vidéos Network Only. iPhone/Safari manuel → MVP-018. MVP-012 MEDIA BLOCKED.
 
 ## 3. Classification Offline / Hybrid / Online
 
@@ -63,14 +63,14 @@ Classification D-142 pour F-033 uniquement parmi les features touchées par MVP-
 | Onboarding | localStorage (MVP-008) — **pas** IndexedDB / SW / sync |
 | Progression | localStorage (MVP-006) — **pas** IndexedDB / SW / sync |
 | Curriculum | Embarqué en code (MVP-003) — pas de cache PWA |
-| Médias | Non commencé — arborescence `public/` documentée (MVP-004) ; fichiers absents |
-| Cache | Non commencé |
+| Médias | Hero Mobile précachés (PO-A) ; Tablet/Desktop runtime ; 3 WebP mouvements précachés ; **0 MP4** en cache |
+| Cache | Livré — precache + runtime versionnés Build ID |
 
 ## 6. Conformité
 
 | Élément | Statut |
 | --- | --- |
-| Conformité vs `18` | Conforme : Offline First non anticipé ; SW limité au cycle update (D-178 / `26`) ; cache métier reporté MVP-017 |
+| Conformité vs `18` | Aligné cœur MVP (shell + cache essentiel + pratique locale) ; sync/IDB/packs hors scope ; D-178 préservé |
 | Divergences | **Aucune** |
 | Décisions Runtime | **Aucune** |
 
@@ -108,8 +108,8 @@ flowchart TB
 
 ```mermaid
 pie title Offline Runtime — état réel
-  "Non commencé Offline" : 1
-  "SW update socle" : 1
+  "Cache cœur Livré" : 1
+  "Sync / IDB non commencé" : 1
 ```
 
 ### 8.3 Synchronisation
@@ -162,6 +162,9 @@ Toute évolution Offline devra :
 | 5 août 2026 | MVP-006 — historique progression en localStorage ; Offline First / SW toujours Non commencé. |
 | 5 août 2026 | MVP-008 — onboarding localStorage classé **Offline** (D-142) ; Offline First / SW toujours Non commencé. |
 | 7 août 2026 | CH-014 — SW **socle App Update** (`/sw.js`, modale, SKIP_WAITING) ; cache / Offline First toujours Non commencé ; MVP-017 non ouvert. |
+| 9 août 2026 | MVP-017 **ouvert** (cadrage Offline/PWA cache cœur) ; DESIGN DECISION REQUIRED ; aucun code ; icônes manifeste notées présentes ; MVP-012 MEDIA BLOCKED ; MVP-018 non ouvert. |
+| 9 août 2026 | MVP-017 **Livré (code)** ; PO-A…D ; SW cache cœur + `/hors-ligne` ; budget ≈ 3,4 Mo ; Offline **En test** ; attente PO ; MVP-018 non ouvert. |
+| 9 août 2026 | MVP-017 **fermé** (validation PO) ; Offline/PWA **Livré** ; precache ≈ 4,16 Mo / 79 entrées ; iPhone/Safari → MVP-018 ; CH-021. |
 
 ## 11. Références
 

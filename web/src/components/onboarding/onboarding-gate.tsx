@@ -28,6 +28,8 @@ export function OnboardingGate({ children }: OnboardingGateProps) {
   const pathname = usePathname();
   const router = useRouter();
   const isOnboardingRoute = pathname.startsWith("/onboarding");
+  const isOfflineFallbackRoute = pathname.startsWith("/hors-ligne");
+  const bypassOnboardingRedirect = isOnboardingRoute || isOfflineFallbackRoute;
 
   const gate = useSyncExternalStore(
     subscribeOnboardingSnapshots,
@@ -36,7 +38,9 @@ export function OnboardingGate({ children }: OnboardingGateProps) {
   );
 
   const needsRedirect =
-    !isOnboardingRoute && gate.kind === "ready" && gate.needsOnboarding;
+    !bypassOnboardingRedirect &&
+    gate.kind === "ready" &&
+    gate.needsOnboarding;
 
   useEffect(() => {
     if (!needsRedirect) return;

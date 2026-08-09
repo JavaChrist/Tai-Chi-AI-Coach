@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# MVP-017 — manifeste precache généré post-build
+/public/tcac-precache-manifest.json
+
 # production
 /build
 

@@ -320,6 +320,7 @@ Tous les développements de Tai-Chi AI Coach devront obligatoirement être réal
 | MVP-014 | `MVP-014_DAILY_PROGRAM.md` | **Fermé** | CH-018 | `d0574f9` |
 | MVP-015 | `MVP-015_HISTORY_PROGRESS_RESUME.md` | **Fermé** | CH-019 | `4c72602` |
 | MVP-016 | `MVP-016_ONBOARDING_SETTINGS_ACCESSIBILITY.md` | **Fermé** | CH-020 | `f61e139` |
+| MVP-017 | `MVP-017_OFFLINE_PWA_CACHE.md` | **Fermé** | CH-021 | — |
 
 **Tickets actifs :** **MVP-012** (ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED ; attente média ; non fermé).
 
@@ -345,8 +346,8 @@ Ce tableau fixe uniquement l’**ordre des tickets** MVP restants.
 | MVP-014 | F-008 + F-014 + F-015 | Programme quotidien + respiration + relaxation | **Fermé** (CH-018) |
 | MVP-015 | F-009 + F-010 + F-032 + F-013 | Historique, progression, reprise persistante, séances complètes | **Fermé** (CH-019) |
 | MVP-016 | F-033 + F-028 + F-029 | Onboarding final + paramètres + accessibilité | **Fermé** (CH-020) |
-| MVP-017 | Offline / PWA | Service Worker + cache cœur | Planifié |
-| MVP-018 | Recette / gates | Validation contenus, tests finaux, publiabilité | Planifié |
+| MVP-017 | Offline / PWA | Service Worker + cache cœur | **Fermé** (CH-021) |
+| MVP-018 | Recette / gates | Validation contenus, tests finaux, publiabilité | Planifié (incl. validation iPhone/Safari manuelle) |
 
 ### Frontière de version (cette roadmap)
 
@@ -368,7 +369,7 @@ Les fichiers détaillés MVP-010 → MVP-018 sont créés **uniquement à l’ou
 | Version | 1.1 |
 | Statut | VALIDÉ |
 | Emplacement | `docs/tickets/README.md` |
-| Dernière mise à jour | 9 août 2026 — MVP-016 Fermé ; MVP-012 MEDIA BLOCKED ; MVP-017 non ouvert |
+| Dernière mise à jour | 9 août 2026 — MVP-017 Fermé ; Offline Livré ; MVP-012 MEDIA BLOCKED ; MVP-018 non ouvert |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

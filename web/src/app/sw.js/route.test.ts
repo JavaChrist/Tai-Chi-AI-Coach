@@ -16,5 +16,9 @@ describe("GET /sw.js", () => {
     expect(body).toContain(`const APP_BUILD_ID = ${JSON.stringify(APP_BUILD_ID)}`);
     expect(body).toContain("SKIP_WAITING");
     expect(body).toContain("clients.claim()");
+    expect(body).toContain("tcac-precache-");
+    expect(body).toContain("installPrecache");
+    expect(body).toContain("/hors-ligne");
+    expect(body).not.toMatch(/\.mp4"/);
   });
 });

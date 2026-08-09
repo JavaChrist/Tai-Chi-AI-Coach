@@ -11,6 +11,17 @@ export const fr: MessageDictionary = {
       "Une nouvelle version de l’application est prête. Mettez à jour pour continuer avec la dernière version.",
     updateLabel: "Mettre à jour",
   },
+  offline: {
+    title: "Vous êtes hors ligne",
+    description:
+      "L’application n’a pas accès au réseau pour le moment. Certaines fonctions restent disponibles sur cet appareil.",
+    available:
+      "Vous pouvez retrouver l’accueil, la bibliothèque et les contenus déjà mis en cache.",
+    limited:
+      "Les vidéos et les contenus qui n’ont pas encore été enregistrés peuvent nécessiter une connexion.",
+    homeLabel: "Retour à l’accueil",
+    libraryLabel: "Bibliothèque",
+  },
   profile: {
     title: "Profil",
     description: "Quelques réglages simples. Vos choix restent sur cet appareil.",

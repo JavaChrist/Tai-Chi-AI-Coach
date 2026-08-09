@@ -16,6 +16,14 @@ export type MessageDictionary = {
     description: string;
     updateLabel: string;
   };
+  offline: {
+    title: string;
+    description: string;
+    available: string;
+    limited: string;
+    homeLabel: string;
+    libraryLabel: string;
+  };
   profile: {
     title: string;
     description: string;
