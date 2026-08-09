@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Fermé** (GO — 9 août 2026 — validation PO — CH-021)
+> Statut : **Fermé** (GO — 9 août 2026 — validation PO — CH-021 ; commit `b5acc1b`)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-017_OFFLINE_PWA_CACHE.md`
 > Dépend de :
@@ -518,7 +518,7 @@ Quota plein : ne pas corrompre localStorage ; échec precache → SW B non activ
 | Décisions PO | **Validées** (PO-A…D) |
 | Gate readiness | **READY** (implémenté) |
 | Implémentation code | **Livrée** — validée PO |
-| Clôture | **Fermé** — CH-021 |
+| Clôture | **Fermé** — CH-021 — commit `b5acc1b` |
 
 ---
 
