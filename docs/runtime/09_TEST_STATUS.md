@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-018 fix round ; Vitest 191/191 ; GATES 1→8 PASS |
-| Phase actuelle | Développement MVP — READY FOR GATE 9/10 |
+| Dernière mise à jour | 9 août 2026 — GATE 9 PASS (iPhone PO) ; Vitest 191/191 |
+| Phase actuelle | Développement MVP — GATES 1→9 PASS ; GATE 10 BLOCKED |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
 
@@ -18,7 +18,7 @@
 | Domaine | État réel |
 | --- | --- |
 | Tests unitaires | **PASS** — Vitest **191/191** (dont BUG-001/002) |
-| Intégration / E2E / UX | **PASS** GATES 1→8 post-fix ; GATE 9/10 restants |
+| Intégration / E2E / UX | **PASS** GATES 1→9 ; GATE 10 BLOCKED (F-006) |
 
 ## 3. Couverture
 
@@ -35,7 +35,7 @@
 | Safety F-016 / F-031 | Partielle (contenu + gate + page — MVP-009) |
 | Discovery F-001 / F-002 | Partielle (contenu + page `/decouverte` — MVP-010) |
 | PWA App Update socle | Partielle (SW source, register, prompt, route `/sw.js` — CH-014) |
-| Offline / cache cœur MVP-017 | Validée PO (Chrome/Edge prod locale) ; iPhone/Safari manuel → MVP-018 |
+| Offline / cache cœur MVP-017 | Validée PO Chrome/Edge + **GATE 9 iPhone/Safari PASS** (HTTPS Vercel) |
 | Mouvements F-004 / F-005 / F-007 | Partielle (reader + catalogue + fiche + accès bibliothèque — MVP-011) |
 | Parcours débutant F-003 | Partielle (BeginnerPath reader + page `/parcours/debutant` + accès Accueil/Découverte/Séances — MVP-013) |
 | Programme quotidien F-008 / Respiration F-014 / Relaxation F-015 | Partielle (`resolveDailyProgram` + `/respiration` + steps `retour` — MVP-014) |
@@ -192,6 +192,7 @@
 | 9 août 2026 | MVP-016 **fermé** — campagne 167/167 confirmée (validation PO) ; CH-020. |
 | 9 août 2026 | MVP-017 Livré (code) — tests precache/SW/lifecycle/budget/fallback ; 181/181 ; attente PO manuelle offline. |
 | 9 août 2026 | MVP-017 **fermé** — campagne offline PO OK (precache ≈ 4,16 Mo) ; iPhone/Safari reporté MVP-018 ; CH-021. |
+| 9 août 2026 | MVP-018 GATE 9 **PASS** — PO iPhone réel / Safari / A2HS / offline sur https://tai-chi-ai-coach.vercel.app. |
 
 ---
 

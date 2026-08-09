@@ -31,7 +31,7 @@ Identifiants : `RD-xxx` (Runtime Decision).
 
 | Runtime Decision ID | Titre | Justification | Ticket | Impact | Statut | Date |
 | --- | --- | --- | --- | --- | --- | --- |
-| RD-001 | Release readiness PO-R1→R7 | Décisions PO officielles publiabilité MVP | MVP-018 | GATE 9/10 non waivables ; 3 MP4 min ; READY FOR FINAL QA ; RELEASE PUBLICATION BLOCKED | **Appliquée** | 9 août 2026 |
+| RD-001 | Release readiness PO-R1→R7 | Décisions PO officielles publiabilité MVP | MVP-018 | GATE 9 PASS (PO iPhone) ; GATE 10 non waivable ; 3 MP4 min ; BLOCKED BY GATE 10 ONLY | **Appliquée** | 9 août 2026 |
 
 ### RD-001 — détail PO-R1→R7
 
@@ -41,9 +41,9 @@ Identifiants : `RD-xxx` (Runtime Decision).
 | PO-R2 | Waiver `deferred media` / F-007+F-005 = release publique | **Non** — fallback = dev/tests seulement ; F-006 non Livré sans vidéos |
 | PO-R3 | Minimum média GATE 10 | **3** MP4 validés (MV-001, MV-002, MV-003) ; 1 qualité/mouvement |
 | PO-R4 | Fidélité pipeline Mei + QC | Mouvement douteux = **REJET** ; MVP-012 reste MEDIA BLOCKED / REFERENCE MOTION BLOCKED |
-| PO-R5 | iPhone/Safari réel | **Obligatoire** — pas de waiver ; GATE 9 BLOCKED jusqu’au test |
-| PO-R6 | Staging HTTPS/Vercel | Inclus recette finale ; **pas de deploy** dans la mission documentaire |
-| PO-R7 | Go / No-Go immédiat | **Aucun Go** tant que GATES 1→10 non satisfaits |
+| PO-R5 | iPhone/Safari réel | **Obligatoire** — pas de waiver ; GATE 9 **PASS** (test PO 9 août 2026) |
+| PO-R6 | Staging HTTPS/Vercel | Inclus recette finale — https://tai-chi-ai-coach.vercel.app |
+| PO-R7 | Go / No-Go immédiat | **Aucun Go** tant que GATE 10 non satisfait |
 
 Référence ticket : `docs/tickets/MVP-018_RELEASE_READINESS.md` §5.
 MVP-012 : statut **non modifié** (ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED).

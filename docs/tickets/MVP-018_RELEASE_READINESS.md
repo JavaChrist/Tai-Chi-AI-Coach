@@ -2,9 +2,10 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Ouvert** — Fix round P1/P3 revalidé — **READY FOR GATE 9/10** (commit `34549c4`)
+> Statut : **Ouvert** — GATES 1→9 **PASS** ; GATE 10 **BLOCKED** (commit `34549c4`)
 > Phase : MVP — Recette finale / gates / publiabilité
-> Release publication : **BLOCKED** (GATE 9 + GATE 10 uniquement)
+> Release publication : **BLOCKED BY GATE 10 ONLY**
+> Recette HTTPS : https://tai-chi-ai-coach.vercel.app
 > Emplacement : `docs/tickets/MVP-018_RELEASE_READINESS.md`
 > Dépend de :
 > - Tickets fermés MVP-008B → MVP-017 (sauf MVP-012)
@@ -25,9 +26,9 @@ Ouvrir et cadrer la **recette finale** du MVP :
 - déterminer si le MVP est **publiable** ;
 - **ensuite** corriger uniquement ce qui bloque réellement la release.
 
-**Phase actuelle :** Fix round BUG-001/002/003 **revalidé** (9 août 2026).
-**Décision campagne :** **READY FOR GATE 9/10** — GATES 1→8 PASS ; 0 P0/P1 ouverts.
-**Release publication :** **BLOCKED** (GATE 9 iPhone + GATE 10 F-006 uniquement).
+**Phase actuelle :** GATE 9 **PASS** (PO iPhone) — reste GATE 10 (F-006 / MVP-012).
+**Décision campagne :** GATES 1→9 **PASS** — reste GATE 10.
+**Release publication :** **BLOCKED BY GATE 10 ONLY**.
 
 MVP-018 **n’est pas** un ticket fourre-tout : hors bugs P0/P1 de release et décisions PO explicites, pas de scope creeping.
 
@@ -123,7 +124,7 @@ Hors scope MVP release (catalogue) : F-011+ V1/V2/V3/backlog — **Hors release*
 | **PO-R2** | Waiver `deferred media` / F-007+F-005 suffisent pour release publique ? | **Non** — F-007+F-005 = développement, fallback, navigation, tests **uniquement** ; **ne permettent pas** de déclarer F-006 Livré | Aucun waiver release |
 | **PO-R3** | Minimum média pour lever GATE 10 | **3 vidéos pédagogiques validées** (1 par mouvement) : MV-001, MV-002, MV-003. Une qualité par mouvement suffit. Pas d’obligation multi-angles / normale+ralentie / voix / montage complexe | Critère PASS GATE 10 |
 | **PO-R4** | Fidélité | Pipeline obligatoire : source fiable → référence approuvée → production Mei → QC → validation humaine → publication. Fidélité pédagogique/biomécanique **>** esthétique. Mouvement douteux = **REJET** | MVP-012 reste MEDIA BLOCKED / REFERENCE MOTION BLOCKED tant que non satisfait |
-| **PO-R5** | iPhone / Safari | Test **iPhone réel obligatoire** avant Go. **Pas de waiver** | GATE 9 **BLOCKED** jusqu’au test réel |
+| **PO-R5** | iPhone / Safari | Test **iPhone réel obligatoire** avant Go. **Pas de waiver** | GATE 9 **PASS** (test PO 9 août 2026) |
 | **PO-R6** | Staging HTTPS/Vercel | Fait partie de la recette finale. **Ne pas déployer** dans la mission documentaire. Campagne doit prévoir build prod + staging/preview + HTTPS + PWA + iPhone réel | Prérequis GATE 9 (URL HTTPS) |
 | **PO-R7** | Go / No-Go maintenant | **Aucun Go maintenant**. Go final = GATES 1→10 satisfaits | Release publication bloquée |
 
@@ -131,8 +132,8 @@ Hors scope MVP release (catalogue) : F-011+ V1/V2/V3/backlog — **Hors release*
 
 | Indicateur | Valeur |
 | --- | --- |
-| Gate ticket MVP-018 | **READY FOR FINAL QA** |
-| Release publication | **BLOCKED** (jusqu’à GATE 9 PASS + GATE 10 PASS + 0 P0/P1 ouverts) |
+| Gate ticket MVP-018 | **Ouvert** — GATES 1→9 PASS ; GATE 10 restant |
+| Release publication | **BLOCKED BY GATE 10 ONLY** (GATE 9 PASS — test PO iPhone) |
 | MVP-012 | **Ouvert** / MEDIA BLOCKED / REFERENCE MOTION BLOCKED — **inchangé** (référence documentaire uniquement) |
 | F-006 | Non Livré ; 0 MP4 ; reste En test / Bloqué média |
 
@@ -251,7 +252,7 @@ Routes réelles (`web/src/app/**/page.tsx`) :
 | Fallback vidéo | ☐ | ☐ | ☐ | ☐ |
 | Touch / safe areas | ☐ | ☐ | ☐ | ☐ |
 
-**État :** iPhone/Safari = **non testé** (report MVP-017). GATE 9 = **BLOCKED** jusqu’au test **iPhone réel** sur URL HTTPS (PO-R5 — **pas de waiver** ; PO-R6 staging).
+**État :** iPhone/Safari = **PASS** (test physique PO — 9 août 2026). Update A→B iPhone = validation complémentaire non bloquante (non effectuée).
 
 ---
 
@@ -407,10 +408,53 @@ Valeurs : `PASS` · `FAIL` · `BLOCKED` · `READY` (exécutable, non encore jou�
 | **GATE 6 — Offline/PWA** | **PASS** | Online 404 conservé ; network failure → hors-ligne (tests) ; cache hit offline ; 0 MP4 |
 | **GATE 7 — Privacy** | **PASS** | Inchangé |
 | **GATE 8 — Contenu** | **PASS** | BUG-001 levé ; fallback « Démonstration vidéo à venir » conservé |
-| **GATE 9 — iPhone/Safari** | **BLOCKED** | Non exécuté — PO-R5/R6 |
+| **GATE 9 — iPhone/Safari** | **PASS** | Test physique PO — iPhone réel / Safari / A2HS / standalone / HTTPS / offline (§19C) |
 | **GATE 10 — F-006 / vidéos** | **BLOCKED** | 0 MP4 — MVP-012 MEDIA BLOCKED |
 
 **Règle :** GATES 1→8 peuvent s’exécuter **même si** GATE 10 est bloqué. Ne pas attendre Mei/VHS. GATE 9 dès qu’une URL HTTPS de recette existe.
+
+---
+
+# 19C. GATE 9 — Recette HTTPS + validation iPhone (PO) — PASS
+
+| Champ | Valeur |
+| --- | --- |
+| Environnement | Vercel projet `tai-chi-ai-coach` (team `javachrist-projects`) — **recette**, pas Go produit |
+| URL HTTPS | **https://tai-chi-ai-coach.vercel.app** |
+| Root Directory | `.` (projet lié au dossier `web/`) |
+| Framework | Next.js |
+| Build Command | `npm run build` |
+| Preuve appareil | **Product Owner** — iPhone réel — Safari — PWA A2HS / standalone — 9 août 2026 |
+| Verdict GATE 9 | **PASS** |
+
+### Résultats checklist (PO)
+
+| Item | Résultat |
+| --- | --- |
+| HTTPS Safari | **PASS** |
+| Chargement initial | **PASS** |
+| Ajouter à l’écran d’accueil (A2HS) | **PASS** |
+| Lancement depuis icône | **PASS** |
+| Mode standalone | **PASS** |
+| Navigation cœur | **PASS** |
+| Pratique | **PASS** |
+| F-031 | **PASS** |
+| Pause / reprise | **PASS** |
+| Reprise persistante | **PASS** |
+| Light / Dark | **PASS** |
+| Relance PWA offline | **PASS** |
+| Navigation cœur offline | **PASS** |
+| Pratique offline | **PASS** |
+| Retour online | **PASS** |
+| Données locales conservées | **PASS** |
+
+### Update A→B iPhone
+
+| Champ | Valeur |
+| --- | --- |
+| Statut | **Non effectué** — validation complémentaire **non bloquante** |
+| Motif | Lifecycle A→B + update différée `/pratique/*` déjà validés MVP-017 ; GATE 9 porte sur Safari / A2HS / offline réel |
+| Inventé | **Non** — aucun PASS A→B iPhone déclaré |
 
 ---
 
@@ -525,7 +569,8 @@ GATE 1 Build
 | Preuve | Tableau §9.2 rempli « testé réel » ; modèle iOS / version Safari. |
 | PASS | Items §9.2 testés réel sans P0/P1. |
 | FAIL | Crash iOS ; offline inutilisable ; A2HS cassé critique ; update destructeur. |
-| État | **BLOCKED** jusqu’URL HTTPS + appareil réel. |
+| État | **PASS** — test physique PO iPhone / Safari / A2HS / offline (9 août 2026). |
+| Update A→B iPhone | Non bloquant — non effectué. |
 | Bugs typiques | P0 crash Safari ; P1 SW iOS cassé ; P2 eviction cache iOS (limitation connue) ; P3 UI notch. |
 
 ### GATE 10 — F-006 / vidéos (MVP-012)
@@ -571,7 +616,7 @@ Détail : `docs/runtime/13_BUGS.md`.
 | LIM-R3 | Pas de sync multi-appareils | Oui (V1) |
 | LIM-R4 | Pas d’analytics produit | Oui |
 | LIM-R5 | Pas F-026 packs | Oui (V2) |
-| LIM-R6 | Staging non encore déployé | Bloque seulement GATE 9 jusqu’à URL HTTPS |
+| LIM-R6 | Update A→B non rejoué sur iPhone réel | Acceptable — non bloquant (MVP-017) |
 
 ---
 
@@ -588,10 +633,10 @@ Détail : `docs/runtime/13_BUGS.md`.
 
 | Indicateur | Valeur |
 | --- | --- |
-| Décision campagne après fix | **READY FOR GATE 9/10** |
-| Release publication | **BLOCKED** (GATE 9 + GATE 10) |
-| Conditions de déblocage publication | GATE 9 PASS + GATE 10 PASS + 0 P0/P1 |
-| Go / No-Go | **Reporté** (PO-R7) |
+| Décision campagne | GATES 1→9 **PASS** — GATE 10 restant |
+| Release publication | **BLOCKED BY GATE 10 ONLY** |
+| Conditions de déblocage publication | GATE 10 PASS + 0 P0/P1 |
+| Go / No-Go | **Reporté** (PO-R7) — attend F-006 / MVP-012 |
 
 MVP-012 **reste ouvert** / MEDIA BLOCKED / REFERENCE MOTION BLOCKED.
 
@@ -603,7 +648,7 @@ MVP-012 **reste ouvert** / MEDIA BLOCKED / REFERENCE MOTION BLOCKED.
 - [x] Campagne gates 1→10 procédurée
 - [x] GATES 1→8 exécutés puis **PASS** après fix round
 - [x] Correctifs BUG-001/002/003 + revalidation
-- [ ] GATE 9 PASS (iPhone réel + HTTPS)
+- [x] GATE 9 PASS (iPhone réel + HTTPS — PO)
 - [ ] GATE 10 PASS (3 MP4 validés via MVP-012)
 - [x] Bugs P0/P1 résolus (0 ouvert)
 - [ ] Go / No-Go publication enregistré (PO-R7)
@@ -615,8 +660,8 @@ MVP-012 **reste ouvert** / MEDIA BLOCKED / REFERENCE MOTION BLOCKED.
 
 | Registre | Action |
 | --- | --- |
-| `00_PROJECT_STATUS` | READY FOR FINAL QA ; RELEASE PUBLICATION BLOCKED ; PO-R |
-| `11_BACKLOG` | MVP-018 → READY FOR FINAL QA ; MVP-012 inchangé |
+| `00_PROJECT_STATUS` | GATES 1→9 PASS ; BLOCKED BY GATE 10 ONLY ; PO-R |
+| `11_BACKLOG` | MVP-018 → GATE 10 restant ; MVP-012 inchangé |
 | `14_DECISIONS_RUNTIME` | RD release PO-R1→R7 |
 | `tickets/README` | Statut MVP-018 |
 | MVP-012 / `02_FEATURE_STATUS` F-006 | **Pas de changement de statut** |
@@ -631,6 +676,7 @@ MVP-012 **reste ouvert** / MEDIA BLOCKED / REFERENCE MOTION BLOCKED.
 | 9 août 2026 | PO-R1→R7 enregistrées ; **READY FOR FINAL QA** ; **RELEASE PUBLICATION BLOCKED** (GATE 9 + GATE 10) ; campagne 1→10 procédurée ; aucun code |
 | 9 août 2026 | Campagne GATES 1→8 exécutée ; PASS 1/2/4/5/7 ; FAIL 3/6/8 ; BUG-001…003 ; **BLOCKED BY P0/P1** |
 | 9 août 2026 | Fix round BUG-001/002/003 ; Vitest **191/191** ; gates 1→8 **PASS** ; décision **READY FOR GATE 9/10** ; commit `34549c4` |
+| 9 août 2026 | GATE 9 **PASS** — test physique PO iPhone/Safari/A2HS/offline sur https://tai-chi-ai-coach.vercel.app ; release **BLOCKED BY GATE 10 ONLY** |
 
 ### Preuves fix round (commandes)
 
@@ -644,4 +690,4 @@ MVP-012 **reste ouvert** / MEDIA BLOCKED / REFERENCE MOTION BLOCKED.
 
 ---
 
-*Fin du ticket MVP-018 (READY FOR GATE 9/10).*
+*Fin du ticket MVP-018 (GATES 1→9 PASS — GATE 10 BLOCKED).*

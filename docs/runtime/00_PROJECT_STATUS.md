@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-018 fix round ; READY FOR GATE 9/10 ; 0 bug ouvert |
+| Dernière mise à jour | 9 août 2026 — MVP-018 GATE 9 PASS ; BLOCKED BY GATE 10 ONLY |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,8 +22,8 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — MVP-018 **READY FOR GATE 9/10** ; Offline/PWA Livré ; MVP-012 MEDIA BLOCKED |
-| Statut global | **MVP-018** ouvert — GATES 1→8 **PASS** ; BUG-001/002/003 **résolus** ; **RELEASE PUBLICATION BLOCKED** (GATE 9+10) ; MVP-012 MEDIA BLOCKED ; F-006 En test ; Vitest 191/191 |
+| Phase | Développement MVP — MVP-018 GATES 1→9 **PASS** ; GATE 10 BLOCKED ; Offline/PWA Livré ; MVP-012 MEDIA BLOCKED |
+| Statut global | **MVP-018** ouvert — GATES 1→9 **PASS** ; **RELEASE PUBLICATION BLOCKED BY GATE 10 ONLY** ; MVP-012 MEDIA BLOCKED ; F-006 En test ; Vitest 191/191 |
 | Dernière mise à jour globale | 9 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
@@ -33,9 +33,9 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | **MVP-018 READY FOR GATE 9/10** ; **MVP-012** MEDIA BLOCKED ; TD-001 fermée |
-| Tests | **En cours** | Vitest **191/191** ; GATES 1→8 PASS post-fix |
-| Release | **BLOCKED (publication)** | GATE 9 + GATE 10 BLOCKED ; 0 P0/P1 ; 0 Release |
+| Développement | **En cours** | **MVP-018** GATES 1→9 PASS ; **MVP-012** MEDIA BLOCKED (GATE 10) ; TD-001 fermée |
+| Tests | **En cours** | Vitest **191/191** ; GATE 9 iPhone PO **PASS** |
+| Release | **BLOCKED BY GATE 10 ONLY** | F-006 / 0 MP4 ; 0 P0/P1 ; 0 Release |
 
 ## 4. Vue d’ensemble Runtime
 
@@ -59,7 +59,7 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Tickets ouverts | **2** (**MVP-012** MEDIA BLOCKED ; **MVP-018** READY FOR GATE 9/10) |
+| Tickets ouverts | **2** (**MVP-012** MEDIA BLOCKED ; **MVP-018** GATE 10 restant) |
 | Tickets terminés | **18** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010, MVP-011, MVP-013, MVP-014, MVP-015, MVP-016, MVP-017) |
 | Tickets bloqués | 0 (MVP-012 = MEDIA BLOCKED, pas un bug applicatif) |
 | Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero + pratique + prudence + découverte + parcours débutant + progression + prefs + onboarding + **SW Offline/PWA** (`web/`) |
@@ -101,9 +101,8 @@ Constats de pilotage (hors `15` tant que non ticketés) : écart nomenclature `9
 
 | Blocage | Nature | Impact |
 | --- | --- | --- |
-| MVP-012 / F-006 | MEDIA BLOCKED / REFERENCE MOTION BLOCKED (0 MP4) | GATE 10 **BLOCKED** |
-| iPhone/Safari | Non testé | GATE 9 **BLOCKED** |
-| Release publication | GATE 9 + GATE 10 | **RELEASE PUBLICATION BLOCKED** |
+| MVP-012 / F-006 | MEDIA BLOCKED / REFERENCE MOTION BLOCKED (0 MP4) | GATE 10 **BLOCKED** — seul bloqueur release |
+| Release publication | GATE 10 only | **BLOCKED BY GATE 10 ONLY** |
 
 *(Le blocage « Runtime incomplet » est **levé** : 20/20 registres créés.)*
 
@@ -124,7 +123,7 @@ Détail : `12_TECH_DEBT.md`.
 | Architecture | Spécifiée ; registre `01` ; Frontend **en cours** ; SW **update + cache cœur** (MVP-017 Fermé / Offline Livré) ; sync non commencée |
 | Sécurité | Spécifiée ; registre `05` ACTIF ; **non implémentée** (0 contrôle runtime) |
 | RGPD | Spécifié ; registre `06` ACTIF ; **non implémenté** (0 traitement / consentement runtime) |
-| Offline | Spécifié ; registre `07` ACTIF ; cache cœur **Livré** (MVP-017) ; sync **non** commencée ; iPhone/Safari manuel → MVP-018 |
+| Offline | Spécifié ; registre `07` ACTIF ; cache cœur **Livré** (MVP-017) ; sync **non** commencée ; iPhone/Safari **PASS** (GATE 9) |
 | Analytics | Spécifié ; registre `08` ACTIF ; **non implémenté** (0 événement / KPI) |
 | Documentation | Conception gelée ; Runtime infrastructure complète |
 
@@ -186,9 +185,8 @@ Détail : `12_TECH_DEBT.md`.
 
 ## 15. Prochaines étapes (réelles, non estimées)
 
-1. Déployer staging HTTPS (PO-R6) → **GATE 9** iPhone réel (PO-R5).
-2. **GATE 10** via MVP-012 (3 MP4 validés) — MEDIA BLOCKED inchangé tant que non satisfait.
-3. Go seulement si GATES 1→10 PASS + 0 P0/P1 (PO-R7).
+1. **GATE 10** via MVP-012 — 3 MP4 pédagogiques validés (PO-R3/R4) ; MEDIA BLOCKED inchangé tant que non satisfait.
+2. Go publication seulement si GATE 10 PASS + 0 P0/P1 (PO-R7).
 
 ## 16. Historique du registre
 
@@ -250,6 +248,7 @@ Détail : `12_TECH_DEBT.md`.
 | 9 août 2026 | **MVP-018** — PO-R1→R7 / **RD-001** ; gate **READY FOR FINAL QA** ; **RELEASE PUBLICATION BLOCKED** (GATE 9 + GATE 10) ; campagne 1→10 procédurée ; GATES 1→8 READY ; aucun code. |
 | 9 août 2026 | **MVP-018 campagne GATES 1→8** ; PASS 1/2/4/5/7 ; FAIL 3/6/8 ; BUG-001/002/003 ; décision **BLOCKED BY P0/P1** ; aucun fix. |
 | 9 août 2026 | **MVP-018 fix round** BUG-001/002/003 résolus ; GATES 1→8 PASS ; **READY FOR GATE 9/10** ; Vitest 191/191 ; commit `34549c4`. |
+| 9 août 2026 | **GATE 9 PASS** — PO iPhone réel / Safari / A2HS / offline sur https://tai-chi-ai-coach.vercel.app ; release **BLOCKED BY GATE 10 ONLY**. |
 
 ## 17. Diagrammes
 
@@ -350,7 +349,7 @@ Jamais anticiper un avancement non réalisé.
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain jalon | GATE 9 iPhone/HTTPS ; GATE 10 via MVP-012 |
+| Prochain jalon | GATE 10 — 3 MP4 via MVP-012 |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

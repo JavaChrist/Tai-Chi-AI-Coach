@@ -8,39 +8,51 @@
 | Fichier | `docs/runtime/10_DEPLOYMENT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 5 août 2026 |
-| Phase actuelle | Post–Design Freeze — initialisation Runtime |
+| Dernière mise à jour | 9 août 2026 — GATE 9 PASS (iPhone PO) ; recette HTTPS |
+| Phase actuelle | MVP-018 — GATE 9 PASS ; release bloquée par GATE 10 seulement |
 | Document de référence | `docs/21_DEPLOYMENT.md` |
 | Type | Runtime Register — état réel du déploiement |
 
-> Ce registre suit exclusivement l’état **réel** du déploiement.  
+> Ce registre suit exclusivement l’état **réel** du déploiement.
 > Il ne décrit jamais le déploiement prévu.
 
 ## 2. État général
 
 | Domaine | État réel |
 | --- | --- |
-| Environnements | Non commencé |
-| Configurations | Non commencé |
-| Secrets | Non commencé |
+| Environnements | Recette Vercel active |
+| Configurations | Root `.` (= `web/`) ; Next.js ; `npm run build` |
+| Secrets | Aucun secret MVP requis |
 | Sauvegardes | Non commencé |
 | Restauration | Non commencé |
 | Monitoring | Non commencé |
-| Publication PWA | Non commencé |
-| Rollback | Non commencé |
-| Disponibilité | Non commencé — aucun service déployé |
+| Publication PWA | Recette HTTPS validée iPhone/Safari (GATE 9 PASS) — **pas** Go public produit |
+| Rollback | Via Vercel deployments |
+| Disponibilité | Recette OK (`tai-chi-ai-coach.vercel.app`) |
 
-**Synthèse :** aucun environnement Runtime. Aucun hébergeur choisi ni pipeline opérationnel.
+**Synthèse :** https://tai-chi-ai-coach.vercel.app — GATE 9 PASS (PO iPhone). Release publique toujours bloquée par GATE 10 (F-006).
 
 ## 3. Environnements
 
 | Environnement | État réel |
 | --- | --- |
-| Local / développement | Non commencé (pas de projet applicatif) |
-| Staging / préprod | Non commencé |
-| Production | Non commencé |
+| Local / développement | Actif (`web/`) |
+| Staging / préprod / recette | **Actif** — https://tai-chi-ai-coach.vercel.app |
+| Production produit (Go) | **Non** — GATE 10 BLOCKED |
 
-## 4. Incidents
+## 4. Projet Vercel
+
+| Champ | Valeur |
+| --- | --- |
+| Project ID | `prj_LebAtfHuTLvEzJswATsA5S0GXbk2` |
+| Nom | `tai-chi-ai-coach` |
+| Root Directory | `.` (lié au dossier applicatif `web/`) |
+| Framework | Next.js |
+| Build | `npm run build` |
+| Node | 24.x |
+| URL principale recette | https://tai-chi-ai-coach.vercel.app |
+
+## 5. Incidents
 
 | Type | Constat |
 | --- | --- |
@@ -48,79 +60,21 @@
 | Rollbacks | Aucun |
 | Indisponibilités | Aucune |
 
-## 5. Conformité
+## 6. Conformité
 
 | Élément | Statut |
 | --- | --- |
-| Conformité vs `21` | Conforme à l’absence d’implémentation attendue |
-| Divergences | **Aucune** |
-| Décisions Runtime | **Aucune** |
+| Conformité vs `21` | Recette opérationnelle ; Go prod hors scope tant que GATE 9/10 non PASS |
+| Divergences | Runtime antérieur « Non commencé » levé pour la recette |
+| Décisions Runtime | RD-001 (publiabilité) — déploiement recette autorisé PO-R6 |
 
-## 6. Diagrammes
-
-### 6.1 Environnements
-
-```mermaid
-flowchart LR
-  Local[Local — Non commencé]
-  Staging[Staging — Non commencé]
-  Prod[Production — Non commencé]
-```
-
-### 6.2 Pipeline
-
-```mermaid
-flowchart LR
-  Build[Build] -.-> Test[Test]
-  Test -.-> Deploy[Deploy]
-  Deploy -.-> Monitor[Monitor]
-  note1[Pipeline absent]
-```
-
-### 6.3 État Runtime
-
-```mermaid
-pie title Déploiement Runtime — état réel
-  "Non commencé" : 1
-  "Opérationnel" : 0
-```
-
-### 6.4 Disponibilité
-
-```mermaid
-flowchart TB
-  App[Application] -->|absent| N/A[Aucune mesure de disponibilité]
-```
-
-### 6.5 Conformité
-
-```mermaid
-flowchart LR
-  C21[21 conception] --> Q{Écart?}
-  Real[Réel = vide] --> Q
-  Q -->|Non| OK[Aucune divergence]
-```
-
-## 7. Gouvernance
-
-Toute évolution de déploiement devra :
-
-1. référencer un ticket ;  
-2. vérifier la conformité avec `docs/21_DEPLOYMENT.md` ;  
-3. mettre à jour ce registre ;  
-4. synchroniser `00_PROJECT_STATUS.md` et `19_RELEASE_HISTORY.md` si publication.
-
-## 8. Historique
+## 7. Historique
 
 | Date | Événement |
 | --- | --- |
-| 5 août 2026 | Création du registre ; initialisation ; aucune implémentation ; aucun environnement Runtime. |
-
-## 9. Références
-
-- `docs/21_DEPLOYMENT.md`  
-- `docs/runtime/README.md`  
-- `docs/25_DESIGN_FREEZE.md`  
+| 5 août 2026 | Création registre — aucun déploiement. |
+| 9 août 2026 | Projet Vercel créé / lié ; recette HTTPS ; URL `tai-chi-ai-coach.vercel.app`. |
+| 9 août 2026 | GATE 9 **PASS** — validation PO iPhone réel / Safari / A2HS / offline sur l’URL recette. |
 
 ---
 
@@ -130,7 +84,6 @@ Toute évolution de déploiement devra :
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain document | `11_BACKLOG.md` / puis `12_TECH_DEBT.md` |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*
