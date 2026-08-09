@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/11_BACKLOG.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-018 GATE 9 PASS ; GATE 10 ONLY ; MVP-012 MEDIA BLOCKED |
-| Phase actuelle | Développement MVP — MVP-012 MEDIA BLOCKED ; MVP-018 GATE 10 |
+| Dernière mise à jour | 9 août 2026 — pause médias MVP-012 (outils vidéo) ; GATE 10 BLOCKED |
+| Phase actuelle | Pause production médias — MVP-012 MEDIA BLOCKED ; MVP-018 GATE 10 |
 | Document de référence (intentions) | `docs/22_ROADMAP.md`, `docs/tickets/README.md` §20 |
 | Type | Runtime Register — travaux **réellement ouverts** |
 
@@ -28,13 +28,13 @@
 | Idées retenues (ticketées) | **0** |
 | Priorités Runtime actives | P0 — MVP-012 (GATE 10 / 3 MP4) ; P0 — MVP-018 (GATE 10 restant) |
 
-**Synthèse :** MVP-012 **ouvert** (MEDIA BLOCKED). MVP-018 GATES 1→9 **PASS** ; release **BLOCKED BY GATE 10 ONLY**.
+**Synthèse :** MVP-012 **ouvert** / **MEDIA BLOCKED** — MotionReferenceSpec APPROVED ; **pause** jusqu’outils vidéo. MVP-018 GATES 1→9 **PASS** ; release **BLOCKED BY GATE 10 ONLY**.
 
 ## 3. Tickets ouverts
 
 | ID ticket | Titre | Priorité | Statut | Date ouverture | Remarque |
 | --- | --- | --- | --- | --- | --- |
-| MVP-012 | Vidéos pédagogiques + intégration séances/mouvements (F-006 + enrichissement F-013) | P0 | Livré (code) / MEDIA BLOCKED / REFERENCE MOTION BLOCKED / attente média | 8 août 2026 | 3 MP4 min (PO-R3) ; statut **inchangé** |
+| MVP-012 | Vidéos pédagogiques + intégration séances/mouvements (F-006 + enrichissement F-013) | P0 | Livré (code) / MEDIA BLOCKED / refs motion APPROVED / **PAUSE** outils vidéo | 8 août 2026 | 3 MP4 min (PO-R3) ; tickets ouverts |
 | MVP-018 | Recette finale / gates / publiabilité | P0 | Ouvert — GATES 1→9 **PASS** ; GATE 10 BLOCKED | 9 août 2026 | Release BLOCKED BY GATE 10 ONLY |
 
 ## 4. Séquence planifiée (non ouverte — pas d’entrée backlog)
@@ -107,6 +107,7 @@ stateDiagram-v2
 | 9 août 2026 | MVP-018 campagne GATES 1→8 ; **BLOCKED BY P0/P1** ; BUG-001…003 enregistrés ; aucun fix. |
 | 9 août 2026 | MVP-018 fix round ; BUG-001/002/003 résolus ; **READY FOR GATE 9/10**. |
 | 9 août 2026 | MVP-018 GATE 9 **PASS** (PO iPhone/Safari/A2HS/offline) ; release **BLOCKED BY GATE 10 ONLY**. |
+| 9 août 2026 | MVP-012 MotionReferenceSpec MV-001…003 **APPROVED** ; REFERENCE MOTION BLOCKED **levé** ; **PAUSE** production (attente outils vidéo) ; MEDIA BLOCKED. |
 
 ## 10. Références
 

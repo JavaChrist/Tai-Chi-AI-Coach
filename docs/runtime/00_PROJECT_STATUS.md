@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-018 GATE 9 PASS ; BLOCKED BY GATE 10 ONLY |
+| Dernière mise à jour | 9 août 2026 — pause médias MVP-012 (outils vidéo) ; GATE 10 BLOCKED |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,8 +22,8 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — MVP-018 GATES 1→9 **PASS** ; GATE 10 BLOCKED ; Offline/PWA Livré ; MVP-012 MEDIA BLOCKED |
-| Statut global | **MVP-018** ouvert — GATES 1→9 **PASS** ; **RELEASE PUBLICATION BLOCKED BY GATE 10 ONLY** ; MVP-012 MEDIA BLOCKED ; F-006 En test ; Vitest 191/191 |
+| Phase | Développement MVP — pause production médias ; MVP-018 GATES 1→9 **PASS** ; GATE 10 BLOCKED ; Offline/PWA Livré |
+| Statut global | **PAUSE médias** — MotionReferenceSpec MV-001…003 **APPROVED** ; MVP-012 **MEDIA BLOCKED** (0 MP4, attente outils vidéo) ; F-006 En test ; release **BLOCKED BY GATE 10 ONLY** ; Vitest 191/191 |
 | Dernière mise à jour globale | 9 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
@@ -101,7 +101,7 @@ Constats de pilotage (hors `15` tant que non ticketés) : écart nomenclature `9
 
 | Blocage | Nature | Impact |
 | --- | --- | --- |
-| MVP-012 / F-006 | MEDIA BLOCKED / REFERENCE MOTION BLOCKED (0 MP4) | GATE 10 **BLOCKED** — seul bloqueur release |
+| MVP-012 / F-006 | MEDIA BLOCKED (refs motion APPROVED ; 0 MP4 ; pause outils vidéo) | GATE 10 **BLOCKED** — seul bloqueur release |
 | Release publication | GATE 10 only | **BLOCKED BY GATE 10 ONLY** |
 
 *(Le blocage « Runtime incomplet » est **levé** : 20/20 registres créés.)*
@@ -185,7 +185,7 @@ Détail : `12_TECH_DEBT.md`.
 
 ## 15. Prochaines étapes (réelles, non estimées)
 
-1. **GATE 10** via MVP-012 — 3 MP4 pédagogiques validés (PO-R3/R4) ; MEDIA BLOCKED inchangé tant que non satisfait.
+1. Reprendre MVP-012 quand les **outils de création vidéo** sont prêts — produire / QC / valider humainement **3 MP4** (PO-R3/R4).
 2. Go publication seulement si GATE 10 PASS + 0 P0/P1 (PO-R7).
 
 ## 16. Historique du registre
@@ -249,6 +249,7 @@ Détail : `12_TECH_DEBT.md`.
 | 9 août 2026 | **MVP-018 campagne GATES 1→8** ; PASS 1/2/4/5/7 ; FAIL 3/6/8 ; BUG-001/002/003 ; décision **BLOCKED BY P0/P1** ; aucun fix. |
 | 9 août 2026 | **MVP-018 fix round** BUG-001/002/003 résolus ; GATES 1→8 PASS ; **READY FOR GATE 9/10** ; Vitest 191/191 ; commit `34549c4`. |
 | 9 août 2026 | **GATE 9 PASS** — PO iPhone réel / Safari / A2HS / offline sur https://tai-chi-ai-coach.vercel.app ; release **BLOCKED BY GATE 10 ONLY**. |
+| 9 août 2026 | **MVP-012** MotionReferenceSpec MV-001…003 **APPROVED** ; REFERENCE MOTION BLOCKED **levé** ; **PAUSE** production médias (attente outils vidéo) ; MEDIA BLOCKED ; GATE 10 BLOCKED. |
 
 ## 17. Diagrammes
 
@@ -349,7 +350,7 @@ Jamais anticiper un avancement non réalisé.
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain jalon | GATE 10 — 3 MP4 via MVP-012 |
+| Prochain jalon | Reprise MVP-012 quand outils vidéo prêts → 3 MP4 → GATE 10 |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*

@@ -26,8 +26,8 @@ Cadrer puis livrer (développement **ultérieur**, hors de cette ouverture) :
 
 But produit : permettre à l’utilisateur de **voir** un geste pour l’imiter prudemment, en complément du texte F-005 et de l’image F-007, sans analyse caméra et sans dépendance runtime à Virtual Humans Studio.
 
-**Phase actuelle : code livré (infra) + MotionReferenceSpec MV-001/002/003 APPROVED `1.0.0` (§8) — MEDIA BLOCKED (0 MP4).**
-Player + `mediaKeyVideo` + mapping séances ; **aucune** vidéo générée ; aucun provider IA ; aucun appel Virtual Humans ; GATE 10 **BLOCKED** ; F-006 **non Livré**.
+**Phase actuelle : PAUSE production média** — MotionReferenceSpec MV-001/002/003 APPROVED `1.0.0` (§8) ; **MEDIA BLOCKED** (0 MP4) ; attente des outils de création vidéo.
+Player + `mediaKeyVideo` + mapping séances ; **aucune** vidéo générée ; aucun provider IA ; aucun appel Virtual Humans ; GATE 10 **BLOCKED** ; F-006 **En test** — **non Livré**.
 
 ---
 
@@ -1110,9 +1110,9 @@ Développement UI/data autorisé avec médias absents ; **publication** F-006 «
 | F-006 | **En test** — **non Livré** |
 | GATE 10 | **BLOCKED** |
 | Implémentation code | **Livré (code)** — commit `0e19f1b` ; attente média |
-| Production vidéos | Autorisée côté référence ; **bloquée** tant que 0 MP4 validés (human validation obligatoire) |
+| Production vidéos | **PAUSE** — attente outils de création vidéo ; puis 3 MP4 + QC + validation humaine |
 | Clôture | **Non** — ticket reste ouvert |
 
 ---
 
-*Fin du ticket MVP-012 (Livré code / MEDIA BLOCKED / attente 3 MP4 — non fermé).*
+*Fin du ticket MVP-012 (Livré code / MEDIA BLOCKED / pause outils vidéo — non fermé).*
