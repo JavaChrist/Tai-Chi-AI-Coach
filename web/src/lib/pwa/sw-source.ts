@@ -87,15 +87,19 @@ async function staleWhileRevalidate(cacheName, request) {
 }
 
 async function networkFirstNavigate(request) {
+  // BUG-002 : toute Response HTTP (404/500 inclus) est renvoyée telle quelle.
+  // Fallback /hors-ligne uniquement après échec réseau réel (throw / pas de réponse).
   try {
     const response = await fetch(request);
-    if (response && response.ok) {
-      const cache = await caches.open(PRECACHE);
-      await putRequest(cache, request, response);
+    if (response) {
+      if (response.ok) {
+        const cache = await caches.open(PRECACHE);
+        await putRequest(cache, request, response);
+      }
       return response;
     }
   } catch (error) {
-    // offline
+    // offline / network failure
   }
 
   const cached = await caches.match(request);

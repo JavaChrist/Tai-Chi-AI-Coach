@@ -8,8 +8,8 @@
 | Fichier | `docs/runtime/09_TEST_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-017 Fermé ; 181/181 ; Offline Livré |
-| Phase actuelle | Développement MVP — tests unitaires Vitest |
+| Dernière mise à jour | 9 août 2026 — MVP-018 fix round ; Vitest 191/191 ; GATES 1→8 PASS |
+| Phase actuelle | Développement MVP — READY FOR GATE 9/10 |
 | Document de référence | `docs/20_TEST_STRATEGY.md` |
 | Type | Runtime Register — tests réellement réalisés |
 
@@ -17,8 +17,8 @@
 
 | Domaine | État réel |
 | --- | --- |
-| Tests unitaires | **En cours** — Vitest |
-| Intégration / E2E / UX | Non commencé (validation Hero Light/Dark manuelle) |
+| Tests unitaires | **PASS** — Vitest **191/191** (dont BUG-001/002) |
+| Intégration / E2E / UX | **PASS** GATES 1→8 post-fix ; GATE 9/10 restants |
 
 ## 3. Couverture
 

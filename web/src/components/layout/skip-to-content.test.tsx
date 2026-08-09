@@ -10,4 +10,10 @@ describe("SkipToContent", () => {
     expect(html).toContain("Aller au contenu principal");
     expect(html).toContain("skip-to-content");
   });
+
+  it("conserve la classe skip-to-content (hit-area ≥44px via CSS)", () => {
+    const html = renderToStaticMarkup(<SkipToContent />);
+    expect(html).toContain('href="#contenu-principal"');
+    expect(html).toContain("skip-to-content");
+  });
 });

@@ -57,6 +57,19 @@ describe("buildServiceWorkerSource (MVP-017)", () => {
     }
   });
 
+  it("BUG-002 — navigation : Response HTTP non-ok renvoyée (pas de fallback offline)", () => {
+    const start = source.indexOf("async function networkFirstNavigate");
+    const end = source.indexOf("async function networkFirstWithCache");
+    const body = source.slice(start, end);
+    // Ancien bug : if (response && response.ok) { ... return response } sans return hors ok
+    expect(body).toContain("if (response) {");
+    expect(body).toContain("return response;");
+    expect(body).toMatch(/if\s*\(\s*response\.ok\s*\)\s*\{[\s\S]*putRequest/);
+    // Le return response doit être hors du seul bloc response.ok
+    const afterOkBlock = body.split("if (response.ok)")[1] ?? "";
+    expect(afterOkBlock).toContain("return response;");
+  });
+
   it("ne référence aucun fichier .mp4 dans le precache injecté", () => {
     expect(source).not.toMatch(/\.mp4"/);
     expect(source).not.toMatch(/\.mp4'/);

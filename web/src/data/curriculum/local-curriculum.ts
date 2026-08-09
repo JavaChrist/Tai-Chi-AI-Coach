@@ -4,10 +4,10 @@ import type { Curriculum } from "@/domain/curriculum/types";
  * Jeu minimal de curriculum local (MVP-003).
  * Structure alignée sur docs/08_TAI_CHI_CURRICULUM.md.
  * Aucun style Tai Chi ni mouvement nommé inventé comme leçon officielle.
- * Contenu marqué `isStructuralPlaceholder` = structure pédagogique initiale.
+ * Contenu marqué `isStructuralPlaceholder` = structure pédagogique initiale (flag data, non affiché).
  */
-/** 0.3.0 — enrichissement textes F-015 (retour au calme) ; mapping MVP-012 conservé. */
-export const LOCAL_CURRICULUM_VERSION = "0.3.0";
+/** 0.3.1 — BUG-001 : textes utilisateur sans jargon technique / placeholder. */
+export const LOCAL_CURRICULUM_VERSION = "0.3.1";
 
 export const localCurriculum: Curriculum = {
   id: "curriculum-tai-chi-ai-coach",
@@ -58,7 +58,7 @@ export const localCurriculum: Curriculum = {
       shortDescription:
         "Une entrée douce pour découvrir le rituel d’une séance, sans surcharge.",
       description:
-        "Séance structurelle de phase Découverte. Elle aide à comprendre le cadre, à intégrer la prudence et à pratiquer quelques minutes dans le calme. Aucun enchaînement de style figé n’est imposé ici : le corps de séance reste une pratique douce générique, en attendant le contenu pédagogique détaillé.",
+        "Une séance de découverte pour comprendre le cadre, intégrer la prudence et pratiquer quelques minutes dans le calme. Le corps de séance propose une posture de départ douce, sans enchaînement de style imposé.",
       curriculumPhaseKey: "decouverte",
       difficulty: "decouverte",
       plannedDurationMinutes: 8,
@@ -92,9 +92,9 @@ export const localCurriculum: Curriculum = {
         {
           id: "step-dec-corps",
           kind: "corps",
-          title: "Corps de séance — pratique douce",
+          title: "Corps de séance — posture de départ",
           summary:
-            "Pratique courte et générique (structure curriculum). Les gestes de style seront ajoutés ultérieurement ; aucun mouvement inventé n’est présenté comme leçon officielle.",
+            "Pratiquez brièvement la posture de départ : pieds confortables au sol, poids réparti, épaules et bras relâchés. Cherchez le confort et la stabilité, sans performance.",
           sortOrder: 3,
           /** Optionnel Découverte — posture de départ (curriculum §27). */
           movementIds: ["MV-001"],
@@ -112,7 +112,7 @@ export const localCurriculum: Curriculum = {
           kind: "cloture",
           title: "Clôture",
           summary:
-            "Fin claire de la séance. La reprise et la prochaine étape arriveront dans un ticket ultérieur.",
+            "Fin claire de la séance. Vous pourrez reprendre quand vous le souhaitez, à votre rythme.",
           sortOrder: 5,
         },
       ],
@@ -129,7 +129,7 @@ export const localCurriculum: Curriculum = {
       shortDescription:
         "Installer le cycle calme d’une séance guidée courte (phase Initiation).",
       description:
-        "Séance structurelle de phase Initiation (niveau Débutant). Elle pose le rituel : préparation, entrée, corps de séance, retour et clôture. Le contenu gestuel détaillé du style retenu n’est pas encore figé dans le Design Freeze ; cette fiche décrit uniquement la structure pédagogique validée.",
+        "Séance débutant pour installer le rituel d’une pratique guidée : préparation, entrée, corps de séance, retour et clôture. Le corps de séance relie la posture de départ et le transfert de poids latéral, dans le calme.",
       curriculumPhaseKey: "initiation",
       difficulty: "debutant",
       plannedDurationMinutes: 12,
@@ -157,15 +157,15 @@ export const localCurriculum: Curriculum = {
           kind: "entree",
           title: "Entrée — respiration simple",
           summary:
-            "Recentrage léger. Les exercices de respiration dédiés (F-014) seront enrichis plus tard.",
+            "Recentrage léger. Quelques souffles naturels pour vous poser, sans imposer de rythme.",
           sortOrder: 2,
         },
         {
           id: "step-init-corps",
           kind: "corps",
-          title: "Corps de séance — bases à venir",
+          title: "Corps de séance — bases gestuelles",
           summary:
-            "Espace réservé aux gestes fondateurs du style retenu. Contenu placeholder structurel — pas de catalogue de mouvements inventé.",
+            "Enchaînez calmement la posture de départ puis le transfert de poids latéral. Gardez les pieds au sol, avancez lentement, et arrêtez-vous avant toute sensation d’instabilité.",
           sortOrder: 3,
           /** Initiation — MV-001 puis MV-002 (curriculum §27). */
           movementIds: ["MV-001", "MV-002"],
@@ -199,7 +199,7 @@ export const localCurriculum: Curriculum = {
       shortDescription:
         "Début de Progression : relier des éléments déjà connus, sans surcharge.",
       description:
-        "Séance structurelle de début de phase Progression. Elle conserve une durée réaliste et introduit une étape de liaison légère entre les moments de pratique. Les micro-enchaînements concrets dépendront du contenu pédagogique ultérieur ; aucun enchaînement de style n’est inventé ici.",
+        "Séance de progression pour relier des éléments déjà connus, sans surcharge. Une durée réaliste, une liaison légère entre le transfert de poids latéral et le pas avant contrôlé, puis un retour au calme.",
       curriculumPhaseKey: "progression",
       difficulty: "progression",
       plannedDurationMinutes: 15,
@@ -233,7 +233,7 @@ export const localCurriculum: Curriculum = {
           kind: "corps",
           title: "Corps de séance",
           summary:
-            "Pratique structurée à enrichir. Placeholder curriculum — pas de mouvements inventés.",
+            "Revenez brièvement aux appuis et au transfert de poids, sans chercher un nouveau geste. Gardez un rythme lent et une sensation de stabilité.",
           sortOrder: 3,
         },
         {
@@ -241,7 +241,7 @@ export const localCurriculum: Curriculum = {
           kind: "liaison",
           title: "Liaison légère",
           summary:
-            "Transition courte entre deux moments déjà connus, sans complexifier inutilement.",
+            "Reliez calmement le transfert de poids latéral et le pas avant contrôlé : petit pas maîtrisé, pause possible entre les phases, sans précipitation.",
           sortOrder: 4,
           /** Progression — liaison MV-002 / MV-003 (curriculum §27). */
           movementIds: ["MV-002", "MV-003"],
@@ -258,7 +258,8 @@ export const localCurriculum: Curriculum = {
           id: "step-prog-cloture",
           kind: "cloture",
           title: "Clôture",
-          summary: "Fin de séance. La reprise guidée (F-032) reste hors périmètre.",
+          summary:
+            "Fin de séance. Vous pourrez la reprendre depuis l’accueil quand vous le souhaiterez.",
           sortOrder: 6,
         },
       ],

@@ -294,6 +294,11 @@
     left: 0.75rem;
     top: 0.75rem;
     z-index: var(--z-max);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem; /* ≥ 44px — BUG-003 */
+    min-width: 2.75rem;
     transform: translateY(-200%);
     padding: 0.65rem 1rem;
     border-radius: var(--radius-md, 0.5rem);

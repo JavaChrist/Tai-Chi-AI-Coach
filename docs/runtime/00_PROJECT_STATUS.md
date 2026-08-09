@@ -8,7 +8,7 @@
 | Fichier | `docs/runtime/00_PROJECT_STATUS.md` |
 | Version du registre | 1.0 |
 | Statut | **ACTIF** |
-| Dernière mise à jour | 9 août 2026 — MVP-017 Fermé ; Offline/PWA Livré ; MVP-012 MEDIA BLOCKED |
+| Dernière mise à jour | 9 août 2026 — MVP-018 fix round ; READY FOR GATE 9/10 ; 0 bug ouvert |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 | Type | Runtime Register — tableau de bord officiel |
 
@@ -22,9 +22,9 @@
 | Nom | Tai-Chi AI Coach |
 | Dossier | `Tai-Chi-AI-Coach` |
 | Version produit livrée | Aucune (aucune release publiée) |
-| Phase | Développement MVP — MVP-017 Fermé ; Offline/PWA Livré ; MVP-012 MEDIA BLOCKED |
-| Statut global | Conception close ; Runtime 20/20 ; **MVP-009** / **MVP-010** / **MVP-011** / **MVP-013** / **MVP-014** / **MVP-015** / **MVP-016** / **MVP-017 fermés** ; **MVP-012** ouvert (MEDIA BLOCKED) ; Offline/PWA **Livré** ; **F-001** / **F-002** / **F-003** / **F-004** / **F-005** / **F-007** / **F-008** / **F-009** / **F-010** / **F-013** / **F-014** / **F-015** / **F-016** / **F-028** / **F-029** / **F-031** / **F-032** / **F-033** **Livré** ; **F-006** En test ; auth/sync hors MVP (V1) |
-| Dernière mise à jour globale | 7 août 2026 |
+| Phase | Développement MVP — MVP-018 **READY FOR GATE 9/10** ; Offline/PWA Livré ; MVP-012 MEDIA BLOCKED |
+| Statut global | **MVP-018** ouvert — GATES 1→8 **PASS** ; BUG-001/002/003 **résolus** ; **RELEASE PUBLICATION BLOCKED** (GATE 9+10) ; MVP-012 MEDIA BLOCKED ; F-006 En test ; Vitest 191/191 |
+| Dernière mise à jour globale | 9 août 2026 |
 | Responsable documentaire | Projet Tai-Chi-AI-Coach |
 
 ## 3. État général
@@ -33,9 +33,9 @@
 | --- | --- | --- |
 | Design Freeze | **Terminé** | `docs/25_DESIGN_FREEZE.md` VALIDÉ ; D-213…D-222 |
 | Runtime | **Terminé** (infrastructure) | `README` VALIDÉ ; **20/20** registres `00`–`19` **ACTIFS** |
-| Développement | **En cours** | **MVP-017 Fermé** (Offline/PWA Livré ; CH-021) ; **MVP-012** MEDIA BLOCKED ; prochain planifié MVP-018 (non ouvert ; incl. iPhone/Safari manuel) ; TD-001 **fermée** |
-| Tests | **En cours** | Vitest OK ; pas de campagne produit E2E complète |
-| Release | **Non commencé** | 0 Release (`19`) ; déploiement absent (`10`) |
+| Développement | **En cours** | **MVP-018 READY FOR GATE 9/10** ; **MVP-012** MEDIA BLOCKED ; TD-001 fermée |
+| Tests | **En cours** | Vitest **191/191** ; GATES 1→8 PASS post-fix |
+| Release | **BLOCKED (publication)** | GATE 9 + GATE 10 BLOCKED ; 0 P0/P1 ; 0 Release |
 
 ## 4. Vue d’ensemble Runtime
 
@@ -59,10 +59,10 @@
 
 | Indicateur | Valeur réelle |
 | --- | --- |
-| Tickets ouverts | **1** (**MVP-012** — MEDIA BLOCKED / REFERENCE MOTION BLOCKED) |
+| Tickets ouverts | **2** (**MVP-012** MEDIA BLOCKED ; **MVP-018** READY FOR GATE 9/10) |
 | Tickets terminés | **18** (MVP-001 … MVP-008, MVP-008A, MVP-008B, MVP-009, MVP-010, MVP-011, MVP-013, MVP-014, MVP-015, MVP-016, MVP-017) |
-| Tickets bloqués | 0 |
-| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero + pratique + prudence + découverte + parcours débutant + progression + prefs + onboarding + **SW App Update socle** (`web/`) |
+| Tickets bloqués | 0 (MVP-012 = MEDIA BLOCKED, pas un bug applicatif) |
+| Modules applicatifs commencés | App Shell + DS 12A + curriculum + assets + Hero + pratique + prudence + découverte + parcours débutant + progression + prefs + onboarding + **SW Offline/PWA** (`web/`) |
 
 Prérequis Runtime (D-022 / D-215) : **satisfait**.
 
@@ -80,8 +80,8 @@ Détail : `02_FEATURE_STATUS.md`.
 
 | Indicateur | Valeur |
 | --- | --- |
-| Décisions Runtime (`14`) | **0** |
-| Détail | `14_DECISIONS_RUNTIME.md` ACTIF — aucune entrée |
+| Décisions Runtime (`14`) | **1** (`RD-001` — PO-R1→R7) |
+| Détail | `14_DECISIONS_RUNTIME.md` ACTIF — RD-001 Appliquée |
 
 Les décisions de conception (`DECISIONS.md`, D-001…D-222) ne sont pas des décisions Runtime.
 
@@ -99,7 +99,11 @@ Constats de pilotage (hors `15` tant que non ticketés) : écart nomenclature `9
 
 ## 10. Blocages
 
-Aucun blocage connu.
+| Blocage | Nature | Impact |
+| --- | --- | --- |
+| MVP-012 / F-006 | MEDIA BLOCKED / REFERENCE MOTION BLOCKED (0 MP4) | GATE 10 **BLOCKED** |
+| iPhone/Safari | Non testé | GATE 9 **BLOCKED** |
+| Release publication | GATE 9 + GATE 10 | **RELEASE PUBLICATION BLOCKED** |
 
 *(Le blocage « Runtime incomplet » est **levé** : 20/20 registres créés.)*
 
@@ -108,7 +112,7 @@ Aucun blocage connu.
 | Synthèse | Valeur |
 | --- | --- |
 | Dette technique applicative constatée | **0** (`12_TECH_DEBT` — TD-001 fermée MVP-016) |
-| Bugs ouverts | **0** (`13_BUGS`) |
+| Bugs ouverts | **0** (`13_BUGS` — BUG-001/002/003 résolus) |
 | Dette documentaire runtime | Écart nomenclature `98` vs `runtime/README` (non bloquant) |
 
 Détail : `12_TECH_DEBT.md`.
@@ -182,10 +186,9 @@ Détail : `12_TECH_DEBT.md`.
 
 ## 15. Prochaines étapes (réelles, non estimées)
 
-1. **MVP-012** — rester ouvert / MEDIA BLOCKED / REFERENCE MOTION BLOCKED jusqu’à sources de mouvement fiables + MP4 validés.
-2. Ouvrir **MVP-018** (Recette / gates / publiabilité) selon convention — **non ouvert** à cette clôture ; y inclure validation iPhone/Safari manuelle.
-3. Appliquer Impact Analysis + cycle Ticket → Dev → Tests → Validation → MAJ Runtime → Commit.
-4. **Ne pas** ouvrir auth / sync / IA / CV / Mei / packs `F-026` dans cette étape.
+1. Déployer staging HTTPS (PO-R6) → **GATE 9** iPhone réel (PO-R5).
+2. **GATE 10** via MVP-012 (3 MP4 validés) — MEDIA BLOCKED inchangé tant que non satisfait.
+3. Go seulement si GATES 1→10 PASS + 0 P0/P1 (PO-R7).
 
 ## 16. Historique du registre
 
@@ -243,6 +246,10 @@ Détail : `12_TECH_DEBT.md`.
 | 9 août 2026 | **MVP-017 ouvert** (cadrage Offline/PWA cache cœur) ; gate DESIGN DECISION REQUIRED (PO-A…D) ; aucun code ; MVP-012 MEDIA BLOCKED ; MVP-018 non ouvert. |
 | 9 août 2026 | **MVP-017 Livré (code)** ; PO-A…D validées ; SW cache cœur + `/hors-ligne` ; budget ≈ 3,4 Mo ; Offline En test ; attente PO ; MVP-012 MEDIA BLOCKED ; MVP-018 non ouvert. |
 | 9 août 2026 | **MVP-017 fermé** (validation PO) ; Offline/PWA → **Livré** ; CH-021 ; precache ≈ 4,16 Mo / 79 entrées ; iPhone/Safari → MVP-018 ; MVP-012 MEDIA BLOCKED ; MVP-018 non ouvert. |
+| 9 août 2026 | **MVP-018 ouvert** (AUDIT + PLAN DE RECETTE) ; ticket `MVP-018_RELEASE_READINESS.md` ; aucun code ; gates 1→10 cadrés ; F-006 décision PO ; MVP-012 MEDIA BLOCKED **conservé**. |
+| 9 août 2026 | **MVP-018** — PO-R1→R7 / **RD-001** ; gate **READY FOR FINAL QA** ; **RELEASE PUBLICATION BLOCKED** (GATE 9 + GATE 10) ; campagne 1→10 procédurée ; GATES 1→8 READY ; aucun code. |
+| 9 août 2026 | **MVP-018 campagne GATES 1→8** ; PASS 1/2/4/5/7 ; FAIL 3/6/8 ; BUG-001/002/003 ; décision **BLOCKED BY P0/P1** ; aucun fix. |
+| 9 août 2026 | **MVP-018 fix round** BUG-001/002/003 résolus ; GATES 1→8 PASS ; **READY FOR GATE 9/10** ; Vitest 191/191 ; aucun commit. |
 
 ## 17. Diagrammes
 
@@ -253,8 +260,8 @@ flowchart LR
   DF[Design Freeze Terminé]
   RT[Runtime Complet]
   DEV[Développement En cours]
-  TEST[Tests Non commencé]
-  REL[Release Non commencé]
+  TEST[Tests En cours]
+  REL[Release En audit]
   DF --> RT
   RT --> DEV
   DEV --> TEST
@@ -343,7 +350,7 @@ Jamais anticiper un avancement non réalisé.
 | --- | --- |
 | Version | 1.0 |
 | Statut | ACTIF |
-| Prochain jalon | MVP-018 (planifié, non ouvert) ; MVP-012 reste MEDIA BLOCKED |
+| Prochain jalon | GATE 9 iPhone/HTTPS ; GATE 10 via MVP-012 |
 | Fin officielle | Oui |
 
 *Fin officielle du document.*
