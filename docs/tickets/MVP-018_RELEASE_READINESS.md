@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Ouvert** — Fix round P1/P3 revalidé — **READY FOR GATE 9/10**
+> Statut : **Ouvert** — Fix round P1/P3 revalidé — **READY FOR GATE 9/10** (commit `34549c4`)
 > Phase : MVP — Recette finale / gates / publiabilité
 > Release publication : **BLOCKED** (GATE 9 + GATE 10 uniquement)
 > Emplacement : `docs/tickets/MVP-018_RELEASE_READINESS.md`
@@ -630,7 +630,7 @@ MVP-012 **reste ouvert** / MEDIA BLOCKED / REFERENCE MOTION BLOCKED.
 | 9 août 2026 | Ouverture — AUDIT + PLAN DE RECETTE ; gate DESIGN/PRODUCT DECISION REQUIRED (F-006) |
 | 9 août 2026 | PO-R1→R7 enregistrées ; **READY FOR FINAL QA** ; **RELEASE PUBLICATION BLOCKED** (GATE 9 + GATE 10) ; campagne 1→10 procédurée ; aucun code |
 | 9 août 2026 | Campagne GATES 1→8 exécutée ; PASS 1/2/4/5/7 ; FAIL 3/6/8 ; BUG-001…003 ; **BLOCKED BY P0/P1** |
-| 9 août 2026 | Fix round BUG-001/002/003 ; Vitest **191/191** ; gates 1→8 **PASS** ; décision **READY FOR GATE 9/10** ; aucun commit |
+| 9 août 2026 | Fix round BUG-001/002/003 ; Vitest **191/191** ; gates 1→8 **PASS** ; décision **READY FOR GATE 9/10** ; commit `34549c4` |
 
 ### Preuves fix round (commandes)
 

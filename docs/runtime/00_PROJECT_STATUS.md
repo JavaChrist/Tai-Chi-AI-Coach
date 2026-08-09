@@ -249,7 +249,7 @@ Détail : `12_TECH_DEBT.md`.
 | 9 août 2026 | **MVP-018 ouvert** (AUDIT + PLAN DE RECETTE) ; ticket `MVP-018_RELEASE_READINESS.md` ; aucun code ; gates 1→10 cadrés ; F-006 décision PO ; MVP-012 MEDIA BLOCKED **conservé**. |
 | 9 août 2026 | **MVP-018** — PO-R1→R7 / **RD-001** ; gate **READY FOR FINAL QA** ; **RELEASE PUBLICATION BLOCKED** (GATE 9 + GATE 10) ; campagne 1→10 procédurée ; GATES 1→8 READY ; aucun code. |
 | 9 août 2026 | **MVP-018 campagne GATES 1→8** ; PASS 1/2/4/5/7 ; FAIL 3/6/8 ; BUG-001/002/003 ; décision **BLOCKED BY P0/P1** ; aucun fix. |
-| 9 août 2026 | **MVP-018 fix round** BUG-001/002/003 résolus ; GATES 1→8 PASS ; **READY FOR GATE 9/10** ; Vitest 191/191 ; aucun commit. |
+| 9 août 2026 | **MVP-018 fix round** BUG-001/002/003 résolus ; GATES 1→8 PASS ; **READY FOR GATE 9/10** ; Vitest 191/191 ; commit `34549c4`. |
 
 ## 17. Diagrammes
 
