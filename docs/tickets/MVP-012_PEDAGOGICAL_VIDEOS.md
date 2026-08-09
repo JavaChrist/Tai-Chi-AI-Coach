@@ -2,7 +2,7 @@
 
 > Tai-Chi AI Coach
 > Version : 1.0
-> Statut : **Livré (code)** / **MEDIA BLOCKED** / **REFERENCE MOTION BLOCKED** (ouvert — non fermé ; infra F-006 ; **0** MP4 ; MotionReferenceSpec **DRAFT** MV-001…003 ; aucune production vidéo)
+> Statut : **Livré (code)** / **MEDIA BLOCKED** (ouvert — non fermé ; infra F-006 ; **0** MP4 ; MotionReferenceSpec MV-001/002/003 **APPROVED** `1.0.0` ; REFERENCE MOTION BLOCKED **levé** ; aucune production vidéo)
 > Phase : MVP
 > Emplacement : `docs/tickets/MVP-012_PEDAGOGICAL_VIDEOS.md`
 > Dépend de :
@@ -26,8 +26,8 @@ Cadrer puis livrer (développement **ultérieur**, hors de cette ouverture) :
 
 But produit : permettre à l’utilisateur de **voir** un geste pour l’imiter prudemment, en complément du texte F-005 et de l’image F-007, sans analyse caméra et sans dépendance runtime à Virtual Humans Studio.
 
-**Phase actuelle : code livré (infra) + contrat MotionReferenceSpec DRAFT (§8).**
-Player + `mediaKeyVideo` + mapping séances ; **aucune** vidéo générée ; aucun provider IA ; aucun appel Virtual Humans ; GATE 10 **BLOCKED**.
+**Phase actuelle : code livré (infra) + MotionReferenceSpec MV-001/002/003 APPROVED `1.0.0` (§8) — MEDIA BLOCKED (0 MP4).**
+Player + `mediaKeyVideo` + mapping séances ; **aucune** vidéo générée ; aucun provider IA ; aucun appel Virtual Humans ; GATE 10 **BLOCKED** ; F-006 **non Livré**.
 
 ---
 
@@ -173,11 +173,11 @@ Un générateur vidéo **ne doit pas inventer librement** un geste de Tai Chi en
 
 # 5. Inventaire références dynamiques (état réel dépôt)
 
-| Mouvement | Texte F-005 | Image F-007 | Séquence positions | Vidéo humaine ref. | Mocap | Pose / squelette | Ref. externe approuvée | Ref. dynamique |
+| Mouvement | Texte F-005 | Image F-007 | MotionReferenceSpec | Vidéo humaine embarquée | Mocap | Pose / squelette | Ref. pédagogique externe | MP4 Mei |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| MV-001 | Oui (`08` §27.2) | Oui (WebP) | Texte ordonné seulement | **Non** | **Non** | **Non** | **Non** dans le dépôt | **Absente** |
-| MV-002 | Oui (`08` §27.3) | Oui | Texte ordonné seulement | **Non** | **Non** | **Non** | **Non** | **Absente** |
-| MV-003 | Oui (`08` §27.4) | Oui | Texte ordonné seulement | **Non** | **Non** | **Non** | **Non** | **Absente** |
+| MV-001 | Oui (`08` §27.2) | Oui (WebP) | **APPROVED** `1.0.0` | **Non** | **Non** | **Non** | **APPROVED** (Dr Lam / TCHI — non embarquée) | **MISSING** |
+| MV-002 | Oui (`08` §27.3) | Oui | **APPROVED** `1.0.0` | **Non** | **Non** | **Non** | **APPROVED** (Dr Lam / TCHI — non embarquée) | **MISSING** |
+| MV-003 | Oui (`08` §27.4) | Oui | **APPROVED** `1.0.0` | **Non** | **Non** | **Non** | **APPROVED** (Dr Lam / TCHI — non embarquée) | **MISSING** |
 
 Référence personnage / tenue (hors F-006) :
 
@@ -273,11 +273,11 @@ Ce chapitre est la **source de vérité Tai-Chi du mouvement attendu** pour cont
 | Ce contrat ne décrit pas | Comment le média sera généré |
 | Texte app F-005 (`08` §27 / `local-movements`) | **Inchangé** par ce chapitre |
 | Production média pendant rédaction | **Interdite** |
-| REFERENCE MOTION dynamique approuvée | **ABSENTE** |
-| MEDIA PRODUCTION READINESS | **BLOCKED** |
+| REFERENCE MOTION (specs MV-001…003) | **APPROVED** — `REFERENCE MOTION BLOCKED` **levé** |
+| MEDIA PRODUCTION READINESS | **MEDIA BLOCKED** (0 MP4 Mei validés) |
 | GATE 10 | **BLOCKED** |
 
-Les briefs §8.1–§8.3 (9 août 2026) restent la base caméra/Mei/durée ; ils sont **évolués** ici en contrats `MotionReferenceSpec` **DRAFT**.
+Les briefs §8.1–§8.3 (9 août 2026) restent la base caméra/Mei/durée ; évolués en contrats `MotionReferenceSpec` **APPROVED** `1.0.0` (MV-001/002/003).
 
 ---
 
@@ -356,20 +356,21 @@ Le contrat peut exprimer, **sans inventer d’angles numériques** :
 | Source de vérité mains/bras | `MotionReferenceSpec.phases[].armsHands` du mouvement concerné |
 | Improvisation générateur | **Interdite** |
 | Posture fondamentale (MV-001) | Distincte de la **configuration pédagogique** d’isolement bas du corps |
-| Mains derrière le dos | **Non** attribuées à MV-001 par défaut ; candidate pour MV-002 / MV-003 si l’exercice isole le bas du corps |
+| Mains derrière le dos | **Non** pour MV-001 ; **APPROVED** config pédagogique MV-002 (§8.2) et MV-003 (§8.3) |
 
-### 8.0.5 Référence pédagogique externe (candidate)
+### 8.0.5 Référence pédagogique externe
 
 | Champ | Valeur |
 | --- | --- |
-| Statut | **CANDIDATE** — analyse pédagogique uniquement |
 | Source | Démonstration étudiée — **Dr Paul Lam / Tai Chi for Health Institute** |
-| Rôle | Analyser posture, base, poids, pieds, genou/pied, bassin, buste, épaules, bras, mains, timing, phases |
+| Rôle | Référence pédagogique et biomécanique (posture, base, poids, pieds, genou/pied, bassin, buste, épaules, bras, mains, timing, phases) |
 | Fichier vidéo dans le dépôt | **Aucun** — ne pas embarquer |
 | Asset Tai-Chi | **Non** — ne pas déclarer comme média produit |
 | Copie audiovisuelle | **Interdite** |
-| sourceType associé | `external_pedagogical_candidate` |
-| Levée REFERENCE MOTION BLOCKED | **Non** — nécessite validation explicite d’une référence **dynamique** approuvée |
+| Statut pour **MV-001** | **APPROVED PEDAGOGICAL REFERENCE** (PO — 9 août 2026) |
+| Statut pour **MV-002** | **APPROVED PEDAGOGICAL REFERENCE** (PO — 9 août 2026) — config mains validée visuellement |
+| Statut pour **MV-003** | **APPROVED PEDAGOGICAL REFERENCE** (PO — 9 août 2026) — phases validées humainement |
+| Levée globale REFERENCE MOTION BLOCKED | **Oui** — MV-001/002/003 APPROVED ; reste **MEDIA BLOCKED** (0 MP4) |
 
 Domaines d’analyse (checklist) : posture · transfert du poids · placement des pieds · relation genou/pied · bassin · buste · épaules · bras · mains · timing · phases du mouvement.
 
@@ -399,63 +400,89 @@ Appliquées par mouvement ; validation finale toujours humaine.
 | Développement CV / landmarks runtime / caméra / comparaison utilisateur | **Hors MVP — interdit ici** |
 | Impact actuel | Documentaire uniquement |
 
-### 8.0.8 Readiness globale (inchangée)
+### 8.0.8 Readiness globale
 
 | Item | Statut |
 | --- | --- |
-| MotionReferenceSpec MV-001…003 | **DRAFT** |
-| REFERENCE MOTION (dynamique approuvée) | **ABSENTE** → **REFERENCE MOTION BLOCKED** |
-| MP4 validés | **0** → **MEDIA BLOCKED** |
+| MotionReferenceSpec MV-001 | **APPROVED** `1.0.0` — MOTION REFERENCE APPROVED ; MEDIA = MISSING |
+| MotionReferenceSpec MV-002 | **APPROVED** `1.0.0` — MOTION REFERENCE APPROVED ; MEDIA = MISSING |
+| MotionReferenceSpec MV-003 | **APPROVED** `1.0.0` — MOTION REFERENCE APPROVED ; MEDIA = MISSING |
+| REFERENCE MOTION BLOCKED | **Levé** (3 specs APPROVED) |
+| MVP-012 | **MEDIA BLOCKED** (0 MP4 Mei) |
 | GATE 10 | **BLOCKED** |
+| F-006 | **En test** — **non Livré** |
 
 ---
 
 ## 8.1 MV-001 — Posture de départ
 
-**Brief production PO** (caméra / Mei / durée) conservé.
-**MotionReferenceSpec** : **DRAFT** `0.1.0-draft`.
+**Décision PO — 9 août 2026 :** première `MotionReferenceSpec` **APPROVED**.
 Aligné `08` §27.2 pour le sens pédagogique ; **ne remplace pas** le texte F-005.
-
-### Distinction fondamentale vs configuration pédagogique
-
-| Concept | Appartenance MV-001 |
-| --- | --- |
-| Posture fondamentale stable / détendue / confortable | **Oui** — cœur de MV-001 |
-| Installation progressive (pieds → genoux → épaules → maintien) | **Oui** |
-| Mains placées derrière le dos (isolement bas du corps) | **Non** — appartient à la **configuration pédagogique** des exercices de transfert / pas (voir MV-002 / MV-003), pas à la posture de départ |
 
 ### En-tête MotionReferenceSpec
 
 | Champ | Valeur |
 | --- | --- |
 | `movementId` | `MV-001` |
-| `version` | `0.1.0-draft` |
-| `referenceStatus` | **DRAFT** |
-| `sourceType` | `curriculum_official` + analyse `external_pedagogical_candidate` |
-| `sourceReference` | `08` §27.2 ; Dr Paul Lam / TCHI (candidate — non embarquée) |
+| `version` | `1.0.0` |
+| `referenceStatus` | **APPROVED** |
+| Statut readiness | **MOTION REFERENCE APPROVED** · **MEDIA = MISSING** |
+| `sourceType` | `curriculum_official` + `approved_pedagogical_reference` |
+| `sourceReference` | Dr Paul Lam / Tai Chi for Health Institute — **APPROVED PEDAGOGICAL REFERENCE** (non embarquée, non asset, non copiée) |
 | `cameraView` | `face` — plein pied, fixe, sans zoom / travelling / coupe |
 | `durationTarget` | 20–30 s |
 | Fichier cible (futur) | `/video/movements/movement-posture-de-depart-demo.mp4` |
-| `humanValidationRequired` | **true** |
-| Readiness production | **BLOCKED** |
+| `humanValidationRequired` | **true** (même spec APPROVED → vidéo Mei future validée humainement) |
 
-### Position mains / bras (requise)
+### Objectif validé
+
+Adopter une posture initiale **stable, naturelle et détendue** avant tout transfert de poids ou déplacement.
+
+### Zones corporelles validées
+
+| Zone | Attendu |
+| --- | --- |
+| Pieds | Environ largeur d’épaules ; stables ; posés au sol ; position confortable |
+| Poids | Approximativement **50 / 50** ; aucun transfert latéral ; aucune jambe porteuse dominante |
+| Genoux | Légèrement fléchis / souples ; non verrouillés ; position naturelle — **aucun angle numérique** |
+| Bassin | Stable ; naturel ; aucune rotation volontaire ; aucun transfert important |
+| Buste / colonne | Vertical ; naturel ; sans rigidité ; aucune inclinaison volontaire |
+| Épaules | Relâchées ; sans élévation volontaire |
+| Tête / regard | Tête dans l’axe ; regard naturel devant soi ; aucune posture forcée |
+
+### Bras / mains (choix pédagogique Tai-Chi AI Coach)
 
 | Règle | Valeur |
 | --- | --- |
-| Position | Mains **ouvertes**, détendues, le long du corps ou légèrement devant les cuisses — posture fondamentale |
-| Derrière le dos | **Interdit** pour MV-001 |
-| Improvisation / mudra / garde martiale | **Interdit** |
+| Position pour vidéo Mei | Bras naturellement **le long du corps** ; mains détendues ; position **neutre** |
+| Nature | **Choix pédagogique** Tai-Chi AI Coach pour une démonstration neutre et lisible |
+| Dr Paul Lam | **Ne pas écrire** que la référence impose exclusivement cette variante |
+| Référence pédagogique | Accepte également d’autres placements préparatoires selon l’exercice |
+| Improvisation générateur / mudra / garde martiale / mains derrière le dos | **Interdit** pour cette démonstration MV-001 |
 
-### Phases
+### Distinction fondamentale vs configuration pédagogique
+
+| Concept | Appartenance MV-001 |
+| --- | --- |
+| Posture fondamentale stable / naturelle / détendue | **Oui** |
+| Installation progressive (5 phases) | **Oui** |
+| Mains derrière le dos (isolement bas du corps) | **Non** — config pédagogique MV-002/MV-003 **APPROVED** |
+
+### Phases (installation progressive)
+
+MV-001 s’arrête **avant** : transfert latéral · déplacement d’un pied · pas avant · mouvement martial · forme Tai Chi supplémentaire.
 
 | # | id | Objectif | Poids | Pieds | Genoux | Bassin | Buste | Épaules | Bras/mains | Transition | Interdit phase |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `mv001-p1-feet` | Stabiliser les appuis | Réparti ~50/50 | Entièrement au sol, écart confortable | Souples | Neutre | Vertical sans rigidité | Relâchées | Position requise MV-001 (ouvertes, le long du corps) | → genoux | Pas, transfert fort, mains derrière dos |
-| 2 | `mv001-p2-knees` | Relâchement léger genoux | Stable réparti | Inchangés | Micro-flexion, pas de squat | Neutre | Stable | Relâchées | Inchangée | → épaules | Position basse, genoux verrouillés |
-| 3 | `mv001-p3-shoulders-arms` | Relâcher ceinture scapulaire | Stable | Inchangés | Souples | Neutre | Stable | Descendre / relâcher | Confirmer mains ouvertes détendues | → stabilisation | Mouvement de bras ajouté |
-| 4 | `mv001-p4-settle` | Stabiliser la posture | Stable | Inchangés | Souples | Neutre | Vertical | Relâchées | Inchangée | → maintien | Rotation, improvisation forme |
-| 5 | `mv001-p5-hold` | Maintien calme quelques secondes | Stable | Inchangés | Souples | Neutre | Stable | Relâchées | Inchangée | Fin | Respiration spectaculaire, transfert |
+| 1 | `mv001-p1-feet` | Placement / stabilisation des pieds | ~50/50 | Largeur d’épaules env. ; au sol ; confortables | Souples | Neutre | Vertical naturel | Relâchées | Neutres le long du corps | → genoux | Pas, transfert, jambes croisées |
+| 2 | `mv001-p2-knees` | Assouplissement léger des genoux | ~50/50 | Stables | Légèrement fléchis ; non verrouillés | Neutre | Stable | Relâchées | Inchangée | → épaules/bras | Squat, angles numériques imposés |
+| 3 | `mv001-p3-shoulders-arms` | Relâchement épaules / bras | ~50/50 | Stables | Souples | Neutre | Stable | Relâchées sans élévation | Confirmer bras/mains neutres | → stabilisation | Mouvement de bras ajouté |
+| 4 | `mv001-p4-settle` | Stabilisation générale | ~50/50 | Stables | Souples | Stable / naturel | Vertical sans rigidité | Relâchées | Neutres | → maintien | Rotation, inclinaison, forme inventée |
+| 5 | `mv001-p5-hold` | Maintien calme | ~50/50 | Stables | Souples | Stable | Vertical naturel | Relâchées | Neutres | Fin | Transfert latéral, pas, martial |
+
+### Respiration
+
+Naturelle. Aucune cadence. Aucune rétention. Aucune synchronisation imposée.
 
 ### Checkpoints pertinents
 
@@ -465,32 +492,60 @@ Aligné `08` §27.2 pour le sens pédagogique ; **ne remplace pas** le texte F-0
 
 - `torso ↔ vertical stability`
 - `shoulders ↔ relaxation`
-- `hands ↔ required reference position` (ouvertes le long du corps — **pas** derrière le dos)
-- genou/pied : genoux souples au-dessus d’appuis stables (pas d’exigence de transfert)
+- `hands ↔ required reference position` (neutres le long du corps — choix pédagogique Tai-Chi AI Coach)
+- `WEIGHT_DISTRIBUTION` ≈ 50/50 sans jambe porteuse dominante
 
 ### Forbidden patterns (global MV-001)
 
-Posture martiale · mouvements de bras ajoutés · transfert de poids important · pas · rotation · squat / position basse · chorégraphie · mains derrière le dos · improvisation Tai Chi · mouvement / coupe caméra.
+Transfert latéral · déplacement d’un pied · pas avant · mouvement martial · forme Tai Chi supplémentaire · squat · rotation volontaire du bassin · élévation des épaules · improvisation bras · mouvement / coupe caméra.
 
-### QC MV-001
+### QC MV-001 APPROUVÉ
+
+PASS uniquement si :
+
+- [ ] identité Mei correcte
+- [ ] tenue Tai Chi ivoire officielle correcte
+- [ ] corps entier visible
+- [ ] pieds visibles
+- [ ] mains visibles
+- [ ] caméra fixe
+- [ ] pieds stables
+- [ ] poids approximativement équilibré
+- [ ] genoux souples
+- [ ] buste vertical naturel
+- [ ] épaules relâchées
+- [ ] bras/mains neutres
+- [ ] aucun transfert de poids important
+- [ ] aucun pas
+- [ ] aucun mouvement martial ajouté
+- [ ] posture finale stable et pédagogiquement lisible
 
 | Famille | Attendu |
 | --- | --- |
 | `motion_fidelity` | PASS |
 | `lower_body_fidelity` | PASS |
 | `upper_body_fidelity` | PASS |
-| `hand_position_fidelity` | PASS (ouvertes le long du corps) |
-| `weight_transfer_fidelity` | PASS (répartition stable, sans transfert latéral démonstratif) |
+| `hand_position_fidelity` | PASS (bras/mains neutres le long du corps) |
+| `weight_transfer_fidelity` | PASS (~50/50, sans transfert latéral) |
 | `camera_compliance` | PASS |
 | `identity_outfit_compliance` | PASS |
 | `pedagogical_readability` | PASS |
+| `humanValidationRequired` | **true** |
+
+### Statut MV-001
+
+| Champ | Valeur |
+| --- | --- |
+| MotionReferenceSpec | **APPROVED** `1.0.0` |
+| MOTION REFERENCE | **APPROVED** |
+| MEDIA | **MISSING** |
+| MP4 | **0** |
 
 ---
 
 ## 8.2 MV-002 — Transfert de poids latéral
 
-**Brief production PO** (caméra / Mei / durée) conservé.
-**MotionReferenceSpec** : **DRAFT** `0.1.0-draft`.
+**Décision PO — 9 août 2026 :** `MotionReferenceSpec` **APPROVED**.
 Aligné `08` §27.3 ; **ne remplace pas** le texte F-005.
 
 ### En-tête MotionReferenceSpec
@@ -498,79 +553,156 @@ Aligné `08` §27.3 ; **ne remplace pas** le texte F-005.
 | Champ | Valeur |
 | --- | --- |
 | `movementId` | `MV-002` |
-| `version` | `0.1.0-draft` |
-| `referenceStatus` | **DRAFT** |
-| `sourceType` | `curriculum_official` + `external_pedagogical_candidate` |
-| `sourceReference` | `08` §27.3 ; Dr Paul Lam / TCHI (candidate — non embarquée) |
+| `version` | `1.0.0` |
+| `referenceStatus` | **APPROVED** |
+| Statut readiness | **MOTION REFERENCE APPROVED** · **MEDIA = MISSING** |
+| `sourceType` | `curriculum_official` + `approved_pedagogical_reference` |
+| `sourceReference` | Dr Paul Lam / Tai Chi for Health Institute — **APPROVED PEDAGOGICAL REFERENCE** (non embarquée, non asset, non copiée) ; config mains validée visuellement PO |
 | `cameraView` | `face` — plein pied, fixe |
 | `durationTarget` | 25–40 s |
 | Fichier cible (futur) | `/video/movements/movement-transfert-poids-lateral-demo.mp4` |
 | `humanValidationRequired` | **true** |
-| Readiness production | **BLOCKED** |
 
-### Position mains / bras (requise — configuration pédagogique)
+### Position initiale validée
 
-Issue de l’analyse de la référence pédagogique candidate (isolement du travail du bas du corps) :
+- pieds stables ; deux pieds au sol ;
+- poids approximativement 50/50 ;
+- genoux souples ;
+- bassin stable ;
+- buste vertical naturel ;
+- épaules relâchées ;
+- mains selon configuration pédagogique validée (ci-dessous).
 
-| Règle | Valeur |
+### Configuration mains / bras VALIDÉE
+
+Configuration pédagogique **spécifique à cet exercice** — sert à neutraliser les bras et rendre le travail du bas du corps lisible.
+**Ne pas** la généraliser comme posture Tai Chi universelle.
+
+| Élément | Attendu |
 | --- | --- |
-| Position | Mains **placées derrière le dos** (configuration pédagogique d’observation du bas du corps) |
-| Maintien | Position **constante** pendant toutes les phases de transfert |
+| Mains | Derrière le corps ; paumes ouvertes posées contre le bas du dos ; une main de chaque côté de la colonne ; doigts orientés globalement vers le bas ; disposition approximativement symétrique |
+| Prises | Aucune prise entre les mains ; aucun poignet saisi ; doigts **non** entrelacés |
+| Coudes | Fléchis ; orientés naturellement vers l’extérieur |
+| Épaules | Relâchées ; non relevées |
+| Maintien | Position **constante** pendant toutes les phases |
 | Improvisation / balancement / mudra / garde | **Interdit** |
-| « Bras naturellement détendus » au sens vague | **Non applicable** — remplacé par cette position requise |
 
-### Relation genou / pied
+### Transfert validé
 
-| Relation | Attendu qualitatif |
+Mouvement **lent et contrôlé** :
+
+```text
+CENTRE (≈ 50/50)
+  → TRANSFERT A (progressif vers jambe porteuse A)
+  → LIMITE A (transfert complet ; pied opposé déchargé ; deux pieds au sol)
+  → RETOUR CENTRE (≈ 50/50)
+  → TRANSFERT B (même principe côté opposé)
+  → LIMITE B
+  → RETOUR CENTRE + STABILISATION
+```
+
+### Pieds
+
+Pendant MV-002 : aucun pas · aucun déplacement volontaire · deux pieds en contact avec le sol · orientation stable · pas de pivot ajouté.
+
+### Relation genou ↔ pied (qualitative)
+
+| Règle | Attendu |
 | --- | --- |
-| knee ↔ foot orientation | Genou de la jambe qui reçoit le poids reste orienté dans le sens du pied d’appui |
-| knee ↔ foot vertical alignment | Pas d’effondrement net du genou vers l’intérieur ; pas de projection agressive hors du pied |
-| supporting leg ↔ feet | Les **deux pieds restent entièrement au sol** pendant tout le clip |
-| pelvis ↔ weight transfer | Bassin accompagne le transfert sans bascule spectaculaire ni inclinaison latérale importante du buste |
+| Orientation | Le genou suit la direction générale du pied / orteils |
+| Interdit | Effondrement manifeste vers l’intérieur ; ouverture forcée vers l’extérieur ; dépassement volontaire excessif vers l’avant |
+| Pendant transfert | Alignement contrôlé |
+| Angles numériques | **Aucun** |
 
-Aucun angle numérique inventé.
+### Bassin / buste / tête
 
-### Phases
+| Zone | Attendu |
+| --- | --- |
+| Bassin | Accompagne le transfert sans mouvement brusque ; aucune rotation importante ajoutée |
+| Buste | Approximativement vertical ; **ne pas** obtenir le transfert en penchant le torse |
+| Tête | Dans l’axe |
+| Épaules | Relâchées |
+
+### Phases MV-002 APPROUVÉES (7)
 
 | # | id | Objectif | Poids | Pieds | Genoux | Bassin | Buste | Épaules | Bras/mains | Transition | Interdit phase |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `mv002-p1-init` | Position initiale stable | ~50/50 | Écart confortable, contact total | Souples | Neutre | Vertical | Relâchées | **Derrière le dos** | → transfert A | Pied levé, pas |
-| 2 | `mv002-p2-to-A` | Transfert lent vers jambe A | Progressive → A | Deux pieds au sol | Souples ; genou A aligné pied A | Suit le transfert | Vertical stable | Relâchées | Inchangées derrière dos | Stop avant instabilité | Bascule brusque, inclinaison forte |
-| 3 | `mv002-p3-limit-A` | Limite confortable côté A | Majoritaire A, sans instabilité | Deux pieds au sol | Souples | Contrôlé | Vertical | Relâchées | Inchangées | → retour centre | Aller jusqu’au déséquilibre |
-| 4 | `mv002-p4-center` | Retour progressif centre | → ~50/50 | Deux pieds au sol | Souples | Neutre | Vertical | Relâchées | Inchangées | → transfert B | Retour brutal |
-| 5 | `mv002-p5-to-B` | Transfert lent vers jambe B | Progressive → B | Deux pieds au sol | Souples ; genou B aligné pied B | Suit le transfert | Vertical | Relâchées | Inchangées | Stop avant instabilité | Pas latéral, croisement |
-| 6 | `mv002-p6-limit-B` | Limite confortable côté B | Majoritaire B | Deux pieds au sol | Souples | Contrôlé | Vertical | Relâchées | Inchangées | → centre final | Squat, rotation posture |
-| 7 | `mv002-p7-center-hold` | Retour centre + maintien bref | ~50/50 | Deux pieds au sol | Souples | Neutre | Vertical | Relâchées | Inchangées | Fin | Chorégraphie bras, forme inventée |
+| 1 | `mv002-p1-init` | Initialisation / centre | ≈ 50/50 | Stables, contact total | Souples | Stable | Vertical naturel | Relâchées | Config validée derrière dos | → transfert A | Pied levé, pas, bras actifs |
+| 2 | `mv002-p2-to-A` | Transfert A progressif | → jambe porteuse A | Deux pieds au sol, orientation stable | Souples ; genou suit pied A | Accompagne sans brusquerie | Vertical (pas de penché) | Relâchées | Inchangées | → limite A | Bascule, pivot, inclinaison |
+| 3 | `mv002-p3-limit-A` | Limite A — transfert complet contrôlé | Complet A ; pied B déchargé | Deux pieds au sol | Alignement contrôlé genou↔pied | Contrôlé | Vertical | Relâchées | Inchangées | → retour centre | Déséquilibre, pas, pied déplacé |
+| 4 | `mv002-p4-center` | Retour centre | → ≈ 50/50 | Deux pieds au sol | Souples | Stable | Vertical | Relâchées | Inchangées | → transfert B | Retour brutal |
+| 5 | `mv002-p5-to-B` | Transfert B progressif | → jambe porteuse B | Deux pieds au sol | Souples ; genou suit pied B | Accompagne | Vertical | Relâchées | Inchangées | → limite B | Pas latéral, croisement |
+| 6 | `mv002-p6-limit-B` | Limite B — transfert complet contrôlé | Complet B ; pied A déchargé | Deux pieds au sol | Alignement contrôlé | Contrôlé | Vertical | Relâchées | Inchangées | → centre final | Squat, rotation importante |
+| 7 | `mv002-p7-center-hold` | Retour centre + stabilisation | ≈ 50/50 | Deux pieds au sol | Souples | Stable | Vertical | Relâchées | Inchangées | Fin | Chorégraphie bras, forme inventée |
 
 ### Checkpoints pertinents
 
-`SHOULDERS` · `LEFT_HAND` · `RIGHT_HAND` · `TORSO` · `PELVIS` · `LEFT_HIP` · `RIGHT_HIP` · `LEFT_KNEE` · `RIGHT_KNEE` · `LEFT_FOOT` · `RIGHT_FOOT` · `WEIGHT_DISTRIBUTION`
+`SHOULDERS` · `LEFT_ELBOW` · `RIGHT_ELBOW` · `LEFT_HAND` · `RIGHT_HAND` · `TORSO` · `PELVIS` · `LEFT_HIP` · `RIGHT_HIP` · `LEFT_KNEE` · `RIGHT_KNEE` · `LEFT_FOOT` · `RIGHT_FOOT` · `WEIGHT_DISTRIBUTION`
+
+### Body relations
+
+- `hands ↔ required reference position` (config derrière dos validée)
+- `shoulders ↔ relaxation`
+- `knee ↔ foot orientation` / alignement contrôlé (sans angles numériques)
+- `pelvis ↔ weight transfer`
+- `torso ↔ vertical stability`
+- `supporting leg ↔ moving foot` (pied opposé déchargé à la limite, **sans** quitter le sol)
 
 ### Forbidden patterns (global MV-002)
 
-Pas latéral · pied levé · posture basse · balancement spectaculaire · bassin brusque · geste martial · bras inventés / quittant le dos · forme improvisée · mouvement caméra.
+Pas · pied déplacé / levé · pivot ajouté · posture basse · pencher le torse pour transférer · bassin brusque · rotation importante · bras quittant la config · prise / doigts entrelacés · posture martiale · forme Tai Chi improvisée · mouvement caméra.
 
-### QC MV-002
+### QC MV-002 APPROUVÉ
+
+PASS uniquement si notamment :
+
+- [ ] Mei correcte
+- [ ] tenue Tai Chi ivoire officielle
+- [ ] corps entier visible
+- [ ] pieds visibles
+- [ ] mains visibles suffisamment pour contrôler leur position
+- [ ] caméra fixe
+- [ ] mains derrière le dos selon configuration validée
+- [ ] épaules relâchées
+- [ ] aucun mouvement des bras ajouté
+- [ ] transfert gauche/droite lisible
+- [ ] transfert complet contrôlé
+- [ ] aucun pas
+- [ ] aucun pied déplacé
+- [ ] relation genou/pied cohérente
+- [ ] bassin contrôlé
+- [ ] buste stable
+- [ ] aucune posture martiale ajoutée
+- [ ] aucune forme Tai Chi improvisée
 
 | Famille | Attendu |
 | --- | --- |
 | `motion_fidelity` | PASS |
 | `lower_body_fidelity` | PASS |
 | `upper_body_fidelity` | PASS |
-| `hand_position_fidelity` | PASS (mains derrière le dos) |
+| `hand_position_fidelity` | PASS (config derrière dos validée) |
 | `weight_transfer_fidelity` | PASS |
 | `knee_foot_alignment` | PASS |
 | `camera_compliance` | PASS |
 | `identity_outfit_compliance` | PASS |
 | `pedagogical_readability` | PASS |
+| `humanValidationRequired` | **true** |
+
+### Statut MV-002
+
+| Champ | Valeur |
+| --- | --- |
+| MotionReferenceSpec | **APPROVED** `1.0.0` |
+| MOTION REFERENCE | **APPROVED** |
+| MEDIA | **MISSING** |
+| MP4 | **0** |
 
 ---
 
 ## 8.3 MV-003 — Pas avant contrôlé
 
-**Brief production PO** (caméra / Mei / durée / QC checklist) conservé.
-**MotionReferenceSpec** : **DRAFT** `0.1.0-draft`.
-Aligné `08` §27.4 ; **ne remplace pas** le texte F-005.
+**Décision PO — 9 août 2026 :** `MotionReferenceSpec` **APPROVED** (validation humaine des phases de référence).
+Aligné `08` §27.4 pour le sens pédagogique ; **ne remplace pas** le texte F-005.
 **Ne pas** transformer en marche normale.
 
 ### En-tête MotionReferenceSpec
@@ -578,91 +710,150 @@ Aligné `08` §27.4 ; **ne remplace pas** le texte F-005.
 | Champ | Valeur |
 | --- | --- |
 | `movementId` | `MV-003` |
-| `version` | `0.1.0-draft` |
-| `referenceStatus` | **DRAFT** |
-| `sourceType` | `curriculum_official` + `external_pedagogical_candidate` |
-| `sourceReference` | `08` §27.4 ; Dr Paul Lam / TCHI (candidate — non embarquée) |
+| `version` | `1.0.0` |
+| `referenceStatus` | **APPROVED** |
+| Statut readiness | **MOTION REFERENCE APPROVED** · **MEDIA = MISSING** |
+| `sourceType` | `curriculum_official` + `approved_pedagogical_reference` |
+| `sourceReference` | Dr Paul Lam / Tai Chi for Health Institute — **APPROVED PEDAGOGICAL REFERENCE** (non embarquée, non asset, non copiée) ; phases contrôlées humainement PO |
 | `cameraView` | `face_near_frontal` ; léger 3/4 seulement si pas illisible |
 | `durationTarget` | 30–45 s |
 | Fichier cible (futur) | `/video/movements/movement-pas-avant-controle-demo.mp4` |
 | `humanValidationRequired` | **true** |
-| REFERENCE MOTION | **ABSENTE** |
-| Readiness production | **BLOCKED** — génération interdite sur ce seul brief |
+| Retour position initiale | **Non requis** pour le geste pédagogique principal / vidéo MVP |
 
-### Position mains / bras (requise — configuration pédagogique)
+### Observations validées (PO)
 
-| Règle | Valeur |
+- transfert du poids **avant** déplacement du pied ;
+- jambe porteuse stabilisée ;
+- pied opposé réellement déchargé ;
+- pied mobile décollé avant déplacement ;
+- déplacement avant de petite amplitude ;
+- premier contact par le **talon** ; avant-pied encore relevé au premier contact ;
+- pose progressive du pied ;
+- transfert du poids seulement **après** le contact ;
+- stabilisation finale ;
+- buste approximativement vertical ;
+- mains derrière le dos ; haut du corps relativement stable.
+
+### Mains / bras (config pédagogique = MV-002 APPROVED)
+
+| Élément | Attendu |
 | --- | --- |
-| Position | Mains **placées derrière le dos** (même logique d’isolement bas du corps que MV-002, issue de la référence candidate) |
-| Maintien | Constante pendant préparation, pas et retour |
-| Improvisation / balancement des bras | **Interdit** |
+| Mains | Derrière le corps ; paumes ouvertes contre le bas du dos ; doigts globalement vers le bas ; aucune prise entre les mains |
+| Coudes | Fléchis |
+| Épaules | Relâchées |
+| Haut du corps | Volontairement stable pour rendre le travail des jambes lisible |
+| Improvisation / chorégraphie bras | **Interdit** |
 
-### Relation genou / pied
+### Jambe porteuse
 
-| Relation | Attendu qualitatif |
+Avant déplacement : transfert effectué vers la jambe porteuse ; stabilité obtenue ; le pied mobile doit pouvoir quitter le sol sans précipitation.
+**Interdit :** simuler une marche où le corps « tombe » vers l’avant pour provoquer le pas.
+
+### Pied mobile
+
+Déchargé avant déplacement · décollage contrôlé · trajectoire courte · déplacement près du sol · aucune projection · aucune accélération.
+
+### Contact avant
+
+| Moment | Attendu |
 | --- | --- |
-| supporting leg ↔ moving foot | Transfert sur jambe porteuse **avant** libération / déplacement du pied opposé |
-| heel ↔ stepping phase | Contact **talon** avant en premier ; transfert avant **après** la pose |
-| knee ↔ foot orientation | Genou de la jambe porteuse orienté avec le pied d’appui ; genou avant suit le pied avancé sans torsion forcée |
-| knee ↔ foot vertical alignment | Pas d’effondrement genou ; pas de grande fente |
-| torso ↔ vertical stability | Buste approximativement vertical pendant le pas |
-| pelvis ↔ weight transfer | Transfert avant progressif, contrôlé |
+| Premier contact | **TALON** au sol ; avant-pied encore relevé ; transfert avant **non** terminé |
+| Ensuite | Pose progressive du reste du pied · poids avance progressivement · stabilisation |
 
-Aucun angle numérique inventé.
+### Relation genou ↔ pied (qualitative)
 
-### Phases
+Genou suit la direction générale du pied · pas d’effondrement manifeste vers l’intérieur · pas d’ouverture forcée · progression contrôlée pendant la prise d’appui.
+**Aucun angle numérique.** Ne pas extrapoler davantage à partir des captures.
+
+### Bassin / buste / tête
+
+Bassin accompagne le transfert progressivement · pas de mouvement brusque · pas de rotation spectaculaire · buste approximativement vertical · **pas** de projection du torse vers l’avant pour créer le pas · tête dans l’axe · épaules relâchées.
+
+### Phases MV-003 APPROUVÉES (9)
+
+Le retour à la position initiale **n’est pas** une exigence du geste pédagogique principal ; **omis** de la future vidéo MVP (ne pas conserver artificiellement l’ancienne phase DRAFT `return`).
 
 | # | id | Objectif | Poids | Pieds | Genoux | Bassin | Buste | Épaules | Bras/mains | Transition | Interdit phase |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `mv003-p1-prep` | Préparation / stabilisation | ~50/50 | Stable, espace devant | Souples | Neutre | Vertical | Relâchées | **Derrière le dos** | → transfert porteuse | Marche, grand pas |
-| 2 | `mv003-p2-load` | Transfert sur jambe porteuse | → jambe porteuse | Porteuse chargée ; autre allégé | Souples | Contrôlé | Vertical | Relâchées | Inchangées | → libération pied | Avancer avant transfert |
-| 3 | `mv003-p3-release` | Pied opposé libéré | Porteuse dominante | Pied libre suffisamment léger | Souples | Stable | Vertical | Relâchées | Inchangées | → lever | Kick, projection |
-| 4 | `mv003-p4-lift` | Lever contrôlé | Porteuse | Pied libre décolle sans précipitation | Souples | Stable | Vertical | Relâchées | Inchangées | → petit pas | Pas rapide |
-| 5 | `mv003-p5-step` | Petit déplacement avant | Porteuse | Petite distance seulement | Souples | Stable | Vertical | Relâchées | Inchangées | → talon | Grande fente, marche |
-| 6 | `mv003-p6-heel` | Contact talon | Encore surtout porteuse | **Talon** avant posé doucement | Souples ; alignement genou/pied | Contrôlé | Vertical | Relâchées | Inchangées | → pause intermédiaire | Pose pleine plante d’abord |
-| 7 | `mv003-p7-mid` | Stabilisation intermédiaire | Transition prudente | Talon/contact avant établi | Souples | Contrôlé | Vertical | Relâchées | Inchangées | → transfert avant | Transfert brutal |
-| 8 | `mv003-p8-forward` | Transfert progressif avant | Partie du poids → avant | Appui avant augmente progressivement | Souples | Suit le transfert | Vertical | Relâchées | Inchangées | → maintien | Perte d’équilibre volontaire |
-| 9 | `mv003-p9-hold` | Maintien stable bref | Stable intermédiaire | Deux appuis contrôlés | Souples | Neutre/contrôlé | Vertical | Relâchées | Inchangées | → retour | Accélération équilibre |
-| 10 | `mv003-p10-return` | Retour position initiale | → répartition initiale | Retour calme | Souples | Contrôlé | Vertical | Relâchées | Inchangées | Fin | Forme Tai Chi ajoutée, rotation forte |
+| 1 | `mv003-p1-prep` | Préparation / position stable | Stable initiale | Stables ; espace devant | Souples | Stable | Vertical | Relâchées | Config MV-002 derrière dos | → charge porteuse | Marche, grand pas |
+| 2 | `mv003-p2-load` | Charge de la jambe porteuse | → jambe porteuse | Porteuse chargée | Souples | Contrôlé | Vertical | Relâchées | Inchangées | → décharge | Avancer avant charge |
+| 3 | `mv003-p3-unload` | Décharge du pied opposé | Porteuse dominante | Pied opposé réellement déchargé | Souples | Stable | Vertical | Relâchées | Inchangées | → décollage | Kick, projection |
+| 4 | `mv003-p4-lift` | Décollage contrôlé du pied mobile | Porteuse | Pied mobile décolle sans précipitation | Souples | Stable | Vertical | Relâchées | Inchangées | → petit pas | Accélération |
+| 5 | `mv003-p5-step` | Petit déplacement vers l’avant | Porteuse | Trajectoire courte, près du sol | Souples | Stable | Vertical | Relâchées | Inchangées | → talon | Grande enjambée, fente, marche |
+| 6 | `mv003-p6-heel` | Premier contact du **talon** | Encore surtout porteuse | Talon au sol ; **avant-pied encore relevé** | Alignement contrôlé | Contrôlé | Vertical | Relâchées | Inchangées | → pose progressive | Plante entière d’abord ; transfert avant terminé trop tôt |
+| 7 | `mv003-p7-place` | Pose progressive du reste du pied | Transition | Pied se pose progressivement | Progression contrôlée | Accompagne | Vertical | Relâchées | Inchangées | → transfert avant | Pose brutale |
+| 8 | `mv003-p8-forward` | Transfert progressif du poids vers l’avant | → avant (après contact) | Appui avant augmente | Suit le pied | Progressif | Vertical (pas de penché) | Relâchées | Inchangées | → stabilisation | Transfert avant contact ; chute vers l’avant |
+| 9 | `mv003-p9-hold` | Stabilisation dans la position avant | Stable avant | Appuis contrôlés | Souples | Stable | Vertical | Relâchées | Inchangées | Fin (pas de retour obligatoire) | Martial, forme inventée |
 
 ### Checkpoints pertinents
 
-`SHOULDERS` · `LEFT_HAND` · `RIGHT_HAND` · `TORSO` · `PELVIS` · `LEFT_HIP` · `RIGHT_HIP` · `LEFT_KNEE` · `RIGHT_KNEE` · `LEFT_ANKLE` · `RIGHT_ANKLE` · `LEFT_FOOT` · `RIGHT_FOOT` · `WEIGHT_DISTRIBUTION`
+`SHOULDERS` · `LEFT_ELBOW` · `RIGHT_ELBOW` · `LEFT_HAND` · `RIGHT_HAND` · `TORSO` · `PELVIS` · `LEFT_HIP` · `RIGHT_HIP` · `LEFT_KNEE` · `RIGHT_KNEE` · `LEFT_ANKLE` · `RIGHT_ANKLE` · `LEFT_FOOT` · `RIGHT_FOOT` · `WEIGHT_DISTRIBUTION`
+
+### Body relations
+
+- `supporting leg ↔ moving foot` (charge avant déplacement)
+- `heel ↔ stepping phase` (talon premier ; avant-pied relevé au contact)
+- `knee ↔ foot orientation` (qualitatif)
+- `pelvis ↔ weight transfer` (après contact)
+- `torso ↔ vertical stability`
+- `hands ↔ required reference position` (config MV-002)
+- `shoulders ↔ relaxation`
 
 ### Forbidden patterns (global MV-003)
 
-Grande fente · marche normale · grand pas · pas rapide · pied projeté · transfert brutal · perte d’équilibre volontaire · kick · posture martiale · chorégraphie bras · forme Tai Chi supplémentaire · improvisation · rotation importante · mouvement / coupe / changement cadrage caméra.
+Marche normale · grande enjambée · grande fente · pied projeté · transfert avant **avant** contact · perte d’équilibre pour avancer · kick · mouvement martial · chorégraphie des bras · mouvement de caméra · zoom · travelling · coupe masquant une transition incorrecte.
 
 ### Priorité de production
 
 Fidélité du mouvement **>** esthétique · fluidité cinématographique · créativité · dynamisme · expressivité.
 Le modèle ne doit **jamais** compléter avec une forme Tai Chi « connue ».
 
-### QC MV-003
+### QC MV-003 APPROUVÉ
+
+PASS uniquement si notamment :
+
+- [ ] Mei correcte
+- [ ] tenue Tai Chi ivoire officielle
+- [ ] corps entier visible
+- [ ] pieds visibles pendant toute la séquence
+- [ ] mains / configuration haut du corps conformes
+- [ ] caméra fixe
+- [ ] charge jambe porteuse lisible
+- [ ] pied opposé déchargé avant déplacement
+- [ ] décollage contrôlé
+- [ ] petit pas
+- [ ] talon premier contact
+- [ ] pose progressive
+- [ ] transfert du poids après contact
+- [ ] relation genou/pied cohérente
+- [ ] buste stable
+- [ ] aucune marche normale
+- [ ] aucune grande fente
+- [ ] aucun geste martial ajouté
+- [ ] stabilisation finale lisible
 
 | Famille | Attendu |
 | --- | --- |
 | `motion_fidelity` | PASS |
 | `lower_body_fidelity` | PASS |
 | `upper_body_fidelity` | PASS |
-| `hand_position_fidelity` | PASS (mains derrière le dos) |
+| `hand_position_fidelity` | PASS (config MV-002 derrière dos) |
 | `weight_transfer_fidelity` | PASS |
 | `knee_foot_alignment` | PASS |
 | `camera_compliance` | PASS |
 | `identity_outfit_compliance` | PASS |
 | `pedagogical_readability` | PASS |
-
-Checklist opérationnelle (conservée) : identité Mei · tenue · corps entier 100 % · deux pieds visibles selon phases · caméra fixe · transfert avant déplacement · jambe porteuse identifiable · pied allégé avant déplacement · petite amplitude · talon d’abord · transfert avant après pose · buste stable · pas de fente/marche/kick/martial/chorégraphie · lent · retour cohérent.
+| `humanValidationRequired` | **true** |
 
 ### Statut MV-003
 
 | Champ | Valeur |
 | --- | --- |
-| Brief production | **Prêt** |
-| MotionReferenceSpec | **DRAFT** |
-| REFERENCE MOTION | **Absente** |
+| MotionReferenceSpec | **APPROVED** `1.0.0` |
+| MOTION REFERENCE | **APPROVED** |
+| MEDIA | **MISSING** |
 | MP4 | **0** |
-| Readiness | **BLOCKED** |
 
 ---
 
@@ -837,18 +1028,22 @@ L’application peut être développée avec player + fallback **avant** livrais
 | QC fidélité normatif | Oui (§4) |
 | Clips MP4 produits | **Non** |
 
-**Décision MEDIA : REFERENCE MOTION BLOCKED**
+**Décision MEDIA : MEDIA BLOCKED**
 
-Production / publication pédagogique des vidéos **bloquée** jusqu’à obtention d’une source de mouvement fiable et approuvée pour chaque MV-00x.
+`REFERENCE MOTION BLOCKED` **levé** (MV-001/002/003 MotionReferenceSpec **APPROVED** `1.0.0`).
+Production / publication pédagogique des vidéos **bloquée** uniquement par l’absence des **3 MP4 Mei** validés (QC + validation humaine).
 
 ## 14.3 Synthèse gate ticket
 
 | Dimension | État |
 | --- | --- |
-| CODE READINESS | **READY FOR CODE** |
-| MEDIA PRODUCTION READINESS | **REFERENCE MOTION BLOCKED** |
+| CODE READINESS | **READY** (infra livrée) |
+| REFERENCE MOTION | **APPROVED** (3/3) — blocage levé |
+| MEDIA PRODUCTION READINESS | **MEDIA BLOCKED** (0 MP4) |
+| F-006 | **En test** — **non Livré** |
+| GATE 10 | **BLOCKED** |
 
-Les deux coexistent : développement UI/data autorisé avec médias absents ; **publication** F-006 « Livré » exige médias validés.
+Développement UI/data autorisé avec médias absents ; **publication** F-006 « Livré » / GATE 10 PASS exige 3 MP4 validés.
 
 ---
 
@@ -905,17 +1100,19 @@ Les deux coexistent : développement UI/data autorisé avec médias absents ; **
 | Pipeline production documenté | **Fait** |
 | Brief production MV-001…003 | **Fait** (PO — 9 août 2026) |
 | MotionReferenceSpec modèle §8.0 | **Fait** — contrat conceptuel |
-| MotionReferenceSpec MV-001 | **DRAFT** `0.1.0-draft` — §8.1 |
-| MotionReferenceSpec MV-002 | **DRAFT** `0.1.0-draft` — §8.2 |
-| MotionReferenceSpec MV-003 | **DRAFT** `0.1.0-draft` — §8.3 |
-| Réf. pédagogique externe TCHI / Dr Paul Lam | **CANDIDATE** — non embarquée ; n’approuve pas REFERENCE MOTION |
-| Sources de mouvement dynamiques approuvées | **Absentes** — REFERENCE MOTION BLOCKED |
+| MotionReferenceSpec MV-001 | **APPROVED** `1.0.0` — MOTION REFERENCE APPROVED ; MEDIA = MISSING — §8.1 |
+| MotionReferenceSpec MV-002 | **APPROVED** `1.0.0` — MOTION REFERENCE APPROVED ; MEDIA = MISSING — §8.2 |
+| MotionReferenceSpec MV-003 | **APPROVED** `1.0.0` — MOTION REFERENCE APPROVED ; MEDIA = MISSING — §8.3 (9 phases ; retour non requis) |
+| Réf. pédagogique Dr Paul Lam / TCHI | **APPROVED PEDAGOGICAL REFERENCE** pour MV-001/002/003 — non embarquée |
+| REFERENCE MOTION BLOCKED | **Levé** |
 | MP4 | **0** — MEDIA BLOCKED |
+| MVP-012 | **MEDIA BLOCKED** (ouvert — non fermé) |
+| F-006 | **En test** — **non Livré** |
 | GATE 10 | **BLOCKED** |
 | Implémentation code | **Livré (code)** — commit `0e19f1b` ; attente média |
-| Production vidéos | **Interdite** tant que référence dynamique absente / 0 MP4 |
+| Production vidéos | Autorisée côté référence ; **bloquée** tant que 0 MP4 validés (human validation obligatoire) |
 | Clôture | **Non** — ticket reste ouvert |
 
 ---
 
-*Fin du ticket MVP-012 (Livré code / MEDIA REFERENCE MOTION BLOCKED / attente média — non fermé).*
+*Fin du ticket MVP-012 (Livré code / MEDIA BLOCKED / attente 3 MP4 — non fermé).*
